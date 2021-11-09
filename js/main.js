@@ -34,25 +34,25 @@ $(document).ready(function(){
 
 $(document).ready(function(){
 
-	//  $('.main-slider').slick({
-	//   autoplay: true,
-  // 	  autoplaySpeed: 2000,
-	//   slidesToShow: 1,
-	//   slidesToScroll: 1,
-	//   arrows: false,
-	//   dots:false,
-	//   fade: true,
-	//   asNavFor: '.nav-slider'
-	// });
-	// $('.nav-slider').slick({
-	//   slidesToShow: 3,
-	//   slidesToScroll: 1,
-	//   asNavFor: '.main-slider',
-	//   dots: false,
-	//   arrows:false,
-	//   centerMode: false,
-	//   focusOnSelect: true
-	// });
+	 $('.main-slider').slick({
+	  autoplay: true,
+  	  autoplaySpeed: 2000,
+	  slidesToShow: 1,
+	  slidesToScroll: 1,
+	  arrows: false,
+	  dots:false,
+	  fade: true,
+	  asNavFor: '.nav-slider'
+	});
+	$('.nav-slider').slick({
+	  slidesToShow: 3,
+	  slidesToScroll: 1,
+	  asNavFor: '.main-slider',
+	  dots: false,
+	  arrows:false,
+	  centerMode: false,
+	  focusOnSelect: true
+	});
 
 });
 
