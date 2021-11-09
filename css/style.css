@@ -1792,3 +1792,11 @@ ul.coloured li:before {
     padding-left: 100px;
   }
 }
+@media only screen and (min-width: 1920px) {
+  #story{
+  background-size: 1920px;
+  }
+  #hero-title{
+  background-position: 50% 100%;
+  }
+}
