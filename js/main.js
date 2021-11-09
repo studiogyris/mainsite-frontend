@@ -33,7 +33,6 @@ $(document).ready(function(){
 
 if (window.location.pathname.replace(/\//g, "")=="epf") {
 	$(document).ready(function(){
-
 		 $('.main-slider').slick({
 		  autoplay: true,
 	  	  autoplaySpeed: 2000,
