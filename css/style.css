@@ -381,7 +381,7 @@ header {
   height: 60vh;
   min-height: 360px;
   position: relative;
-  display: none;
+  /* display: none; */
 }
 #video-wrap .container {
   height: 100%;
