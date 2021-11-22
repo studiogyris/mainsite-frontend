@@ -392,6 +392,17 @@ header {
   -ms-flex-align: end;
   align-items: flex-end;
   height: 100%;
+  padding-bottom: 30px;
+}
+
+#video-wrap .arrow-row .btn{
+  margin-bottom: 10px;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+#video-wrap .arrow-row .white-button{
+  display: none;
 }
 
 #hero-video {
@@ -1233,6 +1244,9 @@ ul.coloured li:before {
 }
 /* Medium Devices, Desktops */
 @media only screen and (min-width: 992px) {
+  #video-wrap .arrow-row .white-button{
+    display: inline-block;
+  }
   .brand-column {
     -webkit-flex-basis: 194px;
     -ms-flex-preferred-size: 194px;
