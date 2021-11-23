@@ -198,10 +198,13 @@ object, embed {
   min-width: 250px;
   text-align: center;
 }
-
+#mint-btn {
+  display: none;
+}
 .red-button {
   background-color: #E43544;
   color: #fff;
+
 }
 .red-button:hover {
   background-color: #fff;
@@ -1244,6 +1247,9 @@ ul.coloured li:before {
 }
 /* Medium Devices, Desktops */
 @media only screen and (min-width: 992px) {
+  #mint-btn {
+    display: block;
+  }
   #video-wrap .arrow-row .white-button{
     display: inline-block;
   }
@@ -1609,7 +1615,7 @@ ul.coloured li:before {
 
   .column-5 {
     -webkit-flex-basis: 41.66%;
-    -ms-flex-preferred-size: 41.66%;
+    -ms-flex-prefer--size: 41.66%;
     flex-basis: 41.66%;
     max-width: 41.66%;
   }
