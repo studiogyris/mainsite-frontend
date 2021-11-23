@@ -198,10 +198,13 @@ object, embed {
   min-width: 250px;
   text-align: center;
 }
-
+#mint-btn {
+  display: none;
+}
 .red-button {
   background-color: #E43544;
   color: #fff;
+
 }
 .red-button:hover {
   background-color: #fff;
@@ -381,7 +384,7 @@ header {
   height: 60vh;
   min-height: 360px;
   position: relative;
-  display: none;
+  overflow: hidden;
 }
 #video-wrap .container {
   height: 100%;
@@ -392,14 +395,28 @@ header {
   -ms-flex-align: end;
   align-items: flex-end;
   height: 100%;
+  padding-bottom: 30px;
+}
+
+#video-wrap .arrow-row .btn{
+  margin-bottom: 10px;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+#video-wrap .arrow-row .white-button{
+  display: none;
 }
 
 #hero-video {
   position: absolute;
   right: 0;
   bottom: 0;
+  left: 0;
+  top: 0;
   min-width: 100%;
-  min-height: 100%;
+  height: 100%;
+  transform: translate( calc((100% - 100vw) / -2), calc((100% - 60vh) / -2));
 }
 
 #video-arrow {
@@ -422,7 +439,6 @@ header {
   background-size: cover;
   background-repeat: no-repeat;
   min-height: 100vh;
-  margin-top: -335.5px;
 }
 #hero-title .container {
   min-height: 100vh;
@@ -433,7 +449,7 @@ header {
   -webkit-align-items: center;
   -ms-flex-align: center;
   align-items: center;
-  padding-top: 335.5px;
+  padding-top: 60px;
   padding-bottom: 60px;
 }
 
@@ -1231,6 +1247,12 @@ ul.coloured li:before {
 }
 /* Medium Devices, Desktops */
 @media only screen and (min-width: 992px) {
+  #mint-btn {
+    display: block;
+  }
+  #video-wrap .arrow-row .white-button{
+    display: inline-block;
+  }
   .brand-column {
     -webkit-flex-basis: 194px;
     -ms-flex-preferred-size: 194px;
@@ -1299,6 +1321,12 @@ ul.coloured li:before {
   #video-wrap {
     margin-top: -170.5px;
     height: 100vh;
+  }
+
+  #hero-video {
+    min-height: 100%;
+    height: unset;
+    transform: translate( calc((100% - 100vw) / -2), calc((100% - 100vh) / -2));
   }
 
   .story-images-column {
@@ -1587,7 +1615,7 @@ ul.coloured li:before {
 
   .column-5 {
     -webkit-flex-basis: 41.66%;
-    -ms-flex-preferred-size: 41.66%;
+    -ms-flex-prefer--size: 41.66%;
     flex-basis: 41.66%;
     max-width: 41.66%;
   }
@@ -1633,7 +1661,7 @@ ul.coloured li:before {
   }
 
   #hero-title {
-    margin-top: -170.5px;
+    margin-top: 0;
   }
   #hero-title .row {
     padding-top: 170.5px;

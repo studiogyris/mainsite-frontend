@@ -1,4 +1,21 @@
 $(document).ready(function(){
+	var mute = $('#mute-video');
+
+	mute.click(function(event) {
+		event.preventDefault();
+		if( $("video").prop('muted') )
+		    {
+		        $("video").prop('muted', false);
+		        mute.text('DISABLE SOUND');
+		    }
+		    else {
+		    	$("video").prop('muted', true);
+		    	mute.text('ENABLE SOUND');
+		    }
+		});
+})
+
+$(document).ready(function(){
 	var button = $('.roadmap-control .btn');
 
 	button.click(function(event) {
