@@ -77,19 +77,39 @@
 			<div class="container">
 				<div class="row arrow-row">
 					<div class="column">
-						<div class="control-buttons text-center">
-							<a href="#" class="btn red-button" id="mute-video">
-								ENABLE SOUND
-							</a>
-							<a href="#hero-title" class="btn white-button">
-								MORE DETAILS
-							</a>
+						<div class="row">
+							<div class="control-buttons">
+								<a href="#" class="btn red-button" id="mute-video">
+									ENABLE SOUND
+								</a><br>
+								<a href="https://www.youtube.com/watch?v=-x1emPxg_S4" class="btn youtube-button" target="_blank">
+									<img src="img/youtube-watch.svg" alt="YouTube">
+								</a>
+							</div>
+							<div class="arrow-down text-center">
+								<a href="#hero-title"><img src="img/arrow-down.svg" alt="arrow"></a>
+							</div>
 						</div>
+							
 					</div>
 				</div>
 			</div>
 		</section>
 		<section id="hero-title">
+			<div class="mobile-video-control text-center">
+				<a href="#" class="btn black-button" id="play-mobile-video">WATCH TEASER</a>
+			</div>
+			<video muted playsinline id="mobile-video">
+				<source src="https://gyris.b-cdn.net/gyris_teaser_H264_WEB.mp4" type="video/mp4">
+			</video>
+			<div class="mobile-video-ended">
+				<div class="row">
+					<div id="replay-video-button">
+						<img src="img/replay.svg" alt="Replay" title="Replay">
+					</div>
+					<a href="https://www.youtube.com/watch?v=-x1emPxg_S4" class="watch-on-youtube" target="_blank"><img src="img/youtube-watch.svg" alt="YouTube"></a>
+				</div>
+			</div>
 			<div class="container">
 				<div class="row">
 					<div class="column">
