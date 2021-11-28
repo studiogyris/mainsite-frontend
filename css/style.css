@@ -493,6 +493,9 @@ header {
 .story-images-column:nth-child(1) .story-image-wrap {
   border: 1px solid #764342;
 }
+.story-image-wrap img {
+  border-radius: 21px;
+}
 .story-images-column:nth-child(1) .story-image-wrap:after {
   content: "";
   width: 200px;
