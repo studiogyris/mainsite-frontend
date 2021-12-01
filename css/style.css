@@ -12,6 +12,13 @@
   font-display: swap;
 }
 @font-face {
+  font-family: "WorkSans";
+  src: url("../fonts/WorkSans-SemiBoldItalic.ttf");
+  font-style: italic;
+  font-weight: 600;
+  font-display: swap;
+}
+@font-face {
   font-family: "PTSerif";
   src: url("../fonts/PTSerif-Bold.ttf");
   font-weight: 700;
@@ -1222,6 +1229,39 @@ ul.coloured li:before {
   height: 100%;
 }
 
+.quote{
+  position: relative;
+  color: #E43544;
+  font-size: 1.625em;
+  font-style: italic;
+  font-weight: 600;
+  text-align: center;
+  padding: 55px;
+}
+
+.quote:before{
+  content: url('../img/quote.svg');
+  position: absolute;
+  display: block;
+  top: 25px;
+  left: 0;
+}
+
+.quote:after{
+  content: url('../img/quote.svg');
+  position: absolute;
+  display: block;
+  bottom: 25px;
+  right: 0;
+  transform: rotate(180deg);
+}
+
+.quote-in-text{
+  padding: 30px;
+  font-weight: 700;
+  font-size: 1.375em;
+}
+
 /*==========  Desktop First  ==========*/
 /* Large Devices, Wide Screens */
 /* Medium Devices, Desktops */
@@ -1250,6 +1290,13 @@ ul.coloured li:before {
 }
 /* Medium Devices, Desktops */
 @media only screen and (min-width: 992px) {
+  .quote{
+    margin-right: 425px;
+  }
+  .quote-in-text{
+    padding-left: 170px;
+    padding-right: 170px;
+  }
   #mint-btn {
     display: block;
   }
@@ -1655,6 +1702,9 @@ ul.coloured li:before {
 }
 /* Large Devices, Wide Screens */
 @media only screen and (min-width: 1200px) {
+  .quote{
+    margin-right: 570px;
+  }
   h1 {
     font-size: 2.81em;
   }
@@ -1688,12 +1738,13 @@ ul.coloured li:before {
     margin-right: auto;
   }
 
-  .story-images-column:nth-child(1) {
+  .story-images-column:nth-child(1):not(.in-text) {
     margin-top: -130px;
   }
-  .story-images-column:nth-child(4) {
+  .story-images-column:nth-child(4):not(.in-text) {
     margin-top: -130px;
   }
+
 
   #story {
     margin-top: -50px;
