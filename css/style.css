@@ -826,6 +826,22 @@ header {
   border-color: #6D9366;
 }
 
+.team-member-avatar.purple:after {
+  content: "";
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  box-shadow: 0 0 200px #CC8899;
+  display: block;
+  position: absolute;
+  z-index: -1;
+  top: 30px;
+  left: 30px;
+}
+.team-member-avatar.purple img {
+  border-color: #CC8899;
+}
+
 .team-member-avatar.orange:after {
   content: "";
   width: 200px;
