@@ -1,86 +1,18 @@
 $(document).ready(function(){
 	var mute = $('#mute-video');
-	var video = $('#hero-video');
 
 	mute.click(function(event) {
 		event.preventDefault();
-		if( video.prop('muted') )
+		if( $("video").prop('muted') )
 		    {
-		    	video.get(0).pause();
-		    	video.get(0).currentTime = 0;
-		    	video.fadeOut();
-		        video.prop('muted', false);
-		        video.get(0).play();
-		        video.fadeIn();
+		        $("video").prop('muted', false);
 		        mute.text('DISABLE SOUND');
 		    }
 		    else {
-		    	video.prop('muted', true);
+		    	$("video").prop('muted', true);
 		    	mute.text('ENABLE SOUND');
 		    }
 		});
-	return;
-})
-
-$(document).ready(function(){
-	var play = $('#play-mobile-video');
-	var video = $('#mobile-video');
-	var replay = $('.mobile-video-ended');
-
-	play.click(function(event) {
-		event.preventDefault();
-		replay.hide();
-		if( video.prop('muted') )
-		    {
-		        video.prop('muted', false);
-		        video.get(0).currentTime = 0;
-		        video.get(0).play();
-		        video.fadeIn();
-		        play.text('CLOSE TEASER');
-		    }
-		    else {
-		    	video.fadeOut();
-		    	video.get(0).pause();
-		    	video.get(0).currentTime = 0;
-		    	video.prop('muted', true);
-		    	play.text('WATCH TEASER');
-		    }
-		});
-	return;
-})
-
-$(document).ready(function(){
-	var video = $('#mobile-video');
-	var replay = $('.mobile-video-ended');
-	var play = $('#play-mobile-video');
-
-	replay.find('.row').outerHeight(video.height());
-
-	video.on('ended',function(){
-	  video.prop('muted', true);
-      video.hide();
-      replay.fadeIn();
-      play.text('WATCH TEASER');
-    });
-})
-
-$(document).ready(function(){
-	var video = $('#mobile-video');
-	var replay = $('.mobile-video-ended');
-	var replaybutton = $('#replay-video-button');
-	var play = $('#play-mobile-video');
-
-	replaybutton.click(function(event) {
-		event.preventDefault();
-		play.text('CLOSE TEASER');
-		replay.hide();
-		video.prop('muted', false);
-		video.get(0).currentTime = 0;
-		video.get(0).play();
-		video.fadeIn();
-		
-		
-	});
 })
 
 $(document).ready(function(){
@@ -159,7 +91,7 @@ $(document).ready(function(){
 
 $(document).ready(function(){
     var $page = $('html, body');
-    $('a[href^="#"]').click(function() {
+    $('a[href*="#"]').click(function() {
         $page.animate({
             scrollTop: $($.attr(this, 'href')).offset().top
         }, 600);

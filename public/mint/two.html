@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 	<title>Home Page</title>
-	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
 <header id="header">
@@ -12,7 +12,7 @@
 		<div class="row header-row">
 			<div class="column brand-column">
 				<a href="/">
-					<img src="img/logo.svg" alt="">
+					<img src="/img/logo.svg" alt="">
 				</a>
 			</div>
 			<div class="column follow-column">
@@ -20,7 +20,7 @@
 				<ul>
 					<li>
 						<a href="https://discord.gg/5RHg4c82GQ" target="_blank">
-							<img src="img/discord.svg" alt="">
+							<img src="/img/discord.svg" alt="">
 						</a>
 					</li>
 					<!--<li>
@@ -30,7 +30,7 @@
 					</li>-->
 					<li>
 						<a href="https://twitter.com/Gyris_nft" target="_blank">
-							<img src="img/twitter.svg" alt="">
+							<img src="/img/twitter.svg" alt="">
 						</a>
 					</li>
 					<!--<li>
@@ -61,13 +61,35 @@
 		<div class="container">
 			<div class="row">
 				<div class="column image-column">
-					<img src="img/eye.png" alt="">
+					<img src="/img/mint-img.png" alt="">
 				</div>
 				<div class="column data-column">
-					<h1>Transaction successfull</h1>
-					<a href="#" class="btn green-button mb-35">view transaction here</a>
-					<p><strong>Would you like to mint more?</strong><br>You are allowed to hold X more buras in your wallet</p>
-					<a href="#" class="btn green-button">MINT MORE</a>
+					<h1>Process Title</h1>
+					<form action="#">
+						<div class="process-row">
+							<div class="column number-column">
+								<div class="number-input">
+									<div class="less">-</div>
+									<input type="number" name="process_name" value="1">
+									<div class="more">+</div>
+								</div>
+							</div>
+							<div class="column max-column">
+								<a href="#" class="btn red-button">USE MAX (1200)</a>
+							</div>
+							<div class="column submit-column">
+								<input type="submit" class="btn green-button" value="Mint">
+							</div>
+						</div>
+					</form>
+
+					<div class="message-wrap">
+						<div class="message-row">
+							<div class="message-message">
+								Please confirm the transaction in your wallet
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -80,17 +102,17 @@
         <ul>
           <li>
             <a href="#">
-              <img src="img/discord-2.svg" alt="">
+              <img src="/img/discord-2.svg" alt="">
             </a>
           </li>
           <li>
                     <a href="#">
-                      <img src="img/logomark-2.svg" alt="" />
+                      <img src="/img/logomark-2.svg" alt="" />
                     </a>
                 </li>
           <li>
             <a href="#">
-              <img src="img/twitter-2.svg" alt="">
+              <img src="/img/twitter-2.svg" alt="">
             </a>
           </li>
         </ul>
@@ -101,7 +123,7 @@
     </div>
   </div>
 </footer>
-	<script src="libs/jquery/jquery-3.3.1.min.js"></script>
-	<script src="js/main.js"></script>
+	<script src="/libs/jquery/jquery-3.3.1.min.js"></script>
+	<script src="/js/jq.js"></script>
 </body>
 </html>
