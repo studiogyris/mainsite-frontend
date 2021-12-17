@@ -53,8 +53,18 @@ async function main(){
     clog(success);
   }
   async function attemptSolflare() {
-    const success = await window.solflare.connect();
+    let wallet = new Wallet(window.solflare);
+    const success = await wallet.connect();
     clog(success);
+    if (success) {
+
+    } else {
+      displayErr('You have cancelled the wallet connection');
+    }
+  }
+  async function displayErr(msg) {
+    editext('err-msg',msg);
+    unhide('err-wrap');
   }
 
   // let transaction = new Transaction().add(
@@ -71,6 +81,9 @@ async function main(){
   // let txid = await connection.sendRawTransaction(signed.serialize());
   // await connection.confirmTransaction(txid);
 };main()
+function editext(id,text) {
+  gid(id).textContent=text;
+}
 function clog(a) {
   console.log(a);
 }

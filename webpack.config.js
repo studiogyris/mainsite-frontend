@@ -29,8 +29,17 @@ module.exports = {
     entry: './src/main.js',
     output: {
       path: path.resolve(__dirname, 'docs/js'),
-      publicPath: path.resolve(__dirname, 'public'),
+      publicPath: path.resolve(__dirname, 'docs'),
       filename: 'bundle.js'
-    }
+    },
+    devServer: {
+      static: {
+        directory: path.join(__dirname, 'docs'),
+      },
+      compress: true,
+      port: 9000,
+  },
+
+
 };
 console.log(path.resolve(__dirname, '/docs/js'));
