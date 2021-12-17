@@ -72,7 +72,24 @@
 					<img src="/img/mint-img.png" alt="">
 				</div>
 				<div class="column data-column">
-					<h1 id="main-h">Connect your Wallet to be able to mint</h1><br>
+					<h1  id="main-h">Connect your Wallet to be able to mint</h1><br>
+					<form style="display:none;" id="mint-controls-form" action="#">
+						<div class="process-row">
+							<div class="column number-column">
+								<div class="number-input">
+									<div class="less">-</div>
+									<input type="number" name="process_name" value="1">
+									<div class="more">+</div>
+								</div>
+							</div>
+							<div class="column max-column">
+								<a href="#" class="btn red-button">USE MAX (1200)</a>
+							</div>
+							<div class="column submit-column">
+								<input type="submit" class="btn green-button" value="Mint">
+							</div>
+						</div>
+					</form>
 					<a id="connect-btn" class="btn red-button">CONNECT WALLET</a>
 					<div style="display:none;" id="err-wrap" class="error-wrap">
 						<div class="error-row">

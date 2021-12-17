@@ -1,70 +1,124 @@
-import { Connection, SystemProgram, Transaction, clusterApiUrl } from '@solana/web3.js';
-import Wallet from '@project-serum/sol-wallet-adapter';
+import * as Web3 from '@solana/web3.js';
+// import Wallet from '@project-serum/sol-wallet-adapter';
+import {CFG} from './config.js';
+
+const LPS = 1000000000;
 
 async function main(){
-  let connection = new Connection(clusterApiUrl('devnet'));
-  let providerUrl = 'https://solflare.com/provider';
-  let wallet = new Wallet(providerUrl);
-  wallet.on('connect', publicKey => console.log('Connected to ' + publicKey.toBase58()));
-  wallet.on('disconnect', () => console.log('Disconnected'));
+  window.sol = {};
+  connectRpc();
 
   clicksen('connect-btn',onClickConnect);
 
-
+  async function getUserBalance() {
+    return await sol.connection.getBalance(window.sol.provider.publicKey);
+  }
+  function connectRpc() {
+    const connection = new Web3.Connection(CFG.rpcUrl);
+    window.sol.connection = connection;
+  }
   async function onClickConnect(){
     //await wallet.connect();
-    const hasPhantom = window.solana;
+    const hasPhantom = window.solana && window.solana.isPhantom;
     const hasSolflare = window.solflare && window.solflare.isSolflare;
 
-    if (hasPhantom && hasSolflare) {
+    if (hasPhantom && hasSolflare ) {
       // make user choose their wallet
-      return onBothWalletsInstalled();
+      return showBothBtns();
+    } if ( hasPhantom ) {
+      attemptPhantom();
+    } else if ( hasSolflare ) {
+      attemptSolflare();
+    } else {
+      showBothBtns();
+      displayErr("No wallet extension found for either Phantom or Solflare.<br> Please install one of them and refresh this website.<br> Clicking on the above buttons will take you to corresponding webpages.");
     }
   }
-
-  async function onBothWalletsInstalled() {
+  async function showBothBtns() {
     hide('connect-btn');
-    gid('main-h').textContent="Select your wallet provider!";
+    setPTitle("Select your wallet provider!");
 
     const phantomBtn = creatE('a');
+    phantomBtn.style['border-radius']='0px';
+    phantomBtn.style['border']='2px solid black';
     phantomBtn.classList="btn red-btn";
     phantomBtn.style['background-color']='purple';
     phantomBtn.style.color="white";
     phantomBtn.textContent="Phantom";
     phantomBtn.id="phantom-btn";
 
-
     const solflareBtn = creatE('a');
+    solflareBtn.style['border-radius']='0px';
+    solflareBtn.style['border']='2px solid black';
     solflareBtn.classList="btn red-btn";
     solflareBtn.style['background-color']='orange';
     solflareBtn.style.color="black";
     solflareBtn.textContent="Solflare";
     solflareBtn.id="solflare-btn";
 
-
     insertAfter(gid('connect-btn'),phantomBtn);
+
     insertAfter(phantomBtn,solflareBtn);
 
     clicksen('phantom-btn',attemptPhantom);
     clicksen('solflare-btn',attemptSolflare);
   }
   async function attemptPhantom() {
-    const success = await window.solana.connect();
-    clog(success);
+    if ( !window.solana || !window.solana.isPhantom  ) {
+      window.open("https://phantom.app","_blank");
+      return;
+    }
+    window.solana.connect()
+      .then((res)=>{
+        hideErr();
+        window.sol.provider=window.solana;
+        onWalletConnected();
+    }).catch((err)=>{
+        if (err.code&&err.code==4001){
+          console.error(err);
+          displayErr('You have cancelled the wallet connection');
+        } else if (err.message) {
+          displayErr(err.message);
+        } else {
+          displayErr('Something went wrong!');
+          console.error(err);
+        }
+      })
   }
   async function attemptSolflare() {
-    let wallet = new Wallet(window.solflare);
-    const success = await wallet.connect();
-    clog(success);
+    if ( !window.solflare || !window.solflare.isSolflare ) {
+      window.open("https://solflare.com","_blank");
+      return;
+    }
+    const success = await window.solflare.connect();
     if (success) {
-
+      hideErr();
+      window.sol.provider=window.solflare;
+      onWalletConnected();
     } else {
       displayErr('You have cancelled the wallet connection');
     }
   }
-  async function displayErr(msg) {
-    editext('err-msg',msg);
+  function displayErr(msg) {
+    gid('err-msg').innerHTML=msg;
     unhide('err-wrap');
+  }
+  function hideErr(){
+    hide('err-wrap');
+  }
+  async function onWalletConnected(){
+    setPTitle("Choose the amount and press mint!");
+    unhide('mint-controls-form');
+    hide('connect-btn');
+    try {
+      hide('solflare-btn');
+      hide('phantom-btn');
+    } catch {}
+
+    getUserBalance();
+  }
+  function setPTitle(title) {
+    editext('main-h',title);
   }
 
   // let transaction = new Transaction().add(
