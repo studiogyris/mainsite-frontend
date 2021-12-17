@@ -23,13 +23,13 @@ module.exports = {
         fallback: {
             crypto: false,
             "assert": require.resolve("assert/"),
-            "stream": require.resolve("stream-browserify") 
+            "stream": require.resolve("stream-browserify")
         }
     },
     entry: './src/main.js',
     output: {
-      path: path.resolve(__dirname, 'public/js'),
+      path: path.resolve(__dirname, 'docs/js'),
       filename: 'bundle.js'
     }
 };
-console.log(path.resolve(__dirname, '/public/js'));
+console.log(path.resolve(__dirname, '/docs/js'));
