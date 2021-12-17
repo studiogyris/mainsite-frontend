@@ -1,0 +1,36 @@
+{
+  "name": "mainsite-frontend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start-dev": "webpack-dev-server --mode development --open ",
+    "start": "webpack-dev-server --mode production --open",
+    "watch-dev": "webpack -w --mode development",
+    "watch": "webpack -w --mode production",
+    "serve": "concurrently --kill-others \"npm run watch\" \"npm run start\"",
+    "serve-dev": "concurrently --kill-others \"npm run watch-dev\" \"npm run start-dev\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/studiogyris/mainsite-frontend.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/studiogyris/mainsite-frontend/issues"
+  },
+  "homepage": "https://github.com/studiogyris/mainsite-frontend#readme",
+  "devDependencies": {
+    "assert": "^2.0.0",
+    "concurrently": "^6.4.0",
+    "stream-browserify": "^3.0.0",
+    "webpack": "^5.65.0",
+    "webpack-cli": "^4.9.1",
+    "webpack-dev-server": "^4.6.0"
+  },
+  "dependencies": {
+    "@project-serum/sol-wallet-adapter": "^0.2.6",
+    "@solana/web3.js": "^1.31.0"
+  }
+}
