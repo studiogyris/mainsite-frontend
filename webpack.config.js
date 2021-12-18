@@ -4,6 +4,10 @@ const path = require('path');
 
 
 module.exports = {
+
+  // optimization: {
+  //   nodeEnv: 'production'
+  // },
     module: {
       rules: [
         {
@@ -17,7 +21,10 @@ module.exports = {
     plugins: [
         new webpack.ProvidePlugin({
             Buffer: ['buffer', 'Buffer']
-        })
+        }),
+        new webpack.ProvidePlugin({
+            process: 'process/browser',
+          }),
     ],
     resolve: {
         fallback: {

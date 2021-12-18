@@ -1,8 +1,12 @@
 import * as Web3 from '@solana/web3.js';
 // import Wallet from '@project-serum/sol-wallet-adapter';
 import {CFG} from './config.js';
+import * as anchor from '@project-serum/anchor';
 
 const LPS = 1000000000;
+const CANDY_MACHINE_PROGRAM = new anchor.web3.PublicKey(
+    "cndyAnrLdpjq1Ssp1z8xxDsB8dxe7u4HL5Nxi2K5WXZ"
+);
 
 async function main(){
   window.sol = {};
@@ -115,8 +119,40 @@ async function main(){
       hide('phantom-btn');
     } catch {}
 
-    getUserBalance();
+    testsAfterConnection();
   }
+  async function testsAfterConnection() {
+    getUserBalance();
+    getCMState();
+  }
+  async function getCMState() {
+    //window.sol.provider.connection=window.sol.connection;
+    const idl = await anchor.Program.fetchIdl(CANDY_MACHINE_PROGRAM, window.sol.connection);
+    clog(idl)
+    if (idl) {
+      const program = new anchor.Program(
+          idl,
+          CANDY_MACHINE_PROGRAM,
+          window.sol.provider
+      );
+
+      const state = await program.account.candyMachine.fetch(
+          CFG.CMID
+      );
+      const itemsAvailable = state.data.itemsAvailable.toNumber();
+      const itemsRedeemed = state.itemsRedeemed.toNumber();
+      const itemsRemaining = itemsAvailable - itemsRedeemed;
+
+      let goLiveDate = state.data.goLiveDate.toNumber();
+      goLiveDate = new Date(goLiveDate * 1000);
+
+      clog(itemsRedeemed);
+      clog(itemsAvailable);
+      clog(itemsRemaining);
+      clog(goLiveDate);
+    }
+  }
+
   function setPTitle(title) {
     editext('main-h',title);
   }
