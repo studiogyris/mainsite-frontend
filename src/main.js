@@ -7,19 +7,54 @@ const LPS = 1000000000;
 const CANDY_MACHINE_PROGRAM = new anchor.web3.PublicKey(
     "cndyAnrLdpjq1Ssp1z8xxDsB8dxe7u4HL5Nxi2K5WXZ"
 );
+const TOTAL_ITEMS = 6;
 
 async function main(){
+  var bag = {};
   window.sol = {};
-  connectRpc();
+  populateDom();
+  if (!connectRpc()) {
+    alert("RPC connection error");
+    return;
+  }
+  onRPCConnected();
 
   clicksen('connect-btn',onClickConnect);
 
   async function getUserBalance() {
-    return await sol.connection.getBalance(window.sol.provider.publicKey);
+    return await sol.provider.connection.getBalance(window.sol.walletProvider.publicKey);
   }
   function connectRpc() {
-    const connection = new Web3.Connection(CFG.rpcUrl);
-    window.sol.connection = connection;
+    var success = true;
+    try {
+      const connection = new Web3.Connection(CFG.rpcUrl);
+      window.sol.provider = new anchor.Provider(connection,{}, {
+          preflightCommitment: "recent", // might need a change
+      });
+    } catch (err) {
+      console.error(err);
+      success = false;
+    }
+    return success;
+  }
+  async function onRPCConnected() {
+
+    bag.stateUpdateInterval = setInterval(updateState,6000);
+    updateState();
+  }
+
+  async function updateState() {
+    const state = await getCMState();
+    if (state.itemsRedeemed>=TOTAL_ITEMS) {
+      clearInterval(bag.stateUpdateInterval);
+      setPTitle(`Collection is sold out! :(<br> you can get one from <a href="${CFG.marketplaceCollection}" target="_blank">${CFG.marketplaceName}</a>`);
+    }
+    editext('minted-amount',state.itemsRedeemed)
+
+  }
+  function populateDom() {
+    editext('price',CFG.price);
+    editext('max-per-tx',CFG.maxPerTx)
   }
   async function onClickConnect(){
     //await wallet.connect();
@@ -75,7 +110,7 @@ async function main(){
     window.solana.connect()
       .then((res)=>{
         hideErr();
-        window.sol.provider=window.solana;
+        window.sol.walletProvider=window.solana;
         onWalletConnected();
     }).catch((err)=>{
         if (err.code&&err.code==4001){
@@ -97,7 +132,7 @@ async function main(){
     const success = await window.solflare.connect();
     if (success) {
       hideErr();
-      window.sol.provider=window.solflare;
+      window.sol.walletProvider=window.solflare;
       onWalletConnected();
     } else {
       displayErr('You have cancelled the wallet connection');
@@ -126,9 +161,12 @@ async function main(){
     getCMState();
   }
   async function getCMState() {
-    //window.sol.provider.connection=window.sol.connection;
-    const idl = await anchor.Program.fetchIdl(CANDY_MACHINE_PROGRAM, window.sol.connection);
-    clog(idl)
+    if (!window.sol.provider) {
+      alert("No provider found, something wrong");
+      return;
+    }
+    const idl = await anchor.Program.fetchIdl(CANDY_MACHINE_PROGRAM, window.sol.provider);
+
     if (idl) {
       const program = new anchor.Program(
           idl,
@@ -142,19 +180,20 @@ async function main(){
       const itemsAvailable = state.data.itemsAvailable.toNumber();
       const itemsRedeemed = state.itemsRedeemed.toNumber();
       const itemsRemaining = itemsAvailable - itemsRedeemed;
-
       let goLiveDate = state.data.goLiveDate.toNumber();
       goLiveDate = new Date(goLiveDate * 1000);
 
-      clog(itemsRedeemed);
-      clog(itemsAvailable);
-      clog(itemsRemaining);
-      clog(goLiveDate);
+      return {
+        itemsAvailable,
+        itemsRedeemed,
+        itemsRemaining,
+        goLiveDate
+      }
     }
   }
-
   function setPTitle(title) {
-    editext('main-h',title);
+    gid('main-h').innerHTML=title;
+
   }
 
   // let transaction = new Transaction().add(
@@ -171,6 +210,7 @@ async function main(){
   // let txid = await connection.sendRawTransaction(signed.serialize());
   // await connection.confirmTransaction(txid);
 };main()
+////////////////////////////////////////////////////
 function editext(id,text) {
   gid(id).textContent=text;
 }
