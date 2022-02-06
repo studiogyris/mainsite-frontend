@@ -35,6 +35,7 @@ $(document).ready(function(){
 
 
 	less.click(function(event) {
+		if (document.getElementById('mint-amount').disabled) return;
 		var value = parseInt(number.val());
 		if (value > 1) {
 			number.val(value - 1);
@@ -43,6 +44,7 @@ $(document).ready(function(){
 		}
 	});
 	more.click(function(event) {
+		if (document.getElementById('mint-amount').disabled) return;
 		var value = parseInt(number.val());
 		number.val(value + 1);
 	});

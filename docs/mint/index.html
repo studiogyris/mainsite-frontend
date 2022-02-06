@@ -67,32 +67,38 @@
 <main>
 	<section id="data">
 		<div class="container">
+			
 			<div class="row">
+				
 				<div class="column image-column">
 					<img src="/img/mint-img.png" alt="">
 				</div>
+				
 				<div class="column data-column">
 					<h1  id="main-h">Connect your Wallet to be able to mint</h1><br>
-					<form style="display:none;" id="mint-controls-form" action="#">
+					<div style="display:none;" id="mint-controls-form" >
 						<div class="process-row">
 							<div class="column number-column">
 								<div class="number-input">
-									<div class="less">-</div>
-									<input type="number" name="process_name" value="1">
-									<div class="more">+</div>
+									<div class="less mint-amount-control">-</div>
+									<input id="mint-amount" type="number"  value="1" min="1">
+									<div class="more mint-amount-control">+</div>
 								</div>
 							</div>
 							<div class="column max-column">
-								<a href="#" class="btn red-button">USE MAX (<span id="max-per-tx">?</span>)</a>
+								<a id="max-btn" class="btn red-button">USE MAX (<span id="max-per-tx">?</span>)</a>
 							</div>
 							<div class="column submit-column">
-								<input type="submit" class="btn green-button" value="Mint">
+								<input id="mint-btn" type="button" class="btn green-button" value="Mint">
 							</div>
 						</div>
-					</form>
+					</div>
 					<a id="connect-btn" class="btn red-button">CONNECT WALLET</a>
 					<br>
-					<div><strong>&nbsp&nbsp<span id="minted-amount">?</span> / 2735 already minted &nbsp ( price: <span id="price">x</span> SOL )</strong></div>
+					<br>
+					<div><strong>&nbsp&nbsp<span id="minted-amount">?</span> / <span id="total-items-amount"></span> already minted &nbsp ( price: <span id="price">x</span> SOL )</strong></div>
+					
+					<div style="display:none;" id="connected-account-wrap">&nbsp&nbspConnected: <span id="connected-account"></span>&nbsp&nbsp<strong>[ <span id="user-balance"></span> ]</strong> &nbsp&nbsp(&nbsp<strong><span id="connected-whitelisted"></span></strong>&nbsp)</div>
 					<div style="display:none;" id="err-wrap" class="error-wrap">
 						<div class="error-row">
 							<div class="error-icon">
@@ -122,6 +128,18 @@
 							</div>
 						</div>
 					</div>
+					<div style="display:none;" id="display-msg-wrap" class="message-wrap">
+						<div class="message-row">
+							<div id="display-msg" class="message-message">
+								Please confirm the transaction in your wallet
+							</div>
+						</div>
+					</div>
+					<div id="submitted-transactions-h" style="display:none;" >
+					<h2 >Submitted transactions:</h2>
+					<h3>Total Minted: <span id='total-minted'>0</span></span></h3>
+					</div>
+					<div  id="submitted-transactions-wrap"></div>
 				</div>
 			</div>
 		</div>
