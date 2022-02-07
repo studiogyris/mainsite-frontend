@@ -1,6 +1,6 @@
 const CFG = {
   rpcUrl: 'https://api.devnet.solana.com',
-  CMID: '8aB3ahkHDum4mUFi4Kz9wH8modp9sgnfaiiNouLoSaAy',
+  CMID: 'EVsas8dKys5hNUifgzYEzJezJ8ReHjyaFyWYWnUpaTh1',
   devnet: true,
   price: 1.69,
   totalItems: 6,

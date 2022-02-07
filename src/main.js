@@ -65,7 +65,7 @@ async function main(){
     return new Date().getTime() / 1000;
   };
   async function mintSuccessCallback(txid){
-    gid('minted-amount').value=parseInt(gid('minted-amount').value)+1;
+    gid('total-minted').value=parseInt(gid('total-minted').value)+1;
     gid('tx-'+txid).textContent="[ Confirmed! ]";
     gid('tx-'+txid).style.color="lightgreen";
   }
