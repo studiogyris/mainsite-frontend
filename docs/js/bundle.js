@@ -1367,7 +1367,7 @@ eval("\n\nvar forEach = __webpack_require__(/*! foreach */ \"./node_modules/fore
   \***********************/
 /***/ ((__unused_webpack_module, exports) => {
 
-eval("const CFG = {\n  rpcUrl: 'https://api.devnet.solana.com',\n  CMID: '7KBixtGrXtsKMkcsfN92xPX2HASkEJBV3kKBKCVrXjDD',\n  devnet: true,\n  price: 1.69,\n  totalItems: 6,\n  maxPerTx: 15,\n  marketplaceName: 'Magic Eden',\n  marketplaceCollection: 'https://magiceden.io/marketplace/panthers_in_the_metaverse'\n\n}\nexports.CFG = CFG;\n\n\n//# sourceURL=webpack://mainsite-frontend/./src/config.js?");
+eval("const CFG = {\n  rpcUrl: 'https://api.devnet.solana.com',\n  CMID: '8aB3ahkHDum4mUFi4Kz9wH8modp9sgnfaiiNouLoSaAy',\n  devnet: true,\n  price: 1.69,\n  totalItems: 6,\n  maxPerTx: 15,\n  marketplaceName: 'Magic Eden',\n  marketplaceCollection: 'https://magiceden.io/marketplace/panthers_in_the_metaverse'\n\n}\nexports.CFG = CFG;\n\n\n//# sourceURL=webpack://mainsite-frontend/./src/config.js?");
 
 /***/ }),
 
