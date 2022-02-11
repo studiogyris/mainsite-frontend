@@ -1,12 +1,10 @@
 const CFG = {
-  rpcUrl: 'https://api.devnet.solana.com',
-  CMID: 'EVsas8dKys5hNUifgzYEzJezJ8ReHjyaFyWYWnUpaTh1',
+  rpcUrl: 'https://psytrbhymqlkfrhudd.dev.genesysgo.net:8899',
+  CMID: 'FPwdV9teeyo2YEnEQsm1vr4DFP125Qkud1NGdt1FjGLb',
   devnet: true,
-  price: 1.69,
-  totalItems: 6,
   maxPerTx: 15,
   marketplaceName: 'Magic Eden',
-  marketplaceCollection: 'https://magiceden.io/marketplace/panthers_in_the_metaverse'
-
+  marketplaceCollection: 'https://magiceden.io/marketplace/gyris',
+  fromWLtoPublic: 24 * 60 * 60 * 1000
 }
 exports.CFG = CFG;

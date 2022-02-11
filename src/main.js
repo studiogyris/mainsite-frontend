@@ -1,49 +1,83 @@
 import * as Web3 from '@solana/web3.js';
-// import Wallet from '@project-serum/sol-wallet-adapter';
 import {CFG} from './config.js';
 import * as anchor from '@project-serum/anchor';
 import {TOKEN_PROGRAM_ID,MintLayout,Token} from  '@solana/spl-token';
+import { token } from '@project-serum/anchor/dist/cjs/utils';
 
-//const LPS = 1000000000;
-const CANDY_MACHINE_PROGRAM = new anchor.web3.PublicKey(
-    "cndy3Z4yapfJBmL3ShUp5exZKqR3z33thTzeNMm2gRZ"
-);
+const constants = {
+  networkConstants: {
+      CANDY_MACHINE_PROGRAM:  new anchor.web3.PublicKey(
+          "cndy3Z4yapfJBmL3ShUp5exZKqR3z33thTzeNMm2gRZ"
+      ),  
+      TOKEN_METADATA_PROGRAM_ID: new anchor.web3.PublicKey(
+        'metaqbxxUerdq28cj1RbAWkYQm3ybzjb6a8bt518x1s',
+      ),
+      SPL_ASSOCIATED_TOKEN_ACCOUNT_PROGRAM_ID: new anchor.web3.PublicKey(
+        'ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL'
+      ),
+      DEFAULT_TIMEOUT : 15000
+  },
+  LAMPORTS_PER_SOL: 1000000000
+}
 
-const TOKEN_METADATA_PROGRAM_ID = new anchor.web3.PublicKey(
-  'metaqbxxUerdq28cj1RbAWkYQm3ybzjb6a8bt518x1s',
-);
 
-const SPL_ASSOCIATED_TOKEN_ACCOUNT_PROGRAM_ID = new anchor.web3.PublicKey(
-  'ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL'
-);
-
-const DEFAULT_TIMEOUT = 15000;
-
-
-
-
+// ********[ Entry function ]*******
 async function main(){
-  var bag = {};
-  bag.submittedTxsAmount = 0;
-  window.sol = {};
-  populateDom();
-  if (!connectRpc()) {
-    alert("RPC connection error");
-    return;
+  // personal convenience object
+  var bag = {
+    sol: {},
+    submittedTxsAmount : 0,
+    staticInfoInitialized: false,
+    cmState: {},
+    balances: {
+      sol: {},
+      WLToken: undefined
+    },
+  };
+ 
+  while (!connectRpc()) {
+    setPTitle("Trying to establish connection to an RPC endpoint...");
+    await sleep('1000');
   }
-  onRPCConnected();
-  fetchDisList();
   
+  onRPCConnected();
+  
+  
+  async function updateWhitelistTokenBalance(){
+    var data =
+            await bag.sol.provider.connection.getParsedTokenAccountsByOwner(
+              bag.sol.walletProvider.publicKey,
+              { mint: bag.cmState.raw.data.whitelistMintSettings.mint }
+            );
 
-  async function getUserBalance() {
-    return await sol.provider.connection.getBalance(window.sol.walletProvider.publicKey);
+    var tokenAmount;
+    if (!data.value.length) {
+      tokenAmount = 0;
+    } else {
+      tokenAmount = data.value[0].account.data.parsed.info.tokenAmount.amount;
+    }
+    
+    bag.balances.WLToken = parseInt(tokenAmount);
+    editext('connected-whitelisted',`${bag.balances.WLToken} WL tokens`);
+    if (tokenAmount==0) onNoWLTokensLeft();
+
   }
+
+  async function onNoWLTokensLeft() {
+    setPTitle(`You have no whitelist tokens!<br>Come back during public Mint.`);
+    hide('mint-controls-form');
+  }
+  
+  async function getUserBalance() {
+    return await bag.sol.provider.connection.getBalance(bag.sol.walletProvider.publicKey);
+  }
+  // returns true/false based on an attempt to create an RPC connection and save it in bag.sol.provider
   function connectRpc() {
     var success = true;
     try {
       const connection = new Web3.Connection(CFG.rpcUrl);
-      window.sol.provider = new anchor.Provider(connection,{}, {
-          preflightCommitment: "recent", // might need a change
+      bag.sol.provider = new anchor.Provider(connection,{}, {
+          preflightCommitment: "recent",
       });
     } catch (err) {
       console.error(err);
@@ -51,23 +85,28 @@ async function main(){
     }
     return success;
   }
-  async function fetchDisList(){
-    fetch("./dislist.json")
-    .then(res => res.json())
-    .then(data => bag.distList=data);
-  }
+  
   async function onRPCConnected() {
-
-    bag.stateUpdateInterval = setInterval(updateState,3000);
-    updateState();
+    reflectState();
+    bag.stateUpdateInterval = setInterval(reflectState,3000);
   }
   const getUnixTs = () => {
     return new Date().getTime() / 1000;
-  };
+  }
   async function mintSuccessCallback(txid){
-    gid('total-minted').value=parseInt(gid('total-minted').value)+1;
+    gid('total-minted').textContent=parseInt(gid('total-minted').textContent)+1;
+    gid('minted-amount').textContent=parseInt(gid('minted-amount').textContent)+1;
     gid('tx-'+txid).textContent="[ Confirmed! ]";
     gid('tx-'+txid).style.color="lightgreen";
+    bag.cmState.itemsLeft--;
+    bag.cmState.itemsSold++;
+    clog('successCallback')
+    if (bag.cmState.itemsLeft==0) {
+      onSoldOut();
+    }
+    if (!bag.mintIsPublic) {
+      bag.balances.WLToken--;
+    }
   }
   async function mintFailCallback(txid){
     gid('tx-'+txid).textContent="[ Failed! ]";
@@ -76,38 +115,133 @@ async function main(){
   async function sleep(ms){
     return new Promise(resolve => setTimeout(resolve, ms));
   }
+  async function updateCountDown() {
+    const {goLiveDate} = bag.cmState;
 
-  async function updateState() {
-    const state = await getCMState();
+    const timeDelta = (goLiveDate - Date.now())/1000;
+    var hours   = Math.floor(timeDelta / 3600);
+    var minutes = Math.floor((timeDelta - (hours * 3600)) / 60);
+    var seconds = (timeDelta - (hours * 3600) - (minutes * 60)).toFixed(0);
+
+    if (hours   < 10) {hours   = "0"+hours;}
+    if (minutes < 10) {minutes = "0"+minutes;}
+    if (seconds < 10) {seconds = "0"+seconds;}
     
-    const formattedPrice = (state.price/1000000000).toFixed(2)
-    editext('price',formattedPrice);
-    if (state.itemsRedeemed>=CFG.totalItems) {
-      clearInterval(bag.stateUpdateInterval);
-      setPTitle(`Collection is sold out! :(<br> you can get one from <a href="${CFG.marketplaceCollection}" target="_blank">${CFG.marketplaceName}</a>`);
-      hide('connect-btn');
-    } else {
-      const {goLiveDate} = state;
-      const timeDelta = goLiveDate - Date.now();
-      if (timeDelta) {
-  
-      } else {
-        
-      }
-      
-    }
-    editext('minted-amount',state.itemsRedeemed)
+    editext('countdown','['+hours+':'+minutes+':'+seconds+']');
   }
-  function populateDom() {
+  async function updateCMStateVars(){
+    bag.cmState.raw = await fetchCMState();
+    bag.cmState.totalItems = bag.cmState.raw.data.itemsAvailable.toNumber();
+    const fetchedItemsSold = bag.cmState.raw.itemsRedeemed.toNumber();
+    if ( !bag.cmState.itemsSold || bag.cmState.itemsSold<fetchedItemsSold ) {
+      bag.cmState.itemsSold = fetchedItemsSold;
+    }
+    bag.cmState.itemsLeft = bag.cmState.totalItems -  bag.cmState.itemsSold;
+    bag.cmState.price = bag.cmState.raw.data.price;
+    bag.cmState.formattedPrice = (bag.cmState.price/1000000000).toFixed(2);
+    bag.cmState.goLiveDate = new Date(bag.cmState.raw.data.goLiveDate.toNumber() * 1000);
+    const whiteListDateTS = Date.parse(bag.cmState.goLiveDate) - CFG.fromWLtoPublic;
+    bag.cmState.WLDate= new Date(whiteListDateTS);
+    return;
+  }
+  //returns milliseconds till goLiveDate
+  function getTimeDelta(mode = 'ms') {
+    const timeDeltaMs = bag.cmState.goLiveDate - Date.now();
+    if (mode=='ms') {
+      return timeDeltaMs;
+    } else if ( mode =='s' ){
+      return timeDeltaMs/1000;
+    } else if (mode== 'm') {
+      return timeDeltaMs/60000;
+    } else if (mode=='h') {
+      return timeDeltaMs/3600000;
+    }
+    
+  }
+  // fetches state and reflects on the UI
+  async function reflectState() {
+    await updateCMStateVars();
+    const {
+      totalItems,
+      itemsSold,
+      itemsLeft,
+      price,
+      goLiveDate,
+      formattedPrice
+    } = bag.cmState;
+    
+    if (!bag.staticInfoInitialized) {
+      editext('total-items-amount',totalItems);
+      editext('price',formattedPrice);
+    }
+    editext('minted-amount',itemsSold);
     clicksen('connect-btn',onClickConnect);
-    //editext('price',CFG.price);
-    editext('max-per-tx',CFG.maxPerTx);
-    editext('total-items-amount',CFG.totalItems);
+    if (itemsSold>=totalItems) {
+      bag.cmState.currentState = 3;
+      onSoldOut();
+    } else if ( (bag.cmState.WLDate - Date.now())>0 ) {
+      if (bag.cmState.currentState != 0) {
+        bag.cmState.currentState = 0;
+      setPTitle(`Whitelist minting starts in<br><span id="wl-countdown">00:00:00<span>`);
+      setInterval(updateWLCountdown,1000);
+      }
+    } else {
+      if (!gid('connect-btn').disabled) {
+        setPTitle('Connect your Wallet to be able to mint');
+        unhide('connect-btn');
+      }
+       
+      if (getTimeDelta() < 0) {
+        // State of Sale is: public
+        bag.cmState.currentState = 2;
+        editext('mint-phase','[ Mint open for public! ]');
+        gid('mint-phase').parentElement.style.color='lightgreen';
+        hide('countdown');
+        bag.mintIsPublic = true;
+      } else {
+        bag.cmState.currentState = 1;
+        bag.mintIsPublic = false;
+        editext('mint-phase','[ Mint open for Whitelist members Only! ]');
+        if (!bag.countDownInterval) {
+          bag.countDownInterval = setInterval(updateCountDown,1000);
+        }
+        if (!bag.balances.WLToken && bag.sol.walletProvider){
+          updateWhitelistTokenBalance();
+        }
+        unhide('countdown');
+        gid('mint-phase').parentElement.style.color='cyan';
+      } 
+    }
+  }
+  function updateWLCountdown(){
+    const {WLDate} = bag.cmState;
+
+    if ( ( WLDate-Date.now() )<0 || !gid('wl-countdown') ) return;
+
+    const timeDelta = (WLDate - Date.now())/1000;
+    var hours   = Math.floor(timeDelta / 3600);
+    var minutes = Math.floor((timeDelta - (hours * 3600)) / 60);
+    var seconds = (timeDelta - (hours * 3600) - (minutes * 60)).toFixed(0);
+
+    if (hours   < 10) {hours   = "0"+hours;}
+    if (minutes < 10) {minutes = "0"+minutes;}
+    if (seconds < 10) {seconds = "0"+seconds;}
+    
+    editext('wl-countdown',hours+':'+minutes+':'+seconds);
+  }
+ 
+  function onSoldOut(){
+    clearInterval(bag.stateUpdateInterval);
+      setPTitle(`Collection is sold out! :(<br> you can get one from <a href="${CFG.marketplaceCollection}" target="_blank">${CFG.marketplaceName}</a>`);
+      hide('mint-controls-form');
+      hide('connect-btn');
   }
   async function onClickConnect(){
     //await wallet.connect();
     const hasPhantom = window.solana && window.solana.isPhantom;
     const hasSolflare = window.solflare && window.solflare.isSolflare;
+
+    disable('connect-btn');
 
     if (hasPhantom && hasSolflare ) {
       // make user choose their wallet
@@ -123,7 +257,7 @@ async function main(){
   }
   function enable(id){
     gid(id).disabled='';
-  };
+  }
   function disable(id){
     gid(id).disabled='true';
   }
@@ -175,15 +309,15 @@ async function main(){
   }
   async function createSignSendAwait(){
     const candyMachine = {
-      'state': window.sol.candyMachineState,
+      'state': bag.cmState.raw,
       'id': CFG.CMID,
-      'program': window.sol.candyMachineProgram
+      'program': bag.sol.candyMachineProgram
     }
     const candyMachineAddress = new anchor.web3.PublicKey(
       candyMachine.id
     );
     const mint = anchor.web3.Keypair.generate();
-    const buyer = window.sol.walletProvider;
+    const buyer = bag.sol.walletProvider;
     const payer = buyer.publicKey;
     const userTokenAccountAddress = (await getAtaForMint(mint.publicKey,payer))[0];
 
@@ -202,7 +336,7 @@ async function main(){
         newAccountPubkey: mint.publicKey,
         space: MintLayout.span,
         lamports:
-          await window.sol.candyMachineProgram.provider.connection.getMinimumBalanceForRentExemption(
+          await bag.sol.candyMachineProgram.provider.connection.getMinimumBalanceForRentExemption(
             MintLayout.span,
           ),
         programId: TOKEN_PROGRAM_ID,
@@ -259,7 +393,7 @@ async function main(){
         });
         signers.push(whitelistBurnAuthority);
         const exists =
-          await window.sol.candyMachineProgram.provider.connection.getAccountInfo(
+          await bag.sol.candyMachineProgram.provider.connection.getAccountInfo(
             whitelistToken,
           );
         if (exists) {
@@ -331,7 +465,7 @@ async function main(){
      
 
     instructions.push(
-      await window.sol.candyMachineProgram.instruction.mintNft(creatorBump, {
+      await bag.sol.candyMachineProgram.instruction.mintNft(creatorBump, {
         accounts: {
           candyMachine: candyMachineAddress,
           candyMachineCreator,
@@ -342,7 +476,7 @@ async function main(){
           masterEdition,
           mintAuthority: payer.toString(),
           updateAuthority: payer.toString(),
-          tokenMetadataProgram: TOKEN_METADATA_PROGRAM_ID,
+          tokenMetadataProgram: constants.networkConstants.TOKEN_METADATA_PROGRAM_ID,
           tokenProgram: TOKEN_PROGRAM_ID,
           systemProgram: Web3.SystemProgram.programId,
           rent: anchor.web3.SYSVAR_RENT_PUBKEY,
@@ -359,7 +493,7 @@ async function main(){
       return (
         await sendTransactions(
           candyMachine.program.provider.connection,
-          window.sol.walletProvider,
+          bag.sol.walletProvider,
           [instructions, cleanupInstructions],
           [signers, []],
           undefined,undefined,
@@ -437,16 +571,20 @@ async function main(){
       });
       
       signedTxnPromise
-        .then(({ failed,txid, slot }) => {
+        .then(({ skipCallback, failed,txid, slot }) => {
           if (failed) {
+            if (!skipCallback) 
             failCallback(txid)
           } else {
+            if (!skipCallback) 
             successCallback(txid, i);
+            
           }
          
         })
         .catch(reason => {
           // @ts-ignore
+          if (!skipCallback)  
           failCallback(signedTxns[i], i);
           if (false) {
             breakEarlyObject.breakEarly = true;
@@ -460,11 +598,11 @@ async function main(){
     }
   
     return { number: signedTxns.length, txs:  Promise.all(pendingTxns) };
-  };
+  }
   async function sendSignedTransaction({
     signedTransaction,
     connection,
-    timeout = DEFAULT_TIMEOUT,
+    timeout = constants.networkConstants.DEFAULT_TIMEOUT,
   }) {
     const rawTransaction = signedTransaction.serialize();
     const startTime = getUnixTs();
@@ -475,9 +613,15 @@ async function main(){
         skipPreflight: true,
       },
     );
-  
+    //console.log(signedTransaction);
+    var skipCallback = false;
     console.log('Started awaiting confirmation for', txid);
-    updateSubmittedTxs(txid);
+    if (signedTransaction.signatures.length == 3) {
+      updateSubmittedTxs(txid);
+    } else {
+      skipCallback = true;
+    }
+    
   
     let done = false;
     (async () => {
@@ -541,7 +685,7 @@ async function main(){
     }
    
     console.log('Latency', txid, getUnixTs() - startTime);
-    return { failed, txid, slot };
+    return { skipCallback, failed, txid, slot };
   }
   async function awaitTransactionSignatureConfirmation  (
     txid,
@@ -606,39 +750,39 @@ async function main(){
     done = true;
     console.log('Returning status', status);
     return status;
-  };
+  }
   async function getMetadata (mint) {
     return (
       await anchor.web3.PublicKey.findProgramAddress(
         [
           Buffer.from('metadata'),
-          TOKEN_METADATA_PROGRAM_ID.toBuffer(),
+          constants.networkConstants.TOKEN_METADATA_PROGRAM_ID.toBuffer(),
           mint.toBuffer(),
         ],
-        TOKEN_METADATA_PROGRAM_ID,
+        constants.networkConstants.TOKEN_METADATA_PROGRAM_ID,
       )
     )[0];
-  };
+  }
   async function getMasterEdition (mint) {
     return (
       await anchor.web3.PublicKey.findProgramAddress(
         [
           Buffer.from('metadata'),
-          TOKEN_METADATA_PROGRAM_ID.toBuffer(),
+          constants.networkConstants.TOKEN_METADATA_PROGRAM_ID.toBuffer(),
           mint.toBuffer(),
           Buffer.from('edition'),
         ],
-        TOKEN_METADATA_PROGRAM_ID,
+        constants.networkConstants.TOKEN_METADATA_PROGRAM_ID,
       )
     )[0];
-  };
+  }
   async function getCandyMachineCreator (candyMachine) {
 
     return await anchor.web3.PublicKey.findProgramAddress(
       [Buffer.from('candy_machine'), candyMachine.toBuffer()],
-      CANDY_MACHINE_PROGRAM,
+      constants.networkConstants.CANDY_MACHINE_PROGRAM,
     );
-  };
+  }
   function createAssociatedTokenAccountInstruction (
     associatedTokenAddress,
     payer,
@@ -664,14 +808,14 @@ async function main(){
     ];
     return new anchor.web3.TransactionInstruction({
       keys,
-      programId: SPL_ASSOCIATED_TOKEN_ACCOUNT_PROGRAM_ID,
+      programId: constants.networkConstants.SPL_ASSOCIATED_TOKEN_ACCOUNT_PROGRAM_ID,
       data: Buffer.from([]),
     });
-  };
+  }
   async function getAtaForMint(mint, buyer) {
     return await anchor.web3.PublicKey.findProgramAddress(
       [buyer.toBuffer(), TOKEN_PROGRAM_ID.toBuffer(), mint.toBuffer()],
-      SPL_ASSOCIATED_TOKEN_ACCOUNT_PROGRAM_ID,
+      constants.networkConstants.SPL_ASSOCIATED_TOKEN_ACCOUNT_PROGRAM_ID,
     );
   }
   async function updateSubmittedTxs(txid) {
@@ -721,7 +865,7 @@ async function main(){
     window.solana.connect()
       .then((res)=>{
         hideErr();
-        window.sol.walletProvider=window.solana;
+        bag.sol.walletProvider=window.solana;
         onWalletConnected();
     }).catch((err)=>{
         if (err.code&&err.code==4001){
@@ -743,7 +887,7 @@ async function main(){
     const success = await window.solflare.connect();
     if (success) {
       hideErr();
-      window.sol.walletProvider=window.solflare;
+      bag.sol.walletProvider=window.solflare;
       onWalletConnected();
     } else {
       displayErr('You have cancelled the wallet connection');
@@ -781,106 +925,128 @@ async function main(){
     if (v<0 || v===0){
       inputE.value=1;
     }
-    if ( v>CFG.maxPerTx){
-      inputE.value=CFG.maxPerTx;
+    if (bag.mintIsPublic) {
+      if ( v>CFG.maxPerTx || v>bag.cmState.itemsLeft){
+        inputE.value=CFG.maxPerTx < bag.cmState.itemsLeft ? CFG.maxPerTx : bag.cmState.itemsLeft;
+      }
+    } else {
+      if ( v>bag.balances.WLToken || v>bag.cmState.itemsLeft){
+        inputE.value=bag.balances.WLToken < bag.cmState.itemsLeft ? bag.balances.WLToken : bag.cmState.itemsLeft;
+      }
     }
+    
   }
   function onClickMaxBtn() {
-    gid("mint-amount").value=CFG.maxPerTx;
+    
+    if (bag.mintIsPublic) {
+      gid("mint-amount").value=CFG.maxPerTx < bag.cmState.itemsLeft ? CFG.maxPerTx : bag.cmState.itemsLeft;
+    } else {
+      gid("mint-amount").value=bag.balances.WLToken < bag.cmState.itemsLeft ? bag.balances.WLToken : bag.cmState.itemsLeft;
+    }
+    
   }
   function shortenAddress (address, chars = 4) {
     return `${address.slice(0, chars)}...${address.slice(-chars)}`;
   };
   async function onWalletConnected(){
-    setPTitle("Choose the amount and press mint!");
-    unhide('mint-controls-form');
     hide('connect-btn');
-    addMintControlListeners();
+    hide('solflare-btn');
+    hide('phantom-btn');
     unhide('connected-account-wrap');
-    editext('connected-account',shortenAddress(window.sol.walletProvider.publicKey.toString()))
-    const accountChangeListenerInterval = setInterval(async function() {
-      if (!window.sol.walletProvider.publicKey) {
-        await window.solana.connect();
-       
-      }
-      updateUserBalance();
-      checkIfWhitelisted();
-      
-      editext('connected-account',shortenAddress(window.sol.walletProvider.publicKey.toString()))
-    }, 325);
-    try {
-      hide('solflare-btn');
-      hide('phantom-btn');
-    } catch {}
+    addMintControlListeners();
+    editext('connected-account',shortenAddress(bag.sol.walletProvider.publicKey.toString()))
+    reflectAccountStatus();
 
-    testsAfterConnection();
+    // listens for accounts changes and prompts connection if detected
+    setInterval(async function() {
+      if (!bag.sol.walletProvider.publicKey) {
+        await bag.solana.connect();
+        editext('connected-account',shortenAddress(bag.sol.walletProvider.publicKey.toString()))
+      }
+    }, 300);
+
+    // checks and reflects sol and wl token balances
+    setInterval(async function() {
+      reflectAccountStatus();
+    }, 1000);
+  }
+  async function reflectAccountStatus(){
+    if (!bag.sol.walletProvider.publicKey) {
+      await bag.solana.connect();
+    }
+    updateUserBalance();
+    if (!bag.mintIsPublic) {
+      await updateWLStatus();
+    }
+    updateMaxMints();
+    
+  }
+  async function updateMaxMints(){
+    
+    if (bag.mintIsPublic) {
+      if ( bag.cmState.itemsLeft < CFG.maxPerTx ) {
+        gid('max-per-tx').textContent = itemsLeft;
+      }
+    } else {
+      if ( bag.cmState.itemsLeft < bag.balances.WLToken ) {
+        gid('max-per-tx').textContent = bag.cmState.itemsLeft;
+      } else {
+        gid('max-per-tx').textContent = bag.balances.WLToken;
+      }
+      
+    }
   }
   async function updateUserBalance(){
     const balance = await getUserBalance();
-    const formattedBalance = (balance/1000000000).toFixed(2)
+    const formattedBalance = (balance/constants.LAMPORTS_PER_SOL).toFixed(2)
+    bag.balances.sol.lamports=balance;
+    bag.balances.sol.formatted-formattedBalance;
     editext('user-balance',formattedBalance + " SOL");
   }
-  async function checkIfWhitelisted(){
-    if (!bag.distList) {
-      return console.error("Shouldn't happen #1");
-    }
-    var isWhitelisted = false;
-    try {
-      
-      for (var obj of bag.distList){
-        if (obj.handle==window.sol.walletProvider.publicKey.toString()) {
-          isWhitelisted = true;
-        break;
-        }
-      }
-    } catch (err) {
-      console.error(err)
-    }
-    if (isWhitelisted) {
-      editext('connected-whitelisted',"Whitelisted");
+  async function updateWLStatus(){
+    await updateWhitelistTokenBalance();
+    
+    if (  bag.balances.WLToken==0 ) {
+      setPTitle(`You have no whitelist tokens!<br>Come back during public Mint.`);
+      hide('mint-controls-form');
+    } else if ( bag.cmState.itemsLeft ) {
+      unhide('mint-controls-form');
+      setPTitle("Choose the amount and press mint!");
+    } else if ( bag.cmState.itemsLeft==0) {
+      onSoldOut();
     } else {
-      editext('connected-whitelisted',"Not Whitelisted");
+      if (bag.timeDelta>0) {
+        hide('mint-controls-form');
+        setPTitle('This wallet is not whitelisted!<br>Please select the one that is or wait for public mint.');
+      }
     }
+    return;
   }
-  async function testsAfterConnection() {
-    getUserBalance();
-    getCMState();
-  }
-  async function getCMState() {
-    if (!window.sol.provider) {
+  
+  // fetches the state of the candymachine and returns it
+  async function fetchCMState() {
+    if (!bag.sol.provider) {
       alert("No provider found, something wrong");
       return;
     }
-    const idl = await anchor.Program.fetchIdl(CANDY_MACHINE_PROGRAM, window.sol.provider);
+    const idl = await anchor.Program.fetchIdl(constants.networkConstants.CANDY_MACHINE_PROGRAM, bag.sol.provider);
 
     if (idl) {
       const program = new anchor.Program(
           idl,
-          CANDY_MACHINE_PROGRAM,
-          window.sol.provider
+          constants.networkConstants.CANDY_MACHINE_PROGRAM,
+          bag.sol.provider
       );
 
-      window.sol.candyMachineProgram = program;
+      bag.sol.candyMachineProgram = program;
         
-      const state = await program.account.candyMachine.fetch(
+      return await program.account.candyMachine.fetch(
           CFG.CMID
       );
-      window.sol.candyMachineState = state;
-      const itemsAvailable = state.data.itemsAvailable.toNumber();
-      const itemsRedeemed = state.itemsRedeemed.toNumber();
-      const itemsRemaining = itemsAvailable - itemsRedeemed;
-      const price = state.data.price;
       
-      let goLiveDate = state.data.goLiveDate.toNumber();
-      goLiveDate = new Date(goLiveDate * 1000);
-
-      return {
-        itemsAvailable,
-        itemsRedeemed,
-        itemsRemaining,
-        goLiveDate,
-        price
-      }
+      return;
+    } else {
+      console.error("No Idl, shouldn't happen");
     }
   }
   function setPTitle(title) {
@@ -888,7 +1054,6 @@ async function main(){
 
   }
   
-
   // let transaction = new Transaction().add(
   //   SystemProgram.transfer({
   //     fromPubkey: wallet.publicKey,
