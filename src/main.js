@@ -28,7 +28,8 @@ async function main(){
     sol: {},
     submittedTxsAmount : 0,
     staticInfoInitialized: false,
-    cmState: {},
+    cmState: {
+    },
     balances: {
       sol: {},
       WLToken: undefined
@@ -102,9 +103,9 @@ async function main(){
     bag.cmState.itemsSold++;
     clog('successCallback')
     if (bag.cmState.itemsLeft==0) {
-      onSoldOut();
+      setState(3);
     }
-    if (!bag.mintIsPublic) {
+    if (!bag.cmState.currentState == 2) {
       bag.balances.WLToken--;
     }
   }
@@ -126,6 +127,10 @@ async function main(){
     if (hours   < 10) {hours   = "0"+hours;}
     if (minutes < 10) {minutes = "0"+minutes;}
     if (seconds < 10) {seconds = "0"+seconds;}
+
+    if (parseInt(hours+minutes+seconds)==0) {
+      reflectState();
+    }
     
     editext('countdown','['+hours+':'+minutes+':'+seconds+']');
   }
@@ -144,9 +149,11 @@ async function main(){
     bag.cmState.WLDate= new Date(whiteListDateTS);
     return;
   }
-  //returns milliseconds till goLiveDate
-  function getTimeDelta(mode = 'ms') {
-    const timeDeltaMs = bag.cmState.goLiveDate - Date.now();
+  // returns milliseconds till either public or whitelist sale
+  // returned positive number means the date is in future
+  function getTimeDelta(sale = 'PUB',mode = 'ms') {
+    const date = sale == 'WL' ? bag.cmState.WLDate : bag.cmState.goLiveDate;
+    const timeDeltaMs = date  - Date.now();
     if (mode=='ms') {
       return timeDeltaMs;
     } else if ( mode =='s' ){
@@ -173,45 +180,67 @@ async function main(){
     if (!bag.staticInfoInitialized) {
       editext('total-items-amount',totalItems);
       editext('price',formattedPrice);
+      clicksen('connect-btn',onClickConnect);
+      bag.staticInfoInitialized=true;
     }
     editext('minted-amount',itemsSold);
-    clicksen('connect-btn',onClickConnect);
+
+    const sign = bag.connectPressed ? 1 : -1;
+
     if (itemsSold>=totalItems) {
-      bag.cmState.currentState = 3;
-      onSoldOut();
-    } else if ( (bag.cmState.WLDate - Date.now())>0 ) {
-      if (bag.cmState.currentState != 0) {
-        bag.cmState.currentState = 0;
-      setPTitle(`Whitelist minting starts in<br><span id="wl-countdown">00:00:00<span>`);
-      setInterval(updateWLCountdown,1000);
-      }
+      // STATE: SOLD OUT
+      setState(3);
+    } else if (getTimeDelta('PUB') < 0) {
+      // STATE: PUBLIC SALE
+      setState(2*sign);
+    } else if (getTimeDelta('WL') < 0) {
+      // STATE: WHITELIST SALE
+      setState(1*sign);
     } else {
-      if (!gid('connect-btn').disabled) {
-        setPTitle('Connect your Wallet to be able to mint');
-        unhide('connect-btn');
+      // STATE: PRE WHITELIST
+      setState(0);
+    } 
+  }
+  async function setState(state){
+    var cState = bag.cmState.currentState;
+
+    if (state==cState) return; // NOTHING TO CHANGE
+    
+    if (state<0) {
+      // User has
+      // Change the state number's sign and RETURN
+      setPTitle("Connect your wallet to be able to Mint!");
+      unhide('connect-btn');
+    } else {
+      switch(state) {
+        case 0: // STATE: PRE WHITELIST
+          displayIndependentSaleStatus('PRE-WL');
+          break;
+        case 1: // STATE WHITELIST SALE
+          setPTitle("Choose the amount and click Mint!");
+          unhide('mint-controls-form');
+          break;
+        case 2: // STATE: PUBLIC SALE
+          setPTitle("Choose the amount and click Mint!");
+          unhide('mint-controls-form');
+          hide('connected-whitelisted-wrap');
+          break;
+        case 3: // STATE: SOLD 
+          clearInterval(bag.stateUpdateInterval);
+          setPTitle(`Collection is sold out! :(<br> you can get one from <a href="${CFG.marketplaceCollection}" target="_blank">${CFG.marketplaceName}</a>`);
+          hide('mint-controls-form');
+          hide('connect-btn');
+          break;
       }
-       
-      if (getTimeDelta() < 0) {
-        // State of Sale is: public
-        bag.cmState.currentState = 2;
-        editext('mint-phase','[ Mint open for public! ]');
-        gid('mint-phase').parentElement.style.color='lightgreen';
-        hide('countdown');
-        bag.mintIsPublic = true;
-      } else {
-        bag.cmState.currentState = 1;
-        bag.mintIsPublic = false;
-        editext('mint-phase','[ Mint open for Whitelist members Only! ]');
-        if (!bag.countDownInterval) {
-          bag.countDownInterval = setInterval(updateCountDown,1000);
-        }
-        if (!bag.balances.WLToken && bag.sol.walletProvider){
-          updateWhitelistTokenBalance();
-        }
-        unhide('countdown');
-        gid('mint-phase').parentElement.style.color='cyan';
-      } 
     }
+
+    if (state*state == 1) {
+      displayIndependentSaleStatus('WL');
+    } else if (state*state == 4) {
+      displayIndependentSaleStatus('PUB');
+    }
+    bag.cmState.currentState=state;
+    return;
   }
   function updateWLCountdown(){
     const {WLDate} = bag.cmState;
@@ -226,15 +255,32 @@ async function main(){
     if (hours   < 10) {hours   = "0"+hours;}
     if (minutes < 10) {minutes = "0"+minutes;}
     if (seconds < 10) {seconds = "0"+seconds;}
+
+    if (parseInt(hours+minutes+seconds)==0) {
+      reflectState();
+    }
     
     editext('wl-countdown',hours+':'+minutes+':'+seconds);
   }
- 
-  function onSoldOut(){
-    clearInterval(bag.stateUpdateInterval);
-      setPTitle(`Collection is sold out! :(<br> you can get one from <a href="${CFG.marketplaceCollection}" target="_blank">${CFG.marketplaceName}</a>`);
-      hide('mint-controls-form');
-      hide('connect-btn');
+  function displayIndependentSaleStatus(saleState) {
+    if (bag.ISS==saleState) return;
+    if (saleState=='WL') {
+      editext('mint-phase','[ Mint open for Whitelist members Only! ]');
+      if (!bag.countDownInterval) {
+        bag.countDownInterval = setInterval(updateCountDown,1000);
+      }
+
+      unhide('countdown');
+      gid('mint-phase').parentElement.style.color='cyan';
+    } else if (saleState=='PUB') {
+      editext('mint-phase','[ Mint open for public! ]');
+      gid('mint-phase').parentElement.style.color='lightgreen';
+      hide('countdown');
+    } else {
+      setPTitle(`Whitelist minting starts in<br><span id="wl-countdown">00:00:00<span>`);
+      setInterval(updateWLCountdown,1000);
+    }
+    bag.ISS=saleState;
   }
   async function onClickConnect(){
     //await wallet.connect();
@@ -925,7 +971,7 @@ async function main(){
     if (v<0 || v===0){
       inputE.value=1;
     }
-    if (bag.mintIsPublic) {
+    if (bag.cmState.currentState == 2) {
       if ( v>CFG.maxPerTx || v>bag.cmState.itemsLeft){
         inputE.value=CFG.maxPerTx < bag.cmState.itemsLeft ? CFG.maxPerTx : bag.cmState.itemsLeft;
       }
@@ -938,7 +984,7 @@ async function main(){
   }
   function onClickMaxBtn() {
     
-    if (bag.mintIsPublic) {
+    if (bag.cmState.currentState == 2) {
       gid("mint-amount").value=CFG.maxPerTx < bag.cmState.itemsLeft ? CFG.maxPerTx : bag.cmState.itemsLeft;
     } else {
       gid("mint-amount").value=bag.balances.WLToken < bag.cmState.itemsLeft ? bag.balances.WLToken : bag.cmState.itemsLeft;
@@ -949,6 +995,7 @@ async function main(){
     return `${address.slice(0, chars)}...${address.slice(-chars)}`;
   };
   async function onWalletConnected(){
+    setState(bag.cmState.currentState*-1);
     hide('connect-btn');
     hide('solflare-btn');
     hide('phantom-btn');
@@ -956,6 +1003,7 @@ async function main(){
     addMintControlListeners();
     editext('connected-account',shortenAddress(bag.sol.walletProvider.publicKey.toString()))
     reflectAccountStatus();
+    bag.connectPressed = true;
 
     // listens for accounts changes and prompts connection if detected
     setInterval(async function() {
@@ -975,17 +1023,17 @@ async function main(){
       await bag.solana.connect();
     }
     updateUserBalance();
-    if (!bag.mintIsPublic) {
+    if (!(bag.cmState.currentState == 2)) {
       await updateWLStatus();
     }
     updateMaxMints();
     
   }
   async function updateMaxMints(){
-    
-    if (bag.mintIsPublic) {
+    if (bag.cmState.currentState == 2) {
+      
       if ( bag.cmState.itemsLeft < CFG.maxPerTx ) {
-        gid('max-per-tx').textContent = itemsLeft;
+        gid('max-per-tx').textContent = bag.cmState.itemsLeft;
       }
     } else {
       if ( bag.cmState.itemsLeft < bag.balances.WLToken ) {
@@ -1013,7 +1061,7 @@ async function main(){
       unhide('mint-controls-form');
       setPTitle("Choose the amount and press mint!");
     } else if ( bag.cmState.itemsLeft==0) {
-      onSoldOut();
+      setState(3);
     } else {
       if (bag.timeDelta>0) {
         hide('mint-controls-form');
@@ -1043,8 +1091,6 @@ async function main(){
       return await program.account.candyMachine.fetch(
           CFG.CMID
       );
-      
-      return;
     } else {
       console.error("No Idl, shouldn't happen");
     }
