@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /mint/
+
+Sitemap: https://gyris.io/sitemap.xml
