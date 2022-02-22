@@ -43,7 +43,7 @@ async function main(){
   
   onRPCConnected();
   
-  
+  // function that gets called to update the WL token balance
   async function updateWhitelistTokenBalance(){
     var data =
             await bag.sol.provider.connection.getParsedTokenAccountsByOwner(
@@ -63,12 +63,12 @@ async function main(){
     if (tokenAmount==0) onNoWLTokensLeft();
 
   }
-
+  // function that gets executed when last WL token is used
   async function onNoWLTokensLeft() {
     setPTitle(`You have no whitelist tokens!<br>Come back during public Mint.`);
     hide('mint-controls-form');
   }
-  
+  // gets lamports in currently connected wallets account
   async function getUserBalance() {
     return await bag.sol.provider.connection.getBalance(bag.sol.walletProvider.publicKey);
   }
@@ -86,14 +86,16 @@ async function main(){
     }
     return success;
   }
-  
+  // function that gets called when RPC endpoint is successfully connected
   async function onRPCConnected() {
     reflectState();
     bag.stateUpdateInterval = setInterval(reflectState,3000);
   }
+  // gets UNIX timestamp
   const getUnixTs = () => {
     return new Date().getTime() / 1000;
   }
+  // transaction that gets called when last transaction was a success
   async function mintSuccessCallback(txid){
     gid('total-minted').textContent=parseInt(gid('total-minted').textContent)+1;
     gid('minted-amount').textContent=parseInt(gid('minted-amount').textContent)+1;
@@ -109,13 +111,16 @@ async function main(){
       bag.balances.WLToken--;
     }
   }
+  // function that gets called when last transaction was a fail
   async function mintFailCallback(txid){
     gid('tx-'+txid).textContent="[ Failed! ]";
     gid('tx-'+txid).style.color="red";
   }
+  // promise version of sleep
   async function sleep(ms){
     return new Promise(resolve => setTimeout(resolve, ms));
   }
+  // updates countdown to public mint
   async function updateCountDown() {
     const {goLiveDate} = bag.cmState;
 
@@ -134,6 +139,7 @@ async function main(){
     
     editext('countdown','['+hours+':'+minutes+':'+seconds+']');
   }
+  // fetches and updates candy machine state variables and constants
   async function updateCMStateVars(){
     bag.cmState.raw = await fetchCMState();
     bag.cmState.totalItems = bag.cmState.raw.data.itemsAvailable.toNumber();
@@ -201,6 +207,7 @@ async function main(){
       setState(0);
     } 
   }
+  // changes UI elements based on the provided state number
   async function setState(state){
     var cState = bag.cmState.currentState;
 
@@ -242,6 +249,7 @@ async function main(){
     bag.cmState.currentState=state;
     return;
   }
+  // responsible for the live countdown elements
   function updateWLCountdown(){
     const {WLDate} = bag.cmState;
 
@@ -262,6 +270,8 @@ async function main(){
     
     editext('wl-countdown',hours+':'+minutes+':'+seconds);
   }
+  // based on current state modifies UI elements independently from user connection
+  // only called by setState()
   function displayIndependentSaleStatus(saleState) {
     if (bag.ISS==saleState) return;
     if (saleState=='WL') {
@@ -282,6 +292,7 @@ async function main(){
     }
     bag.ISS=saleState;
   }
+  // function called after clicking the connect button
   async function onClickConnect(){
     //await wallet.connect();
     const hasPhantom = window.solana && window.solana.isPhantom;
@@ -301,12 +312,7 @@ async function main(){
       displayErr("No wallet extension found for either Phantom or Solflare.<br> Please install one of them and refresh this website.<br> Clicking on the above buttons will take you to corresponding webpages.");
     }
   }
-  function enable(id){
-    gid(id).disabled='';
-  }
-  function disable(id){
-    gid(id).disabled='true';
-  }
+  // function that gets called when mint button is pressed
   async function onClickMint(){
     clearErr();
     disable('mint-amount');
@@ -347,9 +353,11 @@ async function main(){
     
     enable('mint-amount');
   }
+  // hides message box
   function clearMsg(){
     hide('display-msg-wrap');
   }
+  // hides error message
   function clearErr(){
     hide('err-wrap');
   }
@@ -864,6 +872,7 @@ async function main(){
       constants.networkConstants.SPL_ASSOCIATED_TOKEN_ACCOUNT_PROGRAM_ID,
     );
   }
+  // displays the last submitted transaction
   async function updateSubmittedTxs(txid) {
     unhide('submitted-transactions-h');
     bag.submittedTxsAmount++;
@@ -874,6 +883,7 @@ async function main(){
     li.innerHTML = `1) Transaction #${bag.submittedTxsAmount} <a target="_blank" href="https://explorer.solana.com/tx/${txid}${devnetAppend}">${formattedTxid}</a>&nbsp&nbsp<span style="color:orange;" id="tx-${txid}">[ Waiting... ]</span> `;
     subTxsWrap.appendChild(li);
   }
+  // displays both wallet providers if both extensions are found 
   async function showBothBtns() {
     hide('connect-btn');
     setPTitle("Select your wallet provider!");
@@ -903,6 +913,7 @@ async function main(){
     clicksen('phantom-btn',attemptPhantom);
     clicksen('solflare-btn',attemptSolflare);
   }
+  // prompts phantom extension for wallet connection
   async function attemptPhantom() {
     if ( !window.solana || !window.solana.isPhantom  ) {
       window.open("https://phantom.app","_blank");
@@ -910,7 +921,7 @@ async function main(){
     }
     window.solana.connect()
       .then((res)=>{
-        hideErr();
+        clearErr();
         bag.sol.walletProvider=window.solana;
         onWalletConnected();
     }).catch((err)=>{
@@ -925,6 +936,7 @@ async function main(){
         }
       })
   }
+  // prompts solflare extension for wallet connection
   async function attemptSolflare() {
     if ( !window.solflare || !window.solflare.isSolflare ) {
       window.open("https://solflare.com","_blank");
@@ -932,24 +944,24 @@ async function main(){
     }
     const success = await window.solflare.connect();
     if (success) {
-      hideErr();
+      clearErr();
       bag.sol.walletProvider=window.solflare;
       onWalletConnected();
     } else {
       displayErr('You have cancelled the wallet connection');
     }
   }
+  // displays a red error
   function displayErr(msg) {
     gid('err-msg').innerHTML=msg;
     unhide('err-wrap');
   }
+  // displays a green message
   function displayMsg(msg) {
     gid('display-msg').innerHTML=msg;
     unhide('display-msg-wrap');
   }
-  function hideErr(){
-    hide('err-wrap');
-  }
+  // adds listeners to the mint controls (buttons)
   function addMintControlListeners(){
     gid('mint-btn').addEventListener('click',onClickMint);
     gid('mint-amount').addEventListener('input', onInputMintAmount);
@@ -958,6 +970,7 @@ async function main(){
     gid("mint-amount").addEventListener('focusout',onFocusOutMintAmount);
     gid("max-btn").addEventListener('click',onClickMaxBtn);
   }
+  // helper function for input element sanitization
   function onFocusOutMintAmount(){
     const inputE = gid("mint-amount");
     const v = inputE.value;
@@ -965,6 +978,7 @@ async function main(){
       inputE.value=1;
     }
   }
+  // function that gets called when input elements receives changes
   function onInputMintAmount(){
     const inputE = gid("mint-amount");
     const v = inputE.value;
@@ -982,6 +996,7 @@ async function main(){
     }
     
   }
+  // function that gets called when max button is clicked
   function onClickMaxBtn() {
     
     if (bag.cmState.currentState == 2) {
@@ -991,9 +1006,11 @@ async function main(){
     }
     
   }
+  // shortens the public address
   function shortenAddress (address, chars = 4) {
     return `${address.slice(0, chars)}...${address.slice(-chars)}`;
-  };
+  }
+  // function that gets called after wallet connection has been done for the first time
   async function onWalletConnected(){
     setState(bag.cmState.currentState*-1);
     hide('connect-btn');
@@ -1018,6 +1035,7 @@ async function main(){
       reflectAccountStatus();
     }, 1000);
   }
+  // reflects account balances on the UI 
   async function reflectAccountStatus(){
     if (!bag.sol.walletProvider.publicKey) {
       await bag.solana.connect();
@@ -1029,6 +1047,7 @@ async function main(){
     updateMaxMints();
     
   }
+  // determines and reflects the allowed amount of mints
   async function updateMaxMints(){
     if (bag.cmState.currentState == 2) {
       
@@ -1044,13 +1063,16 @@ async function main(){
       
     }
   }
+  // fetches and updates the User's SOL balance
   async function updateUserBalance(){
     const balance = await getUserBalance();
     const formattedBalance = (balance/constants.LAMPORTS_PER_SOL).toFixed(2)
     bag.balances.sol.lamports=balance;
     bag.balances.sol.formatted-formattedBalance;
     editext('user-balance',formattedBalance + " SOL");
+    return;
   }
+  // reflects whitelist specific information on the UI
   async function updateWLStatus(){
     await updateWhitelistTokenBalance();
     
@@ -1070,7 +1092,6 @@ async function main(){
     }
     return;
   }
-  
   // fetches the state of the candymachine and returns it
   async function fetchCMState() {
     if (!bag.sol.provider) {
@@ -1095,26 +1116,21 @@ async function main(){
       console.error("No Idl, shouldn't happen");
     }
   }
+  // sets process Title
   function setPTitle(title) {
     gid('main-h').innerHTML=title;
 
   }
-  
-  // let transaction = new Transaction().add(
-  //   SystemProgram.transfer({
-  //     fromPubkey: wallet.publicKey,
-  //     toPubkey: wallet.publicKey,
-  //     lamports: 100,
-  //   })
-  // );
-  // let { blockhash } = await connection.getRecentBlockhash();
-  // transaction.recentBlockhash = blockhash;
-  // transaction.feePayer = wallet.publicKey;
-  // let signed = await wallet.signTransaction(transaction);
-  // let txid = await connection.sendRawTransaction(signed.serialize());
-  // await connection.confirmTransaction(txid);
 };main()
-////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////
+// These functions below are purely convenience dom manipulation methods
+///////////////////////////////////////////////////////////////////////
+function enable(id){
+  gid(id).disabled='';
+}
+function disable(id){
+  gid(id).disabled='true';
+}
 function editext(id,text) {
   gid(id).textContent=text;
 }
