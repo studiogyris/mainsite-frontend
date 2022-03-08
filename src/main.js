@@ -550,7 +550,7 @@ async function main(){
           bag.sol.walletProvider,
           [instructions, cleanupInstructions],
           [signers, []],
-          undefined,undefined,
+          1,1,
           mintSuccessCallback,
           mintFailCallback
 
