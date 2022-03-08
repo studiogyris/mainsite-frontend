@@ -574,7 +574,7 @@ async function main(){
     failCallback,
     block
   ) {
-    alert(1)
+   
     if (!wallet.publicKey) throw new Error();
   
     const unsignedTxns = [];
@@ -582,11 +582,11 @@ async function main(){
     if (!block) {
       block = await connection.getRecentBlockhash(commitment);
     }
-  
+    alert(11)
     for (let i = 0; i < instructionSet.length; i++) {
       const instructions = instructionSet[i];
       const signers = signersSet[i];
-  
+      alert(12)
       if (instructions.length === 0) {
         continue;
       }
