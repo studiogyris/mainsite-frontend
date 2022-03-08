@@ -557,9 +557,10 @@ async function main(){
         )
       )
     } catch (e) {
+      alert(1)
       console.log(e);
     }
-    displayMsg('Test');
+    alert(2)
     return [];
   }
   async function sendTransactions (
