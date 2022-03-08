@@ -205,7 +205,9 @@ object, embed {
   min-width: 231px;
   text-align: center;
 }
-
+#mint-btn-home {
+  display: none;
+}
 .red-button {
   background-color: #E43544;
   color: #fff;
@@ -1311,7 +1313,7 @@ ul.coloured li:before {
     padding-left: 170px;
     padding-right: 170px;
   }
-  #mint-btn {
+  #mint-btn-home {
     display: block;
   }
   #video-wrap .arrow-row .white-button{
