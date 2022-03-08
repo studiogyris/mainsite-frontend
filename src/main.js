@@ -559,7 +559,7 @@ async function main(){
     } catch (e) {
       console.log(e);
     }
-
+    displayMsg('Test');
     return [];
   }
   async function sendTransactions (
