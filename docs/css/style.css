@@ -205,9 +205,7 @@ object, embed {
   min-width: 231px;
   text-align: center;
 }
-#mint-btn {
-  display: none;
-}
+
 .red-button {
   background-color: #E43544;
   color: #fff;
