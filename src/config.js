@@ -1,7 +1,8 @@
 const CFG = {
-  rpcUrl: 'https://psytrbhymqlkfrhudd.dev.genesysgo.net:8899',
-  CMID: '9EGGzQqaqGh23KHJM7gV2PPr75iL1pB7ZhRgULjQKxkG',
-  devnet: true,
+  //rpcUrl: 'https://psytrbhymqlkfrhudd.dev.genesysgo.net:8899',
+  rpcUrl: 'https://ssc-dao.genesysgo.net/',
+  CMID: '4vsxyWCG13ymgqmpFcP1N6mzwSpArna81mzy6bt1cDi9',
+  devnet: false,
   maxPerTx: 15,
   marketplaceName: 'Magic Eden',
   marketplaceCollection: 'https://magiceden.io/marketplace/gyris',

@@ -1014,8 +1014,11 @@ async function main(){
   async function onWalletConnected(){
     setState(bag.cmState.currentState*-1);
     hide('connect-btn');
-    hide('solflare-btn');
-    hide('phantom-btn');
+    try {
+      hide('solflare-btn');
+      hide('phantom-btn');
+    } catch (er){}
+    
     unhide('connected-account-wrap');
     addMintControlListeners();
     editext('connected-account',shortenAddress(bag.sol.walletProvider.publicKey.toString()))
@@ -1050,9 +1053,10 @@ async function main(){
   // determines and reflects the allowed amount of mints
   async function updateMaxMints(){
     if (bag.cmState.currentState == 2) {
-      
       if ( bag.cmState.itemsLeft < CFG.maxPerTx ) {
         gid('max-per-tx').textContent = bag.cmState.itemsLeft;
+      } else {
+        gid('max-per-tx').textContent = CFG.maxPerTx;
       }
     } else {
       if ( bag.cmState.itemsLeft < bag.balances.WLToken ) {
