@@ -557,10 +557,10 @@ async function main(){
         )
       )
     } catch (e) {
-      alert(1)
+      alert(e.message)
       console.log(e);
     }
-    alert(2)
+   
     return [];
   }
   async function sendTransactions (
