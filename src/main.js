@@ -574,7 +574,7 @@ async function main(){
     failCallback,
     block
   ) {
-   
+    alert(1)
     if (!wallet.publicKey) throw new Error();
   
     const unsignedTxns = [];
@@ -590,7 +590,7 @@ async function main(){
       if (instructions.length === 0) {
         continue;
       }
-  
+      alert(2)
       let transaction = new Web3.Transaction();
       instructions.forEach(instruction => transaction.add(instruction));
       transaction.recentBlockhash = block.blockhash;
@@ -606,7 +606,7 @@ async function main(){
   
       unsignedTxns.push(transaction);
     }
-  
+    alert(3)
     const signedTxns = await wallet.signAllTransactions(unsignedTxns);
     //alert('tx-submitted')
   
