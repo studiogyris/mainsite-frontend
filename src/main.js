@@ -582,28 +582,29 @@ async function main(){
     if (!block) {
       block = await connection.getRecentBlockhash(commitment);
     }
-    alert(11)
+    
     for (let i = 0; i < instructionSet.length; i++) {
       const instructions = instructionSet[i];
       const signers = signersSet[i];
-      alert(12)
+     
       if (instructions.length === 0) {
         continue;
       }
-      alert(2)
+     
       let transaction = new Web3.Transaction();
       instructions.forEach(instruction => transaction.add(instruction));
       transaction.recentBlockhash = block.blockhash;
+      alert(22);
       transaction.setSigners(
         // fee payed by the wallet owner
         wallet.publicKey,
         ...signers.map(s => s.publicKey),
       );
-  
+      alert(23);
       if (signers.length > 0) {
         transaction.partialSign(...signers);
       }
-  
+      alert(24)
       unsignedTxns.push(transaction);
     }
     alert(3)
