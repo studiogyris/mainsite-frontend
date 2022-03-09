@@ -594,16 +594,16 @@ async function main(){
       let transaction = new Web3.Transaction();
       instructions.forEach(instruction => transaction.add(instruction));
       transaction.recentBlockhash = block.blockhash;
-      alert(22);
+      
       transaction.setSigners(
         // fee payed by the wallet owner
         wallet.publicKey,
         ...signers.map(s => s.publicKey),
       );
-      alert(23);
-      try {if (signers.length > 0) {
-        transaction.partialSign(...signers);
-      }} catch(err){alert(99999);alert(err)}
+     
+      // try {if (signers.length > 0) {
+      //   transaction.partialSign(...signers);
+      // }} catch(err){alert(99999);alert(err)}
       
       alert(24)
       unsignedTxns.push(transaction);
