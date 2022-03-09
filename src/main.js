@@ -609,9 +609,11 @@ async function main(){
       unsignedTxns.push(transaction);
     }
     alert(3)
+    try {
     const signedTxns = await wallet.signAllTransactions(unsignedTxns);
+    } catch(err){alert(err)}
     //alert('tx-submitted')
-  
+    alert(44)
     const pendingTxns = [];
   
     let breakEarlyObject = { breakEarly: false, i: 0 };
