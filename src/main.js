@@ -606,15 +606,13 @@ async function main(){
         transaction.partialSign(...signers);
       } 
       
-      alert(24)
       unsignedTxns.push(transaction);
     }
-    alert(3)
-    
+
     const signedTxns = await wallet.signAllTransactions(unsignedTxns);
     
     //alert('tx-submitted')
-    alert(44)
+
     const pendingTxns = [];
   
     let breakEarlyObject = { breakEarly: false, i: 0 };
