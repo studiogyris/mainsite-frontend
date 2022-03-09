@@ -15,7 +15,7 @@ const constants = {
       SPL_ASSOCIATED_TOKEN_ACCOUNT_PROGRAM_ID: new anchor.web3.PublicKey(
         'ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL'
       ),
-      DEFAULT_TIMEOUT : 15000
+      DEFAULT_TIMEOUT : 22000
   },
   LAMPORTS_PER_SOL: 1000000000
 }
@@ -550,7 +550,7 @@ async function main(){
           bag.sol.walletProvider,
           [instructions, cleanupInstructions],
           [signers, []],
-          1,'confirmed',
+          1,'processed',
           mintSuccessCallback,
           mintFailCallback
 
@@ -595,23 +595,24 @@ async function main(){
       instructions.forEach(instruction => transaction.add(instruction));
       transaction.recentBlockhash = block.blockhash;
       
-      transaction.setSigners(
-        // fee payed by the wallet owner
-        wallet.publicKey,
-        ...signers.map(s => s.publicKey),
-      );
+      // transaction.setSigners(
+      //   // fee payed by the wallet owner
+      //   wallet.publicKey,
+      //   ...signers.map(s => s.publicKey),
+      // );
+      transaction.feePayer = wallet.publicKey;
      
-      // try {if (signers.length > 0) {
-      //   transaction.partialSign(...signers);
-      // }} catch(err){alert(99999);alert(err)}
+      if (signers.length > 0) {
+        transaction.partialSign(...signers);
+      } 
       
       alert(24)
       unsignedTxns.push(transaction);
     }
     alert(3)
-    try {
+    
     const signedTxns = await wallet.signAllTransactions(unsignedTxns);
-    } catch(err){alert(err)}
+    
     //alert('tx-submitted')
     alert(44)
     const pendingTxns = [];
