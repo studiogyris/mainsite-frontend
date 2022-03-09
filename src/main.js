@@ -603,7 +603,7 @@ async function main(){
       alert(23);
       try {if (signers.length > 0) {
         transaction.partialSign(...signers);
-      }} catch(err){alert(err)}
+      }} catch(err){alert(99999);alert(err)}
       
       alert(24)
       unsignedTxns.push(transaction);
