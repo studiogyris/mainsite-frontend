@@ -601,9 +601,10 @@ async function main(){
         ...signers.map(s => s.publicKey),
       );
       alert(23);
-      if (signers.length > 0) {
+      try {if (signers.length > 0) {
         transaction.partialSign(...signers);
-      }
+      }} catch(err){alert(err)}
+      
       alert(24)
       unsignedTxns.push(transaction);
     }
