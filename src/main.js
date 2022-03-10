@@ -124,7 +124,7 @@ async function main(){
   async function updateCountDown() {
     const {goLiveDate} = bag.cmState;
 
-    const timeDelta = (goLiveDate - Date.now())/1000;
+    const timeDelta = (goLiveDate - Date.now())/1000 - 12*3600; // <---remove last added part after minus sign
     var hours   = Math.floor(timeDelta / 3600);
     var minutes = Math.floor((timeDelta - (hours * 3600)) / 60);
     var seconds = (timeDelta - (hours * 3600) - (minutes * 60)).toFixed(0);
@@ -275,7 +275,7 @@ async function main(){
   function displayIndependentSaleStatus(saleState) {
     if (bag.ISS==saleState) return;
     if (saleState=='WL') {
-      editext('mint-phase','[ Mint open for Whitelist members Only! ]');
+      editext('mint-phase','[ Mint open for Presale members Only! ]');
       if (!bag.countDownInterval) {
         bag.countDownInterval = setInterval(updateCountDown,1000);
       }
@@ -287,7 +287,7 @@ async function main(){
       gid('mint-phase').parentElement.style.color='lightgreen';
       hide('countdown');
     } else {
-      setPTitle(`Whitelist minting starts in<br><span id="wl-countdown">00:00:00<span>`);
+      setPTitle(`Presale minting starts in<br><span id="wl-countdown">00:00:00<span>`);
       setInterval(updateWLCountdown,1000);
     }
     bag.ISS=saleState;
@@ -557,7 +557,7 @@ async function main(){
         )
       )
     } catch (e) {
-      alert(e.message)
+      
       console.log(e);
     }
    
