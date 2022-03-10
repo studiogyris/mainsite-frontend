@@ -185,7 +185,7 @@ async function main(){
     
     if (!bag.staticInfoInitialized) {
       editext('total-items-amount',totalItems);
-      editext('price',formattedPrice);
+      editext('price','2.5');//formattedPrice);//here
       clicksen('connect-btn',onClickConnect);
       bag.staticInfoInitialized=true;
     }
