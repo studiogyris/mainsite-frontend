@@ -1,0 +1,117 @@
+{
+    "name": "Bura #1449",
+    "symbol": "GGB",
+    "description": "The Bura are a large human-like Genus with considerable racial diversity as indicated by skin and hair colour. The Bura live largely remote and cut off from the rest of Gyris on the high elevation plateaus collectively known as 'The Buralands'. Atop these highlands you find dense forest, high mountains, deep cuts and valleys. Thunderous rivers but also endless branches of creek forks cutting lines in the mountainside. Families carve, paths into the earthen clay and form walkways from their hut to the waterways to wash and bath and fish. To each Bura, their fated Dua, a weapon to fight The Darkness that grows in the very forests that feed them.",
+    "image": "1449.jpg",
+    "external_url": "https://gyris.io/drops/bura/1449",
+    "seller_fee_basis_points": 600,
+    "background_color": "fff",
+    "attributes": [
+        {
+            "trait_type": "Background",
+            "value": "Red"
+        },
+        {
+            "trait_type": "Class",
+            "value": "Bu-Raa-Murri (Yaru)"
+        },
+        {
+            "trait_type": "Tribe",
+            "value": "Akukani"
+        },
+        {
+            "trait_type": "Upper Body",
+            "value": "White Bones of War"
+        },
+        {
+            "trait_type": "Lower Body",
+            "value": "Lap-Lap and Hide (Red)"
+        },
+        {
+            "trait_type": "Arms",
+            "value": "Remembering the Fallen"
+        },
+        {
+            "trait_type": "Jewellery",
+            "value": "none"
+        },
+        {
+            "trait_type": "Hair",
+            "value": "Red Babymaker"
+        },
+        {
+            "trait_type": "Face",
+            "value": "War Paint (Red)"
+        },
+        {
+            "trait_type": "Chin",
+            "value": "none"
+        },
+        {
+            "trait_type": "Head",
+            "value": "none"
+        },
+        {
+            "trait_type": "Eyes",
+            "value": "Blue"
+        },
+        {
+            "display_type": "number",
+            "trait_type": "Strength",
+            "value": 76
+        },
+        {
+            "display_type": "number",
+            "trait_type": "Intelligence",
+            "value": 50
+        },
+        {
+            "display_type": "number",
+            "trait_type": "Wisdom",
+            "value": 34
+        },
+        {
+            "display_type": "number",
+            "trait_type": "Dexterity",
+            "value": 69
+        },
+        {
+            "display_type": "number",
+            "trait_type": "Charisma",
+            "value": 59
+        },
+        {
+            "display_type": "number",
+            "trait_type": "Resilience",
+            "value": 54
+        },
+        {
+            "display_type": "number",
+            "trait_type": "Height",
+            "value": "7.9ft (2.41m)"
+        },
+        {
+            "display_type": "number",
+            "trait_type": "Base rating",
+            "value": 2.0
+        }
+    ],
+    "properties": {
+        "creators": [
+            {
+                "address": "4C7fEKJWDXDgQwpjXpepubFsFCnAF627rea8LNhB4QHb",
+                "share": 100
+            }
+        ],
+        "files": [
+            {
+                "uri": "1449.jpg",
+                "type": "image/jpg"
+            }
+        ]
+    },
+    "collection": {
+        "name": "Gyris Genesis: Bura",
+        "family": "Gyris"
+    }
+}

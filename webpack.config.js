@@ -33,11 +33,14 @@ module.exports = {
             "stream": require.resolve("stream-browserify")
         }
     },
-    entry: './src/main.js',
+    entry: {
+      mint: './src/mint.js',
+      rarity: './src/rarity.js'
+    },
     output: {
       path: path.resolve(__dirname, 'docs/js'),
       publicPath: path.resolve(__dirname, 'docs'),
-      filename: 'bundle.js'
+      filename: '[name].bundle.js'
     },
     devServer: {
       static: {
