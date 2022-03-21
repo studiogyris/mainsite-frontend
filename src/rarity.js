@@ -1,6 +1,10 @@
 async function main(){
     const stats = await fetch('/drops/bura/statistics/index.json').then((res)=>{
         return res.json()})
+
+    const allscores = await fetch('/drops/bura/statistics/allscores.json').then((res)=>{
+        return res.json()})
+
     gid('input-buraid').addEventListener('input', onInputBuraID);
     clicksen('fetch-btn',onClickFetch);
    
@@ -72,13 +76,15 @@ async function main(){
       }
 
     async function onClickFetch(){
-        var totalScore = 5;
+        
+        var totalScore = 10;
         id = gid('input-buraid').value
-        if (  id<0 || id===0 ){
+        if ( isNaN(id) || id=='' || id<0 || id===0 ){
             return
           } else if ( id>2734){
               return
             }
+       
         editext('main-h',`Displaying attributes for Bura #${id}`)
         gid('nonvis-attr-wrap').innerHTML=''
         gid('vis-attr-wrap').innerHTML=''
@@ -120,7 +126,7 @@ async function main(){
                 if (tname=='Resilience'){
                     d1.innerHTML = `&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<strong>` + tname + '</strong>' + `<div style='color:red;'>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp` +tval+'</div><br>'
                 } else if (tname=='Base rating') {
-                    clog(totalScore)
+                   
                     gid('trait-count').textContent=12-noneCount
                     if ( noneCount == 0 ) {
                         //12/12
@@ -131,11 +137,43 @@ async function main(){
                         totalScore+=bonuspoints['5/12']
                         gid('traitcount-bonus').textContent=`[+${bonuspoints['5/12']}]`
                     }
-                    clog(totalScore)
-                    gid('vis-score').textContent=totalScore
-                    gid('nonvis-score').textContent=tval
-                    clog(totalScore*parseFloat(tval))
-                    gid('combined-score').textContent=(totalScore*parseFloat(tval)).toFixed(precision(parseFloat(tval)))
+                    if (totalScore>100) {
+                        totalScore=100
+                    }
+                    const vs = (totalScore/20).toFixed(1)
+                    visrank = 1;
+                    for (scr of allscores['vis']) {
+                        if ((totalScore/20) < scr) {
+                            
+                            visrank++
+                        } else {
+                            break;
+                        }
+                    }
+
+                    gid('vis-score').textContent=`${vs}    ( #${visrank} )`
+
+                    nonvisrank = 1
+                    for (scr of allscores['nonvis']) {
+                        if ((tval) < scr) {
+                            nonvisrank++
+                        } else {
+                            break;
+                        }
+                    }
+
+                    combinedrank = 1
+                    for (scr of allscores['combined']) {
+                        if ((parseFloat(vs)+tval) < scr) {
+                            combinedrank++
+                        } else {
+                            break;
+                        }
+                    }
+
+                    gid('nonvis-score').textContent=`${tval.toFixed(1)}  ( #${nonvisrank} )`
+                    
+                    gid('combined-score').textContent=`${(parseFloat(vs)+tval).toFixed(1)}  ( #${combinedrank} )`
                 } else {
                     d1.innerHTML = `&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<strong>` + tname + '</strong>' + `<div style='color:red;'>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp` +tval+'</div>'
                 }
