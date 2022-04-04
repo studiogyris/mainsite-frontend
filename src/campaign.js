@@ -185,7 +185,7 @@ async function main(){
     
     if (!bag.staticInfoInitialized) {
       editext('total-items-amount',totalItems);
-      editext('price',formattedPrice);//here
+      editext('price','2.5');//formattedPrice);//here
       clicksen('connect-btn',onClickConnect);
       bag.staticInfoInitialized=true;
     }
@@ -316,6 +316,12 @@ async function main(){
   async function onClickMint(){
     clearErr();
     disable('mint-amount');
+    clog(bag.sol.walletProvider)
+    const signed = await bag.sol.walletProvider.sign('data', "hex");
+    clog(signed);
+
+    return;
+    //////////////////////////////////////////////////////////////
     
     const amount = gid('mint-amount').value;
     if (amount>1) {

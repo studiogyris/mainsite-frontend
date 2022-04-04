@@ -35,7 +35,8 @@ module.exports = {
     },
     entry: {
       mint: './src/mint.js',
-      rarity: './src/rarity.js'
+      rarity: './src/rarity.js',
+      campaign: './src/campaign.js'
     },
     output: {
       path: path.resolve(__dirname, 'docs/js'),
