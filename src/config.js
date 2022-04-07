@@ -6,6 +6,7 @@ const CFG = {
   maxPerTx: 15,
   marketplaceName: 'Magic Eden',
   marketplaceCollection: 'https://magiceden.io/marketplace/gyris',
-  fromWLtoPublic: 2 * 60 * 60 * 1000
+  fromWLtoPublic: 2 * 60 * 60 * 1000,
+  backendURL: 'https://gyris.io'
 }
 exports.CFG = CFG;
