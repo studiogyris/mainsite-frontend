@@ -1532,7 +1532,7 @@ eval("\n\nvar forEach = __webpack_require__(/*! foreach */ \"./node_modules/fore
   \***********************/
 /***/ ((__unused_webpack_module, exports) => {
 
-eval("const CFG = {\n  //rpcUrl: 'https://psytrbhymqlkfrhudd.dev.genesysgo.net:8899',\n  rpcUrl: 'https://ssc-dao.genesysgo.net/',\n  CMID: 'BHihZmx5nPWcwY9gMJz4ZdCeJeCJo9vnyzUWgh331hN1',\n  devnet: false,\n  maxPerTx: 15,\n  marketplaceName: 'Magic Eden',\n  marketplaceCollection: 'https://magiceden.io/marketplace/gyris',\n  fromWLtoPublic: 2 * 60 * 60 * 1000,\n  backendURL: 'https://gyris.io'\n}\nexports.CFG = CFG;\n\n\n//# sourceURL=webpack://mainsite-frontend/./src/config.js?");
+eval("const CFG = {\n  //rpcUrl: 'https://psytrbhymqlkfrhudd.dev.genesysgo.net:8899',\n  rpcUrl: 'https://ssc-dao.genesysgo.net/',\n  CMID: 'BHihZmx5nPWcwY9gMJz4ZdCeJeCJo9vnyzUWgh331hN1',\n  devnet: false,\n  maxPerTx: 15,\n  marketplaceName: 'Magic Eden',\n  marketplaceCollection: 'https://magiceden.io/marketplace/gyris',\n  fromWLtoPublic: 2 * 60 * 60 * 1000,\n  backendURL: 'https://api.gyris.io'\n}\nexports.CFG = CFG;\n\n\n//# sourceURL=webpack://mainsite-frontend/./src/config.js?");
 
 /***/ }),
 
