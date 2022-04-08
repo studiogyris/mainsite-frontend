@@ -65,6 +65,13 @@ async function main(){
     
     const url = CFG.backendURL +'/campaign/submissions?buraid='+buraID;
 
+    gid('twitter-wrap').innerHTML=`<a style="display:none;" id="twitter-btn" href="https://twitter.com/share?ref_src=twsrc%5Etfw"
+        class="twitter-share-button" data-size="large"
+        data-text="Check out the name and backstory for this Bura: https://gyris.io/campaign/submissions?buraid=${buraID}.\nYou can view others' submissions here: "
+        data-via="Gyris_official" data-hashtags="nameandbackstorycampaign" data-lang="en"
+        data-dnt="true" data-show-count="true" target="_blank"
+        onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">Tweet</a>`
+
 
     gid('fetch-btn').value='Waiting...'
     fetch(url)
@@ -87,6 +94,14 @@ async function main(){
   }
   
   function displayFetchedData(data) {
+
+    var script = document.createElement('script');
+    script.src = "https://platform.twitter.com/widgets.js";
+    script.async='true';
+    script.charset='utf-8';
+    script.id='twitter-script'
+    gid('twitter-wrap').appendChild(script);
+    
     if (data.reroll==false) {
       editext('reroll-bool','NO');
       gid('reroll-bool').style.color='yellow'

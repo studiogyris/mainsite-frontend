@@ -8,5 +8,6 @@ const CFG = {
   marketplaceCollection: 'https://magiceden.io/marketplace/gyris',
   fromWLtoPublic: 2 * 60 * 60 * 1000,
   backendURL: 'https://api.gyris.io'
+  
 }
 exports.CFG = CFG;

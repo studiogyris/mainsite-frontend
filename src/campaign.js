@@ -7,6 +7,7 @@ const messagesToSign = {
   1: '[Gyris] I want to reroll the non-visual attributes of my Bura #',
   2: '[Gyris] I want to rename my Bura #',
   3: '[Gyris] I want to add a backstory to my Bura #',
+  4: '[Gyris] I want to rename and add a backstory to my Bura #'
 }
 
 
@@ -217,15 +218,11 @@ async function main(){
     if (window.location.pathname=='/campaign/reroll-nonvis/') {
       clicksen('action-btn',onClickReroll);
       setPTitle(`Input the ID of the Bura you'd like to Reroll`);
-    } else if (window.location.pathname=='/campaign/rename/') {
-      clicksen('action-btn',onClickRename);
-      setPTitle(`1) Input the ID of the Bura<br>2) Input the new name<br>3) Click rename`);
-      unhide('warning-wrap');
+    } else {
+      clicksen('action-btn',onClickSubmit);
+      hide('main-h');
       gid('input-name').addEventListener('input',onInputName);
       gid('input-name').addEventListener('focusout',onFocusOutName);
-    } else if (window.location.pathname=='/campaign/backstory/') {
-      clicksen('action-btn',onClickBackstory);
-      setPTitle(`Input the ID of the Bura you'd like to Add a Backstory to`);
       unhide('warning-wrap');
       gid('text-backstory').addEventListener('input',onInputBS);
       if (window.screen.width<900) {
@@ -242,16 +239,57 @@ async function main(){
 
   async function onFocusOutName(){
     const value = gid('input-name').value.trim();
+
+    if (!value) return;
+
     gid('input-name').value=cap(value)
     
-    const valid = /^(?<firstchar>(?=[A-Za-z]))((?<alphachars>[A-Za-z])|(?<specialchars>[A-Za-z]['-](?=[A-Za-z]))|(?<spaces> (?=[A-Za-z])))*$/.test(value)
+    
+    const valid = /^(?<firstchar>(?=[A-Za-z]))((?<alphachars>[A-Za-z()])|(?<specialchars>[A-Za-z]['-](?=[A-Za-z]))|(?<spaces> (?=[A-Za-z()])))*$/.test(value)
+
+
+    var validParenthesis = true;
+    var openC =0;
+    var closeC =0;
+    var inparC = 0;
+    for (var i=0;i<value.length;i++) {
+      if (openC>0) {
+        if (value.charAt(i)!=' ' && value.charAt(i)!='-' &&  value.charAt(i)!=`'`) {
+          inparC++;
+        }
+      }
+      if (value.charAt(i)==')') {
+        if (openC==0) {
+          validParenthesis = false;
+          break;
+        }
+        closeC++;
+      }
+      
+      if (value.charAt(i)=='(') {
+        openC++;
+      }
+    }
+    
+  
+    if (validParenthesis) {
+      if (openC>1 || closeC>1 || openC!=closeC) {
+        validParenthesis = false;
+      }
+     
+      if (openC==1 && inparC < 3) {
+        validParenthesis = false;
+      }
+    }
+    
     if (!valid) gid('input-name').value='INVALID NAME';
+    if (!validParenthesis) gid('input-name').value='INVALID PARENTHESIS';
   }
 
   async function onInputName(){
     const { value } = gid('input-name');
-    if (value.length>25) {
-      gid('input-name').value=value.slice(0,25);
+    if (value.length>50) {
+      gid('input-name').value=value.slice(0,50);
     }
     
   }
@@ -264,6 +302,29 @@ async function main(){
     
   }
 
+  async function onClickSubmit() {
+    const buraID = gid('input-buraid').value;
+
+    
+    if (!buraID) return displayErr('Please input ID of the Bura');
+
+    const inputName = gid('input-name').value;
+    const inputStory = gid('text-backstory').value;
+
+    if (!inputName && !inputStory) return displayErr('Please fill the Name or/and Backstory fields!');
+
+    clearErr();
+    if (!inputName) {
+      return validateSignSend(3);
+    } else {
+      if (!inputStory) {
+        return validateSignSend(2);
+      } else {
+        return validateSignSend(4);
+      } 
+    }
+  }
+
 
   async function validateSignSend(actionNum){
     var name,backstory;
@@ -271,11 +332,22 @@ async function main(){
     if (actionNum==2) {
       await onFocusOutName();
       name = gid('input-name').value;
-      if (name=='INVALID NAME') return;
+      if (name=='INVALID NAME' || name=='INVALID PARENTHESIS') return;
       if (name.length<3) {
         return displayErr('Name has to be atleast 3 characters long!')
       }
     } else if (actionNum==3) {
+      backstory = gid('text-backstory').value;
+      if (backstory.length<200) {
+        return displayErr('Backstory has to be atleast 200 characters long!')
+      } 
+    } else if (actionNum==4) {
+      await onFocusOutName();
+      name = gid('input-name').value;
+      if (name=='INVALID NAME' || name=='INVALID PARENTHESIS') return;
+      if (name.length<3) {
+        return displayErr('Name has to be atleast 3 characters long!')
+      }
       backstory = gid('text-backstory').value;
       if (backstory.length<200) {
         return displayErr('Backstory has to be atleast 200 characters long!')
@@ -312,24 +384,39 @@ async function main(){
       buraID
     }
 
-    var successMsg,btntext;
+    gid('twitter-wrap').innerHTML=`<a style="display:none;" id="twitter-btn" href="https://twitter.com/share?ref_src=twsrc%5Etfw"
+        class="twitter-share-button" data-size="large"
+        data-text=""
+        data-via="Gyris_official" data-hashtags="nameandbackstorycampaign" data-lang="en"
+        data-dnt="true" data-show-count="true" target="_blank"
+        onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">Tweet</a>`
+
+    var successMsg,btntext,btnname;
     if (actionNum==1) {
+     
       url = url + 'reroll'
       btntext = 'Reroll'
       successMsg =   `Your submission to reroll non-visual attributes of Bura #${buraID} has been recorded. Why not <u style='color:red;'>share it on twitter?</u> `;
     } else if (actionNum==2) {
-      gid('twitter-btn').setAttribute('data-text',gid('twitter-btn').getAttribute('data-text').split('#')[0] + `#${buraID} to: ` + `" ${name} "` + gid('twitter-btn').getAttribute('data-text').split('#')[1]);
+      gid('twitter-btn').setAttribute('data-text',`I just renamed my Bura, check it out here: https://gyris.io/campaign/submissions?buraid=${buraID}\nIf you own one you can do the same here: `);
       url = url + 'rename'
-      btntext = 'Rename'
+      btntext = 'Submit'
       Data.name = name;
       successMsg = `Your submission to rename Bura #${buraID} has been recorded. Why not <u style='color:red;'>share it on twitter?</u>`;
-    } else {
-      gid('twitter-btn').setAttribute('data-text',gid('twitter-btn').getAttribute('data-text').split('#')[0] + `#${buraID}` + gid('twitter-btn').getAttribute('data-text').split('#')[1]);
-      gid('twitter-btn').setAttribute('data-text',gid('twitter-btn').getAttribute('data-text').split('-')[0] + `https://gyris.io/campaign/submissions?buraid=${buraID}` + gid('twitter-btn').getAttribute('data-text').split('-')[1]);
+    } else if (actionNum==3) {
+      gid('twitter-btn').setAttribute('data-text',`I just added a backstory to my Bura, check it out here: https://gyris.io/campaign/submissions?buraid=${buraID}\nIf you own one you can do the same here: `);
+
       url = url + 'backstory'
       btntext = 'Submit'
       Data.backstory = backstory;
       successMsg = `Your submission to add a backstory to Bura #${buraID} has been recorded. Why not <u style='color:red;'>share it on twitter?</u>`
+    } else {
+      gid('twitter-btn').setAttribute('data-text',`I just renamed and added a backstory to my Bura, check it out here: https://gyris.io/campaign/submissions?buraid=${buraID}\nIf you own one you can do the same here: `);
+      url = url + 'name-and-backstory'
+      btntext = 'Submit'
+      Data.backstory = backstory;
+      Data.name = name;
+      successMsg = `Your submission to rename and add a backstory to Bura #${buraID} has been recorded. Why not <u style='color:red;'>share it on twitter?</u>`
     }
     
     const params = {
@@ -337,24 +424,26 @@ async function main(){
       body: JSON.stringify(Data),
       method: 'POST'
     }
-    gid('action-btn').value='Waiting...'
+    gid(`action-btn`).value='Waiting...'
     fetch(url,params)
     .then((res)=>{
       return res.json();
     })
     .then((res)=>{
-      console.log(res);
-      gid('action-btn').value=btntext;
+      
+      gid(`action-btn`).value=btntext;
       if (res.code<0){
         displayErr(res.message)
       } else {
         displayMsg(`<strong>Success!</strong>  `+successMsg);
         unhide('twitter-btn');
+        
         var script = document.createElement('script');
         script.src = "https://platform.twitter.com/widgets.js";
         script.async='true';
         script.charset='utf-8';
-        document.head.appendChild(script);
+        script.id='twitter-script'
+        gid('twitter-wrap').appendChild(script);
       }
     })
   }
@@ -363,13 +452,7 @@ async function main(){
     validateSignSend(1)
   }
   
-  async function onClickRename(){
-    validateSignSend(2)
-  }
-
-  async function onClickBackstory(){
-    validateSignSend(3)
-  }
+  
 
   // sets process Title
   function setPTitle(title) {
