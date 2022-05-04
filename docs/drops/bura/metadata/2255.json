@@ -1,9 +1,9 @@
 {
-  "name": "Bura #2255",
+  "name": "Manute Bull",
   "symbol": "GGB",
   "description": "The Bura are a large human-like Genus with considerable racial diversity as indicated by skin and hair colour. The Bura live largely remote and cut off from the rest of Gyris on the high elevation plateaus collectively known as 'The Buralands'. Atop these highlands you find dense forest, high mountains, deep cuts and valleys. Thunderous rivers but also endless branches of creek forks cutting lines in the mountainside. Families carve, paths into the earthen clay and form walkways from their hut to the waterways to wash and bath and fish. To each Bura, their fated Dua, a weapon to fight The Darkness that grows in the very forests that feed them.",
-  "image": "2255.jpg",
-  "external_url": "https://gyris.io/drops/bura/2255",
+  "image": "https://arweave.net/lkWRveIoNLRNDZUemwvhNgSN543MBpiN7I_rA02KcMg?ext=jpg",
+  "external_url": "https://gyris.io/rarity/bura?id=2255",
   "seller_fee_basis_points": 600,
   "background_color": "fff",
   "attributes": [
@@ -58,32 +58,32 @@
     {
       "display_type": "number",
       "trait_type": "Strength",
-      "value": 59
+      "value": 77
     },
     {
       "display_type": "number",
       "trait_type": "Intelligence",
-      "value": 61
+      "value": 60
     },
     {
       "display_type": "number",
       "trait_type": "Wisdom",
-      "value": 33
+      "value": 61
     },
     {
       "display_type": "number",
       "trait_type": "Dexterity",
-      "value": 65
+      "value": 76
     },
     {
       "display_type": "number",
       "trait_type": "Charisma",
-      "value": 41
+      "value": 29
     },
     {
       "display_type": "number",
       "trait_type": "Resilience",
-      "value": 58
+      "value": 60
     },
     {
       "display_type": "number",
@@ -93,7 +93,15 @@
     {
       "display_type": "number",
       "trait_type": "Base rating",
-      "value": 1.7
+      "value": 2.9
+    },
+    {
+      "trait_type": "Memorandi I",
+      "value": "Manute was the son of a Madute and Okwok Bull. Manute's father, a Dunka tribal leader gave him the name Manute, which means Special Blessing. Manute was born prematurely and as a young child, was often teased for being so small. When Manute reached the age of 13, he grew 3ft in a matter of months becoming the tallest Bura in the village at 7.9ft tall. At the age of 14, he was recruited to help protect his tribe from a the neighboring Motun tribes' constant assaults. During his first battle, he single handedly turned back the Motun tribe using his hammer to smash the life from a dozen Bura. While a fierce fighter, he was equally equipped to build the sturdiest huts in the village and was a natural at negotiating building deals with villages from around the lands. Sensing the Motun were close to defeating his Dunkas, he negotiated a deal that saw the Dunkas integrated into the Motun tribe and adopting their tribal name. You can always spot the former Dunka tribe members because of their great height and ability to block shots on the Buraball court."
+    },
+    {
+      "trait_type": "ID",
+      "value": 2255
     }
   ],
   "properties": {

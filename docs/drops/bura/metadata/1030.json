@@ -1,9 +1,9 @@
 {
-  "name": "Bura #1030",
+  "name": "Hadringya",
   "symbol": "GGB",
   "description": "The Bura are a large human-like Genus with considerable racial diversity as indicated by skin and hair colour. The Bura live largely remote and cut off from the rest of Gyris on the high elevation plateaus collectively known as 'The Buralands'. Atop these highlands you find dense forest, high mountains, deep cuts and valleys. Thunderous rivers but also endless branches of creek forks cutting lines in the mountainside. Families carve, paths into the earthen clay and form walkways from their hut to the waterways to wash and bath and fish. To each Bura, their fated Dua, a weapon to fight The Darkness that grows in the very forests that feed them.",
-  "image": "1030.jpg",
-  "external_url": "https://gyris.io/drops/bura/1030",
+  "image": "https://arweave.net/qr0OSH0lFmarsllPeLzaNYPTs5Z6X2S0249CW6TyokI?ext=jpg",
+  "external_url": "https://gyris.io/rarity/bura?id=1030",
   "seller_fee_basis_points": 600,
   "background_color": "fff",
   "attributes": [
@@ -94,6 +94,14 @@
       "display_type": "number",
       "trait_type": "Base rating",
       "value": 2.3
+    },
+    {
+      "trait_type": "Memorandi I",
+      "value": "A healer from the Duara tribe, wise and resilient,  known for his kindness, bravery, and a very deep, soothing voice. Nicknamed as Hadringya - \"Healer of Souls\", he has made himself popular and a respected Bura among the tribe by attacking a Minjierri camp at night, to save his defeated and wounded Burakin readied for execution.  Outnumbered, managed to overpower the enemy squad at the camp and heal his Burakin, one of which was his older brother - Kaia bun. He dragged three wounded brethren a few hundred feet away from the camp and covered them with leaves, in hopes of camouflaging them.  Only able to drag his wounded self, he hurried to gather two more strong men who helped him get his fellow Burakin home. Results of this brave act was turning the tides of the battle: his brethren had overheard the locations of the other nearby camps from the conversations of the Minjierri soldiers..."
+    },
+    {
+      "trait_type": "ID",
+      "value": 1030
     }
   ],
   "properties": {

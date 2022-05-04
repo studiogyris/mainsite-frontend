@@ -107,7 +107,9 @@ async function main(){
         gid('vis-attr-wrap').appendChild(creatE('br'))
 
         for (attrObj of ans.attributes) {
+           
             const tname = attrObj.trait_type
+            if (tname == "Memorandi I" || tname == "ID" ) continue;
             var tval = attrObj.value
             if (tval=='War Paint (Full skull)') {
                 tval = 'War Paint (Full Skull)'

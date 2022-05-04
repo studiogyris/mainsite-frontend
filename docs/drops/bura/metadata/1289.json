@@ -1,9 +1,9 @@
 {
-  "name": "Bura #1289",
+  "name": "Iohrn",
   "symbol": "GGB",
   "description": "The Bura are a large human-like Genus with considerable racial diversity as indicated by skin and hair colour. The Bura live largely remote and cut off from the rest of Gyris on the high elevation plateaus collectively known as 'The Buralands'. Atop these highlands you find dense forest, high mountains, deep cuts and valleys. Thunderous rivers but also endless branches of creek forks cutting lines in the mountainside. Families carve, paths into the earthen clay and form walkways from their hut to the waterways to wash and bath and fish. To each Bura, their fated Dua, a weapon to fight The Darkness that grows in the very forests that feed them.",
-  "image": "1289.jpg",
-  "external_url": "https://gyris.io/drops/bura/1289",
+  "image": "https://arweave.net/8gGcJ0PbKLdxURGIdi_YiqBBlMjEhgzkXw0eqvdxIUY?ext=jpg",
+  "external_url": "https://gyris.io/rarity/bura?id=1289",
   "seller_fee_basis_points": 600,
   "background_color": "fff",
   "attributes": [
@@ -94,6 +94,14 @@
       "display_type": "number",
       "trait_type": "Base rating",
       "value": 2.1
+    },
+    {
+      "trait_type": "Memorandi I",
+      "value": "Iohrn was born in to a family of fisherman who lived in a small shack by the ocean. He spent most of his childhood on a raft with his dad whit a net and a spear in hand. Even as a teenager he was considered to be an extremely skilled navigator by his peers although he had no passion for his trade. As a young adult he decided to trade knowledge of his best spots for crab traps in exchange for a small plot of land by the ocean where he could explore what he felt was his higher calling. He built a garden for exotic flowers and medicinal plants. Using his aptitude for swimming and diving as well as his extensive knowledge of the surrounding waters he would harvest nutriment rich seaweed to use as fertilizer. He dose not have a formal dwelling and sleeps on a raft he keeps anchored near the shore. Every day at dawn and dusk you can find him smoking rose petals on the beach in front of his garden."
+    },
+    {
+      "trait_type": "ID",
+      "value": 1289
     }
   ],
   "properties": {

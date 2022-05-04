@@ -35,7 +35,7 @@ module.exports = {
     },
     entry: {
       mint: './src/mint.js',
-      rarity: './src/rarity.js',
+      rarity: './src/rarity.js'
       // campaign: './src/campaign.js',
       // 'campaign.submissions': './src/campaign.submissions.js'
     },

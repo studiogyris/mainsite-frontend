@@ -1,9 +1,9 @@
 {
-  "name": "Bura #597",
+  "name": "Erakan Talltree",
   "symbol": "GGB",
   "description": "The Bura are a large human-like Genus with considerable racial diversity as indicated by skin and hair colour. The Bura live largely remote and cut off from the rest of Gyris on the high elevation plateaus collectively known as 'The Buralands'. Atop these highlands you find dense forest, high mountains, deep cuts and valleys. Thunderous rivers but also endless branches of creek forks cutting lines in the mountainside. Families carve, paths into the earthen clay and form walkways from their hut to the waterways to wash and bath and fish. To each Bura, their fated Dua, a weapon to fight The Darkness that grows in the very forests that feed them.",
-  "image": "597.jpg",
-  "external_url": "https://gyris.io/drops/bura/597",
+  "image": "https://arweave.net/6t_RcsHm2RDIMcId7VBqsJFlkBPRujzLjlWSfg3kAh0?ext=jpg",
+  "external_url": "https://gyris.io/rarity/bura?id=597",
   "seller_fee_basis_points": 600,
   "background_color": "fff",
   "attributes": [
@@ -63,12 +63,12 @@
     {
       "display_type": "number",
       "trait_type": "Intelligence",
-      "value": 43
+      "value": 46
     },
     {
       "display_type": "number",
       "trait_type": "Wisdom",
-      "value": 43
+      "value": 40
     },
     {
       "display_type": "number",
@@ -78,12 +78,12 @@
     {
       "display_type": "number",
       "trait_type": "Charisma",
-      "value": 51
+      "value": 33
     },
     {
       "display_type": "number",
       "trait_type": "Resilience",
-      "value": 61
+      "value": 67
     },
     {
       "display_type": "number",
@@ -93,7 +93,15 @@
     {
       "display_type": "number",
       "trait_type": "Base rating",
-      "value": 1.8
+      "value": 1.5
+    },
+    {
+      "trait_type": "Memorandi I",
+      "value": "Erakan learned from a young age that the rules are different when you're a giant. He'd always been bigger than the other Burakin, but after he'd almost broken Tufi's arm while they were wrestling, and saw the look of genuine fear in his Baru's eyes, he understood how different he was. From that day he vowed never to make anyone afraid of him again, unless it was on the battlefield.\n\nNow he was grown, and stood at least a head taller than any Burakin he knew. In battle he was pure terror; enemies trembled before his club, and his Baru drew courage and strength from his ferocity. But in the village children would gather to listen and laugh at his silly stories about The Woodman and Onji Softfoot.He helped carry goods to the market, and kept the bar at the Silver Hammer. Anything that made him one of the Burakin, he did it with joy."
+    },
+    {
+      "trait_type": "ID",
+      "value": 597
     }
   ],
   "properties": {

@@ -1,9 +1,9 @@
 {
-  "name": "Bura #2721",
+  "name": "Decimus",
   "symbol": "GGB",
   "description": "The Bura are a large human-like Genus with considerable racial diversity as indicated by skin and hair colour. The Bura live largely remote and cut off from the rest of Gyris on the high elevation plateaus collectively known as 'The Buralands'. Atop these highlands you find dense forest, high mountains, deep cuts and valleys. Thunderous rivers but also endless branches of creek forks cutting lines in the mountainside. Families carve, paths into the earthen clay and form walkways from their hut to the waterways to wash and bath and fish. To each Bura, their fated Dua, a weapon to fight The Darkness that grows in the very forests that feed them.",
-  "image": "2721.jpg",
-  "external_url": "https://gyris.io/drops/bura/2721",
+  "image": "https://arweave.net/c96zB-HRBwAcUzWbB5HmuofPP4EMVuRGg1zpGE13t5I?ext=jpg",
+  "external_url": "https://gyris.io/rarity/bura?id=2721",
   "seller_fee_basis_points": 600,
   "background_color": "fff",
   "attributes": [
@@ -58,7 +58,7 @@
     {
       "display_type": "number",
       "trait_type": "Strength",
-      "value": 70
+      "value": 72
     },
     {
       "display_type": "number",
@@ -68,22 +68,22 @@
     {
       "display_type": "number",
       "trait_type": "Wisdom",
-      "value": 48
+      "value": 30
     },
     {
       "display_type": "number",
       "trait_type": "Dexterity",
-      "value": 64
+      "value": 65
     },
     {
       "display_type": "number",
       "trait_type": "Charisma",
-      "value": 55
+      "value": 57
     },
     {
       "display_type": "number",
       "trait_type": "Resilience",
-      "value": 53
+      "value": 59
     },
     {
       "display_type": "number",
@@ -93,7 +93,15 @@
     {
       "display_type": "number",
       "trait_type": "Base rating",
-      "value": 2.0
+      "value": 1.8
+    },
+    {
+      "trait_type": "Memorandi I",
+      "value": "Decimus is a pacifist by nature. He likes to smell the refreshing scent of flowers and you'll often find him meditating under the nice breeze of any forest on Gyris. Some word of caution though. Don't make the mistake of thinking he can be messed with, as his Bu-Raa-Murri ascendence makes him a great hunter and will no hesitate of killing any creature... if needed."
+    },
+    {
+      "trait_type": "ID",
+      "value": 2721
     }
   ],
   "properties": {

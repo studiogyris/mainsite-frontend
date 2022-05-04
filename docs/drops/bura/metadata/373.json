@@ -2,8 +2,8 @@
   "name": "Bura #373",
   "symbol": "GGB",
   "description": "The Bura are a large human-like Genus with considerable racial diversity as indicated by skin and hair colour. The Bura live largely remote and cut off from the rest of Gyris on the high elevation plateaus collectively known as 'The Buralands'. Atop these highlands you find dense forest, high mountains, deep cuts and valleys. Thunderous rivers but also endless branches of creek forks cutting lines in the mountainside. Families carve, paths into the earthen clay and form walkways from their hut to the waterways to wash and bath and fish. To each Bura, their fated Dua, a weapon to fight The Darkness that grows in the very forests that feed them.",
-  "image": "373.jpg",
-  "external_url": "https://gyris.io/drops/bura/373",
+  "image": "https://arweave.net/A3w12j5yPhSDlQozZ3EVN0Rr-qfXgPVg3TxdQuuIiyE?ext=jpg",
+  "external_url": "https://gyris.io/rarity/bura?id=373",
   "seller_fee_basis_points": 600,
   "background_color": "fff",
   "attributes": [
@@ -58,32 +58,32 @@
     {
       "display_type": "number",
       "trait_type": "Strength",
-      "value": 51
+      "value": 53
     },
     {
       "display_type": "number",
       "trait_type": "Intelligence",
-      "value": 42
-    },
-    {
-      "display_type": "number",
-      "trait_type": "Wisdom",
-      "value": 76
-    },
-    {
-      "display_type": "number",
-      "trait_type": "Dexterity",
       "value": 44
     },
     {
       "display_type": "number",
+      "trait_type": "Wisdom",
+      "value": 78
+    },
+    {
+      "display_type": "number",
+      "trait_type": "Dexterity",
+      "value": 37
+    },
+    {
+      "display_type": "number",
       "trait_type": "Charisma",
-      "value": 61
+      "value": 53
     },
     {
       "display_type": "number",
       "trait_type": "Resilience",
-      "value": 72
+      "value": 91
     },
     {
       "display_type": "number",
@@ -93,7 +93,11 @@
     {
       "display_type": "number",
       "trait_type": "Base rating",
-      "value": 2.4
+      "value": 2.7
+    },
+    {
+      "trait_type": "ID",
+      "value": 373
     }
   ],
   "properties": {

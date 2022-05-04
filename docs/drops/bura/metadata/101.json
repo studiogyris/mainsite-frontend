@@ -1,9 +1,9 @@
 {
-  "name": "Bura #101",
+  "name": "Kaia bun",
   "symbol": "GGB",
   "description": "The Bura are a large human-like Genus with considerable racial diversity as indicated by skin and hair colour. The Bura live largely remote and cut off from the rest of Gyris on the high elevation plateaus collectively known as 'The Buralands'. Atop these highlands you find dense forest, high mountains, deep cuts and valleys. Thunderous rivers but also endless branches of creek forks cutting lines in the mountainside. Families carve, paths into the earthen clay and form walkways from their hut to the waterways to wash and bath and fish. To each Bura, their fated Dua, a weapon to fight The Darkness that grows in the very forests that feed them.",
-  "image": "101.jpg",
-  "external_url": "https://gyris.io/drops/bura/101",
+  "image": "https://arweave.net/Iaf2oyppzv5EacZ5IFlSxIJLv2-djmrtJn7MwUQUSeQ?ext=jpg",
+  "external_url": "https://gyris.io/rarity/bura?id=101",
   "seller_fee_basis_points": 600,
   "background_color": "fff",
   "attributes": [
@@ -94,6 +94,14 @@
       "display_type": "number",
       "trait_type": "Base rating",
       "value": 2.3
+    },
+    {
+      "trait_type": "Memorandi I",
+      "value": "A warrior, from the Duara tribe, brave and strong but careless. He has lived most of his adult life walking in the shadow of his younger brother - Hadringya. Unfortunate events coupled with his carelessness and foolishness has made him spiral down into self-hatred and envy for Hadringya, especially after having his life saved, eternally in debt to his brother. The situation in which he had gotten his brethren and himself due to overconfidence and careless pursuit for redemption. Will he ever be able to forgive himself? The time will tell, but luckily for him, the real chance for redemption seems to be not too far into the future..."
+    },
+    {
+      "trait_type": "ID",
+      "value": 101
     }
   ],
   "properties": {

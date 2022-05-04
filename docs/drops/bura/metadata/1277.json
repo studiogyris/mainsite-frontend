@@ -1,9 +1,9 @@
 {
-  "name": "Bura #1277",
+  "name": "Yamamo Sulan",
   "symbol": "GGB",
   "description": "The Bura are a large human-like Genus with considerable racial diversity as indicated by skin and hair colour. The Bura live largely remote and cut off from the rest of Gyris on the high elevation plateaus collectively known as 'The Buralands'. Atop these highlands you find dense forest, high mountains, deep cuts and valleys. Thunderous rivers but also endless branches of creek forks cutting lines in the mountainside. Families carve, paths into the earthen clay and form walkways from their hut to the waterways to wash and bath and fish. To each Bura, their fated Dua, a weapon to fight The Darkness that grows in the very forests that feed them.",
-  "image": "1277.jpg",
-  "external_url": "https://gyris.io/drops/bura/1277",
+  "image": "https://arweave.net/acs_abkzy93B5eNxWeZQZ0kebrqrAf2verHF8bvZrX0?ext=jpg",
+  "external_url": "https://gyris.io/rarity/bura?id=1277",
   "seller_fee_basis_points": 600,
   "background_color": "fff",
   "attributes": [
@@ -94,6 +94,14 @@
       "display_type": "number",
       "trait_type": "Base rating",
       "value": 3.1
+    },
+    {
+      "trait_type": "Memorandi I",
+      "value": "I can fight the Ochichurri with bare hands.\n\n\nNo joke.\n\nI practice MMA for 7 years now, boxing in parallel for 6 years, don't piss me off. \n\nNot to count strength training at the gym for 4 years, 6.5 ft for 242 lbs.\n\nI have an insane speed, reflexes similar to my speed. I just have to wait for him to charge me, dodge his attacks, and throw good punches to his head. I won't stop, and at the smallest mistake he does, the Ochichurri is finished. You'll always have virgins from here thinking that it's impossible. First, nothing is impossible with will, my friends, and 2) that's not with your weak bodies that you'll do anything. \n\nAny Bura with a minimum of training can beat the Ochichurri with a spear anyway. With bare hands, that is not necessarily more complicated, it just requires technical skills."
+    },
+    {
+      "trait_type": "ID",
+      "value": 1277
     }
   ],
   "properties": {

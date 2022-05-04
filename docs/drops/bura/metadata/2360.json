@@ -1,9 +1,9 @@
 {
-  "name": "Bura #2360",
+  "name": "Naigati Raa-Bu",
   "symbol": "GGB",
   "description": "The Bura are a large human-like Genus with considerable racial diversity as indicated by skin and hair colour. The Bura live largely remote and cut off from the rest of Gyris on the high elevation plateaus collectively known as 'The Buralands'. Atop these highlands you find dense forest, high mountains, deep cuts and valleys. Thunderous rivers but also endless branches of creek forks cutting lines in the mountainside. Families carve, paths into the earthen clay and form walkways from their hut to the waterways to wash and bath and fish. To each Bura, their fated Dua, a weapon to fight The Darkness that grows in the very forests that feed them.",
-  "image": "2360.jpg",
-  "external_url": "https://gyris.io/drops/bura/2360",
+  "image": "https://arweave.net/OW4zydJ2nIDJKyOLX5I3ghFHvOksWDZNI1JtH20vHNc?ext=jpg",
+  "external_url": "https://gyris.io/rarity/bura?id=2360",
   "seller_fee_basis_points": 600,
   "background_color": "fff",
   "attributes": [
@@ -94,6 +94,14 @@
       "display_type": "number",
       "trait_type": "Base rating",
       "value": 1.8
+    },
+    {
+      "trait_type": "Memorandi I",
+      "value": "As one of the tallest young adult Bura\u2019s in his tribe, Naigati grew up as a strong, proud Bura. \n\nKnowing very little of his parents, the tribe elders would tell stories of their great battles & treacherous adventures to instil the memories of them into Naigati throughout his growing years. \n\nIt was during an unusually cold winters night on the rising of the full moon that Naigati succumbed to the horrible scars and injuries that plague his body even to this day. As a constant reminder of the Bura\u2019s fragility, he remembers all to well the poisoned Ogg that inflicted his wounds that night. It was this time in his life when he realised his true calling - a healer. \n\nWith a magical calmness about him, he is able to sense bura\u2019s pain and quickly became one of the only tribesmen with a true healing spirit. His constant thirst for information has taken him throughout the lands making significant discoveries in local medicines, healing techniques &  crafting of surgical tools. \n\nIt is whispered amongst his people that Naigati was \u201cBorn with the spirit of a Dua\u201d\n"
+    },
+    {
+      "trait_type": "ID",
+      "value": 2360
     }
   ],
   "properties": {

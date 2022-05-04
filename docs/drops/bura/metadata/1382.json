@@ -1,9 +1,9 @@
 {
-  "name": "Bura #1382",
+  "name": "Sharamurri",
   "symbol": "GGB",
   "description": "The Bura are a large human-like Genus with considerable racial diversity as indicated by skin and hair colour. The Bura live largely remote and cut off from the rest of Gyris on the high elevation plateaus collectively known as 'The Buralands'. Atop these highlands you find dense forest, high mountains, deep cuts and valleys. Thunderous rivers but also endless branches of creek forks cutting lines in the mountainside. Families carve, paths into the earthen clay and form walkways from their hut to the waterways to wash and bath and fish. To each Bura, their fated Dua, a weapon to fight The Darkness that grows in the very forests that feed them.",
-  "image": "1382.jpg",
-  "external_url": "https://gyris.io/drops/bura/1382",
+  "image": "https://arweave.net/5zhjZdvNyfcHa3kMO5D9jkl8pIrig3qz_gOe0ROCMxg?ext=jpg",
+  "external_url": "https://gyris.io/rarity/bura?id=1382",
   "seller_fee_basis_points": 600,
   "background_color": "fff",
   "attributes": [
@@ -58,32 +58,32 @@
     {
       "display_type": "number",
       "trait_type": "Strength",
-      "value": 78
+      "value": 69
     },
     {
       "display_type": "number",
       "trait_type": "Intelligence",
-      "value": 53
+      "value": 50
     },
     {
       "display_type": "number",
       "trait_type": "Wisdom",
-      "value": 37
+      "value": 46
     },
     {
       "display_type": "number",
       "trait_type": "Dexterity",
-      "value": 66
+      "value": 63
     },
     {
       "display_type": "number",
       "trait_type": "Charisma",
-      "value": 53
+      "value": 69
     },
     {
       "display_type": "number",
       "trait_type": "Resilience",
-      "value": 64
+      "value": 58
     },
     {
       "display_type": "number",
@@ -93,7 +93,15 @@
     {
       "display_type": "number",
       "trait_type": "Base rating",
-      "value": 2.2
+      "value": 2.4
+    },
+    {
+      "trait_type": "Memorandi I",
+      "value": "Sharamurri was once a loved and respected Bura, one of the best hunters of his tribe is now a derailed, mentally ill soul. Catalyst for which, were the acts committed by his fellow tribesmen of the brutal Akunani. His wife raped and killed in a drunken rampage, while the three devils responsible, instead of paying for their crimes, were sheltered by a chief, the uncle of one of the wrongdoers. With the chance for justice taken away from him, he fell victim once again, now to madness. After some time Sharamurri was nowhere to be seen, leaving no clues and the Burakin worried. The only links to the lost soul, too terrifying to believe even for the Akunani, could have been the dismembered bodies, occasionally found in the forest, on the ground or impaled on stakes. No one wanted to believe, but everyone felt guilty..."
+    },
+    {
+      "trait_type": "ID",
+      "value": 1382
     }
   ],
   "properties": {

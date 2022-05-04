@@ -1,9 +1,9 @@
 {
-  "name": "Bura #810",
+  "name": "Gaiari Naru (Strong Foot)",
   "symbol": "GGB",
   "description": "The Bura are a large human-like Genus with considerable racial diversity as indicated by skin and hair colour. The Bura live largely remote and cut off from the rest of Gyris on the high elevation plateaus collectively known as 'The Buralands'. Atop these highlands you find dense forest, high mountains, deep cuts and valleys. Thunderous rivers but also endless branches of creek forks cutting lines in the mountainside. Families carve, paths into the earthen clay and form walkways from their hut to the waterways to wash and bath and fish. To each Bura, their fated Dua, a weapon to fight The Darkness that grows in the very forests that feed them.",
-  "image": "810.jpg",
-  "external_url": "https://gyris.io/drops/bura/810",
+  "image": "https://arweave.net/N6kmddC9_mkERGwIeSxWq_4tWZL3VtodqAbIfWoriww?ext=jpg",
+  "external_url": "https://gyris.io/rarity/bura?id=810",
   "seller_fee_basis_points": 600,
   "background_color": "fff",
   "attributes": [
@@ -94,6 +94,14 @@
       "display_type": "number",
       "trait_type": "Base rating",
       "value": 3.1
+    },
+    {
+      "trait_type": "Memorandi I",
+      "value": "Gaiari Naru (Strong Foot), Chief Bu-Raa-Oo of the Motun, was named at 3 years old when he disappeared from his village. When he was found days later he was many kilometres away, still climbing the mountains that overlooked Motun. \n\nWhen asked, \"Why did you run away\" he replied, \"disla bayadja oomi\" - this is my sky. Though his fated Dua was the Dua-Oo he is more than a warrior, proficient in the hunt and the making of things. \n"
+    },
+    {
+      "trait_type": "ID",
+      "value": 810
     }
   ],
   "properties": {

@@ -2,8 +2,8 @@
   "name": "Bura #1883",
   "symbol": "GGB",
   "description": "The Bura are a large human-like Genus with considerable racial diversity as indicated by skin and hair colour. The Bura live largely remote and cut off from the rest of Gyris on the high elevation plateaus collectively known as 'The Buralands'. Atop these highlands you find dense forest, high mountains, deep cuts and valleys. Thunderous rivers but also endless branches of creek forks cutting lines in the mountainside. Families carve, paths into the earthen clay and form walkways from their hut to the waterways to wash and bath and fish. To each Bura, their fated Dua, a weapon to fight The Darkness that grows in the very forests that feed them.",
-  "image": "1883.jpg",
-  "external_url": "https://gyris.io/drops/bura/1883",
+  "image": "https://arweave.net/HvUnSxGS-4QjpcX1k7jVxJu-KGyKkbwT0aH-pNnXXGI?ext=jpg",
+  "external_url": "https://gyris.io/rarity/bura?id=1883",
   "seller_fee_basis_points": 600,
   "background_color": "fff",
   "attributes": [
@@ -94,6 +94,10 @@
       "display_type": "number",
       "trait_type": "Base rating",
       "value": 2.2
+    },
+    {
+      "trait_type": "ID",
+      "value": 1883
     }
   ],
   "properties": {

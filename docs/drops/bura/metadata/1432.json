@@ -2,8 +2,8 @@
   "name": "Bura #1432",
   "symbol": "GGB",
   "description": "The Bura are a large human-like Genus with considerable racial diversity as indicated by skin and hair colour. The Bura live largely remote and cut off from the rest of Gyris on the high elevation plateaus collectively known as 'The Buralands'. Atop these highlands you find dense forest, high mountains, deep cuts and valleys. Thunderous rivers but also endless branches of creek forks cutting lines in the mountainside. Families carve, paths into the earthen clay and form walkways from their hut to the waterways to wash and bath and fish. To each Bura, their fated Dua, a weapon to fight The Darkness that grows in the very forests that feed them.",
-  "image": "1432.jpg",
-  "external_url": "https://gyris.io/drops/bura/1432",
+  "image": "https://arweave.net/h6rdGvOTjO7k-fmWN3Igufe_vBaiT-DSAgxPQKDvs6U?ext=jpg",
+  "external_url": "https://gyris.io/rarity/bura?id=1432",
   "seller_fee_basis_points": 600,
   "background_color": "fff",
   "attributes": [
@@ -58,32 +58,32 @@
     {
       "display_type": "number",
       "trait_type": "Strength",
-      "value": 46
+      "value": 63
     },
     {
       "display_type": "number",
       "trait_type": "Intelligence",
-      "value": 45
+      "value": 47
     },
     {
       "display_type": "number",
       "trait_type": "Wisdom",
-      "value": 81
+      "value": 86
     },
     {
       "display_type": "number",
       "trait_type": "Dexterity",
-      "value": 15
+      "value": 17
     },
     {
       "display_type": "number",
       "trait_type": "Charisma",
-      "value": 54
+      "value": 61
     },
     {
       "display_type": "number",
       "trait_type": "Resilience",
-      "value": 65
+      "value": 71
     },
     {
       "display_type": "number",
@@ -93,7 +93,11 @@
     {
       "display_type": "number",
       "trait_type": "Base rating",
-      "value": 1.4
+      "value": 2.4
+    },
+    {
+      "trait_type": "ID",
+      "value": 1432
     }
   ],
   "properties": {
