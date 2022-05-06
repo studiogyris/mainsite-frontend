@@ -1321,6 +1321,8 @@ ul.coloured li:before {
     max-width: 50%;
   }
 
+  
+
   .value-row .column {
     -webkit-flex-basis: 50%;
     -ms-flex-preferred-size: 50%;
@@ -1333,6 +1335,11 @@ ul.coloured li:before {
   .quote{
     margin-right: 425px;
   }
+
+  #buy-now-mobile {
+    display: none !important;
+  }
+
   .quote-in-text{
     padding-left: 170px;
     padding-right: 170px;
