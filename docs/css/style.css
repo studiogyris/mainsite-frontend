@@ -712,6 +712,20 @@ header {
   border-radius: 50%;
   z-index: 25;
 }
+
+.completed:before {
+  content: "";
+  width: 44px;
+  height: 44px;
+  background-color: #42816C !important;
+  display: block;
+  position: absolute;
+  right: -72px;
+  top: 34px;
+  border-radius: 50%;
+  z-index: 25;
+}
+
 .roadmap-item-wrap:after {
   content: "";
   width: 18px;
