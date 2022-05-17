@@ -2029,7 +2029,6 @@ section#our-team .team-member-avatar {
   display: flex;
   opacity: 0;
   position: absolute;
-  top: 0px;
   flex-direction: column;
   width: 315px;
   background: rgb(36 36 36);
@@ -2041,6 +2040,7 @@ section#our-team .team-member-avatar {
   margin-left: -27px;
   align-items: center;
   transition: opacity 0.5s ease-out;
+  margin-top: -469px;
 }
 .team-card .top {
   border-bottom: 1px solid #636262;
