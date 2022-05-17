@@ -512,6 +512,9 @@ header {
   display: flex;
   flex-direction: column;
 }
+.story-images-column .story-image-wrap img:nth-child(2) {
+  width: 85%;
+}
 .story-image-wrap img {
   border-radius: 21px;
   border: 1px solid #764342;
