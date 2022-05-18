@@ -1152,17 +1152,17 @@ footer .copyright-column {
 }
 
 .number-column {
-  -webkit-flex-basis: 274px;
-  -ms-flex-preferred-size: 274px;
-  flex-basis: 274px;
-  max-width: 274px;
+  -webkit-flex-basis: 150px;
+  -ms-flex-preferred-size: 150px;
+  flex-basis: 150px;
+  max-width: 150px;
 }
 
 .max-column {
-  -webkit-flex-basis: 274px;
-  -ms-flex-preferred-size: 274px;
-  flex-basis: 274px;
-  max-width: 274px;
+  -webkit-flex-basis: 210px;
+  -ms-flex-preferred-size: 210px;
+  flex-basis: 210px;
+  max-width: 210px;
 }
 .max-column .btn {
   margin-bottom: 20px;
@@ -2053,4 +2053,138 @@ section#our-team .team-member-avatar {
 }
 #our-team .team-list .team-item img {
   width: 100%;
+}
+
+.boxes ul {
+  padding: 0px;
+  margin: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.boxes li {
+  list-style: none;
+}
+
+.boxes h3 {
+  font-size: 23px;
+  text-align: center;
+}
+
+.boxes {
+  margin-bottom: 50px;
+  margin-top: 50px;
+}
+
+.boxes li img {
+  border-radius: 12px;
+}
+.boxes li.active img {
+  opacity: 1;
+  width: 100%;
+  display: block;
+}
+
+.boxes li img {
+  opacity: 0.3;
+  display: block;
+}
+
+.boxes li {
+  text-align: center;
+}
+
+.boxes li span {
+  font-size: 18px;
+  margin-top: 20px;
+  display: block;
+  font-weight: bold;
+  color: #24b679;
+}
+
+.boxes li a {
+  text-decoration: none;
+}
+
+.boxes li.active span {
+  color: white;
+}
+.line-box {
+  border: 1px solid white;
+  padding: 25px 50px;
+  border-radius: 10px;
+  margin-bottom: 50px;
+}
+.team-table table {
+  width: 100%;
+}
+
+.team-table table th {
+  background: #e43544;
+
+  font-size: 16px;
+  padding: 10px 7px;
+}
+.team-table table td img {
+  width: 37px;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 10px;
+  border: 1px solid #616161;
+}
+
+.team-table table td ul {
+  padding: 0px;
+  margin: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.team-table table td ul li {
+  list-style: none;
+}
+
+.team-table table td ul li img {
+  width: 20px;
+  border: none;
+}
+.team-table table th.name {
+  width: 60%;
+}
+
+.team-table table th.department {
+  width: 30%;
+}
+
+.team-table table th.social-links {
+  text-align: center;
+}
+
+.department {
+  text-align: center;
+}
+.team-table td {
+  padding: 6px 7px;
+  border: 1px solid #2b2b2b;
+}
+
+.process-row {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+input#input-buraid {
+  z-index: 100;
+  position: relative;
+  width: 200px;
+  font-size: 21px;
+  font-weight: bold;
+}
+#fetch-btn {
+  min-width: 200px;
+  padding-right: 0px;
 }

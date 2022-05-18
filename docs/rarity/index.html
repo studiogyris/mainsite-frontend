@@ -1,190 +1,170 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <title>Gyris: Rarity</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
+    <script src="/js/rarity.bundle.js" async defer></script>
+    <meta name="msapplication-TileColor" content="#da532c" />
+    <meta name="theme-color" content="#ffffff" />
+  </head>
 
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-	<title>Gyris: Rarity</title>
-	<link rel="stylesheet" href="/css/style.css">
-	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-	<link rel="manifest" href="/site.webmanifest">
-	<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
-	<script src="/js/rarity.bundle.js" async defer></script>
-	<meta name="msapplication-TileColor" content="#da532c">
-	<meta name="theme-color" content="#ffffff">
-</head>
+  <body>
+    <header id="header">
+      <div class="container">
+        <div class="row header-row">
+          <div class="column brand-column">
+            <a href="/">
+              <img src="/img/logo.svg" alt="" />
+            </a>
+          </div>
+          <div class="column follow-column">
+            Follow Us:
+            <ul>
+              <li>
+                <a href="https://discord.gg/gyris" target="_blank">
+                  <img src="/img/discord.svg" alt="" />
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/gyris_official" target="_blank">
+                  <img src="/img/twitter.svg" alt="" />
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="column main-menu-column">
+            <ul>
+              <li>
+                <a href="/manifesto">Manifesto</a>
+              </li>
+              <li>
+                <a href="/epf">GYRIS-EPF</a>
+              </li>
+              <li>
+                <a href="/metaverse">Metaverse</a>
+              </li>
+              <li>
+                <a href="/rarity">Rarity</a>
+              </li>
+            </ul>
+          </div>
+          <div class="column cta-column">
+            <!--<a href="#" class="btn red-button">mint</a>-->
+            <a
+              id="mint-btn-home"
+              class="btn green-button"
+              target="_blank"
+              href="https://magiceden.io/marketplace/gyris_genesis"
+              >BUY NOW</a
+            >
+            <div class="info-block"></div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main>
+      <section id="data">
+        <div class="container">
+          <div class="row">
+            <h2 class="text-center" style="display: block; width: 100%">
+              Rarity and Scoring
+            </h2>
+            <div class="column">
+              <div class="line-box">
 
-<body>
-	<header id="header">
-		<div class="container">
-			<div class="row header-row">
-				<div class="column brand-column">
-					<a href="/">
-						<img src="/img/logo.svg" alt="">
-					</a>
-				</div>
-				<div class="column follow-column">
-					Follow Us:
-					<ul>
-						<li>
-							<a href="https://discord.gg/gyris" target="_blank">
-								<img src="/img/discord.svg" alt="">
-							</a>
-						</li>
-						<!--<li>
-						<a href="#">
-							<img src="img/logomark.svg" alt="">
-						</a>
-					</li>-->
-						<li>
-							<a href="https://twitter.com/gyris_official" target="_blank">
-								<img src="/img/twitter.svg" alt="">
-							</a>
-						</li>
-						<!--<li>
-						<a href="#">
-							<img src="img/mediu.svg" alt="">
-						</a>
-					</li>-->
-					</ul>
-				</div>
-				<div class="column main-menu-column">
-					<ul>
-						<li>
-							<a href="/manifesto">Manifesto</a>
-						</li>
-						<li>
-							<a href="/epf">GYRIS-EPF</a>
-						</li>
-						<li>
-							<a href="/metaverse">Metaverse</a>
-						</li>
-						<li>
-							<a href="/rarity">Rarity</a>
-						</li>
-						
-					</ul>
-				</div>
-				<div class="column cta-column">
-					<!--<a href="#" class="btn red-button">mint</a>-->
-					<a id="mint-btn-home" class="btn green-button" target="_blank" href="https://magiceden.io/marketplace/gyris_genesis">BUY NOW</a>
-					<div class="info-block">
-						
-					</div>
-				</div>
-			</div>
-		</div>
-	</header>
-	<main>
-		<section id="data">
-			<div class="container">
+							
+							<p>
+                Rarity in Gyris is interpreted slightly differently, rather than
+                judging value purely by multiplying the chances for rolling
+                specific traits we decided to split the scoring in two: visual
+                score and a non-visual score ( a.k.a Base rating ) and by
+                combining the two one would get a value for relative comparison
+                of two unique items from the same collection.
+              </p>
 
-				<div class="row">
-					<h1 style="padding:10px;" id="main-h">Please input Bura ID below and click 'FETCH'</h1>
+              <h3>Visual scoring</h3>
+              <p>
+                Instead of giving each trait a visual score based on it’s chance
+                for rolling, we assigned each trait to a Rarity Tier. The tiers
+                and their naming will be familiar to anyone who has played RPG
+                games: Common, Uncommon , Rare , Epic , Legendary and Divine.
+                Each tier is given score/value points and the final visual score
+                is the sum of all traits. You can see the detailed scoring and
+                tier of each trait here.
+              </p>
 
-
-					<div class="process-row">
-
-						<div class="column  number-column">
-
-							<div class="number-input">
-
-								<input id="input-buraid" type="number" value="" min="0" max="2734">
-
-							</div>
+              <h3>Non-visual scoring ( Base rating )</h3>
+              <p>
+                Here the score is calculated based on how maxed out the scores
+                from the items subclass limits. Each non-visual attrobute is
+                generated with a gamma function and the floor and upper limits
+                are determined by it’s subclass limitations.......
+              </p>
 						</div>
-						<div class="column max-column">
-							<a id="fetch-btn" class="btn green-button">Fetch</a>
-						</div>
+            </div>
+            <div class="column">
+              <h2 class="text-center" style="display: block; width: 100%">
+                Choose a collection to look up Rarity and scores
+              </h2>
 
-					</div>
-					<div class=" column image-column">
-						<img id="img-bura" src="/img/mint-gif.gif" alt="">
+              <div class="boxes">
+                <h3>Genesis Collections</h3>
+								<ul>
+									<li class="active"><a href="#"><img src="/img/story-1.png"/><span>Bura</span></a></li>
+									<li><img src="/img/story-2.png"/><span>Mara</span></li>
+									<li><img src="/img/story-3.png"/><span>Minjierri</span></li>
+									<li><img src="/img/story-4.png"/><span>Dharwar</span></li>
+								</ul>
+              </div>
 
-
-					</div>
-					<div>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<br></div>
-					<div id='tier-coloring' style="display:none;">
-						<div style="font-size:200%;"><strong>Tier coloring:</strong></div>
-						<div style="color:rgb(136, 138, 136);"><strong>Common</strong></div>
-						<div style="color:rgb(94, 255, 30);"><strong>Uncommon</strong></div>
-						<div style="color:rgb(38, 81, 224);"><strong>Rare</strong></div>
-						<div style="color:rgb(179, 65, 207);"><strong>Epic</strong></div>
-						<div style="color:rgb(226, 167, 41);"><strong>Legendary</strong></div>
-						<div style="color:rgb(255, 255, 255);"><strong><i>Divine</i></strong></div>
-						<div><strong style="color:rgb(98, 63, 63);">Special&nbsp</strong>( Unique to special buras )
-						</div>
-						<br>
-						<div style="border:1px solid red;padding: 12px;border-radius:15px;">
-							<strong>
-								<div style="font-size:160%;color:red;"><strong>Bura scores:</strong></div>
-								<br>
-								<div>Visual score: &nbsp<span style="color:red;" id="vis-score">?</span></div>
-								<br>
-								<div>Non-visual score: &nbsp<span style="color:red;" id="nonvis-score">?</span></div>
-								<div>________</div>
-								<div>Combined score: &nbsp<span style="color:red;" id="combined-score">?</span></div>
-							</strong>
-
-						</div>
-					</div>
-					<div class='row'>
-						<div>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div>
-						<div class="">
-
-							<div id="vis-attr-wrap" style="line-height:2;">
-
-							</div>
-						</div>
-						<div>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div>
-						<div>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div>
-						<div class="">
-							<div>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div>
-							<div id="nonvis-attr-wrap">
-
-							</div>
-						</div>
-					</div>
-
-
-				</div>
-			</div>
-			</div>
-		</section>
-	</main>
-	<footer>
-		<div class="container">
-			<div class="row footer-row">
-				<div class="column footer-social text-center">
-					<ul>
-						<li>
-							<a href="https://discord.gg/gyris" target="_blank">
-								<img src="/img/discord-2.svg" alt="">
-							</a>
-						</li>
-						<!-- <li>
-                    <a href="#">
-                      <img src="/img/logomark-2.svg" alt="" />
-                    </a>
-                </li> -->
-						<li>
-							<a href="https://twitter.com/gyris_official" target="_blank">
-								<img src="/img/twitter-2.svg" alt="">
-							</a>
-						</li>
-					</ul>
-				</div>
-				<div class="column copyright-column text-center">
-					Copyright © 2022 Gyris
-				</div>
-			</div>
-		</div>
-	</footer>
-	<script src="/libs/jquery/jquery-3.3.1.min.js"></script>
-
-	<script src="/js/jq.js"></script>
-</body>
-
+              <div class="boxes">
+                <h3>Genesis companion animalia</h3>
+								<ul>
+									<li><img src="/img/story-1.png"/><span>Ogg</span</li>
+									<li><img src="/img/story-2.png"/><span>TBA</span</li>
+									<li><img src="/img/story-3.png"/><span>TBA</span</li>
+									<li><img src="/img/story-4.png"/><span>TBA</span</li>
+								</ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <div class="container">
+        <div class="row footer-row">
+          <div class="column footer-social text-center">
+            <ul>
+              <li>
+                <a href="https://discord.gg/gyris" target="_blank">
+                  <img src="/img/discord-2.svg" alt="" />
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/gyris_official" target="_blank">
+                  <img src="/img/twitter-2.svg" alt="" />
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="column copyright-column text-center">
+            Copyright © 2022 Gyris
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="/libs/jquery/jquery-3.3.1.min.js"></script>
+    <script src="/js/jq.js"></script>
+  </body>
 </html>
