@@ -1973,8 +1973,8 @@ ul.coloured li:before {
   list-style: none;
   margin: 0px;
   padding: 25px;
-  height: 530px;
-  margin-bottom: 49px;
+  height: 350px;
+  margin-bottom: 196px;
 }
 
 section#our-team h3 {
@@ -2024,8 +2024,13 @@ section#our-team .team-member-avatar {
   padding: 0px;
   font-size: 13px;
 }
+#our-team .team-item:hover  {
+  opacity: 1;
+  background: transparent
+}
 #our-team .team-item:hover .team-card {
   opacity: 1;
+  background: linear-gradient(45deg, rgb(25 25 25), transparent);
 }
 .team-card {
   display: flex;
@@ -2187,4 +2192,10 @@ input#input-buraid {
 #fetch-btn {
   min-width: 200px;
   padding-right: 0px;
+}
+.description {
+  font-size: 13px;
+}
+#our-team .team-item:hover .team-member-details {
+  opacity: 0;
 }
