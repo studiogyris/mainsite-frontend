@@ -1956,7 +1956,6 @@ ul.coloured li:before {
 
 #our-team .team-list {
   padding: 0px;
-  width: 1200px;
   margin: 0 auto;
   max-width: 100%;
 }
@@ -1987,7 +1986,15 @@ section#our-team .team-member-avatar {
   margin: 0px;
   margin-top: 20px;
 }
-
+#our-team .team-item:hover .team-member-avatar:before {
+  content: ' ';
+  width: 100% !important;
+  box-shadow: inset 0px 425px 625px -325px #000;
+  height: 324px;
+  display: block;
+  position: absolute;
+  border-radius: 20px;
+}
 .team-card {
   display: none;
 }
@@ -2024,13 +2031,12 @@ section#our-team .team-member-avatar {
   padding: 0px;
   font-size: 13px;
 }
-#our-team .team-item:hover  {
+#our-team .team-item:hover {
   opacity: 1;
-  background: transparent
 }
 #our-team .team-item:hover .team-card {
   opacity: 1;
-  background: linear-gradient(45deg, rgb(25 25 25), transparent);
+  background: transparent;
 }
 .team-card {
   display: flex;
@@ -2038,21 +2044,20 @@ section#our-team .team-member-avatar {
   position: absolute;
   flex-direction: column;
   width: 374px;
-  background: rgb(36 36 36);
+  background: transparent;
   border-radius: 25px;
   list-style: none;
   margin: 0px;
   padding: 25px;
-  height: 530px;
+  height: 350px;
   margin-left: -27px;
   align-items: center;
   transition: opacity 0.5s ease-out;
   margin-top: -508px;
 }
 .team-card .top {
-  border-bottom: 1px solid #636262;
   padding: 0px 0px 5px 0px;
-  margin-bottom: 13px;
+  margin-bottom: 0px;
   width: 99%;
   justify-content: space-between;
 }
