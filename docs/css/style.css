@@ -1988,12 +1988,13 @@ section#our-team .team-member-avatar {
 }
 #our-team .team-item:hover .team-member-avatar:before {
   content: ' ';
-  width: 100% !important;
-  box-shadow: inset 0px 425px 625px -325px #000;
-  height: 324px;
+  width: 298px !important;
+  height: 299px;
   display: block;
   position: absolute;
   border-radius: 20px;
+  margin-left: 34px;
+  background: linear-gradient(180deg, #000000d1, #0000002b);
 }
 .team-card {
   display: none;
@@ -2204,7 +2205,7 @@ input#input-buraid {
   font-size: 13px;
 }
 #our-team .team-item:hover .excerpt {
-  opacity:0;
+  opacity: 0;
 }
 
 #our-team .team-item .main {
@@ -2501,4 +2502,9 @@ w {
 .details span {
   font-weight: 700;
   font-size: 18px;
+}
+section#our-team .team-member-avatar img {
+  width: 300px !important;
+  margin: 0 auto !important;
+  display: block;
 }
