@@ -1994,7 +1994,7 @@ section#our-team .team-member-avatar {
   position: absolute;
   border-radius: 20px;
   margin-left: 34px;
-  background: linear-gradient(180deg, #000000d1, #0000002b);
+  background: linear-gradient(180deg, #343033, #00000096);
 }
 .team-card {
   display: none;
@@ -2221,11 +2221,12 @@ input#input-buraid {
 }
 
 .row.other-information h3 {
-  font-size: 30px;
+  font-size: 36px;
   text-align: center;
   display: block;
   width: 100%;
   color: #2b886c;
+  margin-top: 75px;
 }
 
 .memorandum {
