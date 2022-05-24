@@ -2225,8 +2225,9 @@ input#input-buraid {
   text-align: center;
   display: block;
   width: 100%;
-  color: #2b886c;
+  color: #fff;
   margin-top: 75px;
+  margin-bottom: 0px;
 }
 
 .memorandum {
@@ -2236,17 +2237,19 @@ input#input-buraid {
   text-align: justify;
   width: 1000px;
   margin: 0 auto;
+  line-height: 24px;
 }
 
 .memorandum h4 {
   text-align: center;
   font-size: 30px;
   margin: 0px;
+  color: #2b886c;
 }
 
 .row.top-details {
   display: flex;
-  background: #1a0a0a;
+  background: #1a0a0a url(../img/bg3.png);
   border-radius: 60px;
   padding: 50px 50px !important;
   align-items: flex-start !important;
@@ -2254,9 +2257,8 @@ input#input-buraid {
   margin: 0 auto;
   margin-top: 50px;
   justify-content: space-between;
-}
-
-w {
+  background-size: cover;
+  background-position: center;
 }
 
 .image-section {
@@ -2329,13 +2331,13 @@ w {
 }
 
 .attribute-list h3 {
-  border-top: 2px solid #2b886c;
   display: inline-table;
-  padding: 14px 5px 0px 5px;
+  padding: 0px 5px 0px 5px;
   letter-spacing: 5px;
   font-weight: 700;
   color: #a7a1a1;
   margin-bottom: 13px;
+  margin-top: 0px;
 }
 
 .attribute-list {
@@ -2347,7 +2349,9 @@ w {
   width: 300px;
   margin: 0 auto;
   padding: 22px 0px;
-  background: #1a1c1c;
+  background: #1a1c1c url(../img/bg4.png);
+  background-size: cover;
+  background-position: center;
 }
 
 .attribute-section .list ul {
@@ -2404,12 +2408,16 @@ w {
 .height span {
   margin-left: 6px;
 }
+.top-details {
+  height: 950px !important;
+}
 .row.middle-details {
-  width: 1000px;
+  width: 860px;
   margin: 50px auto;
   display: flex;
   justify-content: space-between !important;
   padding: 0px 0px !important;
+  margin-top: -200px;
 }
 
 .tier {
@@ -2417,16 +2425,29 @@ w {
 }
 
 .visual {
-  width: 43%;
+  width: 420px;
   border: 1px solid #5e5e5e;
   border-radius: 25px;
-  background: #1a0a0ab3;
+  background: url(../img/bg2.png);
+    background-size: cover;
+    background-position: center;
+  height: 400px;
 }
 
 .score {
-  width: 27%;
+  width: 420px;
+  border: 1px solid #5e5e5e;
+  border-radius: 25px;
+  background: url(../img/bg1.png);
+    background-size: cover;
+    background-position: center;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
 
+.about-details h3,
 .tier h3 {
   font-size: 25px;
 }
@@ -2434,6 +2455,7 @@ w {
 .row.middle-details ul {
   padding: 0px;
   margin: 0px;
+  width: 80%;
 }
 
 .row.middle-details li {
@@ -2454,7 +2476,6 @@ w {
 .score li {
   display: block;
   margin-bottom: 7px;
-  display: flex;
 }
 
 .score li span {
@@ -2474,6 +2495,7 @@ w {
 }
 .visual h3 {
   text-align: center;
+  color: red;
   font-size: 25px;
 }
 
@@ -2508,4 +2530,117 @@ section#our-team .team-member-avatar img {
   width: 300px !important;
   margin: 0 auto !important;
   display: block;
+}
+
+.sub-heading {
+  width: 600px;
+  margin: 0 auto;
+  margin-bottom: 40px;
+}
+
+.row.about-box {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.about-details {
+  width: 50%;
+}
+
+.tier ul {
+  padding: 0px;
+  margin: 0px;
+}
+
+.tier li {
+  list-style: none;
+}
+
+.mt-50 {
+  margin-top: 50px;
+}
+
+.attrubute-extended {
+  border: 1px solid #2b886c;
+  border-radius: 30px;
+  margin-top: 20px;
+  padding: 20px 0px;
+  background: url(../img/bg2.png);
+  background-size: cover;
+  background-position: center;
+}
+
+.attrubute-extended .apprecntice {
+  margin: 20px auto;
+}
+p.other-info-text {
+  width: 600px;
+  margin: 0 auto;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 75px;
+  max-width: 100%;
+}
+.tooltip {
+  position: relative; /* making the .tooltip span a container for the tooltip text */
+  border-bottom: 1px dashed #000; /* little indicater to indicate it's hoverable */
+}
+.tooltip:before {
+  content: attr(data-text); /* here's the magic */
+  position: absolute;
+
+  /* vertically center */
+  top: 50%;
+  transform: translateY(-50%);
+
+  /* move to right */
+  left: 100%;
+  margin-left: 15px; /* and add a small left margin */
+
+  /* basic styles */
+  width: 150px;
+  padding: 10px;
+  border-radius: 10px;
+  background: #000;
+  color: #fff;
+  text-align: center;
+  font-size: 12px;
+  display: none; /* hide by default */
+}
+
+.tooltip:hover:before {
+  display: block;
+}
+
+.main-bar {
+  background: #2b886c;
+  border-radius: 20px;
+  width: 100%;
+  height: 8px;
+  display: block;
+  margin: 10px auto;
+}
+.row.middle-details li .bar {
+  display: flex;
+}
+.score .title {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 19px;
+  line-height: 29px;
+
+  color: #1c8d6b;
+
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  margin-bottom: 20px;
+  text-transform: capitalize;
+  margin-top: 20px;
+}
+.score-bar {
+  width: 90px;
+  height: 8px;
+
+  background: #f50000;
+  border-radius: 20px;
 }
