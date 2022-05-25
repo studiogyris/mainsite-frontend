@@ -2310,6 +2310,8 @@ input#input-buraid {
 }
 .attribute-section .title span {
   margin-left: 20px;
+  font-weight: normal;
+  font-size: 18px;
 }
 
 .att-title {
@@ -2409,7 +2411,7 @@ input#input-buraid {
   margin-left: 6px;
 }
 .top-details {
-  height: 950px !important;
+  height: 890px !important;
 }
 .row.middle-details {
   width: 860px;
@@ -2429,8 +2431,8 @@ input#input-buraid {
   border: 1px solid #5e5e5e;
   border-radius: 25px;
   background: url(../img/bg2.png);
-    background-size: cover;
-    background-position: center;
+  background-size: cover;
+  background-position: center;
   height: 400px;
 }
 
@@ -2439,8 +2441,8 @@ input#input-buraid {
   border: 1px solid #5e5e5e;
   border-radius: 25px;
   background: url(../img/bg1.png);
-    background-size: cover;
-    background-position: center;
+  background-size: cover;
+  background-position: center;
   height: 400px;
   display: flex;
   align-items: center;
@@ -2504,9 +2506,12 @@ input#input-buraid {
   margin: 0 auto;
   border-spacing: 0; /* Removes the cell spacing via CSS */
   border-collapse: collapse;
-  margin-bottom: 21px;
+  margin-bottom: 0px;
 }
-
+span.tooltip-hover i {
+  color: red;
+  margin-left: 18px;
+}
 .visual table td {
   border-right: 1px solid white;
   position: relative;
@@ -2586,29 +2591,22 @@ p.other-info-text {
   position: relative; /* making the .tooltip span a container for the tooltip text */
   border-bottom: 1px dashed #000; /* little indicater to indicate it's hoverable */
 }
-.tooltip:before {
-  content: attr(data-text); /* here's the magic */
+.tooltip-box {
   position: absolute;
-
-  /* vertically center */
-  top: 50%;
-  transform: translateY(-50%);
-
-  /* move to right */
-  left: 100%;
-  margin-left: 15px; /* and add a small left margin */
-
-  /* basic styles */
-  width: 150px;
-  padding: 10px;
-  border-radius: 10px;
-  background: #000;
-  color: #fff;
-  text-align: center;
+  background: black;
+  color: white;
+  font-weight: normal;
   font-size: 12px;
-  display: none; /* hide by default */
+  line-height: 16px;
+  padding: 10px 13px;
+  border-radius: 6px;
+  width: 200px;
+  margin-top: -110px;
+  display: none;
 }
-
+.row.middle-details li:hover .tooltip-box {
+  display: block;
+}
 .tooltip:hover:before {
   display: block;
 }
@@ -2643,4 +2641,35 @@ p.other-info-text {
 
   background: #f50000;
   border-radius: 20px;
+}
+
+span.tooltip-hover i {
+  color: red;
+  margin-left: 18px;
+}
+
+.tooltip-hover .tier {
+  width: 200px;
+  background: black;
+  padding: 20px;
+  border-radius: 4px;
+  border: 1px solid #525252;
+  position: absolute;
+  margin-top: -323px;
+  margin-left: -111px;
+  display: none;
+}
+
+.tooltip-hover .tier h3 {
+  font-size: 15px;
+  text-align: left;
+}
+
+.tooltip-hover .tier ul li {
+  line-height: 15px;
+  font-size: 14px;
+}
+
+.tooltip-hover:hover .tier {
+  display: block;
 }
