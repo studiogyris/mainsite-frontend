@@ -69,7 +69,9 @@ async function main(){
     hide('mint-controls-form');
   }
   // gets lamports in currently connected wallets account
-  
+  async function getUserBalance() {
+    return await bag.sol.provider.connection.getBalance(bag.sol.walletProvider.publicKey);
+  }
   // returns true/false based on an attempt to create an RPC connection and save it in bag.sol.provider
   function connectRpc() {
     var success = true;
@@ -118,7 +120,25 @@ async function main(){
   async function sleep(ms){
     return new Promise(resolve => setTimeout(resolve, ms));
   }
- 
+  // updates countdown to public mint
+  async function updateCountDown() {
+    const {goLiveDate} = bag.cmState;
+
+    const timeDelta = (goLiveDate - Date.now())/1000 ; // <---remove last added part after minus sign
+    var hours   = Math.floor(timeDelta / 3600);
+    var minutes = Math.floor((timeDelta - (hours * 3600)) / 60);
+    var seconds = (timeDelta - (hours * 3600) - (minutes * 60)).toFixed(0);
+
+    if (hours   < 10) {hours   = "0"+hours;}
+    if (minutes < 10) {minutes = "0"+minutes;}
+    if (seconds < 10) {seconds = "0"+seconds;}
+
+    if (parseInt(hours+minutes+seconds)==0) {
+      reflectState();
+    }
+    
+    editext('countdown','['+hours+':'+minutes+':'+seconds+']');
+  }
   // fetches and updates candy machine state variables and constants
   async function updateCMStateVars(){
     bag.cmState.raw = await fetchCMState();
@@ -128,26 +148,44 @@ async function main(){
       bag.cmState.itemsSold = fetchedItemsSold;
     }
     bag.cmState.itemsLeft = bag.cmState.totalItems -  bag.cmState.itemsSold;
-    
-    
-    
+    bag.cmState.price = bag.cmState.raw.data.price;
+    bag.cmState.formattedPrice = (bag.cmState.price/1000000000).toFixed(2);
+    bag.cmState.goLiveDate = new Date(bag.cmState.raw.data.goLiveDate.toNumber() * 1000);
+    const whiteListDateTS = Date.parse(bag.cmState.goLiveDate) - CFG.fromWLtoPublic;
+    bag.cmState.WLDate= new Date(whiteListDateTS);
     return;
   }
   // returns milliseconds till either public or whitelist sale
   // returned positive number means the date is in future
-  
+  function getTimeDelta(sale = 'PUB',mode = 'ms') {
+    const date = sale == 'WL' ? bag.cmState.WLDate : bag.cmState.goLiveDate;
+    const timeDeltaMs = date  - Date.now();
+    if (mode=='ms') {
+      return timeDeltaMs;
+    } else if ( mode =='s' ){
+      return timeDeltaMs/1000;
+    } else if (mode== 'm') {
+      return timeDeltaMs/60000;
+    } else if (mode=='h') {
+      return timeDeltaMs/3600000;
+    }
+    
+  }
   // fetches state and reflects on the UI
   async function reflectState() {
     await updateCMStateVars();
     const {
       totalItems,
       itemsSold,
-      itemsLeft
+      itemsLeft,
+      price,
+      goLiveDate,
+      formattedPrice
     } = bag.cmState;
     
     if (!bag.staticInfoInitialized) {
       editext('total-items-amount',totalItems);
-      editext('price','FREE');//here
+      editext('price',formattedPrice);//here
       clicksen('connect-btn',onClickConnect);
       bag.staticInfoInitialized=true;
     }
@@ -158,8 +196,15 @@ async function main(){
     if (itemsSold>=totalItems) {
       // STATE: SOLD OUT
       setState(3);
-    } else {
+    } else if (getTimeDelta('PUB') < 0) {
+      // STATE: PUBLIC SALE
+      setState(2*sign);
+    } else if (getTimeDelta('WL') < 0) {
+      // STATE: WHITELIST SALE
       setState(1*sign);
+    } else {
+      // STATE: PRE WHITELIST
+      setState(0);
     } 
   }
   // changes UI elements based on the provided state number
@@ -205,21 +250,45 @@ async function main(){
     return;
   }
   // responsible for the live countdown elements
-  
+  function updateWLCountdown(){
+    const {WLDate} = bag.cmState;
+
+    if ( ( WLDate-Date.now() )<0 || !gid('wl-countdown') ) return;
+
+    const timeDelta = (WLDate - Date.now())/1000;
+    var hours   = Math.floor(timeDelta / 3600);
+    var minutes = Math.floor((timeDelta - (hours * 3600)) / 60);
+    var seconds = (timeDelta - (hours * 3600) - (minutes * 60)).toFixed(0);
+
+    if (hours   < 10) {hours   = "0"+hours;}
+    if (minutes < 10) {minutes = "0"+minutes;}
+    if (seconds < 10) {seconds = "0"+seconds;}
+
+    if (parseInt(hours+minutes+seconds)==0) {
+      reflectState();
+    }
+    
+    editext('wl-countdown',hours+':'+minutes+':'+seconds);
+  }
   // based on current state modifies UI elements independently from user connection
   // only called by setState()
   function displayIndependentSaleStatus(saleState) {
     if (bag.ISS==saleState) return;
     if (saleState=='WL') {
-      editext('mint-phase','[ Mint open for Whitelisted members Only! ]');
-      
+      editext('mint-phase','[ Mint open for Whitelist members Only! ]');
+      if (!bag.countDownInterval) {
+        bag.countDownInterval = setInterval(updateCountDown,1000);
+      }
 
-      
+      unhide('countdown');
       gid('mint-phase').parentElement.style.color='cyan';
     } else if (saleState=='PUB') {
       editext('mint-phase','[ Mint open for public! ]');
       gid('mint-phase').parentElement.style.color='lightgreen';
-      
+      hide('countdown');
+    } else {
+      setPTitle(`Whitelist minting starts in<br><span id="wl-countdown">00:00:00<span>`);
+      setInterval(updateWLCountdown,1000);
     }
     bag.ISS=saleState;
   }
@@ -978,7 +1047,7 @@ async function main(){
     if (!bag.sol.walletProvider.publicKey) {
       await bag.solana.connect();
     }
-  
+    updateUserBalance();
     if (!(bag.cmState.currentState == 2)) {
       await updateWLStatus();
     }
@@ -1002,13 +1071,21 @@ async function main(){
       
     }
   }
-  
+  // fetches and updates the User's SOL balance
+  async function updateUserBalance(){
+    const balance = await getUserBalance();
+    const formattedBalance = (balance/constants.LAMPORTS_PER_SOL).toFixed(2)
+    bag.balances.sol.lamports=balance;
+    bag.balances.sol.formatted-formattedBalance;
+    editext('user-balance',formattedBalance + " SOL");
+    return;
+  }
   // reflects whitelist specific information on the UI
   async function updateWLStatus(){
     await updateWhitelistTokenBalance();
     
     if (  bag.balances.WLToken==0 ) {
-      setPTitle(`You have no whitelist tokens on the selected address!  :(`);
+      setPTitle(`You have no whitelist tokens!<br>Come back during public Mint.`);
       hide('mint-controls-form');
     } else if ( bag.cmState.itemsLeft ) {
       unhide('mint-controls-form');
@@ -1016,10 +1093,10 @@ async function main(){
     } else if ( bag.cmState.itemsLeft==0) {
       setState(3);
     } else {
-      
+      if (bag.timeDelta>0) {
         hide('mint-controls-form');
         setPTitle('This wallet is not whitelisted!<br>Please select the one that is or wait for public mint.');
-      
+      }
     }
     return;
   }
