@@ -2673,3 +2673,174 @@ span.tooltip-hover i {
 .tooltip-hover:hover .tier {
   display: block;
 }
+
+#our-team .team-item .main {
+  max-width: 100%;
+}
+
+.team-member .bottom {
+  max-width: 100%;
+}
+
+@media screen and (max-width: 520px) {
+  header#header {
+    background: linear-gradient(162deg, #0000008f, transparent);
+  }
+
+  main {
+    /* background: linear-gradient(162deg, black, transparent); */
+  }
+
+  section#video-wrap {
+    background: black;
+  }
+
+  .control-buttons.text-center {
+    position: relative;
+    z-index: 1000;
+    padding-bottom: 20px;
+  }
+
+  #video-wrap .arrow-row {
+    padding-bottom: 0px;
+  }
+
+  #video-wrap .arrow-row {
+    background: #0000007d;
+  }
+
+  .main-menu-column ul {
+    text-align: center;
+  }
+
+  #hero-title .container .row {
+    padding: 30px 30px;
+    padding-bottom: 0px;
+  }
+
+  section#value-and-utility {
+    margin-top: 0px;
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+  }
+
+  section#story {
+    padding-bottom: 0px;
+  }
+
+  #our-team .team-list {
+    flex-direction: column;
+  }
+
+  #our-team .team-list .team-item {
+    width: 100%;
+  }
+
+  .team-member .bottom {
+    width: 100%;
+  }
+
+  .team-member .top {
+    flex-direction: column;
+  }
+
+  .team-member-social {
+    padding: 0px;
+    margin-top: 10px;
+  }
+
+  .team-member .top ul li {
+    margin-left: 0px !important;
+    margin-right: 14px !important;
+  }
+  .boxes ul {
+    flex-direction: column;
+  }
+
+  .boxes ul li {
+    margin-bottom: 20px;
+  }
+
+  .sub-heading {
+    max-width: 100%;
+  }
+
+  .row.about-box {
+    flex-direction: column;
+    padding: 0px 30px;
+  }
+
+  .process-row {
+  }
+
+  .row.top-details {
+    flex-direction: column !important;
+    padding: 0px;
+    margin: 0px;
+    max-width: 100%;
+    width: 100%;
+    display: block !important;
+    height: auto !important;
+  }
+
+  .image-section {
+    width: 100%;
+  }
+
+  .attribute-section {
+    width: 100% !important;
+  }
+
+  .row.middle-details {
+    margin: 0px !important;
+    width: 100%;
+  }
+
+  .visual {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .row.top-details {
+    padding-bottom: 20px !important;
+  }
+
+  .attribute-section .list {
+    width: 100%;
+  }
+
+  .memorandum {
+    width: 90%;
+    padding: 24px 26px;
+  }
+
+  .row.middle-details li:hover .tooltip-box {
+    margin-left: -177px;
+  }
+
+  .about-details {
+    width: 100%;
+  }
+
+  .tier {
+    width: 100%;
+  }
+
+  input#input-buraid {
+    width: 100%;
+  }
+
+  .number-column {
+    max-width: 100%;
+  }
+
+  .max-column {
+    max-width: 100%;
+  }
+
+  #fetch-btn {
+    width: 100%;
+    min-width: 100%;
+    padding: 16px 0px;
+  }
+}
