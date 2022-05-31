@@ -2843,4 +2843,115 @@ span.tooltip-hover i {
     min-width: 100%;
     padding: 16px 0px;
   }
+
+  .story-images-column .story-image-wrap {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .story-image-wrap img {
+    width: 75%;
+    border-radius: 10px;
+  }
+
+  .story-images-column .story-image-wrap img:nth-child(2) {
+    width: 50%;
+    border-radius: 10px;
+  }
+
+  section#our-team .team-member-avatar img {
+    width: 245px !important;
+  }
+
+  .line-box {
+    border: none;
+    padding: 0px 17px;
+    text-align: justify;
+    line-height: 22px;
+  }
+
+  .boxes li {
+    width: 50%;
+    margin-bottom: 17px;
+  }
+
+  .boxes ul {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .about-details h3 {
+    text-align: center;
+  }
+
+  .about-details p {
+    text-align: justify;
+  }
+
+  .row.about-box .tier h3 {
+    text-align: center;
+  }
+
+  .row.about-box .tier li {
+    text-align: center;
+  }
+
+  #data .container {
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+  }
+
+  .image-section .title {
+    text-align: center;
+  }
+
+  .image-section img {
+    border-radius: 25px;
+  }
+
+  .attribute-section .list {
+    border-radius: 25px;
+    border: none;
+  }
+
+  .attrubute-extended {
+    border-radius: 25px;
+  }
+
+  .memorandum {
+    padding: 0px 20px;
+    border: none;
+  }
+
+  p.other-info-text {
+    padding: 0px 20px;
+  }
+  .att-title {
+    color: white;
+  }
+
+  .attrubute-extended .apprecntice {
+    color: white;
+  }
+
+  .height {
+    color: white;
+  }
+
+  .attribute-list h3 {
+    color: white;
+  }
+
+  .attribute-section .title {
+    color: white;
+  }
+  .image-section .title {
+    color: white;
+  }
+}
+
+.story-images-column .story-image-wrap img:nth-child(1):hover {
+  transform: scale(1.05);
+  cursor: pointer;
 }
