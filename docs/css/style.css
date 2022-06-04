@@ -514,6 +514,8 @@ header {
 }
 .story-images-column .story-image-wrap img:nth-child(2) {
   width: 85%;
+  position: relative;
+  z-index: 1000000;
 }
 .story-image-wrap img {
   border-radius: 21px;
@@ -2775,7 +2777,7 @@ span.tooltip-hover i {
 
   .row.top-details {
     flex-direction: column !important;
-    padding: 0px;
+    padding: 20px!important;
     margin: 0px;
     max-width: 100%;
     width: 100%;
@@ -2806,7 +2808,8 @@ span.tooltip-hover i {
   }
 
   .attribute-section .list {
-    width: 100%;
+    width: 80%;
+    margin:0 auto;
   }
 
   .memorandum {
@@ -2850,13 +2853,16 @@ span.tooltip-hover i {
   }
 
   .story-image-wrap img {
-    width: 75%;
+    width: 80%;
     border-radius: 10px;
   }
 
   .story-images-column .story-image-wrap img:nth-child(2) {
-    width: 50%;
+    width: 58%;
     border-radius: 10px;
+    position: relative;
+    left: -5px;
+    z-index: -1;
   }
 
   section#our-team .team-member-avatar img {
@@ -2951,7 +2957,14 @@ span.tooltip-hover i {
   }
 }
 
-.story-images-column .story-image-wrap img:nth-child(1):hover {
+/* Link hover effect */
+.story-images-column .story-image-wrap img:nth-child(1):hover,
+.story-images-column .story-image-wrap img:nth-child(2):hover {
   transform: scale(1.05);
   cursor: pointer;
+}
+
+/* Slight spacing for images at rarity page*/
+.boxes li img {
+  padding: 0px 5px;
 }
