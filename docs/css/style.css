@@ -2777,7 +2777,7 @@ span.tooltip-hover i {
 
   .row.top-details {
     flex-direction: column !important;
-    padding: 20px!important;
+    padding: 20px !important;
     margin: 0px;
     max-width: 100%;
     width: 100%;
@@ -2809,7 +2809,7 @@ span.tooltip-hover i {
 
   .attribute-section .list {
     width: 80%;
-    margin:0 auto;
+    margin: 0 auto;
   }
 
   .memorandum {
@@ -2955,6 +2955,20 @@ span.tooltip-hover i {
   .image-section .title {
     color: white;
   }
+  #our-team .team-item:hover .team-member-avatar:before {
+    width: 245px !important;
+    height: 245px;
+    margin-left: 28px;
+  }
+
+  #our-team .team-item:hover .main {
+    width: 300px;
+    margin-top: -420px;
+    top:inherit;
+  }
+#data  .row {
+    margin:0px;
+  }
 }
 
 /* Link hover effect */
@@ -2967,4 +2981,4 @@ span.tooltip-hover i {
 /* Slight spacing for images at rarity page*/
 .boxes li img {
   padding: 0px 5px;
-} 
+}
