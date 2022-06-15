@@ -1,833 +1,819 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, viewport-fit=cover"
-    />
-    <title>Gyris</title>
-    <link rel="stylesheet" href="css/style.css" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-    <link rel="manifest" href="/site.webmanifest" />
-    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
-    <meta name="msapplication-TileColor" content="#da532c" />
-    <meta name="theme-color" content="#ffffff" />
-  </head>
 
-  <body>
-    <header id="header">
-      <div class="container">
-        <div class="row header-row">
-          <div class="column brand-column">
-            <a href="/">
-              <img src="img/logo.svg" alt="" />
-            </a>
-          </div>
-          <div class="column follow-column">
-            Follow Us:
-            <ul>
-              <li>
-                <a href="https://discord.gg/gyris" target="_blank">
-                  <img src="img/discord.svg" alt="" />
-                </a>
-              </li>
-              <!--<li>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Gyris</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
+  <meta name="msapplication-TileColor" content="#da532c" />
+  <meta name="theme-color" content="#ffffff" />
+</head>
+
+<body>
+  <header id="header">
+    <div class="container">
+      <div class="row header-row">
+        <div class="column brand-column">
+          <a href="/">
+            <img src="img/logo.svg" alt="" />
+          </a>
+        </div>
+        <div class="column follow-column">
+          Follow Us:
+          <ul>
+            <li>
+              <a href="https://discord.gg/gyris" target="_blank">
+                <img src="img/discord.svg" alt="" />
+              </a>
+            </li>
+            <!--<li>
 						<a href="#">
 							<img src="img/logomark.svg" alt="">
 						</a>
 					</li>-->
-              <li>
-                <a href="https://twitter.com/Gyris_official" target="_blank">
-                  <img src="img/twitter.svg" alt="" />
-                </a>
-              </li>
-              <!--<li>
+            <li>
+              <a href="https://twitter.com/Gyris_official" target="_blank">
+                <img src="img/twitter.svg" alt="" />
+              </a>
+            </li>
+            <!--<li>
 						<a href="#">
 							<img src="img/medium.svg" alt="">
 						</a>
 					</li>-->
-            </ul>
-          </div>
-          <div class="column main-menu-column">
-            <ul>
-              <li>
-                <a href="/manifesto">Manifesto</a>
-              </li>
-              <li>
-                <a href="/epf">GYRIS-EPF</a>
-              </li>
-              <li>
-                <a href="/metaverse">Metaverse</a>
-              </li>
-              <li>
-                <a href="/rarity">Rarity</a>
-              </li>
-            </ul>
-          </div>
-          <div class="column cta-column">
-            <!--<a href="#" class="btn red-button">mint</a>-->
-            <a
-              id="mint-btn-home"
-              class="btn green-button"
-              target="_blank"
-              href="https://magiceden.io/marketplace/gyris_genesis"
-              >BUY NOW</a
-            >
-            <div class="info-block"></div>
-          </div>
+          </ul>
+        </div>
+        <div class="column main-menu-column">
+          <ul>
+            <li>
+              <a href="/manifesto">Manifesto</a>
+            </li>
+            <li>
+              <a href="/epf">GYRIS-EPF</a>
+            </li>
+            <li>
+              <a href="/metaverse">Metaverse</a>
+            </li>
+            <li>
+              <a href="/rarity">Rarity</a>
+            </li>
+          </ul>
+        </div>
+        <div class="column cta-column">
+          <!--<a href="#" class="btn red-button">mint</a>-->
+          <a id="mint-btn-home" class="btn green-button" target="_blank"
+            href="https://magiceden.io/marketplace/gyris_genesis">BUY NOW</a>
+          <div class="info-block"></div>
         </div>
       </div>
-    </header>
-    <main>
-      <section id="video-wrap">
-        <video autoplay muted loop playsinline id="hero-video">
-          <source
-            src="https://gyris.b-cdn.net/gyris_teaser_2022_WEBSITE.mp4"
-            type="video/mp4"
-          />
-        </video>
-        <div class="container">
-          <div class="row arrow-row">
-            <div class="column">
-              <div class="control-buttons text-center">
-                <a class="btn red-button" id="mute-video"> ENABLE SOUND </a>
-                <a href="#hero-title" class="btn white-button">
-                  MORE DETAILS
-                </a>
-              </div>
+    </div>
+  </header>
+  <main>
+    <section id="video-wrap">
+      <video autoplay muted loop playsinline id="hero-video">
+        <source src="https://gyris.b-cdn.net/gyris_teaser_2022_WEBSITE.mp4" type="video/mp4" />
+      </video>
+      <div class="container">
+        <div class="row arrow-row">
+          <div class="column">
+            <div class="control-buttons text-center">
+              <a class="btn red-button" id="mute-video"> ENABLE SOUND </a>
+              <a href="#hero-title" class="btn white-button">
+                MORE DETAILS
+              </a>
             </div>
           </div>
         </div>
-      </section>
-      <section id="hero-title">
-        <a
-          class="btn green-button"
-          target="blank"
-          id="buy-now-mobile"
-          href="https://magiceden.io/marketplace/gyris_genesis"
-          style="
+      </div>
+    </section>
+    <section id="hero-title">
+      <a class="btn green-button" target="blank" id="buy-now-mobile"
+        href="https://magiceden.io/marketplace/gyris_genesis" style="
             display: flex;
             justify-content: center;
             align-items: center;
             text-align: center;
             border-radius: 0px;
-          "
-          >BUY NOW ON SECONDARY</a
-        >
-        <div class="container">
-          <div class="row">
-            <div class="column">
-              <h1>
-                Gyris will be more than a beautifully crafted NFT project. Our
-                vision is to become the world’s first web3 metaverse film and
-                gaming franchise.
-              </h1>
-              <p>
-                <strong>‘Gyris: The Sound of Trees Standing’</strong> delivers a
-                narrative driven metaverse project with truly deep narrative. A
-                world-first experiment in collaborative creativity and
-                ownership, the team will release storyline and art while funding
-                infrastructure and opportunities that reward a community of
-                holder-artists. As an artist or a fan, you will be asked to
-                colour our rich story with your own art and voice and together
-                build the tapestry to best depict our world.
-              </p>
+          ">BUY NOW ON SECONDARY</a>
+      <div class="container">
+        <div class="row">
+          <div class="column">
+            <h1>
+              Gyris will be more than a beautifully crafted NFT project. Our
+              vision is to become the world’s first web3 metaverse film and
+              gaming franchise.
+            </h1>
+            <p>
+              <strong>‘Gyris: The Sound of Trees Standing’</strong> delivers a
+              narrative driven metaverse project with truly deep narrative. A
+              world-first experiment in collaborative creativity and
+              ownership, the team will release storyline and art while funding
+              infrastructure and opportunities that reward a community of
+              holder-artists. As an artist or a fan, you will be asked to
+              colour our rich story with your own art and voice and together
+              build the tapestry to best depict our world.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="story">
+      <div class="container">
+        <div class="row">
+          <div class="column text-center story-text-column">
+            <h2>Story</h2>
+            <p>
+              As the gluttonous Minjierri slaughter the creatures of Gyris,
+              the brave Bura come to their aid. While this great war ensues, a
+              reluctant hero must rise. Argus succumbs to the call of the
+              ancient tradition of ‘Duali’. Young Bura take a perilous quest
+              in search of their fated ‘Dua’, weapons said to be divined by
+              the gods themselves. But darkness seeks flesh beyond the
+              battlefield and evil takes root in his dreams. If Argus is to
+              become the future of his people he must learn; that no one alone
+              can fight the dark.
+            </p>
+          </div>
+        </div>
+        <div class="row story-images-row">
+          <div class="column story-images-column">
+            <div class="story-image-wrap">
+              <img src="img/story-1.png" alt="" />
+              <img src="img/story-1a.png" alt="" />
+            </div>
+          </div>
+          <div class="column story-images-column">
+            <div class="story-image-wrap">
+              <img src="img/story-2.png" alt="" />
+              <img src="img/story-4.png" alt="" />
+            </div>
+          </div>
+          <div class="column story-images-column">
+            <div class="story-image-wrap">
+              <img src="img/story-3.png" alt="" />
+              <img src="img/story-4.png" alt="" />
+            </div>
+          </div>
+          <div class="column story-images-column">
+            <div class="story-image-wrap">
+              <img src="img/story-4.png" alt="" />
+              <img src="img/story-4.png" alt="" />
             </div>
           </div>
         </div>
-      </section>
-      <section id="story">
-        <div class="container">
-          <div class="row">
-            <div class="column text-center story-text-column">
-              <h2>Story</h2>
-              <p>
-                As the gluttonous Minjierri slaughter the creatures of Gyris,
-                the brave Bura come to their aid. While this great war ensues, a
-                reluctant hero must rise. Argus succumbs to the call of the
-                ancient tradition of ‘Duali’. Young Bura take a perilous quest
-                in search of their fated ‘Dua’, weapons said to be divined by
-                the gods themselves. But darkness seeks flesh beyond the
-                battlefield and evil takes root in his dreams. If Argus is to
-                become the future of his people he must learn; that no one alone
-                can fight the dark.
-              </p>
+        <div class="row follow-story-row">
+          <div class="column text-center">
+            <div class="follow-story-title">
+              Follow Argus, Saras, Djalu and the inhabitants of Gyris in a
+              saga spanning 3 generations.
+              <span class="red">No one alone, can fight the Dark.</span>
+            </div>
+            <div class="follow-story-links">
+              <ul>
+                <li>
+                  <a href="https://discord.gg/gyris" target="_blank">
+                    <img src="img/discord-2.svg" alt="" />
+                  </a>
+                </li>
+                <li>
+                  <a href="https://twitter.com/Gyris_official" target="_blank">
+                    <img src="img/twitter-2.svg" alt="" />
+                  </a>
+                </li>
+              </ul>
             </div>
           </div>
-          <div class="row story-images-row">
-            <div class="column story-images-column">
-              <div class="story-image-wrap">
-                <img src="img/story-1.png" alt="" />
-                <img src="img/story-1a.png" alt="" />
-              </div>
+        </div>
+      </div>
+    </section>
+    <section id="value-and-utility">
+      <div class="value-curve-top">
+        <img src="img/value-bg-top.svg" alt="" />
+      </div>
+      <div class="value-curve-bottom">
+        <img src="img/value-bg-bottom.svg" alt="" />
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="column text-center">
+            <h2>A Long-term Vision of True Value And Utility</h2>
+            <p>Community funded studio to bring our story to life through:</p>
+          </div>
+        </div>
+        <div class="row value-row">
+          <div class="column text-center">
+            <div class="value-icon">
+              <img src="img/FilmAnimationandGaming.svg" alt="" />
             </div>
-            <div class="column story-images-column">
-              <div class="story-image-wrap">
-                <img src="img/story-2.png" alt="" />
-                <img src="img/story-4.png" alt="" />
-              </div>
+            <div class="value-title">Metaverse and Gaming</div>
+          </div>
+          <div class="column text-center">
+            <div class="value-icon">
+              <img src="img/ValuesbasedDao.svg" alt="" />
             </div>
-            <div class="column story-images-column">
-              <div class="story-image-wrap">
-                <img src="img/story-3.png" alt="" />
-                <img src="img/story-4.png" alt="" />
-              </div>
+            <div class="value-title">Values-based DAO</div>
+          </div>
+          <div class="column text-center">
+            <div class="value-icon">
+              <img src="img/MultiverseLaunchpad.svg" alt="" />
             </div>
-            <div class="column story-images-column">
-              <div class="story-image-wrap">
-                <img src="img/story-4.png" alt="" />
-                <img src="img/story-4.png" alt="" />
-              </div>
+            <div class="value-title">Multiverse Launchpad</div>
+          </div>
+          <div class="column text-center">
+            <div class="value-icon">
+              <img src="img/ArtistMarketplace.svg" alt="" />
+            </div>
+            <div class="value-title">Artist Marketplace</div>
+          </div>
+          <div class="column text-center">
+            <div class="value-icon">
+              <img src="img/EcosystemTokenisation.svg" alt="" />
+            </div>
+            <div class="value-title">Ecosystem Tokenisation</div>
+          </div>
+          <div class="column text-center">
+            <div class="value-icon">
+              <img src="img/Licensing.svg" alt="" />
+            </div>
+            <div class="value-title">On-Screen Production</div>
+          </div>
+          <div class="column text-center">
+            <div class="value-icon">
+              <img src="img/Profit-share.svg" alt="" />
+            </div>
+            <div class="value-title">Community</div>
+          </div>
+          <div class="column text-center">
+            <div class="value-icon">
+              <img src="img/Community.svg" alt="" />
+            </div>
+            <div class="value-title">Licensing and Profit-share</div>
+          </div>
+          <div class="column text-center">
+            <div class="value-icon">
+              <img src="img/Transparency.svg" alt="" />
+            </div>
+            <div class="value-title">Transparency</div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="column text-center">
+            <div class="value-more-link">
+              Read The <a href="/manifesto">Litepaper</a> For More
             </div>
           </div>
-          <div class="row follow-story-row">
-            <div class="column text-center">
-              <div class="follow-story-title">
-                Follow Argus, Saras, Djalu and the inhabitants of Gyris in a
-                saga spanning 3 generations.
-                <span class="red">No one alone, can fight the Dark.</span>
+        </div>
+      </div>
+    </section>
+    <section id="roadmap">
+      <div class="container">
+        <div class="row">
+          <div class="column text-center">
+            <h2>‘Gyris: The Sound Of Trees Standing‘ Roadmap</h2>
+          </div>
+        </div>
+        <div class="row">
+          <div class="column text-center roadmap-control">
+            <a href="#" class="btn white-button active" data-stage="stage-1">STAGE 1</a>
+            <a href="#" class="btn white-button" data-stage="stage-2">STAGE 2</a>
+          </div>
+        </div>
+        <div class="stage-1">
+          <div class="row roadmap-row">
+            <div class="column roadmap-column">
+              <div class="roadmap-item-wrap completed">
+                <div class="roadmap-item-title">
+                  <span>DROP 1 - <s>11 March 2022</s><span style="color: #42816c">COMPLETED</span></span>
+                </div>
+                <div class="roadmap-item-description">
+                  <strong><i>“The Bura born to Kiera, in the Mountains High”</i></strong><br />
+                  <strong>The First of Four Genesis Genera:</strong>
+                  Our Genesis Series will begin with ‘The Bura’ Genus. Only
+                  2735 produced from over 160 traits. Holders will be entitled
+                  to priority access to Drop 2.
+                  <br /><br />
+                  <strong>> Development of environments & 3D assets for the
+                    upcoming Gyris game commences</strong>
+                </div>
               </div>
-              <div class="follow-story-links">
-                <ul>
-                  <li>
-                    <a href="https://discord.gg/gyris" target="_blank">
-                      <img src="img/discord-2.svg" alt="" />
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="https://twitter.com/Gyris_official"
-                      target="_blank"
-                    >
-                      <img src="img/twitter-2.svg" alt="" />
-                    </a>
-                  </li>
-                </ul>
+            </div>
+            <div class="column roadmap-column">
+              <div class="roadmap-item-wrap completed">
+                <div class="roadmap-item-title">
+                  <span>Campaign #1 - <s>April 2022</s><span style="color: #42816c">COMPLETED</span></span>
+                </div>
+                <div class="roadmap-item-description">
+                  <strong>Add a custom name, "Memorandum I" entry and
+                    Reroll!</strong><br />
+                  Holders are given the chance to add a custom name and/or a
+                  backstory to their Bura's metadata. In addition, one reroll
+                  per Bura will be given for a chance to improve the
+                  non-visual attributes such as Strength, Intelligence,
+                  Dexterity etc.
+                  <br /><br />
+                  <strong>> Start of conceptualization & development of the first
+                    minigame: "Ogg Racing"</strong>
+                </div>
+              </div>
+            </div>
+            <div class="column roadmap-column">
+              <div class="roadmap-item-wrap completed">
+                <div class="roadmap-item-title">
+                  <span>AIRDROP 1 - <s>25 May 2022</s><span style="color: #42816c">COMPLETED</span></span>
+                </div>
+                <div class="roadmap-item-description">
+                  <strong><i>“Ogg, a Bura's best friend”</i></strong><br />
+                  <strong>The First of Four Genesis Animalia:</strong>
+                  Only 2735 Oggs produced from 150+ traits. Each Bura will
+                  receive a random Ogg as a complimentary mount, ridable in
+                  the upcoming Ogg racing minigame.
+                </div>
+              </div>
+            </div>
+            <div class="column roadmap-column">
+              <div class="roadmap-item-wrap">
+                <div class="roadmap-item-title">
+                  <span>DROP 2</span>
+                </div>
+                <div class="roadmap-item-description">
+                  <strong><i>“The Mara’s veins they reach beyond the Darkness of the
+                      Night”</i></strong><br />
+                  <strong>The Second of Four Genesis Genera:</strong>
+                  Only 2735 Mara produced from over 150 traits. Holders will
+                  be entitled to priority access to Drop 3
+                </div>
+              </div>
+            </div>
+            <div class="column roadmap-column">
+              <div class="roadmap-item-wrap">
+                <div class="roadmap-item-title">
+                  <span>DROP 3</span>
+                </div>
+                <div class="roadmap-item-description">
+                  <strong><i>“The Minjierri born in Earth, under Mountain’s Feet”</i></strong><br />
+                  <strong>The Third of Four Genesis Genera:</strong> Only 2735
+                  Minjierri produced from 150+ traits enter Gyris. Holders
+                  given priority access to Drop 4.
+                </div>
+              </div>
+            </div>
+            <div class="column roadmap-column">
+              <div class="roadmap-item-wrap">
+                <div class="roadmap-item-title">
+                  <span>DROP 4</span>
+                </div>
+                <div class="roadmap-item-description">
+                  <strong><i>“The Dharwar born to Porth, by the Raging Sea”</i></strong><br />
+                  <strong>The Fourth of Four Genesis Genera:</strong>
+                  Only 2735 Dharwar produced from 150+ traits enter Gyris.
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </section>
-      <section id="value-and-utility">
-        <div class="value-curve-top">
-          <img src="img/value-bg-top.svg" alt="" />
-        </div>
-        <div class="value-curve-bottom">
-          <img src="img/value-bg-bottom.svg" alt="" />
-        </div>
-        <div class="container">
-          <div class="row">
-            <div class="column text-center">
-              <h2>A Long-term Vision of True Value And Utility</h2>
-              <p>Community funded studio to bring our story to life through:</p>
-            </div>
-          </div>
-          <div class="row value-row">
-            <div class="column text-center">
-              <div class="value-icon">
-                <img src="img/FilmAnimationandGaming.svg" alt="" />
-              </div>
-              <div class="value-title">Metaverse and Gaming</div>
-            </div>
-            <div class="column text-center">
-              <div class="value-icon">
-                <img src="img/ValuesbasedDao.svg" alt="" />
-              </div>
-              <div class="value-title">Values-based DAO</div>
-            </div>
-            <div class="column text-center">
-              <div class="value-icon">
-                <img src="img/MultiverseLaunchpad.svg" alt="" />
-              </div>
-              <div class="value-title">Multiverse Launchpad</div>
-            </div>
-            <div class="column text-center">
-              <div class="value-icon">
-                <img src="img/ArtistMarketplace.svg" alt="" />
-              </div>
-              <div class="value-title">Artist Marketplace</div>
-            </div>
-            <div class="column text-center">
-              <div class="value-icon">
-                <img src="img/EcosystemTokenisation.svg" alt="" />
-              </div>
-              <div class="value-title">Ecosystem Tokenisation</div>
-            </div>
-            <div class="column text-center">
-              <div class="value-icon">
-                <img src="img/Licensing.svg" alt="" />
-              </div>
-              <div class="value-title">On-Screen Production</div>
-            </div>
-            <div class="column text-center">
-              <div class="value-icon">
-                <img src="img/Profit-share.svg" alt="" />
-              </div>
-              <div class="value-title">Community</div>
-            </div>
-            <div class="column text-center">
-              <div class="value-icon">
-                <img src="img/Community.svg" alt="" />
-              </div>
-              <div class="value-title">Licensing and Profit-share</div>
-            </div>
-            <div class="column text-center">
-              <div class="value-icon">
-                <img src="img/Transparency.svg" alt="" />
-              </div>
-              <div class="value-title">Transparency</div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="column text-center">
-              <div class="value-more-link">
-                Read The <a href="/manifesto">Litepaper</a> For More
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section id="roadmap">
-        <div class="container">
-          <div class="row">
-            <div class="column text-center">
-              <h2>‘Gyris: The Sound Of Trees Standing‘ Roadmap</h2>
-            </div>
-          </div>
-          <div class="row">
-            <div class="column text-center roadmap-control">
-              <a href="#" class="btn white-button active" data-stage="stage-1"
-                >STAGE 1</a
-              >
-              <a href="#" class="btn white-button" data-stage="stage-2"
-                >STAGE 2</a
-              >
-            </div>
-          </div>
-          <div class="stage-1">
-            <div class="row roadmap-row">
-              <div class="column roadmap-column">
-                <div class="roadmap-item-wrap completed">
-                  <div class="roadmap-item-title">
-                    <span
-                      >DROP 1 - <s>11 March 2022</s
-                      ><span style="color: #42816c">COMPLETED</span></span
-                    >
-                  </div>
-                  <div class="roadmap-item-description">
-                    <strong
-                      ><i
-                        >“The Bura born to Kiera, in the Mountains High”</i
-                      ></strong
-                    ><br />
-                    <strong>The First of Four Genesis Genera:</strong>
-                    Our Genesis Series will begin with ‘The Bura’ Genus. Only
-                    2735 produced from over 160 traits. Holders will be entitled
-                    to priority access to Drop 2.
-                    <br /><br />
-                    <strong
-                      >> Development of environments & 3D assets for the
-                      upcoming Gyris game commences</strong
-                    >
-                  </div>
+        <div class="stage-2">
+          <div class="row roadmap-row">
+            <div class="column roadmap-column">
+              <div class="roadmap-item-wrap">
+                <div class="roadmap-item-title">
+                  <span>The Great War</span>
                 </div>
-              </div>
-              <div class="column roadmap-column">
-                <div class="roadmap-item-wrap completed">
-                  <div class="roadmap-item-title">
-                    <span
-                      >Campaign #1 - <s>April 2022</s
-                      ><span style="color: #42816c">COMPLETED</span></span
-                    >
-                  </div>
-                  <div class="roadmap-item-description">
-                    <strong
-                      >Add a custom name, "Memorandum I" entry and
-                      Reroll!</strong
-                    ><br />
-                    Holders are given the chance to add a custom name and/or a
-                    backstory to their Bura's metadata. In addition, one reroll
-                    per Bura will be given for a chance to improve the
-                    non-visual attributes such as Strength, Intelligence,
-                    Dexterity etc.
-                    <br /><br />
-                    <strong
-                      >> Start of conceptualization & development of the first
-                      minigame: "Ogg Racing"</strong
-                    >
-                  </div>
-                </div>
-              </div>
-              <div class="column roadmap-column">
-                <div class="roadmap-item-wrap completed">
-                  <div class="roadmap-item-title">
-                    <span>AIRDROP 1 - <s>25 May 2022</s
-                      ><span style="color: #42816c">COMPLETED</span></span
-                    >
-                  </div>
-                  <div class="roadmap-item-description">
-                    <strong><i>“Ogg, a Bura's best friend”</i></strong
-                    ><br />
-                    <strong>The First of Four Genesis Animalia:</strong>
-                    Only 2735 Oggs produced from 150+ traits. Each Bura will
-                    receive a random Ogg as a complimentary mount, ridable in
-                    the upcoming Ogg racing minigame.
-                  </div>
-                </div>
-              </div>
-              <div class="column roadmap-column">
-                <div class="roadmap-item-wrap">
-                  <div class="roadmap-item-title">
-                    <span>DROP 2</span>
-                  </div>
-                  <div class="roadmap-item-description">
-                    <strong
-                      ><i
-                        >“The Mara’s veins they reach beyond the Darkness of the
-                        Night”</i
-                      ></strong
-                    ><br />
-                    <strong>The Second of Four Genesis Genera:</strong>
-                    Only 2735 Mara produced from over 150 traits. Holders will
-                    be entitled to priority access to Drop 3
-                  </div>
-                </div>
-              </div>
-              <div class="column roadmap-column">
-                <div class="roadmap-item-wrap">
-                  <div class="roadmap-item-title">
-                    <span>DROP 3</span>
-                  </div>
-                  <div class="roadmap-item-description">
-                    <strong
-                      ><i
-                        >“The Minjierri born in Earth, under Mountain’s Feet”</i
-                      ></strong
-                    ><br />
-                    <strong>The Third of Four Genesis Genera:</strong> Only 2735
-                    Minjierri produced from 150+ traits enter Gyris. Holders
-                    given priority access to Drop 4.
-                  </div>
-                </div>
-              </div>
-              <div class="column roadmap-column">
-                <div class="roadmap-item-wrap">
-                  <div class="roadmap-item-title">
-                    <span>DROP 4</span>
-                  </div>
-                  <div class="roadmap-item-description">
-                    <strong
-                      ><i
-                        >“The Dharwar born to Porth, by the Raging Sea”</i
-                      ></strong
-                    ><br />
-                    <strong>The Fourth of Four Genesis Genera:</strong>
-                    Only 2735 Dharwar produced from 150+ traits enter Gyris.
-                  </div>
+                <div class="roadmap-item-description">
+                  <br /><strong>• </strong> All holders receive a free
+                  ‘Genesis Airdrop’. This drop will be uniquely positioned to
+                  interact with your NFT <br /><strong>• </strong> Community
+                  Wallet: 7.5% of sales from drops go to fund community art
+                  competitions, set up the DAO, the $GYRIS token and liquidity
+                  pair <br /><strong>• </strong> Community art contest begins
+                  <br /><strong>• </strong> ‘Gyris: The Sound of Trees
+                  Standing’: Screenplay and audio released (First Half)
+                  <br /><strong>• </strong> Holders of all 4 characters
+                  receive limited run NFT’s commissioned from world class
+                  artists depicting the characters from the Screenplay.
+                  <br /><strong>• </strong> Metaverse build commences
+                  <br /><strong>• </strong> Tribes, Guilds mechanics
+                  <br /><strong>• </strong> The Great War Single Scene
+                  Premiere: Short high-end animation will bring to life a
+                  scene from our story, voiced by our community, a taste of
+                  our larger project <br /><strong>• </strong> Winners of
+                  community art contest are offered opportunities as ‘Official
+                  Gyris Artists’
                 </div>
               </div>
             </div>
-          </div>
-          <div class="stage-2">
-            <div class="row roadmap-row">
-              <div class="column roadmap-column">
-                <div class="roadmap-item-wrap">
-                  <div class="roadmap-item-title">
-                    <span>The Great War</span>
-                  </div>
-                  <div class="roadmap-item-description">
-                    <br /><strong>• </strong> All holders receive a free
-                    ‘Genesis Airdrop’. This drop will be uniquely positioned to
-                    interact with your NFT <br /><strong>• </strong> Community
-                    Wallet: 7.5% of sales from drops go to fund community art
-                    competitions, set up the DAO, the $GYRIS token and liquidity
-                    pair <br /><strong>• </strong> Community art contest begins
-                    <br /><strong>• </strong> ‘Gyris: The Sound of Trees
-                    Standing’: Screenplay and audio released (First Half)
-                    <br /><strong>• </strong> Holders of all 4 characters
-                    receive limited run NFT’s commissioned from world class
-                    artists depicting the characters from the Screenplay.
-                    <br /><strong>• </strong> Metaverse build commences
-                    <br /><strong>• </strong> Tribes, Guilds mechanics
-                    <br /><strong>• </strong> The Great War Single Scene
-                    Premiere: Short high-end animation will bring to life a
-                    scene from our story, voiced by our community, a taste of
-                    our larger project <br /><strong>• </strong> Winners of
-                    community art contest are offered opportunities as ‘Official
-                    Gyris Artists’
-                  </div>
+            <div class="column roadmap-column">
+              <div class="roadmap-item-wrap">
+                <div class="roadmap-item-title">
+                  <span>The Dua Tree </span>
+                </div>
+                <div class="roadmap-item-description">
+                  <br /><strong>•</strong> The second half of the Gyris: The
+                  Sound of Trees Standing delivered as written narrative
+                  exclusive to holders <br /><strong>•</strong> The Dua Tree
+                  Single Scene Premiere/Argus and Narcis Reveal Short animated
+                  scene based on recent story reveal, voiced by our community
+                  <br /><strong>•</strong> ‘Official Gyris Artist’ winners
+                  announced <br /><strong>•</strong> Gyris DAO ‘Gumurri’
+                  Initiated: We expect the process of transferring the
+                  leadership over the Gyris multi-verse to the community to
+                  begin with informal community participation in allocating
+                  treasury funds. <br /><strong>•</strong> All holders receive
+                  a free ‘Genesis Beast Airdrop’. <br /><strong>•</strong>
+                  High quality treatment or ‘pitch deck’ created from
+                  screenplay, wide array of environment and character assets
+                  sent to studios and streaming services.
                 </div>
               </div>
-              <div class="column roadmap-column">
-                <div class="roadmap-item-wrap">
-                  <div class="roadmap-item-title">
-                    <span>The Dua Tree </span>
-                  </div>
-                  <div class="roadmap-item-description">
-                    <br /><strong>•</strong> The second half of the Gyris: The
-                    Sound of Trees Standing delivered as written narrative
-                    exclusive to holders <br /><strong>•</strong> The Dua Tree
-                    Single Scene Premiere/Argus and Narcis Reveal Short animated
-                    scene based on recent story reveal, voiced by our community
-                    <br /><strong>•</strong> ‘Official Gyris Artist’ winners
-                    announced <br /><strong>•</strong> Gyris DAO ‘Gumurri’
-                    Initiated: We expect the process of transferring the
-                    leadership over the Gyris multi-verse to the community to
-                    begin with informal community participation in allocating
-                    treasury funds. <br /><strong>•</strong> All holders receive
-                    a free ‘Genesis Beast Airdrop’. <br /><strong>•</strong>
-                    High quality treatment or ‘pitch deck’ created from
-                    screenplay, wide array of environment and character assets
-                    sent to studios and streaming services.
-                  </div>
-                </div>
-              </div>
+            </div>
 
-              <div class="column roadmap-column">
-                <div class="roadmap-item-wrap">
-                  <div class="roadmap-item-title">
-                    <span>$GYRIS and Artist Marketplace</span>
-                  </div>
-                  <div class="roadmap-item-description">
-                    <br /><strong>•</strong> Snapshot for $GYRIS token initial
-                    airdrop
-                    <br />
-                    <br /><strong>•</strong> Artist Marketplace: Not only is
-                    this a place for artists to be showcased to the community
-                    but the team will be allocating funds to purchase the rights
-                    to utilise the artist creations in the creative elements of
-                    the project. We want your voice! Battle scenes, maps,
-                    character derivatives, voice overs for film and games, and
-                    through our DAO, for the direction of the multiverse itself!
-                    <br /><br />
-                    <strong>•</strong>$GYRIS ecosystem token: Full tokenomics
-                    made available to community prior to initial circulation
-                  </div>
+            <div class="column roadmap-column">
+              <div class="roadmap-item-wrap">
+                <div class="roadmap-item-title">
+                  <span>$GYRIS and Artist Marketplace</span>
+                </div>
+                <div class="roadmap-item-description">
+                  <br /><strong>•</strong> Snapshot for $GYRIS token initial
+                  airdrop
+                  <br />
+                  <br /><strong>•</strong> Artist Marketplace: Not only is
+                  this a place for artists to be showcased to the community
+                  but the team will be allocating funds to purchase the rights
+                  to utilise the artist creations in the creative elements of
+                  the project. We want your voice! Battle scenes, maps,
+                  character derivatives, voice overs for film and games, and
+                  through our DAO, for the direction of the multiverse itself!
+                  <br /><br />
+                  <strong>•</strong>$GYRIS ecosystem token: Full tokenomics
+                  made available to community prior to initial circulation
                 </div>
               </div>
+            </div>
 
-              <div class="column roadmap-column">
-                <div class="roadmap-item-wrap">
-                  <div class="roadmap-item-title">
-                    <span>Gyris: The Sound of Trees Standing (On-screen)</span>
-                  </div>
-                  <div class="roadmap-item-description">
-                    <i>Ongoing releases - 24 months</i>
-                    <br /><br />
-                    The core creative focus for the team will be to execute the
-                    best representation of Gyris: The Sound of Trees Standing
-                    on-screen. Our commitment is, that if we can’t fully fund
-                    the project, we will create something so damn fantastic that
-                    it will attract the funds to make it in full.
-                  </div>
+            <div class="column roadmap-column">
+              <div class="roadmap-item-wrap">
+                <div class="roadmap-item-title">
+                  <span>Gyris: The Sound of Trees Standing (On-screen)</span>
+                </div>
+                <div class="roadmap-item-description">
+                  <i>Ongoing releases - 24 months</i>
+                  <br /><br />
+                  The core creative focus for the team will be to execute the
+                  best representation of Gyris: The Sound of Trees Standing
+                  on-screen. Our commitment is, that if we can’t fully fund
+                  the project, we will create something so damn fantastic that
+                  it will attract the funds to make it in full.
                 </div>
               </div>
-              <div class="column roadmap-column">
-                <div class="roadmap-item-wrap">
-                  <div class="roadmap-item-title">
-                    <span>Gyris Metaverse and Game</span>
-                  </div>
-                  <div class="roadmap-item-description">
-                    <i>Ongoing releases - 24 months</i>
-                    <br /><br />
+            </div>
+            <div class="column roadmap-column">
+              <div class="roadmap-item-wrap">
+                <div class="roadmap-item-title">
+                  <span>Gyris Metaverse and Game</span>
+                </div>
+                <div class="roadmap-item-description">
+                  <i>Ongoing releases - 24 months</i>
+                  <br /><br />
 
-                    <strong>•</strong>More Gyris environment completed
-                    <br />
-                    <strong>•</strong>Tribes/Guilds/community mechanics will be
-                    released. Unless you want to be left alone...you better
-                    choose your people.
-                    <br />
-                    <strong>•</strong>First Gyris minigames due Q4, 2022 with
-                    rewards in $GYRIS and exclusive NFTs
-                    <br />
-                    <strong>•</strong>Game and metaverse beta expected in Q1
-                    2023 with development taking 24 months in total to develop
-                    an MVP that we think can drive serious investment to build
-                    the bigger vision. Tokenization!
-                  </div>
+                  <strong>•</strong>More Gyris environment completed
+                  <br />
+                  <strong>•</strong>Tribes/Guilds/community mechanics will be
+                  released. Unless you want to be left alone...you better
+                  choose your people.
+                  <br />
+                  <strong>•</strong>First Gyris minigames due Q4, 2022 with
+                  rewards in $GYRIS and exclusive NFTs
+                  <br />
+                  <strong>•</strong>Game and metaverse beta expected in Q1
+                  2023 with development taking 24 months in total to develop
+                  an MVP that we think can drive serious investment to build
+                  the bigger vision. Tokenization!
                 </div>
               </div>
-              <div class="column roadmap-column">
-                <div class="roadmap-item-wrap">
-                  <div class="roadmap-item-title">
-                    <span>Gyris Dao Launchpad</span>
-                  </div>
-                  <div class="roadmap-item-description">
-                    <i>Ongoing</i>
-                    <br /><br />
-                    Each new ‘universe’ or ‘reality’ will have its own
-                    relationship with its relevant community, DAO and
-                    intellectual property. Members of this community can put
-                    forward proposals consisting of a creative thesis and go to
-                    market strategy, for story forks and new projects that
-                    become part of the overarching Multiverse.
-                  </div>
+            </div>
+            <div class="column roadmap-column">
+              <div class="roadmap-item-wrap">
+                <div class="roadmap-item-title">
+                  <span>Gyris Dao Launchpad</span>
+                </div>
+                <div class="roadmap-item-description">
+                  <i>Ongoing</i>
+                  <br /><br />
+                  Each new ‘universe’ or ‘reality’ will have its own
+                  relationship with its relevant community, DAO and
+                  intellectual property. Members of this community can put
+                  forward proposals consisting of a creative thesis and go to
+                  market strategy, for story forks and new projects that
+                  become part of the overarching Multiverse.
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </section>
-      <section id="world">
-        <div class="container">
-          <div class="row">
-            <div class="column world-image text-center">
-              <img src="img/world-image.png" alt="" />
-            </div>
-            <div class="column world-description-column">
-              <h2>A World of Our Making</h2>
-              <p>
-                Gyris is excited to grow the artistic representation of the
-                world we will come to love. As the community will be well-aware,
-                the value of our underlying asset will greatly affect the level
-                at which we can execute a grand vision, given the high quality
-                and cost of the art we produce. We are however confident of
-                strong market conditions and of blowing you all away.
-              </p>
-
-              <p>
-                We want you to think big with us. Live-action or animated? Does
-                Gyris work as a series? Will our community make the first
-                NFT-funded feature film? What does Gyris the game look like? The
-                bigger the budget, the bigger the project, all leveraged to
-                expand Gyris and the multiverse.
-              </p>
-            </div>
+      </div>
+    </section>
+    <section id="world">
+      <div class="container">
+        <div class="row">
+          <div class="column world-image text-center">
+            <img src="img/world-image.png" alt="" />
           </div>
-          <div class="row">
-            <div class="column world-note text-center">
-              Together…. we’re the fuckin modern day love-child of Lucas Films
-              and Marvel, co-writing and directing Baz Luhrman’s Lord of the
-              Rings.
-            </div>
+          <div class="column world-description-column">
+            <h2>A World of Our Making</h2>
+            <p>
+              Gyris is excited to grow the artistic representation of the
+              world we will come to love. As the community will be well-aware,
+              the value of our underlying asset will greatly affect the level
+              at which we can execute a grand vision, given the high quality
+              and cost of the art we produce. We are however confident of
+              strong market conditions and of blowing you all away.
+            </p>
+
+            <p>
+              We want you to think big with us. Live-action or animated? Does
+              Gyris work as a series? Will our community make the first
+              NFT-funded feature film? What does Gyris the game look like? The
+              bigger the budget, the bigger the project, all leveraged to
+              expand Gyris and the multiverse.
+            </p>
           </div>
         </div>
-      </section>
-      <section id="our-team">
-        <div class="container">
-          <div class="row">
-            <div class="column text-center">
-              <h2>Core Team</h2>
-            </div>
+        <div class="row">
+          <div class="column world-note text-center">
+            Together…. we’re the fuckin modern day love-child of Lucas Films
+            and Marvel, co-writing and directing Baz Luhrman’s Lord of the
+            Rings.
           </div>
-          <div class="row">
-            <div class="column">
-              <div class="team-list">
-                <div class="team-item">
-                  <div class="team-member">
-                    <div class="team-member-details">
-                      <div class="top">
-                        <h3>Artist (Chris Harkin)</h3>
-                        <div class="team-member-social">
-                          <ul>
-                            <li>
-                              <a
-                                target="_blank"
-                                href="https://www.instagram.com/_charkin/"
-                              >
-                                <img src="img/insta.svg" alt="" />
-                              </a>
-                            </li>
-                            <li>
-                              <a
-                                target="_blank"
-                                href="https://www.chrisharkin.com/reel"
-                              >
-                                <img src="img/website.svg" alt="" />
-                              </a>
-                            </li>
-                          </ul>
-                        </div>
+        </div>
+      </div>
+    </section>
+    <section id="our-team">
+      <div class="container">
+        <div class="row">
+          <div class="column text-center">
+            <h2>Core Team</h2>
+          </div>
+        </div>
+        <div class="row">
+          <div class="column">
+            <div class="team-list">
+              <div class="team-item">
+                <div class="team-member">
+                  <div class="team-member-details">
+                    <div class="top">
+                      <h3>Artist (Chris Harkin)</h3>
+                      <div class="team-member-social">
+                        <ul>
+                          <li>
+                            <a target="_blank" href="https://www.instagram.com/_charkin/">
+                              <img src="img/insta.svg" alt="" />
+                            </a>
+                          </li>
+                          <li>
+                            <a target="_blank" href="https://www.chrisharkin.com/reel">
+                              <img src="img/website.svg" alt="" />
+                            </a>
+                          </li>
+                        </ul>
                       </div>
-                      <div class="bottom">
-                        <div class="excerpt">
+                    </div>
+                    <div class="bottom">
+                      <div class="excerpt">
                         A motion designer, FX artist, photographer and musician,
                         inspired and fascinated by elements of the natural
                         world, our perception of reality, the nature of
                         consciousness, and the universe. Friends with Co-creator.....
-                        <a href="#">Read More</a></div>
-                        
+                        <a href="#">Read More</a>
                       </div>
-                    </div>
-                    <div class="team-member-avatar red">
-                      <img src="img/chris-pfp.png" alt="" />
-                    </div>
-                    <div class="main">
-                      A motion designer, FX artist, photographer and musician,
-                      inspired and fascinated by elements of the natural
-                      world, our perception of reality, the nature of
-                      consciousness, and the universe. Friends with Co-creator
-                      Muff (Adam) since high school, collaborating on music
-                      videos, music, art and now NFTs. Not only is he a
-                      genuine creative prodigy but a legendary human.
+                      <div class="main">
+                        A motion designer, FX artist, photographer and musician,
+                        inspired and fascinated by elements of the natural
+                        world, our perception of reality, the nature of
+                        consciousness, and the universe. Friends with Co-creator
+                        Muff (Adam) since high school, collaborating on music
+                        videos, music, art and now NFTs. Not only is he a
+                        genuine creative prodigy but a legendary human.
                       </div>
+
+                    </div>
                   </div>
-                </div>
-                <div class="team-item">
-                  <div class="team-member">
-                    <div class="team-member-details">
-                      <div class="top">
-                        <h3>Creator (Adam Everill)</h3>
-                        <div class="team-member-social">
-                          <ul>
-                            <li>
-                              <a href="https://www.instagram.com/thesearethedaysyoumust" target="_blank">
-                                <img src="img/insta.svg" alt="">
-                              </a>
-                            </li>
-                            <li>
-                              <a href="https://twitter.com/noiamsatoshi" target="_blank">
-                                <img src="img/twitter.svg" alt="">
-                              </a>
-                            </li>
-                          </ul>
-                        </div>
-                      </div>
-                      <div class="bottom">
-                        <div class="excerpt">
-                          A father of two, social entrepreneur and creative he wrote the beginnings of Gyris in Easter 2020. At age 15, Adam worked on his first film crew and had dreams of being a Writer/Director. Instead, he.....
-                        <a href="#">Read More</a></div>
-                        
-                      </div>
-                    </div>
-                    <div class="team-member-avatar red">
-                      <img src="img/adam-pfp.png" alt="" />
-                    </div>
-                    <div class="main">
-                      A father of two, social entrepreneur and creative he wrote the beginnings of Gyris in Easter 2020. At age 15, Adam worked on his first film crew and had dreams of being a Writer/Director. Instead, he cofounded Equal Playing Field raising over $10,000,000 for the prevention of violence against women and the protection of children in Papua New Guinea and Australia. Adam is all in in crypto and is the creator of the world first song nft voicing a Sewer Rats Social Club trio 'The Feastie Boys' in 'Praise Cheezus' and later the 'Rumble Kong Killers' with 'I AM KONG'. Many years in crypto, even more in building big things.
-                      </div>
+                  <div class="team-member-avatar red">
+                    <img src="img/chris-pfp.png" alt="" />
                   </div>
+
                 </div>
-                <div class="team-item">
-                  <div class="team-member">
-                    <div class="team-member-details">
-                      <div class="top">
-                        <h3>Artist (Tristan Britainne)</h3>
-                        <div class="team-member-social">
-                          <ul>
-                            <li>
-                              <a target="_blank" href="https://vimeo.com/tbrittaine">
-                                <img src="img/website.svg" alt="">
-                              </a>
-                            </li>
-                          </ul>
-                        </div>
-                      </div>
-                      <div class="bottom">
-                        <div class="excerpt">
-                          Tristan is a Motion Designer, FX Artist, illustrator and Photographer. With over 10 years of experience in the motion design space he has worked with a swath of international clientele.....
-                        <a href="#">Read More</a></div>
-                        
+              </div>
+              <div class="team-item">
+                <div class="team-member">
+                  <div class="team-member-details">
+                    <div class="top">
+                      <h3>Creator (Adam Everill)</h3>
+                      <div class="team-member-social">
+                        <ul>
+                          <li>
+                            <a href="https://www.instagram.com/thesearethedaysyoumust" target="_blank">
+                              <img src="img/insta.svg" alt="">
+                            </a>
+                          </li>
+                          <li>
+                            <a href="https://twitter.com/noiamsatoshi" target="_blank">
+                              <img src="img/twitter.svg" alt="">
+                            </a>
+                          </li>
+                        </ul>
                       </div>
                     </div>
-                    <div class="team-member-avatar red">
-                      <img src="img/tristan-pfp.png" alt="" />
-                    </div>
-                    <div class="main">
-                      Tristan is a Motion Designer, FX Artist, illustrator and Photographer. With over 10 years of experience in the motion design space he has worked with a swath of international clientele. An important figure in the development of Chris Harkin's work Tristan joins the Studio Gyris Roster to work across creature and environment design.
+                    <div class="bottom">
+                      <div class="excerpt">
+                        A father of two, social entrepreneur and creative he wrote the beginnings of Gyris in Easter
+                        2020. At age 15, Adam worked on his first film crew and had dreams of being a Writer/Director.
+                        Instead, he.....
+                        <a href="#">Read More</a>
                       </div>
+                      <div class="main">
+                        A father of two, social entrepreneur and creative he wrote the beginnings of Gyris in Easter
+                        2020. At age 15, Adam worked on his first film crew and had dreams of being a Writer/Director.
+                        Instead, he cofounded Equal Playing Field raising over $10,000,000 for the prevention of
+                        violence against women and the protection of children in Papua New Guinea and Australia. Adam is
+                        all in in crypto and is the creator of the world first song nft voicing a Sewer Rats Social Club
+                        trio 'The Feastie Boys' in 'Praise Cheezus' and later the 'Rumble Kong Killers' with 'I AM
+                        KONG'. Many years in crypto, even more in building big things.
+                      </div>
+
+                    </div>
                   </div>
+                  <div class="team-member-avatar red">
+                    <img src="img/adam-pfp.png" alt="" />
+                  </div>
+
                 </div>
-                
-                <div class="team-item">
-                  <div class="team-member">
-                    <div class="team-member-details">
-                      <div class="top">
-                        <h3>Metaverse CTO (Andy Clayton)</h3>
-                        <div class="team-member-social">
-                          <ul>
-                            <a target="_blank" href="https://au.linkedin.com/in/aclayton86">
+              </div>
+              <div class="team-item">
+                <div class="team-member">
+                  <div class="team-member-details">
+                    <div class="top">
+                      <h3>Artist (Tristan Britainne)</h3>
+                      <div class="team-member-social">
+                        <ul>
+                          <li>
+                            <a target="_blank" href="https://vimeo.com/tbrittaine">
                               <img src="img/website.svg" alt="">
                             </a>
-                          </ul>
-                        </div>
-                      </div>
-                      <div class="bottom">
-                        <div class="excerpt">
-                          Andy cut his chops as an automation engineer in the manufacturing sector before designing software for one of the world’s largest machinery manufacturers. He has spent the last year managing.....
-                        <a href="#">Read More</a></div>
-                        
+                          </li>
+                        </ul>
                       </div>
                     </div>
-                    <div class="team-member-avatar red">
-                      <img src="img/andy-pfp.png" alt="" />
-                    </div>
-                    <div class="main">
-                      Andy cut his chops as an automation engineer in the manufacturing sector before designing software for one of the world’s largest machinery manufacturers. He has spent the last year managing a team of developers creating virtual reality simulations for safety training in hazardous industries. Proficient in Unity he is now leading the team's move into Unreal Engine 5. A father of three, he has been friends with the founding duo of Chris and Adam since high school, where legend has it the three came together to form the world’s greatest cover band for one night only.
+                    <div class="bottom">
+                      <div class="excerpt">
+                        Tristan is a Motion Designer, FX Artist, illustrator and Photographer. With over 10 years of
+                        experience in the motion design space he has worked with a swath of international clientele.....
+                        <a href="#">Read More</a>
                       </div>
+                      <div class="main">
+                        Tristan is a Motion Designer, FX Artist, illustrator and Photographer. With over 10 years of
+                        experience in the motion design space he has worked with a swath of international clientele. An
+                        important figure in the development of Chris Harkin's work Tristan joins the Studio Gyris Roster
+                        to work across creature and environment design.
+                      </div>
+
+                    </div>
                   </div>
-                </div>
-                <div class="team-item">
-                  <div class="team-member">
-                    <div class="team-member-details">
-                      <div class="top">
-                        <h3>Communications (Sean Rung)</h3>
-                        <div class="team-member-social">
-                          <ul>
-                            <li>
-                              <a target="_blank" href="https://twitter.com/DiggyMonke">
-                                <img src="img/twitter.svg" alt="">
-                              </a>
-                            </li>
-                          </ul>
-                        </div>
-                      </div>
-                      <div class="bottom">
-                        <div class="excerpt">
-                          Known as Diggy in NFT circles is a lover of all things web3. Adam found Diggy in his role as a MonkeDAO Board Member and they quickly found a synergy. Diggy heads up the Gyris Marketing and Comms..... 
-                        <a href="#">Read More</a></div>
-                        
-                      </div>
-                    </div>
-                    <div class="team-member-avatar red">
-                      <img src="img/diggy-pfp.png" alt="" />
-                    </div>
-                    <div class="main">
-                      Known as Diggy in NFT circles is a lover of all things web3. Adam found Diggy in his role as a MonkeDAO Board Member and they quickly found a synergy. Diggy heads up the Gyris Marketing and Comms. As a communications, media and marketing professional who previously worked in the not for profit world, his ethos has always been around providing people with the information they need to empower individuals, families and communities. He's a strong advocate for empowering people to build the community they want to see and his experiences with MonkeDAO have shown him that community can often be the strongest utility. 
-                      </div>
+                  <div class="team-member-avatar red">
+                    <img src="img/tristan-pfp.png" alt="" />
                   </div>
+
                 </div>
-                <div class="team-item">
-                  <div class="team-member">
-                    <div class="team-member-details">
-                      <div class="top">
-                        <h3>Blockchain (Saba Udzilauri)</h3>
-                        <div class="team-member-social">
-                          <ul>
-                            <li>
-                              <a href="https://twitter.com/0xtane" target="_blank">
-                                <img src="img/twitter.svg" alt="">
-                              </a>
-                            </li>
-                          </ul>
-                        </div>
-                      </div>
-                      <div class="bottom">
-                        <div class="excerpt">
-                          Obsessed with math &amp; physics and logic, Saba grew up in front of a computer screen. He is a Blockchain developer, experienced in building on Ethereum and Solana, complimented with a Cyber Security background.....
-                        <a href="#">Read More</a></div>
-                        
-                      </div>
-                    </div>
-                    <div class="team-member-avatar red">
-                      <img src="img/saba-pfp.png" alt="" />
-                    </div>
-                    <div class="main">
-                      Obsessed with math &amp; physics and logic, Saba grew up in front of a computer screen. He is a Blockchain developer, experienced in building on Ethereum and Solana, complimented with a Cyber Security background. Deeply passionate about philosophy
-									and learning about how everything around us works, from the smallest detail, to its place in a biggest picture. Discarding nihilism, he is purpose-driven and full of wonder and optimism. A perfect fit for Gyris.
-                      </div>
-                  </div>
-                </div>
-                
-                
-                
-                
-                
               </div>
-              <!-- <h2 class="text-center">The list of talents goes on</h2>
+
+              <div class="team-item">
+                <div class="team-member">
+                  <div class="team-member-details">
+                    <div class="top">
+                      <h3>Metaverse CTO (Andy Clayton)</h3>
+                      <div class="team-member-social">
+                        <ul>
+                          <a target="_blank" href="https://au.linkedin.com/in/aclayton86">
+                            <img src="img/website.svg" alt="">
+                          </a>
+                        </ul>
+                      </div>
+                    </div>
+                    <div class="bottom">
+                      <div class="excerpt">
+                        Andy cut his chops as an automation engineer in the manufacturing sector before designing
+                        software for one of the world’s largest machinery manufacturers. He has spent the last year
+                        managing.....
+                        <a href="#">Read More</a>
+                      </div>
+                      <div class="main">
+                        Andy cut his chops as an automation engineer in the manufacturing sector before designing
+                        software for one of the world’s largest machinery manufacturers. He has spent the last year
+                        managing a team of developers creating virtual reality simulations for safety training in
+                        hazardous industries. Proficient in Unity he is now leading the team's move into Unreal Engine
+                        5. A father of three, he has been friends with the founding duo of Chris and Adam since high
+                        school, where legend has it the three came together to form the world’s greatest cover band for
+                        one night only.
+                      </div>
+
+                    </div>
+                  </div>
+                  <div class="team-member-avatar red">
+                    <img src="img/andy-pfp.png" alt="" />
+                  </div>
+
+                </div>
+              </div>
+              <div class="team-item">
+                <div class="team-member">
+                  <div class="team-member-details">
+                    <div class="top">
+                      <h3>Communications (Sean Rung)</h3>
+                      <div class="team-member-social">
+                        <ul>
+                          <li>
+                            <a target="_blank" href="https://twitter.com/DiggyMonke">
+                              <img src="img/twitter.svg" alt="">
+                            </a>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                    <div class="bottom">
+                      <div class="excerpt">
+                        Known as Diggy in NFT circles is a lover of all things web3. Adam found Diggy in his role as a
+                        MonkeDAO Board Member and they quickly found a synergy. Diggy heads up the Gyris Marketing and
+                        Comms.....
+                        <a href="#">Read More</a>
+                      </div>
+                      <div class="main">
+                        Known as Diggy in NFT circles is a lover of all things web3. Adam found Diggy in his role as a
+                        MonkeDAO Board Member and they quickly found a synergy. Diggy heads up the Gyris Marketing and
+                        Comms. As a communications, media and marketing professional who previously worked in the not
+                        for profit world, his ethos has always been around providing people with the information they
+                        need to empower individuals, families and communities. He's a strong advocate for empowering
+                        people to build the community they want to see and his experiences with MonkeDAO have shown him
+                        that community can often be the strongest utility.
+                      </div>
+
+                    </div>
+                  </div>
+                  <div class="team-member-avatar red">
+                    <img src="img/diggy-pfp.png" alt="" />
+                  </div>
+
+                </div>
+              </div>
+              <div class="team-item">
+                <div class="team-member">
+                  <div class="team-member-details">
+                    <div class="top">
+                      <h3>Blockchain (Saba Udzilauri)</h3>
+                      <div class="team-member-social">
+                        <ul>
+                          <li>
+                            <a href="https://twitter.com/0xtane" target="_blank">
+                              <img src="img/twitter.svg" alt="">
+                            </a>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                    <div class="bottom">
+                      <div class="excerpt">
+                        Obsessed with math &amp; physics and logic, Saba grew up in front of a computer screen. He is a
+                        Blockchain developer, experienced in building on Ethereum and Solana, complimented with a Cyber
+                        Security background.....
+                        <a href="#">Read More</a>
+                      </div>
+                      <div class="main">
+                        Obsessed with math &amp; physics and logic, Saba grew up in front of a computer screen. He is a
+                        Blockchain developer, experienced in building on Ethereum and Solana, complimented with a Cyber
+                        Security background. Deeply passionate about philosophy
+                        and learning about how everything around us works, from the smallest detail, to its place in a
+                        biggest picture. Discarding nihilism, he is purpose-driven and full of wonder and optimism. A
+                        perfect fit for Gyris.
+                      </div>
+
+                    </div>
+                  </div>
+                  <div class="team-member-avatar red">
+                    <img src="img/saba-pfp.png" alt="" />
+                  </div>
+
+                </div>
+              </div>
+
+
+
+
+
+            </div>
+            <!-- <h2 class="text-center">The list of talents goes on</h2>
               <div class="team-table">
                 <table>
                   <tr>
@@ -885,46 +871,47 @@
                   </tr>
                 </table>
               </div> -->
-            </div>
           </div>
         </div>
-      </section>
-    </main>
-    <footer>
-      <div class="container">
-        <div class="row footer-row">
-          <div class="column footer-note text-center">
-            10% of sales revenue will go to funding programs, meaning this
-            project will have a direct connection to real world impact. Learn
-            specifically about the EPF – Gyris connection
-            <a href="/epf">here</a>
-          </div>
-          <div class="column footer-social text-center">
-            <ul>
-              <li>
-                <a href="https://discord.gg/gyris" target="_blank">
-                  <img src="img/discord-2.svg" alt="" />
-                </a>
-              </li>
-              <!-- <li>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <div class="container">
+      <div class="row footer-row">
+        <div class="column footer-note text-center">
+          10% of sales revenue will go to funding programs, meaning this
+          project will have a direct connection to real world impact. Learn
+          specifically about the EPF – Gyris connection
+          <a href="/epf">here</a>
+        </div>
+        <div class="column footer-social text-center">
+          <ul>
+            <li>
+              <a href="https://discord.gg/gyris" target="_blank">
+                <img src="img/discord-2.svg" alt="" />
+              </a>
+            </li>
+            <!-- <li>
             <a href="#">
               <img src="img/logomark-2.svg" alt="" />
             </a>
 		      </li> -->
-              <li>
-                <a href="https://twitter.com/Gyris_official" target="_blank">
-                  <img src="img/twitter-2.svg" alt="" />
-                </a>
-              </li>
-            </ul>
-          </div>
-          <div class="column copyright-column text-center">
-            Copyright © 2022 Gyris
-          </div>
+            <li>
+              <a href="https://twitter.com/Gyris_official" target="_blank">
+                <img src="img/twitter-2.svg" alt="" />
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="column copyright-column text-center">
+          Copyright © 2022 Gyris
         </div>
       </div>
-    </footer>
-    <script src="libs/jquery/jquery-3.3.1.min.js"></script>
-    <script src="js/jq.js"></script>
-  </body>
+    </div>
+  </footer>
+  <script src="libs/jquery/jquery-3.3.1.min.js"></script>
+  <script src="js/jq.js"></script>
+</body>
+
 </html>

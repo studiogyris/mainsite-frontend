@@ -1988,14 +1988,17 @@ section#our-team .team-member-avatar {
   margin: 0px;
   margin-top: 20px;
 }
-#our-team .team-item:hover .team-member-avatar:before {
+#our-team .team-item:hover .team-member-avatar {
+  margin-top: -80px;
+}
+  #our-team .team-item:hover .team-member-avatar:before {
   content: ' ';
-  width: 298px !important;
-  height: 299px;
+  width: 300px !important;
+  height: 300px;
   display: block;
   position: absolute;
   border-radius: 20px;
-  margin-left: 34px;
+  margin-left: 28px;
   background: linear-gradient(180deg, #343033, #00000096);
 }
 .team-card {
@@ -2054,7 +2057,7 @@ section#our-team .team-member-avatar {
   list-style: none;
   margin: 0px;
   padding: 25px;
-  height: 350px;
+  height: 450px;
   margin-left: -27px;
   align-items: center;
   transition: opacity 0.5s ease-out;
@@ -2208,15 +2211,17 @@ input#input-buraid {
 }
 #our-team .team-item:hover .excerpt {
   opacity: 0;
+  display:none;
 }
 
 #our-team .team-item .main {
   display: none;
-  position: absolute;
-  width: 367px;
+  width: 100%;
   top: 0px;
-  margin-top: 53px;
+  margin-top: 0px;
   text-align: justify;
+  position: relative;
+  z-index: 1000;
 }
 #our-team .team-item:hover .main {
   display: block;
@@ -2688,6 +2693,9 @@ span.tooltip-hover i {
   header#header {
     background: linear-gradient(162deg, #0000008f, transparent);
   }
+  .team-list .team-member-avatar:after {
+    display:none
+  }
 
   main {
     /* background: linear-gradient(162deg, black, transparent); */
@@ -2962,8 +2970,7 @@ span.tooltip-hover i {
   }
 
   #our-team .team-item:hover .main {
-    width: 300px;
-    margin-top: -420px;
+    width: 100%;
     top:inherit;
   }
 #data  .row {
