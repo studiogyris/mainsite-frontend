@@ -109,6 +109,9 @@ async function main(){
         while (Math.round(a * e) / e !== a) { e *= 10; p++; }
         return p;
       }
+      function capitalize(str) {
+        return str.charAt(0).toUpperCase() + str.slice(1);
+      }
 
     async function onClickFetch(){
         
@@ -120,7 +123,7 @@ async function main(){
               return
             }
         unhide('extended')
-        gid('title').textContent='Ogg #';
+        gid('title').textContent=capitalize(collectionName)+' #';
         hide('memorandum');
         unhide('nothing')
         gid('item-img').src='/img/giphy.gif';
