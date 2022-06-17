@@ -1,0 +1,91 @@
+{
+  "name": "Ogg #2600",
+  "symbol": "GGAO",
+  "description": "The Oggs are large bear sized animalia that roam much of the land of Gyris. When befriended by the Bura they form lifelong bonds that see them carry the Bura into battle and protect them from harms way. Much like a dog, they are warm and friendly when treated with kindness and dignity but when crossed or threatened they will not hesitate to bear their teeth, or worse yet, tear flesh from their enemies.",
+  "image": "2600.jpg",
+  "external_url": "https://gyris.io/rarity/ogg?id=2600",
+  "seller_fee_basis_points": 600,
+  "background_color": "fff",
+  "collection": {
+    "name": "Gyris Genesis Animalia: Ogg",
+    "family": "Gyris"
+  },
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "Green"
+    },
+    {
+      "trait_type": "Type",
+      "value": "Shayatare Kahn"
+    },
+    {
+      "trait_type": "Ground",
+      "value": "Shayatare"
+    },
+    {
+      "trait_type": "Saddle",
+      "value": "none"
+    },
+    {
+      "trait_type": "Hand Piece",
+      "value": "Ana Kooreh"
+    },
+    {
+      "trait_type": "Mane",
+      "value": "Abi"
+    },
+    {
+      "trait_type": "Head Piece",
+      "value": "none"
+    },
+    {
+      "trait_type": "Trophy",
+      "value": "No"
+    },
+    {
+      "display_type": "number",
+      "trait_type": "Strength",
+      "value": 79
+    },
+    {
+      "display_type": "number",
+      "trait_type": "Agility",
+      "value": 53
+    },
+    {
+      "display_type": "number",
+      "trait_type": "Resilience",
+      "value": 53
+    },
+    {
+      "display_type": "number",
+      "trait_type": "Endurance",
+      "value": 40
+    },
+    {
+      "display_type": "number",
+      "trait_type": "Synergy",
+      "value": 51
+    },
+    {
+      "display_type": "number",
+      "trait_type": "Base rating",
+      "value": 1.7
+    }
+  ],
+  "properties": {
+    "creators": [
+      {
+        "address": "4C7fEKJWDXDgQwpjXpepubFsFCnAF627rea8LNhB4QHb",
+        "share": 100
+      }
+    ],
+    "files": [
+      {
+        "uri": "2600.jpg",
+        "type": "image/jpg"
+      }
+    ]
+  }
+}

@@ -1,0 +1,153 @@
+{
+    "mapping": {
+        "Bu-Raa-Eh": 1,
+        "Bu-Raa-See": 2,
+        "Bu-Raa-Oo": 3,
+        "Bu-Raa-Nai": 4,
+        "Bu-Raa-Murri": 5
+    },
+    "dictionary":{
+        "1": "Bu-Raa-Eh (Healer)",
+        "5": "Bu-Raa-Murri (Hunter)",
+        "2": "Bu-Raa-See (Crafter)",
+        "3": "Bu-Raa-Oo (Warrior)",
+        "4": "Bu-Raa-Nai (Ex-Warrior)"
+
+    },
+    "height": {
+        "min": 53,
+        "max": 80
+    },
+    "values": {
+        "1": {
+            "Strength": {
+                "min": 40,
+                "max": 80
+            },
+            "Intelligence": {
+                "min": 40,
+                "max": 50
+            },
+            "Wisdom": {
+                "min": 70,
+                "max": 100
+            },
+            "Dexterity": {
+                "min": 0,
+                "max": 50
+            },
+            "Charisma": {
+                "min": 50,
+                "max": 70
+            },
+            "Resilience": {
+                "min": 50,
+                "max": 100
+            }
+        },
+        "2": {
+            "Strength": {
+                "min": 50,
+                "max": 90
+            },
+            "Intelligence": {
+                "min": 55,
+                "max": 70
+            },
+            "Wisdom": {
+                "min": 20,
+                "max": 70
+            },
+            "Dexterity": {
+                "min": 60,
+                "max": 90
+            },
+            "Charisma": {
+                "min": 20,
+                "max": 50
+            },
+            "Resilience": {
+                "min": 45,
+                "max": 75
+            }
+        },
+        "3": {
+            "Strength": {
+                "min": 75,
+                "max": 95
+            },
+            "Intelligence": {
+                "min": 40,
+                "max": 50
+            },
+            "Wisdom": {
+                "min": 30,
+                "max": 60
+            },
+            "Dexterity": {
+                "min": 35,
+                "max": 65
+            },
+            "Charisma": {
+                "min": 20,
+                "max": 80
+            },
+            "Resilience": {
+                "min": 50,
+                "max": 100
+            }
+        },
+        "4": {
+            "Strength": {
+                "min": 60,
+                "max": 100
+            },
+            "Intelligence": {
+                "min": 40,
+                "max": 60
+            },
+            "Wisdom": {
+                "min": 50,
+                "max": 80
+            },
+            "Dexterity": {
+                "min": 20,
+                "max": 40
+            },
+            "Charisma": {
+                "min": 20,
+                "max": 80
+            },
+            "Resilience": {
+                "min": 50,
+                "max": 80
+            }
+        },
+        "5": {
+            "Strength": {
+                "min": 60,
+                "max": 90
+            },
+            "Intelligence": {
+                "min": 45,
+                "max": 65
+            },
+            "Wisdom": {
+                "min": 25,
+                "max": 75
+            },
+            "Dexterity": {
+                "min": 50,
+                "max": 80
+            },
+            "Charisma": {
+                "min": 45,
+                "max": 70
+            },
+            "Resilience": {
+                "min": 45,
+                "max": 70
+            }
+        }
+    }
+}

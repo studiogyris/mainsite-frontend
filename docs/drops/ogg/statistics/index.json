@@ -1,0 +1,326 @@
+{
+  "Background": { 
+  
+    "Grey" : { 
+       "score": 0,
+       "rarity" : "16.05 %",
+       "frequency" : 439
+    
+   },
+ 
+    "Blue" : { 
+       "score": 0,
+       "rarity" : "15.17 %",
+       "frequency" : 415
+    
+   },
+ 
+    "Orange" : { 
+       "score": 0,
+       "rarity" : "15.1 %",
+       "frequency" : 413
+    
+   },
+ 
+    "Green" : { 
+       "score": 0,
+       "rarity" : "14.95 %",
+       "frequency" : 409
+    
+   },
+ 
+    "Black" : { 
+       "score": 2,
+       "rarity" : "14.52 %",
+       "frequency" : 397
+    
+   },
+ 
+    "Red" : { 
+       "score": 2,
+       "rarity" : "14.04 %",
+       "frequency" : 384
+    
+   },
+ 
+    "Snow" : { 
+       "score": 5,
+       "rarity" : "2.89 %",
+       "frequency" : 79
+    
+   },
+ 
+    "Blood Moon" : { 
+       "score": 5,
+       "rarity" : "2.23 %",
+       "frequency" : 61
+    
+   },
+ 
+    "Fire Moon" : { 
+       "score": 5,
+       "rarity" : "2.16 %",
+       "frequency" : 59
+    
+   },
+ 
+    "Flames" : { 
+       "score": 5,
+       "rarity" : "1.94 %",
+       "frequency" : 53
+    
+   },
+ 
+    "Wara Moon" : { 
+       "score": 5,
+       "rarity" : "0.95 %",
+       "frequency" : 26
+    
+   }
+},
+  "Type": { 
+  
+    "Shayatare Kyu" : { 
+       "score": 0,
+       "rarity" : "17.4 %",
+       "frequency" : 476
+    
+   },
+ 
+    "Shayatare Kahn" : { 
+       "score": 0,
+       "rarity" : "16.89 %",
+       "frequency" : 462
+    
+   },
+ 
+    "Ayunkoi Kahn" : { 
+       "score": 2,
+       "rarity" : "16.31 %",
+       "frequency" : 446
+    
+   },
+ 
+    "Ayunkoi Kyu" : { 
+       "score": 2,
+       "rarity" : "14.52 %",
+       "frequency" : 397
+    
+   },
+ 
+    "Hadr Kyu" : { 
+       "score": 5,
+       "rarity" : "12.43 %",
+       "frequency" : 340
+    
+   },
+ 
+    "Hadr Kahn" : { 
+       "score": 5,
+       "rarity" : "12.18 %",
+       "frequency" : 333
+    
+   },
+ 
+    "Obso Kahn" : { 
+       "score": 10,
+       "rarity" : "5.37 %",
+       "frequency" : 147
+    
+   },
+ 
+    "Obso Kyu" : { 
+       "score": 10,
+       "rarity" : "4.9 %",
+       "frequency" : 134
+    
+   }
+},
+  "Ground": { 
+  
+    "Shayatare" : { 
+       "score": 0,
+       "rarity" : "34.3 %",
+       "frequency" : 938
+    
+   },
+ 
+    "Ayunkai" : { 
+       "score": 0,
+       "rarity" : "30.82 %",
+       "frequency" : 843
+    
+   },
+ 
+    "Hadr Igwe" : { 
+       "score": 0,
+       "rarity" : "24.61 %",
+       "frequency" : 673
+    
+   },
+ 
+    "Shayatare Obso" : { 
+       "score": 0,
+       "rarity" : "4.53 %",
+       "frequency" : 124
+    
+   },
+ 
+    "Ayunkai Obso" : { 
+       "score": 2,
+       "rarity" : "3.69 %",
+       "frequency" : 101
+    
+   },
+ 
+    "Hadr Obso" : { 
+       "score": 5,
+       "rarity" : "2.05 %",
+       "frequency" : 56
+    
+   }
+},
+  "Saddle": { 
+  
+    "Eh-Yashara Ana" : { 
+       "score": 2,
+       "rarity" : "40.84 %",
+       "frequency" : 1117
+    
+   },
+ 
+    "Eh-Yashara Moi-Ana" : { 
+       "score": 5,
+       "rarity" : "24.42 %",
+       "frequency" : 668
+    
+   },
+ 
+    "none" : { 
+       "score": -1,
+       "rarity" : "24.2 %",
+       "frequency" : 662
+    
+   },
+ 
+    "Eh-Yashara Karu" : { 
+       "score": 10,
+       "rarity" : "10.53 %",
+       "frequency" : 288
+    
+   }
+},
+  "Hand Piece": { 
+  
+    "none" : { 
+       "score": -1,
+       "rarity" : "44.68 %",
+       "frequency" : 1222
+    
+   },
+ 
+    "Ana Kooreh" : { 
+       "score": 2,
+       "rarity" : "40.37 %",
+       "frequency" : 1104
+    
+   },
+ 
+    "Moi-Ana Kooreh" : { 
+       "score": 5,
+       "rarity" : "14.95 %",
+       "frequency" : 409
+    
+   }
+},
+  "Mane": { 
+  
+    "Abi Kyu" : { 
+       "score": 0,
+       "rarity" : "33.78 %",
+       "frequency" : 924
+    
+   },
+ 
+    "Abi" : { 
+       "score": 0,
+       "rarity" : "25.67 %",
+       "frequency" : 702
+    
+   },
+ 
+    "Moi-Abi" : { 
+       "score": 5,
+       "rarity" : "21.21 %",
+       "frequency" : 580
+    
+   },
+ 
+    "Moi-Abi Kyu" : { 
+       "score": 5,
+       "rarity" : "12.43 %",
+       "frequency" : 340
+    
+   },
+ 
+    "Karu" : { 
+       "score": 25,
+       "rarity" : "3.88 %",
+       "frequency" : 106
+    
+   },
+ 
+    "Karu Kyu" : { 
+       "score": 25,
+       "rarity" : "3.03 %",
+       "frequency" : 83
+    
+   }
+},
+  "Head Piece": { 
+  
+    "none" : { 
+       "score": -1,
+       "rarity" : "61.97 %",
+       "frequency" : 1695
+    
+   },
+ 
+    "Ana Baina" : { 
+       "score": 2,
+       "rarity" : "19.96 %",
+       "frequency" : 546
+    
+   },
+ 
+    "Moi-Ana Baina" : { 
+       "score": 5,
+       "rarity" : "14.44 %",
+       "frequency" : 395
+    
+   },
+ 
+    "Ingya Mok" : { 
+       "score": 10,
+       "rarity" : "3.62 %",
+       "frequency" : 99
+    
+   }
+},
+  "Trophy": { 
+  
+    "No" : { 
+       "score": -1,
+       "rarity" : "82.34 %",
+       "frequency" : 2252
+    
+   },
+ 
+    "Yes" : { 
+       "score": 5,
+       "rarity" : "17.66 %",
+       "frequency" : 483
+    
+   }
+}
+}

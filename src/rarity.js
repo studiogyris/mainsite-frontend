@@ -1,24 +1,59 @@
 async function main(){
-    const stats = await fetch('/drops/bura/statistics/index.json').then((res)=>{
-        return res.json()})
+    const pathn = window.location.pathname;
+    var stats,allscores,nonvis,collectionName,subclassLimits;
 
-    const allscores = await fetch('/drops/bura/statistics/allscores.json').then((res)=>{
-        return res.json()})
+    if (pathn.includes('bura')) {
+        collectionName = 'bura';
 
-    gid('input-buraid').addEventListener('input', onInputBuraID);
+        stats = await fetch('/drops/bura/statistics/index.json').then((res)=>{
+            return res.json()})
+    
+        allscores = await fetch('/drops/bura/statistics/allscores.json').then((res)=>{
+            return res.json()})
+
+        subclassLimits = await fetch('/drops/bura/additional/subclasslimits.json').then((res)=>{
+            return res.json()})
+
+        nonvis = [
+            'Strength',
+            'Intelligence',
+            'Wisdom',
+            'Dexterity',
+            'Resilience',
+            'Charisma',
+            'Height',
+            'Base rating'
+        ]
+
+    } else if (pathn.includes('ogg')) {
+        collectionName = 'ogg';
+
+        stats = await fetch('/drops/ogg/statistics/index.json').then((res)=>{
+            return res.json()})
+    
+        allscores = await fetch('/drops/ogg/statistics/allscores.json').then((res)=>{
+            return res.json()})
+
+        subclassLimits = await fetch('/drops/ogg/additional/subclasslimits.json').then((res)=>{
+            return res.json()})
+
+        nonvis = [
+            'Strength',
+            'Agility',
+            'Endurance',
+            'Synergy',
+            'Resilience',
+            'Base rating'
+        ]
+    } 
+    
+   
+
+    gid('input-itemid').addEventListener('input', onInputItemID);
     clicksen('fetch-btn',onClickFetch);
    
 
-    const nonvis = [
-        'Strength',
-        'Intelligence',
-        'Wisdom',
-        'Dexterity',
-        'Resilience',
-        'Charisma',
-        'Height',
-        'Base rating'
-    ]
+    
 
     const tiers = {
         '-1':{
@@ -58,8 +93,8 @@ async function main(){
 
     const specialAttrs = ['Mahan Yura','The Old, the Gone, the Here and the Now','Chief Lap-Lap','Oo Na Gaiari','Moss','Akukani Bu-Raa-Nai']
 
-    function onInputBuraID(){
-        const inputE = gid("input-buraid");
+    function onInputItemID(){
+        const inputE = gid("input-itemid");
         const v = inputE.value;
         if (  v<0 || v===0 ){
           inputE.value="";
@@ -78,41 +113,50 @@ async function main(){
     async function onClickFetch(){
         
         var totalScore = 10;
-        id = gid('input-buraid').value
+        id = gid('input-itemid').value
         if ( isNaN(id) || id=='' || id<0 || id===0 ){
             return
           } else if ( id>2734){
               return
             }
-       
-        editext('main-h',`Displaying attributes for Bura #${id}`)
-        gid('nonvis-attr-wrap').innerHTML=''
-        gid('vis-attr-wrap').innerHTML=''
-        const ans = await fetch('/drops/bura/metadata/'+id+'.json')
+        unhide('extended')
+        gid('title').textContent='Ogg #';
+        hide('memorandum');
+        unhide('nothing')
+        gid('item-img').src='/img/giphy.gif';
+
+        const ans = await fetch('/drops/'+collectionName + '/metadata/'+id+'.json')
         .then((res)=>{
            return res.json()
         })
 
-        gid('img-bura').src=`https://gyris-bura.b-cdn.net/${id}.jpg`
         
-        const pp = creatE('div')
-        pp.innerHTML="<br>"
+        gid('item-img').src=`https://gyris-${collectionName}.b-cdn.net/${id}.jpg`
+        gid('view-original').href=`https://gyris-${collectionName}.b-cdn.net/${id}.jpg`
+        
+        
 
-        gid('vis-attr-wrap').appendChild(pp)
+        gid('title-itemid').innerHTML=id;
+
         var noneCount = 0;
 
-        const tn = creatE('div')
-        tn.innerHTML=`<strong style="font-size:120%">Trait count: &nbsp<span id='trait-count'>?</span>/12</strong>&nbsp<span id="traitcount-bonus"></span>`
-        gid('vis-attr-wrap').appendChild(tn)
-        gid('vis-attr-wrap').appendChild(creatE('br'))
 
         for (attrObj of ans.attributes) {
-           
             const tname = attrObj.trait_type
-            if (tname == "Memorandi I" || tname == "ID" ) continue;
+            if ( tname == "ID" ) continue;
+
+           
+
             var tval = attrObj.value
             if (tval=='War Paint (Full skull)') {
                 tval = 'War Paint (Full Skull)'
+            }
+
+            if (tname == "Memorandi I" ) {
+                editext('memorandum-text',tval);
+                hide('nothing');
+                unhide('memorandum')
+                continue;
             }
             
             var isNonvis = false;
@@ -120,93 +164,170 @@ async function main(){
                 isNonvis = true;
             }
 
-            const wrap = isNonvis ? gid('nonvis-attr-wrap') : gid('vis-attr-wrap')
-            const d1 = creatE('div')
-            
-
             if (isNonvis) {
-                if (tname=='Resilience'){
-                    d1.innerHTML = `&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<strong>` + tname + '</strong>' + `<div style='color:red;'>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp` +tval+'</div><br>'
-                } else if (tname=='Base rating') {
+                 if (tname=='Base rating') {
                    
-                    gid('trait-count').textContent=12-noneCount
-                    if ( noneCount == 0 ) {
-                        //12/12
-                        totalScore+=bonuspoints['12/12']
-                        gid('traitcount-bonus').textContent=`[+${bonuspoints['12/12']}]`
-                    } else if ( noneCount == 7 ){
-                        //5/12
-                        totalScore+=bonuspoints['5/12']
-                        gid('traitcount-bonus').textContent=`[+${bonuspoints['5/12']}]`
+                    if (collectionName=='bura') {
+                        if ( noneCount == 0 ) {
+                            //12/12
+                            totalScore+=bonuspoints['12/12']
+                            //gid('traitcount-bonus').textContent=`[+${bonuspoints['12/12']}]`
+                        } else if ( noneCount == 7 ){
+                            //5/12
+                            totalScore+=bonuspoints['5/12']
+                            //gid('traitcount-bonus').textContent=`[+${bonuspoints['5/12']}]`
+                        }
                     }
+
+
                     if (totalScore>100) {
                         totalScore=100
                     }
                     const vs = (totalScore/20).toFixed(1)
                     visrank = 1;
+                    var samescoreAmountVis=0;
+
                     for (scr of allscores['vis']) {
                         if ((totalScore/20) < scr) {
                             
                             visrank++
+                        } else if ( parseFloat((totalScore/20).toFixed(2))==scr ) {
+                            samescoreAmountVis++;
                         } else {
                             break;
                         }
                     }
+            
+                    gid('vis-score').textContent=`${vs}/5`
 
-                    gid('vis-score').textContent=`${vs}    ( #${visrank} )`
+                    var visBetterThan = 2735 - visrank - samescoreAmountVis;
+                    var visMarginLeft  = visBetterThan / (2735/315)
+                    var visWidth = samescoreAmountVis / (2735/315)
+                    if ( visWidth < 7 ) visWidth = 7;
+                    if (visMarginLeft > 307) visMarginLeft = 307;
+                    gid('vis-bar').style['margin-left']= visMarginLeft +'px' 
+                    gid('vis-bar').style.width= (visWidth ).toFixed(0) + 'px'
+                    
+                    gid("vis-better").textContent= (( (2735 - visrank - samescoreAmountVis + 1 ) / 2735 ) * 100).toFixed(1);
+                    gid("vis-same").textContent= (( samescoreAmountVis / 2735 ) * 100).toFixed(1);
+                    gid("vis-worse").textContent= (( (visrank - 1 ) / 2735 ) * 100).toFixed(1);
+                   
+                    var samescoreAmountNonvis = 0;
 
                     nonvisrank = 1
                     for (scr of allscores['nonvis']) {
                         if ((tval) < scr) {
                             nonvisrank++
+                        } else if ( tval==scr ) {
+                            samescoreAmountNonvis++;
                         } else {
                             break;
                         }
                     }
-
+                    var samescoreAmountComb = 0;
                     combinedrank = 1
                     for (scr of allscores['combined']) {
                         if ((parseFloat(vs)+tval) < scr) {
                             combinedrank++
+                        } else if ( (parseFloat(vs)+tval)==scr ) {
+                            samescoreAmountComb++;
                         } else {
                             break;
                         }
                     }
 
-                    gid('nonvis-score').textContent=`${tval.toFixed(1)}  ( #${nonvisrank} )`
-                    
-                    gid('combined-score').textContent=`${(parseFloat(vs)+tval).toFixed(1)}  ( #${combinedrank} )`
+                    gid('nonvis-score').textContent=`${tval.toFixed(1)}/5`
+
+                    var nonvisBetterThan = 2735 - nonvisrank - samescoreAmountNonvis;
+                    var nonvisMarginLeft  = nonvisBetterThan / (2735/315)
+                    var nonvisWidth = samescoreAmountNonvis / (2735/315)
+                    if ( nonvisWidth < 7 ) nonvisWidth = 7;
+                    if (visMarginLeft > 307) visMarginLeft = 307;
+                    gid('nonvis-bar').style['margin-left']= nonvisMarginLeft +'px';
+                   
+                    gid('nonvis-bar').style.width= (nonvisWidth ).toFixed(0) + 'px';
+                    gid("nonvis-better").textContent= (( (2735 - nonvisrank - samescoreAmountNonvis + 1 ) / 2735 ) * 100).toFixed(1);
+                    gid("nonvis-same").textContent= (( samescoreAmountNonvis / 2735 ) * 100).toFixed(1);
+                    gid("nonvis-worse").textContent= (( (nonvisrank - 1 ) / 2735 ) * 100).toFixed(1);
+                 
                 } else {
-                    d1.innerHTML = `&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<strong>` + tname + '</strong>' + `<div style='color:red;'>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp` +tval+'</div>'
+                    gid('attr-val-'+tname).textContent=tval;
+                    if (tname!='Height') {
+                        const greenbar = gid('barwrap-'+tname.toLowerCase()).children[0];
+                        const min = greenbar.style['margin-left'];
+                        const minn = parseInt(min.split('p')[0])
+                        greenbar.style.width = (tval * 2.4 - minn ).toFixed(0) + 'px';
+                    }
+                    
                 }
                 
             } else {
                 if (tval == 'none' ) {
                     noneCount++;
                 }
+                const idp2 = tname.replace(/\s+/g, '-').toLowerCase();
+                
+                if (collectionName=='bura') {
+                    if (tname=='Class') {
+                        const className = tval.split(' ')[0];
+                        const isYaru = tval.split(' ')[1] ? true : false;
+                        gid('classname').textContent = subclassLimits.dictionary[subclassLimits.mapping[className]];
+                        gid('isyaru').textContent = isYaru ? 'Yaru (Apprentice)' : 'Carved weapon'
+                        const scl = subclassLimits.values[ (subclassLimits.mapping[className]).toFixed(0) ];
+
+                        for (attrName in scl) {
+                            
+                            const greenbar = gid('barwrap-'+attrName.toLowerCase()).children[0]
+                            const redbar = gid('barwrap-'+attrName.toLowerCase()).children[1]
+                            const { max } = scl[attrName];
+                            const { min } = scl[attrName];
+                            greenbar.style['margin-left']=(min * 2.4).toFixed(0) + 'px';
+                            redbar.style['margin-left']=(min* 2.40).toFixed(0) + 'px';
+                            redbar.style.width=(max * 2.4 - min * 2.4).toFixed(0) + 'px';
+                        }
+
+                    }
+                } else if (collectionName=='ogg') {
+                    if (tname=="Type") {
+                        const className = tval;
+                        
+                        gid('classname').textContent = className
+                        gid('isyaru').textContent = subclassLimits.dictionary[subclassLimits.mapping[className]];
+                        const scl = subclassLimits.values[ (subclassLimits.mapping[className]).toFixed(0) ];
+                        
+
+                        for (attrName in scl) {
+                            
+                            const greenbar = gid('barwrap-'+attrName.toLowerCase()).children[0]
+                            const redbar = gid('barwrap-'+attrName.toLowerCase()).children[1]
+                            const { max } = scl[attrName];
+                            const { min } = scl[attrName];
+                            greenbar.style['margin-left']=(min * 2.4).toFixed(0) + 'px';
+                            redbar.style['margin-left']=(min* 2.40).toFixed(0) + 'px';
+                            redbar.style.width=(max * 2.4 - min * 2.4).toFixed(0) + 'px';
+                        }
+
+                    }
+                }
+                
+
                 const o = stats[tname][tval];
                 const { score } = o;
                 totalScore += score;
                
-                var p1 = ""
-                var p2 = ""
                
                 if (tiers[score.toString()]['name']=="Divine"){
-                    p1 = "<strong><i>"
-                    p2 = '</strong></i>'
+                   gid('visa-'+idp2).innerHTML=`<strong><i>${tval}</i></strong>`;
+                } else {
+                   gid('visa-'+idp2).textContent=tval;
                 }
                 var { color } = tiers[score.toString()]
                 if ( specialAttrs.includes(tval) ) {
                     color = 'rgb(98, 63, 63)'
                 }
-                d1.innerHTML = '<strong>' + tname + '</strong>' + ' : ' + `<span style='color:${color}'>${p1}` +tval+`${p2}</span>`
+                gid('visa-'+idp2).style.color=color;   
             }
-           
-    
-            wrap.appendChild(d1)
         }  
-      
-        unhide('tier-coloring')
     }
 }main();
 

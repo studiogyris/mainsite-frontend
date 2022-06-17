@@ -102,13 +102,12 @@
             </h2>
 
             <p class="text-center sub-heading">
-              Thing voice. Nicknamed as H popular and a respected Bura among the
-              tribe by attacking a Minjierri camp at night, to save his defeated
-              and wounde
+              Type the ID of the Bura you'd like to search, then press Fetch!<br>
+              Don't forget to hover over the tooltip icons (?) to reveal more information about what you are looking at.
             </p>
 
             <div class="row about-box">
-              <div class="about-details">
+              <div style="display:none;" class="about-details">
                 <h3>About Bura’s rarity</h3>
                 <p>
                   thing voice. Nicknamed as H popular and a respected Bura among
@@ -144,7 +143,7 @@
               <div class="column number-column">
                 <div class="number-input">
                   <input
-                    id="input-buraid"
+                    id="input-itemid"
                     type="number"
                     value=""
                     min="0"
@@ -160,27 +159,27 @@
         </div>
         <div class="row top-details">
           <div class="image-section">
-            <div class="title">Bura #1234</div>
-            <img src="https://gyris-bura.b-cdn.net/123.jpg" />
-            <span>View the original image</span>
+            <div  class="title"><b id="title">&nbsp</b><b id="title-itemid"></b></div>
+            <img id="item-img" src="https://gyris-bura.b-cdn.net/123.jpg" />
+            <span><a id="view-original" href="https://gyris-bura.b-cdn.net/123.jpg" target="_blank">View the original image</a></span>
           </div>
 
           <div class="attribute-section">
-            <div class="title">Owner: <span>xYza...SsnHj</span></div>
+            <div class="title">&nbsp<span></span></div>
             <div class="list">
               <div class="attribute-list">
                 <h3>ATTRIBUTES</h3>
 
                 <ul>
-                  <li class="strength">
+                  <li  id="barwrap-strength" class="strength">
                     <div
                       class="bar-2"
                       style="margin-left: 61px; width: 30px"
                     ></div>
                     <div class="bar-3" style="margin-left: 61px"></div>
-                    <div class="details">Strength<span>61</span></div>
+                    <div class="details">Strength<span id="attr-val-Strength">61</span></div>
                   </li>
-                  <li class="intelligence">
+                  <li  id="barwrap-intelligence" class="intelligence">
                     <div
                       class="bar-2"
                       style="margin-left: 35px; width: 50px"
@@ -189,51 +188,51 @@
                       class="bar-3"
                       style="margin-left: 35px; width: 70px"
                     ></div>
-                    <div class="details">Intelligence<span>35</span></div>
+                    <div class="details">Intelligence<span  id="attr-val-Intelligence">35</span></div>
                   </li>
-                  <li class="wisdom">
+                  <li id="barwrap-wisdom"  class="wisdom">
                     <div
                       class="bar-2"
                       style="margin-left: 82px; width: 20px"
                     ></div>
                     <div class="bar-3" style="margin-left: 82px"></div>
-                    <div class="details">Wisdom<span>82</span></div>
+                    <div class="details">Wisdom<span id="attr-val-Wisdom">82</span></div>
                   </li>
-                  <li class="dexterity">
+                  <li  id="barwrap-dexterity" class="dexterity">
                     <div
                       class="bar-2"
                       style="margin-left: 66px; width: 30px"
                     ></div>
                     <div class="bar-3" style="margin-left: 66px"></div>
-                    <div class="details">Dexterity<span>66</span></div>
+                    <div class="details">Dexterity<span  id="attr-val-Dexterity">66</span></div>
                   </li>
-                  <li class="resilience">
+                  <li  id="barwrap-resilience" class="resilience">
                     <div
                       class="bar-2"
                       style="margin-left: 26px; width: 100px"
                     ></div>
                     <div class="bar-3" style="margin-left: 26px"></div>
-                    <div class="details">Resilience<span>96</span></div>
+                    <div class="details">Resilience<span id="attr-val-Resilience">96</span></div>
                   </li>
-                  <li class="charisma">
+                  <li id="barwrap-charisma" class="charisma">
                     <div
                       class="bar-2"
                       style="margin-left: 23px; width: 20px"
                     ></div>
                     <div class="bar-3" style="margin-left: 23px"></div>
-                    <div class="details">Charisma<span>23</span></div>
+                    <div class="details">Charisma<span id="attr-val-Charisma">23</span></div>
                   </li>
                 </ul>
               </div>
             </div>
             <div class="attrubute-extended">
-              <div class="att-title">Bu-Raa-Oo (Hunter)</div>
-              <div class="apprecntice">Yaru (Apprentice)</div>
-              <div class="height">Height<span>7.5 ft(2.3m)</span></div>
+              <div class="att-title" id="classname">Bu-Raa-Oo (Hunter)</div>
+              <div class="apprecntice" id="isyaru">Yaru (Apprentice)</div>
+              <div class="height">Height<span  id="attr-val-Height">7.5 ft(2.3m)</span></div>
             </div>
           </div>
         </div>
-        <div class="container">
+        <div id='extended' style='display:none' class="container">
           <div>
             <div class="row middle-details">
               <div class="visual">
@@ -242,51 +241,51 @@
                   <tbody>
                     <tr>
                       <td>Background</td>
-                      <td style="color: rgb(136, 138, 136)">Value 1</td>
+                      <td style="color: rgb(136, 138, 136)" id="visa-background">Value 1</td>
                     </tr>
                     <tr>
                       <td>Class</td>
-                      <td style="color: rgb(94, 255, 30)">Value 2</td>
+                      <td style="color: rgb(94, 255, 30)" id="visa-class">Value 2</td>
                     </tr>
                     <tr>
                       <td>Tribe</td>
-                      <td style="color: rgb(38, 81, 224)">Value 3</td>
+                      <td style="color: rgb(38, 81, 224)" id="visa-tribe">Value 3</td>
                     </tr>
                     <tr>
                       <td>Upper Body</td>
-                      <td style="color: rgb(179, 65, 207)">Value 4</td>
+                      <td style="color: rgb(179, 65, 207)" id="visa-upper-body">Value 4</td>
                     </tr>
                     <tr>
                       <td>Lower Body</td>
-                      <td style="color: rgb(226, 167, 41)">Value 5</td>
+                      <td style="color: rgb(226, 167, 41)" id="visa-lower-body">Value 5</td>
                     </tr>
                     <tr>
                       <td>Arms</td>
-                      <td>Value 6</td>
+                      <td id="visa-arms">Value 6</td>
                     </tr>
                     <tr>
                       <td>Jewellery</td>
-                      <td style="color: rgb(104 64 64 / 99%)">Value 7</td>
+                      <td style="color: rgb(104 64 64 / 99%)" id="visa-jewellery">Value 7</td>
                     </tr>
                     <tr>
                       <td>Hair</td>
-                      <td style="color: rgb(191 160 160)">Value 8</td>
+                      <td style="color: rgb(191 160 160)" id="visa-hair">Value 8</td>
                     </tr>
                     <tr>
                       <td>Face</td>
-                      <td style="color: rgb(211 116 116)">Value 9</td>
+                      <td style="color: rgb(211 116 116)" id="visa-face">Value 9</td>
                     </tr>
                     <tr>
                       <td>Chin</td>
-                      <td style="color: rgb(22 184 31)">Value 10</td>
+                      <td style="color: rgb(22 184 31)" id="visa-chin">Value 10</td>
                     </tr>
                     <tr>
                       <td>Head</td>
-                      <td style="color: rgb(21 241 33)">Value 11</td>
+                      <td style="color: rgb(21 241 33)" id="visa-head">Value 11</td>
                     </tr>
                     <tr>
                       <td>Eyes</td>
-                      <td style="color: rgb(206 238 0)">Value 12</td>
+                      <td style="color: rgb(206 238 0)" id="visa-eyes">Value 12</td>
                     </tr>
                   </tbody>
                 </table>
@@ -320,11 +319,12 @@
                 <ul>
                   <li>
                     <div class="title">
-                      Non-visual score: <span class="bura-score"> 1.5/5</span>
+                      Non-visual score: <span id="nonvis-score" class="bura-score"> 1.5/5</span>
                     </div>
                     <div class="bar">
                       <div class="main-bar">
                         <div
+                          id="nonvis-bar"
                           class="score-bar"
                           style="width: 100x; margin-left: 20px"
                         ></div>
@@ -336,8 +336,14 @@
                             aria-hidden="true"
                           ></i>
                           <div class="tooltip-box">
-                            Your nonvisual score is:<br /><br />Better than 14%,
-                            Same as 29%, Worse than 57%
+                            Your non-visual score is:
+                            <br />
+                            <br />
+                            <ul>
+                              <li>&nbsp	&#8226; Better than <span id="nonvis-better">14</span> %</li>
+                              <li>&nbsp &#8226; Same as <span id="nonvis-same">29</span> %</li>
+                              <li>&nbsp &#8226; Worse than <span id="nonvis-worse">57</span> %</li>
+                            </ul>
                           </div></span
                         >
                       </div>
@@ -345,11 +351,12 @@
                   </li>
                   <li>
                     <div class="title">
-                      on-visual score: <span class="bura-score">1.5/5</span>
+                      Visual score: <span id="vis-score" class="bura-score">1.5/5</span>
                     </div>
                     <div class="bar">
                       <div class="main-bar">
                         <div
+                          id="vis-bar"
                           class="score-bar"
                           style="width: 100x; margin-left: 100px"
                         ></div>
@@ -361,8 +368,14 @@
                             aria-hidden="true"
                           ></i>
                           <div class="tooltip-box">
-                            Your nonvisual score is:<br /><br />Better than 14%,
-                            Same as 29%, Worse than 57%
+                            Your non-visual score is:
+                            <br />
+                            <br />
+                            <ul>
+                              <li>&nbsp	&#8226; Better than <span id="vis-better">14</span> %</li>
+                              <li>&nbsp &#8226; Same as <span id="vis-same">29</span> %</li>
+                              <li>&nbsp &#8226; Worse than <span id="vis-worse">57</span> %</li>
+                            </ul>
                           </div>
                         </span>
                       </div>
@@ -376,16 +389,18 @@
             </div>
 
             <div class="row other-information">
-              <h3>Other information</h3>
+              <h3>Other attributes</h3>
               <p class="other-info-text">
-                thing voice. Nicknamed as H popular and a respected Bura among
-                the tribe by attacking a Minjierri camp at night, to save his
-                defeated and wounde
+                Below will be listed any additional attributes given to a Bura during campaigns. Currently such is only "Memorandum I" entry attribute.
               </p>
 
-              <div class="memorandum">
+              <div id="nothing" class="memorandum">
+                <h4>No additional attributes found...</h4>
+              </div>
+
+              <div id="memorandum" style="display:none;" class="memorandum">
                 <h4>Memorandum I</h4>
-                <p>
+                <p id="memorandum-text">
                   A healer from the Duara tribe, wise and resilient, known for
                   his kindness, bravery, and a very deep, soothing voice.
                   Nicknamed as Hadringya - “Healer of Souls”, he has made

@@ -1,0 +1,200 @@
+{
+    "mapping": {
+        "Shayatare Kahn":1,
+        "Shayatare Kyu":11,
+        "Obso Kahn":2,
+        "Obso Kyu":22,
+        "Hadr Kahn":3,
+        "Hadr Kyu":33,
+        "Ayunkoi Kahn":4,
+        "Ayunkoi Kyu":44
+    },
+    "dictionary":{
+        "1": "Forest ( Male )",
+        "11": "Forest ( Female )",
+        "2": "Midnight ( Male )",
+        "22": "Midnight ( Female )",
+        "3": "Snow ( Male )",
+        "33": "Snow ( Female )",
+        "4": "Savannah ( Male )",
+        "44": "Savannah ( Female )"
+    },
+    "values": {
+        "1": {
+            "Strength": {
+                "max": 90,
+                "min": 70
+            },
+            "Agility": {
+                "max": 75,
+                "min": 45
+            },
+            "Resilience": {
+                "max": 70,
+                "min": 40
+            },
+            "Endurance": {
+                "max": 60,
+                "min": 30
+            },
+            "Synergy": {
+                "max": 80,
+                "min": 40
+            }
+        },
+        "11": {
+            "Strength": {
+                "max": 80,
+                "min": 60
+            },
+            "Agility": {
+                "max": 80,
+                "min": 50
+            },
+            "Resilience": {
+                "max": 75,
+                "min": 45
+            },
+            "Endurance": {
+                "max": 60,
+                "min": 30
+            },
+            "Synergy": {
+                "max": 80,
+                "min": 40
+            }
+        },
+        "2": {
+            "Strength": {
+                "max": 70,
+                "min": 40
+            },
+            "Agility": {
+                "max": 75,
+                "min": 45
+            },
+            "Resilience": {
+                "max": 100,
+                "min": 70
+            },
+            "Endurance": {
+                "max": 90,
+                "min": 60
+            },
+            "Synergy": {
+                "max": 40,
+                "min": 10
+            }
+        },
+        "22": {
+            "Strength": {
+                "max": 70,
+                "min": 35
+            },
+            "Agility": {
+                "max": 75,
+                "min": 40
+            },
+            "Resilience": {
+                "max": 95,
+                "min": 70
+            },
+            "Endurance": {
+                "max": 95,
+                "min": 70
+            },
+            "Synergy": {
+                "max": 40,
+                "min": 10
+            }
+        },
+        "3": {
+            "Strength": {
+                "max": 70,
+                "min": 40
+            },
+            "Agility": {
+                "max": 75,
+                "min": 45
+            },
+            "Resilience": {
+                "max": 85,
+                "min": 40
+            },
+            "Endurance": {
+                "max": 100,
+                "min": 75
+            },
+            "Synergy": {
+                "max": 45,
+                "min": 20
+            }
+        },
+        "33": {
+            "Strength": {
+                "max": 70,
+                "min": 40
+            },
+            "Agility": {
+                "max": 75,
+                "min": 40
+            },
+            "Resilience": {
+                "max": 75,
+                "min": 40
+            },
+            "Endurance": {
+                "max": 100,
+                "min": 75
+            },
+            "Synergy": {
+                "max": 55,
+                "min": 30
+            }
+        },
+        "4": {
+            "Strength": {
+                "max": 70,
+                "min": 30
+            },
+            "Agility": {
+                "max": 95,
+                "min": 70
+            },
+            "Resilience": {
+                "max": 85,
+                "min": 55
+            },
+            "Endurance": {
+                "max": 50,
+                "min": 20
+            },
+            "Synergy": {
+                "max": 75,
+                "min": 45
+            }
+        },
+        "44": {
+            "Strength": {
+                "max": 60,
+                "min": 25
+            },
+            "Agility": {
+                "max": 95,
+                "min": 80
+            },
+            "Resilience": {
+                "max": 85,
+                "min": 55
+            },
+            "Endurance": {
+                "max": 60,
+                "min": 25
+            },
+            "Synergy": {
+                "max": 75,
+                "min": 45
+            }
+        }
+    }
+}

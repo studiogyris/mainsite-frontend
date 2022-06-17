@@ -1,0 +1,91 @@
+{
+  "name": "Ogg #2418",
+  "symbol": "GGAO",
+  "description": "The Oggs are large bear sized animalia that roam much of the land of Gyris. When befriended by the Bura they form lifelong bonds that see them carry the Bura into battle and protect them from harms way. Much like a dog, they are warm and friendly when treated with kindness and dignity but when crossed or threatened they will not hesitate to bear their teeth, or worse yet, tear flesh from their enemies.",
+  "image": "2418.jpg",
+  "external_url": "https://gyris.io/rarity/ogg?id=2418",
+  "seller_fee_basis_points": 600,
+  "background_color": "fff",
+  "collection": {
+    "name": "Gyris Genesis Animalia: Ogg",
+    "family": "Gyris"
+  },
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "Grey"
+    },
+    {
+      "trait_type": "Type",
+      "value": "Hadr Kahn"
+    },
+    {
+      "trait_type": "Ground",
+      "value": "Hadr Igwe"
+    },
+    {
+      "trait_type": "Saddle",
+      "value": "Eh-Yashara Karu"
+    },
+    {
+      "trait_type": "Hand Piece",
+      "value": "none"
+    },
+    {
+      "trait_type": "Mane",
+      "value": "Abi"
+    },
+    {
+      "trait_type": "Head Piece",
+      "value": "none"
+    },
+    {
+      "trait_type": "Trophy",
+      "value": "No"
+    },
+    {
+      "display_type": "number",
+      "trait_type": "Strength",
+      "value": 56
+    },
+    {
+      "display_type": "number",
+      "trait_type": "Agility",
+      "value": 72
+    },
+    {
+      "display_type": "number",
+      "trait_type": "Resilience",
+      "value": 63
+    },
+    {
+      "display_type": "number",
+      "trait_type": "Endurance",
+      "value": 79
+    },
+    {
+      "display_type": "number",
+      "trait_type": "Synergy",
+      "value": 35
+    },
+    {
+      "display_type": "number",
+      "trait_type": "Base rating",
+      "value": 2.7
+    }
+  ],
+  "properties": {
+    "creators": [
+      {
+        "address": "4C7fEKJWDXDgQwpjXpepubFsFCnAF627rea8LNhB4QHb",
+        "share": 100
+      }
+    ],
+    "files": [
+      {
+        "uri": "2418.jpg",
+        "type": "image/jpg"
+      }
+    ]
+  }
+}
