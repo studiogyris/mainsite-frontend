@@ -17,7 +17,7 @@ async function main(){
                     gid('item-img').src= `https://gyris-${collectionName}-800x800.b-cdn.net/123.jpg`
                 }
             await new Promise(r => setTimeout(r, 50));
-            r = true;
+            r1 = true;
         } catch (err) {
             await new Promise(r => setTimeout(r, 50));
           }
