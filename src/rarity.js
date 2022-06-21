@@ -154,7 +154,7 @@ async function main(){
                 await new Promise(r => setTimeout(r, 50));     
                 r1 = true;
             } catch (err) {
-                
+                await new Promise(r => setTimeout(r, 50));  
             }
             
         }
