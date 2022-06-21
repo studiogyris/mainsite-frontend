@@ -8,12 +8,21 @@ async function main(){
     if (pathn.includes('bura')) {
         collectionName = 'bura';
 
-        if (isMobile) {
-            gid('item-img').src= `https://gyris-${collectionName}-350x350.b-cdn.net/123.jpg`
-        } else {
-            gid('item-img').src= `https://gyris-${collectionName}-800x800.b-cdn.net/123.jpg`
+        var r1 = false;
+        while (r1==false) {
+            try {
+                if (isMobile) {
+                    gid('item-img').src= `https://gyris-${collectionName}-350x350.b-cdn.net/123.jpg`
+                } else {
+                    gid('item-img').src= `https://gyris-${collectionName}-800x800.b-cdn.net/123.jpg`
+                }
+            await new Promise(r => setTimeout(r, 50));
+            r = true;
+        } catch (err) {
+            await new Promise(r => setTimeout(r, 50));
+          }
         }
-    
+        
 
         stats = await fetch('/drops/bura/statistics/index.json').then((res)=>{
             return res.json()})
