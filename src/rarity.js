@@ -142,12 +142,23 @@ async function main(){
         .then((res)=>{
            return res.json()
         })
-
-        if (isMobile) {
-            gid('item-img').src=`https://gyris-${collectionName}-350x350.b-cdn.net/${id}.jpg`
-        } else {
-            gid('item-img').src=`https://gyris-${collectionName}-800x800.b-cdn.net/${id}.jpg`
+        var r1 = false;
+        while (r1==false) {
+            try {
+                if (isMobile) {
+                
+                    gid('item-img').src=`https://gyris-${collectionName}-350x350.b-cdn.net/${id}.jpg`
+                } else {
+                    gid('item-img').src=`https://gyris-${collectionName}-800x800.b-cdn.net/${id}.jpg`
+                }
+                await new Promise(r => setTimeout(r, 50));     
+                r1 = true;
+            } catch (err) {
+                
+            }
+            
         }
+      
         
 
 
