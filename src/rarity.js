@@ -2,8 +2,18 @@ async function main(){
     const pathn = window.location.pathname;
     var stats,allscores,nonvis,collectionName,subclassLimits;
 
+    var isMobile = screen.width < 521 ? true : false;
+
+   
     if (pathn.includes('bura')) {
         collectionName = 'bura';
+
+        if (isMobile) {
+            gid('item-img').src= `https://gyris-${collectionName}-350x350.b-cdn.net/123.jpg`
+        } else {
+            gid('item-img').src= `https://gyris-${collectionName}-800x800.b-cdn.net/123.jpg`
+        }
+    
 
         stats = await fetch('/drops/bura/statistics/index.json').then((res)=>{
             return res.json()})
@@ -133,8 +143,14 @@ async function main(){
            return res.json()
         })
 
+        if (isMobile) {
+            gid('item-img').src=`https://gyris-${collectionName}-350x350.b-cdn.net/${id}.jpg`
+        } else {
+            gid('item-img').src=`https://gyris-${collectionName}-800x800.b-cdn.net/${id}.jpg`
+        }
         
-        gid('item-img').src=`https://gyris-${collectionName}.b-cdn.net/${id}.jpg`
+
+
         gid('view-original').href=`https://gyris-${collectionName}.b-cdn.net/${id}.jpg`
         
         
