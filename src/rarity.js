@@ -47,6 +47,21 @@ async function main(){
     } else if (pathn.includes('ogg')) {
         collectionName = 'ogg';
 
+        var r1 = false;
+        while (r1==false) {
+            try {
+                if (isMobile) {
+                    gid('item-img').src= `https://gyris-${collectionName}-350x350.b-cdn.net/123.jpg`
+                } else {
+                    gid('item-img').src= `https://gyris-${collectionName}-800x800.b-cdn.net/123.jpg`
+                }
+            await new Promise(r => setTimeout(r, 50));
+            r1 = true;
+        } catch (err) {
+            await new Promise(r => setTimeout(r, 50));
+          }
+        }
+
         stats = await fetch('/drops/ogg/statistics/index.json').then((res)=>{
             return res.json()})
     
@@ -238,12 +253,14 @@ async function main(){
                     }
             
                     gid('vis-score').textContent=`${vs}/5`
+                    var cardWidth = screen.width < 420 ? screen.width : 420;
+                    var barSize = ( cardWidth * 0.8 ) - 20
 
                     var visBetterThan = 2735 - visrank - samescoreAmountVis;
-                    var visMarginLeft  = visBetterThan / (2735/315)
-                    var visWidth = samescoreAmountVis / (2735/315)
+                    var visMarginLeft  = visBetterThan / (2735/barSize) - 2
+                    var visWidth = samescoreAmountVis / (2735/barSize)
                     if ( visWidth < 7 ) visWidth = 7;
-                    if (visMarginLeft > 307) visMarginLeft = 307;
+                    if (visMarginLeft > (barSize - 9) ) visMarginLeft = barSize - 9;
                     gid('vis-bar').style['margin-left']= visMarginLeft +'px' 
                     gid('vis-bar').style.width= (visWidth ).toFixed(0) + 'px'
                     
@@ -277,11 +294,15 @@ async function main(){
 
                     gid('nonvis-score').textContent=`${tval.toFixed(1)}/5`
 
+                    var cardWidth = screen.width < 420 ? screen.width : 420;
+                    var barSize = ( cardWidth * 0.8 ) - 20
+
                     var nonvisBetterThan = 2735 - nonvisrank - samescoreAmountNonvis;
-                    var nonvisMarginLeft  = nonvisBetterThan / (2735/315)
-                    var nonvisWidth = samescoreAmountNonvis / (2735/315)
+                    
+                    var nonvisMarginLeft  = nonvisBetterThan / (2735/barSize) - 2
+                    var nonvisWidth = samescoreAmountNonvis / (2735/barSize)
                     if ( nonvisWidth < 7 ) nonvisWidth = 7;
-                    if (visMarginLeft > 307) visMarginLeft = 307;
+                    if (nonvisMarginLeft > (barSize-9)  ) nonvisMarginLeft = barSize - 9;
                     gid('nonvis-bar').style['margin-left']= nonvisMarginLeft +'px';
                    
                     gid('nonvis-bar').style.width= (nonvisWidth ).toFixed(0) + 'px';
