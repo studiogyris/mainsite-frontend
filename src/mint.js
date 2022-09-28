@@ -392,7 +392,7 @@ async function main(){
               whitelistBurnAuthority.publicKey,
               payer,
               [],
-              Web3.LAMPORTS_PER_SOL,
+              1,
             ),
           );
           cleanupInstructions.push(
