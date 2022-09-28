@@ -56,7 +56,7 @@ async function main(){
     if (!data.value.length) {
       tokenAmount = 0;
     } else {
-      tokenAmount = data.value[0].account.data.parsed.info.tokenAmount.amount/Web3.LAMPORTS_PER_SOL;
+      tokenAmount = data.value[0].account.data.parsed.info.tokenAmount.amount;
     }
     
     console.log(tokenAmount)
