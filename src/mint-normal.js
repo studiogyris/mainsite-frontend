@@ -2,7 +2,7 @@ import * as Web3 from '@solana/web3.js';
 import {CFG} from './config.js';
 import * as anchor from '@project-serum/anchor';
 import {TOKEN_PROGRAM_ID,MintLayout,Token} from  '@solana/spl-token';
-import { token } from '@project-serum/anchor/dist/cjs/utils';
+
 
 const constants = {
   networkConstants: {

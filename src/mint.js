@@ -2,7 +2,7 @@ import * as Web3 from '@solana/web3.js';
 import {CFG} from './config.js';
 import * as anchor from '@project-serum/anchor';
 import {TOKEN_PROGRAM_ID,MintLayout,Token} from  '@solana/spl-token';
-import { token } from '@project-serum/anchor/dist/cjs/utils';
+
 
 const constants = {
   networkConstants: {
@@ -19,6 +19,7 @@ const constants = {
   },
   LAMPORTS_PER_SOL: 1000000000
 }
+
 
 
 // ********[ Entry function ]*******
@@ -55,9 +56,10 @@ async function main(){
     if (!data.value.length) {
       tokenAmount = 0;
     } else {
-      tokenAmount = data.value[0].account.data.parsed.info.tokenAmount.amount;
+      tokenAmount = data.value[0].account.data.parsed.info.tokenAmount.amount/Web3.LAMPORTS_PER_SOL;
     }
     
+    console.log(tokenAmount)
     bag.balances.WLToken = parseInt(tokenAmount);
     editext('connected-whitelisted',`${bag.balances.WLToken} WL tokens`);
     if (tokenAmount==0) onNoWLTokensLeft();
@@ -305,7 +307,7 @@ async function main(){
     const buyer = bag.sol.walletProvider;
     const payer = buyer.publicKey;
     const userTokenAccountAddress = (await getAtaForMint(mint.publicKey,payer))[0];
-
+      console.log(candyMachine.state)
 
     const userPayingAccountAddress = candyMachine.state.tokenMint
     ? (await getAtaForMint(candyMachine.state.tokenMint, payer))[0]
@@ -351,6 +353,7 @@ async function main(){
    
 
     if (candyMachine.state.data.whitelistMintSettings) {
+     
       
       const mint = new anchor.web3.PublicKey(
         candyMachine.state.data.whitelistMintSettings.mint,
@@ -389,7 +392,7 @@ async function main(){
               whitelistBurnAuthority.publicKey,
               payer,
               [],
-              1,
+              Web3.LAMPORTS_PER_SOL,
             ),
           );
           cleanupInstructions.push(
@@ -405,6 +408,7 @@ async function main(){
     }
     //
     if (candyMachine.state.tokenMint) {
+      
       const transferAuthority = anchor.web3.Keypair.generate();
 
       signers.push(transferAuthority);
