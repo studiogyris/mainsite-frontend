@@ -1,0 +1,177 @@
+{   
+    "mapping": {
+        "Duvali Mara": 1,
+        "Abali Mara": 2,
+        "Iguela de Wara": 3,
+        "Mara Anyan": 4,
+        "Duvali Nono": 5,
+        "Duvali Alee": 6
+    },
+    "dictionary":{
+        "1": "Duvali Mara",
+        "2": "Abali Mara",
+        "3": "Iguela de Wara",
+        "4": "Mara Anyan",
+        "5": "Duvali King",
+        "6": "Duvali Alee"
+
+    },
+    "values": {
+        "1": {
+            "Intelligence": {
+                "min": 10,
+                "max": 30
+            },
+            "Resilience": {
+                "min": 50,
+                "max": 75
+            },
+            "Wisdom": {
+                "min": 100,
+                "max": 150
+            },
+            "Diffusion": {
+                "min": 70,
+                "max": 100
+            },
+            "Curiosity": {
+                "min": 50,
+                "max": 100
+            },
+            "Instinct": {
+                "min": 50,
+                "max": 100
+            }
+        },
+        "2": {
+            "Intelligence": {
+                "min": 10,
+                "max": 30
+            },
+            "Resilience": {
+                "min": 50,
+                "max": 75
+            },
+            "Wisdom": {
+                "min": 100,
+                "max": 150
+            },
+            "Diffusion": {
+                "min": 70,
+                "max": 100
+            },
+            "Curiosity": {
+                "min": 50,
+                "max": 100
+            },
+            "Instinct": {
+                "min": 50,
+                "max": 100
+            }
+        },
+        "3": {
+            "Intelligence": {
+                "min": 10,
+                "max": 30
+            },
+            "Resilience": {
+                "min": 50,
+                "max": 75
+            },
+            "Wisdom": {
+                "min": 100,
+                "max": 150
+            },
+            "Diffusion": {
+                "min": 70,
+                "max": 100
+            },
+            "Curiosity": {
+                "min": 50,
+                "max": 100
+            },
+            "Instinct": {
+                "min": 50,
+                "max": 100
+            }
+        },
+        "4": {
+            "Intelligence": {
+                "min": 10,
+                "max": 30
+            },
+            "Resilience": {
+                "min": 50,
+                "max": 75
+            },
+            "Wisdom": {
+                "min": 100,
+                "max": 150
+            },
+            "Diffusion": {
+                "min": 70,
+                "max": 100
+            },
+            "Curiosity": {
+                "min": 50,
+                "max": 100
+            },
+            "Instinct": {
+                "min": 50,
+                "max": 100
+            }
+        },
+        "5": {
+            "Intelligence": {
+                "min": 10,
+                "max": 30
+            },
+            "Resilience": {
+                "min": 50,
+                "max": 75
+            },
+            "Wisdom": {
+                "min": 100,
+                "max": 150
+            },
+            "Diffusion": {
+                "min": 70,
+                "max": 100
+            },
+            "Curiosity": {
+                "min": 50,
+                "max": 100
+            },
+            "Instinct": {
+                "min": 50,
+                "max": 100
+            }
+        },
+        "6": {
+            "Intelligence": {
+                "min": 10,
+                "max": 30
+            },
+            "Resilience": {
+                "min": 50,
+                "max": 75
+            },
+            "Wisdom": {
+                "min": 100,
+                "max": 150
+            },
+            "Diffusion": {
+                "min": 70,
+                "max": 100
+            },
+            "Curiosity": {
+                "min": 50,
+                "max": 100
+            },
+            "Instinct": {
+                "min": 50,
+                "max": 100
+            }
+        }
+    }
+}

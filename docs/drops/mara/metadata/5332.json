@@ -1,0 +1,101 @@
+{
+  "name": "Mara #5332",
+  "symbol": "GGM",
+  "description": "A mysterious Genus often taking the form of funghi, plants or in the skins of small animals, insects and rodents. You will find their homes in trees and logs, made from parts of earth or sheltered under forest growth. The Mara have always been called to plant the Tua Tree atop stones Gumurri pushes through the earth. When the Mara witness the stones arise, they make gardens on top, regardless of its size, and plant the Tua seed. Although small, their place in our saga could not be more important. They can transport themselves effectively via the mycelium network but this isn\u2019t necessary given they connect to a hive mind. They can therefore just speak across it to another Mara anywhere the network reaches. In times where they must move another being (non-Mara) they may use the network as transportation.",
+  "image": "5332.jpg",
+  "external_url": "https://gyris.io/rarity/mara/?id=5332",
+  "seller_fee_basis_points": 600,
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "Black"
+    },
+    {
+      "trait_type": "Magic",
+      "value": "Fire (Purple) (III)"
+    },
+    {
+      "trait_type": "Class",
+      "value": "Mara Anyan"
+    },
+    {
+      "trait_type": "Back Growth",
+      "value": "Tramatis Purple"
+    },
+    {
+      "trait_type": "Wings",
+      "value": "none"
+    },
+    {
+      "trait_type": "Leg Growth",
+      "value": "none"
+    },
+    {
+      "trait_type": "Arms",
+      "value": "Mara Anyan"
+    },
+    {
+      "trait_type": "Head",
+      "value": "with Gills"
+    },
+    {
+      "trait_type": "Eyes",
+      "value": "Generic Double Fire"
+    },
+    {
+      "trait_type": "Facial Features",
+      "value": "none"
+    },
+    {
+      "trait_type": "Intelligence",
+      "value": 17
+    },
+    {
+      "trait_type": "Resilience",
+      "value": 54
+    },
+    {
+      "trait_type": "Wisdom",
+      "value": 150
+    },
+    {
+      "trait_type": "Diffusion",
+      "value": 80
+    },
+    {
+      "trait_type": "Instinct",
+      "value": 92
+    },
+    {
+      "trait_type": "Curiosity",
+      "value": 64
+    },
+    {
+      "trait_type": "Base rating",
+      "value": 2.8
+    },
+    {
+      "trait_type": "ID",
+      "value": "5332"
+    }
+  ],
+  "properties": {
+    "creators": [
+      {
+        "address": "4C7fEKJWDXDgQwpjXpepubFsFCnAF627rea8LNhB4QHb",
+        "share": 100
+      }
+    ],
+    "files": [
+      {
+        "uri": "5332.jpg",
+        "type": "image/jpg"
+      }
+    ],
+    "category": "image"
+  },
+  "collection": {
+    "name": "Gyris Genesis: Mara",
+    "family": "Gyris"
+  }
+}

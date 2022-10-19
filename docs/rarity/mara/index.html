@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <title>Gyris: Rarity</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
+    <script src="/js/rarity.bundle.js" async defer></script>
+    <meta name="msapplication-TileColor" content="#da532c" />
+    <meta name="theme-color" content="#ffffff" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"
+      integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+
+  <body>
+    <header id="header">
+      <div class="container">
+        <div class="row header-row">
+          <div class="column brand-column">
+            <a href="/">
+              <img src="/img/logo.svg" alt="" />
+            </a>
+          </div>
+          <div class="column follow-column">
+            Follow Us:
+            <ul>
+              <li>
+                <a href="https://discord.gg/gyris" target="_blank">
+                  <img src="/img/discord.svg" alt="" />
+                </a>
+              </li>
+              <!--<li>
+						<a href="#">
+							<img src="img/logomark.svg" alt="">
+						</a>
+					</li>-->
+              <li>
+                <a href="https://twitter.com/gyris_official" target="_blank">
+                  <img src="/img/twitter.svg" alt="" />
+                </a>
+              </li>
+              <!--<li>
+						<a href="#">
+							<img src="img/mediu.svg" alt="">
+						</a>
+					</li>-->
+            </ul>
+          </div>
+          <div class="column main-menu-column">
+            <ul>
+              <li>
+                <a href="/manifesto">Manifesto</a>
+              </li>
+              <li>
+                <a href="/epf">GYRIS-EPF</a>
+              </li>
+              <li>
+                <a href="/gaming">Gaming</a>
+              </li>
+              <li>
+                <a href="/rarity">Rarity</a>
+              </li>
+              <li>
+                <a target="_blank" href="https://docs.google.com/document/d/e/2PACX-1vRusIh2v10spfKEpd9agVzF2Fk95oCca2ePWLYWTP9yuKwvAKqAjbOF-Gxvrn01f5f3rrP0Ml1iBl6C/pub">Wiki</a>
+              </li>
+            </ul>
+          </div>
+          <div class="column cta-column">
+            <!--<a href="#" class="btn red-button">mint</a>-->
+            <a
+              id="mint-btn-home"
+              class="btn green-button"
+              target="_blank"
+              href="https://magiceden.io/marketplace/gyris_mara"
+              >BUY NOW</a
+            >
+            <div class="info-block"></div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main>
+      <section id="data">
+        <div class="container">
+          <div>
+            <h2
+              id="main-h"
+              style="display: block; width: 100%"
+              class="text-center"
+            >
+              Rarity and Scoring - Mara
+            </h2>
+
+            <p class="text-center sub-heading">
+              Type the ID of the Mara you'd like to search, then press Fetch!<br>
+              Don't forget to hover over the tooltip icons (?) to reveal more information about what you are looking at.
+            </p>
+
+            <div class="row about-box">
+              <div  class="about-details">
+                <h3>About Mara's rarity</h3>
+                <p>
+                  All Mara belong to a certain class, there are 6 types total: Duvali Mara, Duvali Nono, Duvali Alee, Abali Mara, Iguela de Wara and Mara Anyan.
+                  All of the classes have different minimum and maximum values for their non-visual attributes, in addition, the male and female version of each class have slightly different limits aswell. If you look at the Attribute card, you'll see there is bar for every attribute. All of them have a value of the attribute written to the rightmost side. 
+                  <br>The <span style="color:grey;">grey</span> area of the bar represents the values which are out-of-limits for the subclass of the Bura you are looking at. The <span style="color:red;">red</span> bar represents the values that are higher than your current attribute value and are still within the subclass limits. Lastly, the rightmost point of the <span style="color:rgb(54, 149, 54);">green</span> bar is where your current attribute value stands, the rest of the green bar represents values lower values but still sitting within the subclass limits.
+                </p>
+              </div>
+              <div class="tier">
+                <h3>Tier coloring:</h3>
+                <ul>
+                  <li style="color: rgb(136, 138, 136)">Common</li>
+                  <li style="color: rgb(94, 255, 30)">Uncommon</li>
+                  <li style="color: rgb(38, 81, 224)">Rare</li>
+                  <li style="color: rgb(179, 65, 207)">Epic</li>
+                  <li style="color: rgb(226, 167, 41)">Legendary</li>
+                  
+                 
+                </ul>
+              </div>
+            </div>
+
+            <div class="process-row mt-50">
+              <div class="column number-column">
+                <div class="number-input">
+                  <input
+                    id="input-itemid"
+                    type="number"
+                    value=""
+                    min="0"
+                    max="5469"
+                  />
+                </div>
+              </div>
+              <div class="column max-column">
+                <a id="fetch-btn" class="btn green-button">Fetch</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row top-details">
+          <div class="image-section">
+            <div  class="title"><b id="title">&nbsp</b><b id="title-itemid"></b></div>
+            <img  id="item-img" src="/img/giphy.gif" />
+            <span><a id="view-original" href="https://gyris-mara.b-cdn.net/123.jpg" target="_blank">View the original image</a></span>
+          </div>
+
+          <div class="attribute-section">
+            <div class="title">&nbsp<span></span></div>
+            <div class="list">
+              <div class="attribute-list">
+                <h3>ATTRIBUTES</h3>
+
+                <ul>
+                  <li  id="barwrap-intelligence" class="strength">
+                    <div
+                      class="bar-2"
+                      style="margin-left: 61px; width: 30px"
+                    ></div>
+                    <div class="bar-3" style="margin-left: 61px"></div>
+                    <div class="details">Intelligence<span id="attr-val-Intelligence">61</span></div>
+                  </li>
+                  <li  id="barwrap-resilience" class="intelligence">
+                    <div
+                      class="bar-2"
+                      style="margin-left: 35px; width: 50px"
+                    ></div>
+                    <div
+                      class="bar-3"
+                      style="margin-left: 35px; width: 70px"
+                    ></div>
+                    <div class="details">Resilience<span  id="attr-val-Resilience">35</span></div>
+                  </li>
+                  <li id="barwrap-wisdom"  class="wisdom">
+                    <div
+                      class="bar-2"
+                      style="margin-left: 82px; width: 20px"
+                    ></div>
+                    <div class="bar-3" style="margin-left: 82px"></div>
+                    <div class="details">Wisdom<span id="attr-val-Wisdom">82</span></div>
+                  </li>
+                  <li  id="barwrap-diffusion" class="dexterity">
+                    <div
+                      class="bar-2"
+                      style="margin-left: 66px; width: 30px"
+                    ></div>
+                    <div class="bar-3" style="margin-left: 66px"></div>
+                    <div class="details">Diffusion<span  id="attr-val-Diffusion">66</span></div>
+                  </li>
+                  <li  id="barwrap-instinct" class="resilience">
+                    <div
+                      class="bar-2"
+                      style="margin-left: 26px; width: 100px"
+                    ></div>
+                    <div class="bar-3" style="margin-left: 26px"></div>
+                    <div class="details">Instinct<span id="attr-val-Instinct">96</span></div>
+                  </li>
+                  <li id="barwrap-curiosity" class="charisma">
+                    <div
+                      class="bar-2"
+                      style="margin-left: 23px; width: 20px"
+                    ></div>
+                    <div class="bar-3" style="margin-left: 23px"></div>
+                    <div class="details">Curiosity<span id="attr-val-Curiosity">23</span></div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="attrubute-extended">
+              <div class="att-title" id="classname">Duvali Mara
+                </div>
+              <div style="display:none;" class="apprecntice" id="isyaru">Duvali Mara</div>
+              
+            </div>
+          </div>
+        </div>
+        <div style='display:none;' id="extended" class="container">
+          <div>
+            <div class="row middle-details">
+              <div style='min-height:450px;' class="visual">
+                <h3>Visual Traits</h3>
+                <br>
+                <table>
+                  <tbody>
+                    <tr>
+                      <td>Background</td>
+                      <td style="color: rgb(136, 138, 136)" id="visa-background">Value 1</td>
+                    </tr>
+                    <tr>
+                      <td>Class</td>
+                      <td style="color: rgb(94, 255, 30)" id="visa-class">Value 2</td>
+                    </tr>
+                    <tr>
+                      <td>Magic</td>
+                      <td style="color: rgb(38, 81, 224)" id="visa-magic">Value 3</td>
+                    </tr>
+                    <tr>
+                      <td>Body Variation</td>
+                      <td style="color: rgb(179, 65, 207)" id="visa-body-variation">Value 4</td>
+                    </tr>
+                    <tr>
+                      <td>Back growth</td>
+                      <td style="color: rgb(226, 167, 41)" id="visa-back-growth">Value 5</td>
+                    </tr>
+                    <tr>
+                      <td>Wings</td>
+                      <td id="visa-wings">Value 6</td>
+                    </tr>
+                    <tr>
+                      <td>Leg growth</td>
+                      <td style="color: rgb(104 64 64 / 99%)" id="visa-leg-growth">Value 7</td>
+                    </tr>
+                    <tr>
+                      <td>Arms</td>
+                      <td style="color: rgb(191 160 160)" id="visa-arms">Value 8</td>
+                    </tr>
+                    <tr>
+                      <td>Head</td>
+                      <td style="color: rgb(22 184 31)" id="visa-head">Value 10</td>
+                    </tr>
+                    <tr>
+                      <td>Eyes</td>
+                      <td style="color: rgb(21 241 33)" id="visa-eyes">Value 11</td>
+                    </tr>
+                    <tr>
+                      <td>Facial features</td>
+                      <td style="color: rgb(206 238 0)" id="visa-facial-features">Value 12</td>
+                    </tr>
+                    
+                  </tbody>
+                </table>
+                <span class="tooltip-hover">
+                  <i class="fa fa-question-circle" aria-hidden="true"></i>
+                  <div class="tier">
+                    <h3>Tier coloring:</h3>
+                    <ul>
+                      <li style="color: rgb(136, 138, 136)">Common</li>
+                      <li style="color: rgb(94, 255, 30)">Uncommon</li>
+                      <li style="color: rgb(38, 81, 224)">Rare</li>
+                      <li style="color: rgb(179, 65, 207)">Epic</li>
+                      <li style="color: rgb(226, 167, 41)">Legendary</li>
+                      
+                    </ul>
+                  </div>
+                </span>
+              </div>
+              <div style='min-height:450px;'  class="score">
+                <h3>Scores</h3>
+                <ul>
+                  <li>
+                    <div class="title">
+                      Non-visual score: <span id="nonvis-score" class="bura-score"> 1.5/5</span>
+                    </div>
+                    <div class="bar">
+                      <div class="main-bar">
+                        <div
+                          id="nonvis-bar"
+                          class="score-bar"
+                          style="width: 100x; margin-left: 20px"
+                        ></div>
+                      </div>
+                      <div class="info">
+                        <span class="tooltip"
+                          ><i
+                            class="fa fa-question-circle"
+                            aria-hidden="true"
+                          ></i>
+                          <div class="tooltip-box">
+                            Your non-visual score is:
+                            <br />
+                            <br />
+                            <ul>
+                              <li>&nbsp	&#8226; Better than <span id="nonvis-better">14</span> %</li>
+                              <li>&nbsp &#8226; Same as <span id="nonvis-same">29</span> %</li>
+                              <li>&nbsp &#8226; Worse than <span id="nonvis-worse">57</span> %</li>
+                            </ul>
+                          </div></span
+                        >
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="title">
+                      Visual score: <span id="vis-score" class="bura-score">1.5/5</span>
+                    </div>
+                    <div class="bar">
+                      <div class="main-bar">
+                        <div
+                          id="vis-bar"
+                          class="score-bar"
+                          style="width: 100x; margin-left: 100px"
+                        ></div>
+                      </div>
+                      <div class="info">
+                        <span class="tooltip"
+                          ><i
+                            class="fa fa-question-circle"
+                            aria-hidden="true"
+                          ></i>
+                          <div class="tooltip-box">
+                            Your visual score is:
+                            <br />
+                            <br />
+                            <ul>
+                              <li>&nbsp	&#8226; Better than <span id="vis-better">14</span> %</li>
+                              <li>&nbsp &#8226; Same as <span id="vis-same">29</span> %</li>
+                              <li>&nbsp &#8226; Worse than <span id="vis-worse">57</span> %</li>
+                            </ul>
+                          </div>
+                        </span>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+                <div class="important">
+                  * non-visual is the base rating in the metadata
+                </div>
+              </div>
+            </div>
+
+            <div style="display:none;" class="row other-information">
+              <h3>Other attributes</h3>
+              <p class="other-info-text">
+                Below will be listed any additional attributes given to a Mara during campaigns. Currently such is only "Memorandum I" entry attribute.
+              </p>
+
+              <div id="nothing" class="memorandum">
+                <h4>No additional attributes found...</h4>
+              </div>
+
+              <div id="memorandum" style="display:none;" class="memorandum">
+                <h4>Memorandum I</h4>
+                <p id="memorandum-text">
+                  A healer from the Duara tribe, wise and resilient, known for
+                  his kindness, bravery, and a very deep, soothing voice.
+                  Nicknamed as Hadringya - “Healer of Souls”, he has made
+                  himself popular and a respected Bura among the tribe by
+                  attacking a Minjierri camp at night, to save his defeated and
+                  wounded Burakin readied for execution. Outnumbered, managed to
+                  overpower the enemy squad at the camp and heal his Burakin,
+                  one of which was his older brother [101]. He dragged three
+                  wounded brethren a few hundred feet away from the camp and
+                  covered them with leaves, in hopes of camouflaging them. Only
+                  able to drag his wounded self, he hurried to gather two more
+                  strong men who helped him get his fellow Burakin home. Results
+                  of this brave act was turning the tides of the battle: his
+                  brethren had overheard the locations of the other nearby camps
+                  from the conversations of the Minjierri soldiers…<br /><br />The
+                  most important outcome for him was, of course, the life of his
+                  older brother.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <div class="container">
+        <div class="row footer-row">
+          <div class="column footer-social text-center">
+            <ul>
+              <li>
+                <a href="https://discord.gg/gyris" target="_blank">
+                  <img src="/img/discord-2.svg" alt="" />
+                </a>
+              </li>
+              <!-- <li>
+                    <a href="#">
+                      <img src="/img/logomark-2.svg" alt="" />
+                    </a>
+                </li> -->
+              <li>
+                <a href="https://twitter.com/gyris_official" target="_blank">
+                  <img src="/img/twitter-2.svg" alt="" />
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="column copyright-column text-center">
+            Copyright © 2022 Gyris
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="/libs/jquery/jquery-3.3.1.min.js"></script>
+
+    <script src="/js/jq.js"></script>
+  </body>
+</html>

@@ -1,6 +1,6 @@
 async function main() {
     const pathn = window.location.pathname;
-    var stats, allscores, nonvis, collectionName, subclassLimits;
+    var stats, allscores, nonvis, collectionName, subclassLimits ,maxID;
 
     
 
@@ -10,7 +10,7 @@ async function main() {
 
     if (pathn.includes('bura')) {
         collectionName = 'bura';
-
+        maxID = 2734;
         var r1 = false;
         while (r1 == false) {
             try {
@@ -52,7 +52,7 @@ async function main() {
 
     } else if (pathn.includes('ogg')) {
         collectionName = 'ogg';
-
+        maxID = 2734;
         var r1 = false;
         while (r1 == false) {
             try {
@@ -86,6 +86,45 @@ async function main() {
             'Endurance',
             'Synergy',
             'Resilience',
+            'Base rating'
+        ]
+    } else if (pathn.includes('mara')) {
+        collectionName = 'mara';
+        maxID = 5469;
+        var r1 = false;
+        while (r1 == false) {
+            try {
+                if (isMobile) {
+                    gid('item-img').src = `https://gyris-${collectionName}-350x350.b-cdn.net/123.jpg`
+                } else {
+                    gid('item-img').src = `https://gyris-${collectionName}-800x800.b-cdn.net/123.jpg`
+                }
+                await new Promise(r => setTimeout(r, 50));
+                r1 = true;
+            } catch (err) {
+                await new Promise(r => setTimeout(r, 50));
+            }
+        }
+
+        stats = await fetch('/drops/mara/statistics/index.json').then((res) => {
+            return res.json()
+        })
+
+        allscores = await fetch('/drops/mara/statistics/allscores.json').then((res) => {
+            return res.json()
+        })
+
+        subclassLimits = await fetch('/drops/mara/additional/subclasslimits.json').then((res) => {
+            return res.json()
+        })
+
+        nonvis = [
+            'Intelligence',
+            'Resilience',
+            'Wisdom',
+            'Diffusion',
+            'Instinct',
+            'Curiosity',
             'Base rating'
         ]
     }
@@ -146,8 +185,8 @@ async function main() {
         const v = inputE.value;
         if (v < 0 || v === 0) {
             inputE.value = "";
-        } else if (v > 2734) {
-            inputE.value = 2734;
+        } else if (v > maxID) {
+            inputE.value = maxID;
         }
     }
 
@@ -178,7 +217,7 @@ async function main() {
         id = gid('input-itemid').value
         if (isNaN(id) || id == '' || id < 0 || id === 0) {
             return
-        } else if (id > 2734) {
+        } else if (id > maxID) {
             return
         }
         unhide('extended')
@@ -281,17 +320,17 @@ async function main() {
                     var cardWidth = screen.width < 420 ? screen.width : 420;
                     var barSize = (cardWidth * 0.8) - 20
 
-                    var visBetterThan = 2735 - visrank - samescoreAmountVis;
-                    var visMarginLeft = visBetterThan / (2735 / barSize) - 2
-                    var visWidth = samescoreAmountVis / (2735 / barSize)
+                    var visBetterThan = maxID+1 - visrank - samescoreAmountVis;
+                    var visMarginLeft = visBetterThan / ( (maxID+1) / barSize) - 2
+                    var visWidth = samescoreAmountVis / ( (maxID+1) / barSize)
                     if (visWidth < 7) visWidth = 7;
                     if (visMarginLeft > (barSize - 9)) visMarginLeft = barSize - 9;
                     gid('vis-bar').style['margin-left'] = visMarginLeft + 'px'
                     gid('vis-bar').style.width = (visWidth).toFixed(0) + 'px'
 
-                    gid("vis-better").textContent = (((2735 - visrank - samescoreAmountVis + 1) / 2735) * 100).toFixed(1);
-                    gid("vis-same").textContent = ((samescoreAmountVis / 2735) * 100).toFixed(1);
-                    gid("vis-worse").textContent = (((visrank - 1) / 2735) * 100).toFixed(1);
+                    gid("vis-better").textContent = ((( (maxID+1) - visrank - samescoreAmountVis + 1) / (maxID+1)) * 100).toFixed(1);
+                    gid("vis-same").textContent = ((samescoreAmountVis / (maxID+1)) * 100).toFixed(1);
+                    gid("vis-worse").textContent = (((visrank - 1) / (maxID+1)) * 100).toFixed(1);
 
                     var samescoreAmountNonvis = 0;
 
@@ -322,22 +361,27 @@ async function main() {
                     var cardWidth = screen.width < 420 ? screen.width : 420;
                     var barSize = (cardWidth * 0.8) - 20
 
-                    var nonvisBetterThan = 2735 - nonvisrank - samescoreAmountNonvis;
+                    var nonvisBetterThan = (maxID+1) - nonvisrank - samescoreAmountNonvis;
 
-                    var nonvisMarginLeft = nonvisBetterThan / (2735 / barSize) - 2
-                    var nonvisWidth = samescoreAmountNonvis / (2735 / barSize)
+                    var nonvisMarginLeft = nonvisBetterThan / ((maxID+1) / barSize) - 2
+                    var nonvisWidth = samescoreAmountNonvis / ((maxID+1) / barSize)
                     if (nonvisWidth < 7) nonvisWidth = 7;
                     if (nonvisMarginLeft > (barSize - 9)) nonvisMarginLeft = barSize - 9;
                     gid('nonvis-bar').style['margin-left'] = nonvisMarginLeft + 'px';
 
                     gid('nonvis-bar').style.width = (nonvisWidth).toFixed(0) + 'px';
-                    gid("nonvis-better").textContent = (((2735 - nonvisrank - samescoreAmountNonvis + 1) / 2735) * 100).toFixed(1);
-                    gid("nonvis-same").textContent = ((samescoreAmountNonvis / 2735) * 100).toFixed(1);
-                    gid("nonvis-worse").textContent = (((nonvisrank - 1) / 2735) * 100).toFixed(1);
+                    gid("nonvis-better").textContent = ((((maxID+1) - nonvisrank - samescoreAmountNonvis + 1) / (maxID+1)) * 100).toFixed(1);
+                    gid("nonvis-same").textContent = ((samescoreAmountNonvis / (maxID+1)) * 100).toFixed(1);
+                    gid("nonvis-worse").textContent = (((nonvisrank - 1) / (maxID+1)) * 100).toFixed(1);
 
                 } else {
                     gid('attr-val-' + tname).textContent = tval;
                     if (tname != 'Height') {
+                        if (collectionName=='mara') {
+                            if (tname.toLowerCase()=='wisdom') {
+                                tval-=100;
+                            }
+                        }
                         const greenbar = gid('barwrap-' + tname.toLowerCase()).children[0];
                         const min = greenbar.style['margin-left'];
                         const minn = parseInt(min.split('p')[0])
@@ -393,6 +437,34 @@ async function main() {
                         }
 
                     }
+                } else if (collectionName == 'mara') {
+                    if (tname == "Class") {
+                        const className = tval;
+
+                        gid('classname').textContent = className
+                        gid('isyaru').textContent = subclassLimits.dictionary[subclassLimits.mapping[className]];
+                        const scl = subclassLimits.values[(subclassLimits.mapping[className]).toFixed(0)];
+
+
+                        for (attrName in scl) {
+
+                            const greenbar = gid('barwrap-' + attrName.toLowerCase()).children[0]
+                            const redbar = gid('barwrap-' + attrName.toLowerCase()).children[1]
+                            
+                            var { max } = scl[attrName];
+                            var { min } = scl[attrName];
+
+                            if (attrName.toLowerCase()=='wisdom') {
+                                max-=100;
+                                min-=100;
+                            }
+
+                            greenbar.style['margin-left'] = (min * 2.4).toFixed(0) + 'px';
+                            redbar.style['margin-left'] = (min * 2.40).toFixed(0) + 'px';
+                            redbar.style.width = (max * 2.4 - min * 2.4).toFixed(0) + 'px';
+                        }
+
+                    }
                 }
 
 
@@ -404,6 +476,7 @@ async function main() {
                 if (tiers[score.toString()]['name'] == "Divine") {
                     gid('visa-' + idp2).innerHTML = `<strong><i>${tval}</i></strong>`;
                 } else {
+                
                     gid('visa-' + idp2).textContent = tval;
                 }
                 var { color } = tiers[score.toString()]

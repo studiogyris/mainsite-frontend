@@ -1,0 +1,2425 @@
+{
+    "Background": { 
+  
+        "Red" : { 
+           "score": 0,
+           "rarity" : "16.33 %",
+           "frequency" : 893
+        
+       },
+     
+        "Orange" : { 
+           "score": 0,
+           "rarity" : "14.94 %",
+           "frequency" : 817
+        
+       },
+     
+        "Black" : { 
+           "score": 2,
+           "rarity" : "11.1 %",
+           "frequency" : 607
+        
+       },
+     
+        "Blue" : { 
+           "score": 2,
+           "rarity" : "11.06 %",
+           "frequency" : 605
+        
+       },
+     
+        "Grey" : { 
+           "score": 0,
+           "rarity" : "10.84 %",
+           "frequency" : 593
+        
+       },
+     
+        "Solar" : { 
+           "score": 5,
+           "rarity" : "10.82 %",
+           "frequency" : 592
+        
+       },
+     
+        "Green" : { 
+           "score": 0,
+           "rarity" : "10.8 %",
+           "frequency" : 591
+        
+       },
+     
+        "Rock" : { 
+           "score": 5,
+           "rarity" : "5.89 %",
+           "frequency" : 322
+        
+       },
+     
+        "Blood Moon" : { 
+           "score": 5,
+           "rarity" : "3.42 %",
+           "frequency" : 187
+        
+       },
+     
+        "Snow" : { 
+           "score": 5,
+           "rarity" : "3.2 %",
+           "frequency" : 175
+        
+       },
+     
+        "Flames" : { 
+           "score": 5,
+           "rarity" : "1.26 %",
+           "frequency" : 69
+        
+       },
+     
+        "Blue Haze" : { 
+           "score": 10,
+           "rarity" : "0.13 %",
+           "frequency" : 7
+        
+       },
+     
+        "Red Purple Flames" : { 
+           "score": 10,
+           "rarity" : "0.13 %",
+           "frequency" : 7
+        
+       },
+     
+        "Green Haze" : { 
+           "score": 10,
+           "rarity" : "0.09 %",
+           "frequency" : 5
+        
+       }
+    },
+    "Magic": { 
+  
+        "none" : { 
+           "score": -1,
+           "rarity" : "71.52 %",
+           "frequency" : 3912
+        
+       },
+     
+        "Fire (Orange) (I)" : { 
+           "score": 2,
+           "rarity" : "2.52 %",
+           "frequency" : 138
+        
+       },
+     
+        "Fire (Blue) (II)" : { 
+           "score": 5,
+           "rarity" : "2.5 %",
+           "frequency" : 137
+        
+       },
+     
+        "Fire (Generic) (I)" : { 
+           "score": 2,
+           "rarity" : "2.41 %",
+           "frequency" : 132
+        
+       },
+     
+        "Fire (Green) (I)" : { 
+           "score": 2,
+           "rarity" : "2.38 %",
+           "frequency" : 130
+        
+       },
+     
+        "Water (Green) (I)" : { 
+           "score": 2,
+           "rarity" : "2.25 %",
+           "frequency" : 123
+        
+       },
+     
+        "Water (Blue) (I)" : { 
+           "score": 2,
+           "rarity" : "2.05 %",
+           "frequency" : 112
+        
+       },
+     
+        "Water (Blue) (II)" : { 
+           "score": 5,
+           "rarity" : "1.9 %",
+           "frequency" : 104
+        
+       },
+     
+        "Water (Green) (II)" : { 
+           "score": 5,
+           "rarity" : "1.83 %",
+           "frequency" : 100
+        
+       },
+     
+        "Fire (Blue) (I)" : { 
+           "score": 2,
+           "rarity" : "1.3 %",
+           "frequency" : 71
+        
+       },
+     
+        "Fire (Blue) (III)" : { 
+           "score": 10,
+           "rarity" : "1.3 %",
+           "frequency" : 71
+        
+       },
+     
+        "Water (Blue) (III)" : { 
+           "score": 10,
+           "rarity" : "1.12 %",
+           "frequency" : 61
+        
+       },
+     
+        "Fire (Generic) (III)" : { 
+           "score": 10,
+           "rarity" : "1.06 %",
+           "frequency" : 58
+        
+       },
+     
+        "Fire (Generic) (II)" : { 
+           "score": 5,
+           "rarity" : "0.88 %",
+           "frequency" : 48
+        
+       },
+     
+        "Fire (Orange) (III)" : { 
+           "score": 10,
+           "rarity" : "0.88 %",
+           "frequency" : 48
+        
+       },
+     
+        "Fire (Orange) (II)" : { 
+           "score": 5,
+           "rarity" : "0.8 %",
+           "frequency" : 44
+        
+       },
+     
+        "Water (Green) (III)" : { 
+           "score": 10,
+           "rarity" : "0.79 %",
+           "frequency" : 43
+        
+       },
+     
+        "Light Ball" : { 
+           "score": 10,
+           "rarity" : "0.77 %",
+           "frequency" : 42
+        
+       },
+     
+        "Fire (Green) (II)" : { 
+           "score": 5,
+           "rarity" : "0.73 %",
+           "frequency" : 40
+        
+       },
+     
+        "Fire (Green) (III)" : { 
+           "score": 10,
+           "rarity" : "0.68 %",
+           "frequency" : 37
+        
+       },
+     
+        "Fire (Purple) (III)" : { 
+           "score": 10,
+           "rarity" : "0.22 %",
+           "frequency" : 12
+        
+       },
+     
+        "Fire (Purple) (I)" : { 
+           "score": 2,
+           "rarity" : "0.07 %",
+           "frequency" : 4
+        
+       },
+     
+        "Fire (Purple) (II)" : { 
+           "score": 5,
+           "rarity" : "0.05 %",
+           "frequency" : 3
+        
+       }
+    },
+    "Class": { 
+  
+        "Duvali Mara" : { 
+           "score": 0,
+           "rarity" : "93.35 %",
+           "frequency" : 5106
+        
+       },
+     
+        "Abali Mara" : { 
+           "score": 10,
+           "rarity" : "2.01 %",
+           "frequency" : 110
+        
+       },
+     
+        "Mara Anyan" : { 
+           "score": 10,
+           "rarity" : "1.83 %",
+           "frequency" : 100
+        
+       },
+     
+        "Iguela de Wara" : { 
+           "score": 10,
+           "rarity" : "1.54 %",
+           "frequency" : 84
+        
+       },
+     
+        "Duvali Alee" : { 
+           "score": 25,
+           "rarity" : "0.64 %",
+           "frequency" : 35
+        
+       },
+     
+        "Duvali Nono" : { 
+           "score": 25,
+           "rarity" : "0.64 %",
+           "frequency" : 35
+        
+       }
+    },
+    "Body Variation": { 
+  
+        "Blue" : { 
+           "score": 0,
+           "rarity" : "6.31 %",
+           "frequency" : 345
+        
+       },
+     
+        "Green" : { 
+           "score": 0,
+           "rarity" : "5.5 %",
+           "frequency" : 301
+        
+       },
+     
+        "Orange" : { 
+           "score": 0,
+           "rarity" : "5.48 %",
+           "frequency" : 300
+        
+       },
+     
+        "Purple" : { 
+           "score": 0,
+           "rarity" : "5.03 %",
+           "frequency" : 275
+        
+       },
+     
+        "Blue Cerebrus" : { 
+           "score": 2,
+           "rarity" : "4.39 %",
+           "frequency" : 240
+        
+       },
+     
+        "Cerebrus" : { 
+           "score": 2,
+           "rarity" : "4.13 %",
+           "frequency" : 226
+        
+       },
+     
+        "Leopard" : { 
+           "score": 2,
+           "rarity" : "3.93 %",
+           "frequency" : 215
+        
+       },
+     
+        "Maze" : { 
+           "score": 2,
+           "rarity" : "3.66 %",
+           "frequency" : 200
+        
+       },
+     
+        "Blue Leopard" : { 
+           "score": 2,
+           "rarity" : "3.62 %",
+           "frequency" : 198
+        
+       },
+     
+        "Green Cerebrus" : { 
+           "score": 2,
+           "rarity" : "3.58 %",
+           "frequency" : 196
+        
+       },
+     
+        "Blue Maze" : { 
+           "score": 2,
+           "rarity" : "3.53 %",
+           "frequency" : 193
+        
+       },
+     
+        "Orange Cerebrus" : { 
+           "score": 2,
+           "rarity" : "3.42 %",
+           "frequency" : 187
+        
+       },
+     
+        "Green Leopard" : { 
+           "score": 2,
+           "rarity" : "3.38 %",
+           "frequency" : 185
+        
+       },
+     
+        "Blue Tunnels" : { 
+           "score": 2,
+           "rarity" : "2.82 %",
+           "frequency" : 154
+        
+       },
+     
+        "Purple Cerebrus" : { 
+           "score": 5,
+           "rarity" : "2.71 %",
+           "frequency" : 148
+        
+       },
+     
+        "Veins" : { 
+           "score": 2,
+           "rarity" : "2.67 %",
+           "frequency" : 146
+        
+       },
+     
+        "Green Maze" : { 
+           "score": 2,
+           "rarity" : "2.67 %",
+           "frequency" : 146
+        
+       },
+     
+        "Orange Leopard" : { 
+           "score": 2,
+           "rarity" : "2.61 %",
+           "frequency" : 143
+        
+       },
+     
+        "Purple Maze" : { 
+           "score": 5,
+           "rarity" : "2.23 %",
+           "frequency" : 122
+        
+       },
+     
+        "Green Tunnels" : { 
+           "score": 2,
+           "rarity" : "2.21 %",
+           "frequency" : 121
+        
+       },
+     
+        "Leopard Purple" : { 
+           "score": 5,
+           "rarity" : "2.03 %",
+           "frequency" : 111
+        
+       },
+     
+        "Orange Maze" : { 
+           "score": 2,
+           "rarity" : "1.92 %",
+           "frequency" : 105
+        
+       },
+     
+        "Veins Blue" : { 
+           "score": 2,
+           "rarity" : "1.88 %",
+           "frequency" : 103
+        
+       },
+     
+        "Orange Tunnels" : { 
+           "score": 2,
+           "rarity" : "1.77 %",
+           "frequency" : 97
+        
+       },
+     
+        "Veins Green" : { 
+           "score": 2,
+           "rarity" : "1.57 %",
+           "frequency" : 86
+        
+       },
+     
+        "Veins Orange" : { 
+           "score": 2,
+           "rarity" : "1.41 %",
+           "frequency" : 77
+        
+       },
+     
+        "Purple Tunnels" : { 
+           "score": 5,
+           "rarity" : "1.39 %",
+           "frequency" : 76
+        
+       },
+     
+        "Tunnels" : { 
+           "score": 2,
+           "rarity" : "1.17 %",
+           "frequency" : 64
+        
+       },
+     
+        "Veins Purple" : { 
+           "score": 5,
+           "rarity" : "0.88 %",
+           "frequency" : 48
+        
+       }
+    },
+    "Back Growth": { 
+  
+        "none" : { 
+           "score": -1,
+           "rarity" : "71.37 %",
+           "frequency" : 3904
+        
+       },
+     
+        "Mycena Erupta Purple" : { 
+           "score": 2,
+           "rarity" : "2.43 %",
+           "frequency" : 133
+        
+       },
+     
+        "Super Mycena Erupta Blue" : { 
+           "score": 5,
+           "rarity" : "2.34 %",
+           "frequency" : 128
+        
+       },
+     
+        "Mycena Erupta" : { 
+           "score": 2,
+           "rarity" : "2.16 %",
+           "frequency" : 118
+        
+       },
+     
+        "Super Mycena Erupta" : { 
+           "score": 5,
+           "rarity" : "2.12 %",
+           "frequency" : 116
+        
+       },
+     
+        "Tramatis Purple" : { 
+           "score": 2,
+           "rarity" : "2.03 %",
+           "frequency" : 111
+        
+       },
+     
+        "Mycena Erupta Blue" : { 
+           "score": 2,
+           "rarity" : "2.03 %",
+           "frequency" : 111
+        
+       },
+     
+        "Super Mycena Erupta Purple" : { 
+           "score": 5,
+           "rarity" : "2.03 %",
+           "frequency" : 111
+        
+       },
+     
+        "Tramatis" : { 
+           "score": 2,
+           "rarity" : "1.99 %",
+           "frequency" : 109
+        
+       },
+     
+        "Tramatis Blue" : { 
+           "score": 2,
+           "rarity" : "1.81 %",
+           "frequency" : 99
+        
+       },
+     
+        "Super Mycena Erupta Green" : { 
+           "score": 5,
+           "rarity" : "1.79 %",
+           "frequency" : 98
+        
+       },
+     
+        "Mycena Erupta Orange" : { 
+           "score": 2,
+           "rarity" : "1.68 %",
+           "frequency" : 92
+        
+       },
+     
+        "Mycena Erupta Green" : { 
+           "score": 2,
+           "rarity" : "1.66 %",
+           "frequency" : 91
+        
+       },
+     
+        "Tramatis Green" : { 
+           "score": 2,
+           "rarity" : "1.57 %",
+           "frequency" : 86
+        
+       },
+     
+        "Super Mycena Erupta Orange" : { 
+           "score": 5,
+           "rarity" : "1.52 %",
+           "frequency" : 83
+        
+       },
+     
+        "Tramatis Orange" : { 
+           "score": 2,
+           "rarity" : "1.46 %",
+           "frequency" : 80
+        
+       }
+    },
+    "Wings": { 
+  
+        "none" : { 
+           "score": -1,
+           "rarity" : "97.42 %",
+           "frequency" : 5329
+        
+       },
+     
+        "Little Bird Embattled" : { 
+           "score": 10,
+           "rarity" : "0.33 %",
+           "frequency" : 18
+        
+       },
+     
+        "Bird" : { 
+           "score": 10,
+           "rarity" : "0.31 %",
+           "frequency" : 17
+        
+       },
+     
+        "Bird Embattled" : { 
+           "score": 10,
+           "rarity" : "0.27 %",
+           "frequency" : 15
+        
+       },
+     
+        "Little Bird" : { 
+           "score": 10,
+           "rarity" : "0.24 %",
+           "frequency" : 13
+        
+       },
+     
+        "Bayadja" : { 
+           "score": 10,
+           "rarity" : "0.16 %",
+           "frequency" : 9
+        
+       },
+     
+        "Blue Bayadja" : { 
+           "score": 10,
+           "rarity" : "0.13 %",
+           "frequency" : 7
+        
+       },
+     
+        "Blue Little Bird" : { 
+           "score": 10,
+           "rarity" : "0.09 %",
+           "frequency" : 5
+        
+       },
+     
+        "Decay" : { 
+           "score": 10,
+           "rarity" : "0.07 %",
+           "frequency" : 4
+        
+       },
+     
+        "Purple Little Bird" : { 
+           "score": 10,
+           "rarity" : "0.07 %",
+           "frequency" : 4
+        
+       },
+     
+        "Embattled" : { 
+           "score": 10,
+           "rarity" : "0.05 %",
+           "frequency" : 3
+        
+       },
+     
+        "Green Bird" : { 
+           "score": 10,
+           "rarity" : "0.05 %",
+           "frequency" : 3
+        
+       },
+     
+        "Blue Bird Embattled" : { 
+           "score": 10,
+           "rarity" : "0.05 %",
+           "frequency" : 3
+        
+       },
+     
+        "Orange Bird" : { 
+           "score": 10,
+           "rarity" : "0.05 %",
+           "frequency" : 3
+        
+       },
+     
+        "Green Bird Decay" : { 
+           "score": 10,
+           "rarity" : "0.05 %",
+           "frequency" : 3
+        
+       },
+     
+        "Blue Bird" : { 
+           "score": 10,
+           "rarity" : "0.05 %",
+           "frequency" : 3
+        
+       },
+     
+        "Purple Bayadja" : { 
+           "score": 10,
+           "rarity" : "0.05 %",
+           "frequency" : 3
+        
+       },
+     
+        "Purple Bird Decay" : { 
+           "score": 10,
+           "rarity" : "0.05 %",
+           "frequency" : 3
+        
+       },
+     
+        "Purple Bird Embattled" : { 
+           "score": 10,
+           "rarity" : "0.05 %",
+           "frequency" : 3
+        
+       },
+     
+        "Green Bayadja" : { 
+           "score": 10,
+           "rarity" : "0.04 %",
+           "frequency" : 2
+        
+       },
+     
+        "Blue Little Bird Embattled" : { 
+           "score": 10,
+           "rarity" : "0.04 %",
+           "frequency" : 2
+        
+       },
+     
+        "Green Bird Embattled" : { 
+           "score": 10,
+           "rarity" : "0.04 %",
+           "frequency" : 2
+        
+       },
+     
+        "Green Little Bird" : { 
+           "score": 10,
+           "rarity" : "0.04 %",
+           "frequency" : 2
+        
+       },
+     
+        "Orange Little Bird Embattled" : { 
+           "score": 10,
+           "rarity" : "0.04 %",
+           "frequency" : 2
+        
+       },
+     
+        "Orange Bird Decay" : { 
+           "score": 10,
+           "rarity" : "0.04 %",
+           "frequency" : 2
+        
+       },
+     
+        "Orange Bayadja" : { 
+           "score": 10,
+           "rarity" : "0.04 %",
+           "frequency" : 2
+        
+       },
+     
+        "Blue Bird Decay" : { 
+           "score": 10,
+           "rarity" : "0.04 %",
+           "frequency" : 2
+        
+       },
+     
+        "Bird Decay" : { 
+           "score": 10,
+           "rarity" : "0.04 %",
+           "frequency" : 2
+        
+       },
+     
+        "Orange Bird Embattled" : { 
+           "score": 10,
+           "rarity" : "0.02 %",
+           "frequency" : 1
+        
+       },
+     
+        "Purple Bird" : { 
+           "score": 10,
+           "rarity" : "0.02 %",
+           "frequency" : 1
+        
+       },
+     
+        "Purple Little Bird Embattled" : { 
+           "score": 10,
+           "rarity" : "0.02 %",
+           "frequency" : 1
+        
+       },
+     
+        "Orange Little Bird" : { 
+           "score": 10,
+           "rarity" : "0.02 %",
+           "frequency" : 1
+        
+       }
+    },
+    "Leg Growth": { 
+  
+        "none" : { 
+           "score": -1,
+           "rarity" : "58.21 %",
+           "frequency" : 3184
+        
+       },
+     
+        "Tramatis Purple" : { 
+           "score": 2,
+           "rarity" : "8.96 %",
+           "frequency" : 490
+        
+       },
+     
+        "Tramatis Blue" : { 
+           "score": 0,
+           "rarity" : "8.72 %",
+           "frequency" : 477
+        
+       },
+     
+        "Tramatis Red" : { 
+           "score": 0,
+           "rarity" : "8.57 %",
+           "frequency" : 469
+        
+       },
+     
+        "Tramatis Orange" : { 
+           "score": 0,
+           "rarity" : "7.99 %",
+           "frequency" : 437
+        
+       },
+     
+        "Tramatis Green" : { 
+           "score": 0,
+           "rarity" : "7.55 %",
+           "frequency" : 413
+        
+       }
+    },
+    "Arms": { 
+  
+        "Purple" : { 
+           "score": 0,
+           "rarity" : "10.0 %",
+           "frequency" : 547
+        
+       },
+     
+        "Red" : { 
+           "score": 0,
+           "rarity" : "9.95 %",
+           "frequency" : 544
+        
+       },
+     
+        "Orange" : { 
+           "score": 0,
+           "rarity" : "9.93 %",
+           "frequency" : 543
+        
+       },
+     
+        "Green" : { 
+           "score": 0,
+           "rarity" : "9.85 %",
+           "frequency" : 539
+        
+       },
+     
+        "Generic" : { 
+           "score": 0,
+           "rarity" : "9.4 %",
+           "frequency" : 514
+        
+       },
+     
+        "Abali Mara" : { 
+           "score": 10,
+           "rarity" : "2.01 %",
+           "frequency" : 110
+        
+       },
+     
+        "Mara Anyan" : { 
+           "score": 10,
+           "rarity" : "1.83 %",
+           "frequency" : 100
+        
+       },
+     
+        "Orange with Purple fungi" : { 
+           "score": 2,
+           "rarity" : "1.57 %",
+           "frequency" : 86
+        
+       },
+     
+        "Red with Green fungi" : { 
+           "score": 2,
+           "rarity" : "1.57 %",
+           "frequency" : 86
+        
+       },
+     
+        "Iguela de Wara" : { 
+           "score": 10,
+           "rarity" : "1.54 %",
+           "frequency" : 84
+        
+       },
+     
+        "Blue" : { 
+           "score": 0,
+           "rarity" : "1.52 %",
+           "frequency" : 83
+        
+       },
+     
+        "Purple with Orange fungi" : { 
+           "score": 2,
+           "rarity" : "1.5 %",
+           "frequency" : 82
+        
+       },
+     
+        "Green with Green fungi" : { 
+           "score": 2,
+           "rarity" : "1.5 %",
+           "frequency" : 82
+        
+       },
+     
+        "Purple with Green fungi" : { 
+           "score": 2,
+           "rarity" : "1.48 %",
+           "frequency" : 81
+        
+       },
+     
+        "Purple with Red fungi" : { 
+           "score": 2,
+           "rarity" : "1.46 %",
+           "frequency" : 80
+        
+       },
+     
+        "Green with Orange fungi" : { 
+           "score": 2,
+           "rarity" : "1.46 %",
+           "frequency" : 80
+        
+       },
+     
+        "Red with Blue fungi" : { 
+           "score": 2,
+           "rarity" : "1.44 %",
+           "frequency" : 79
+        
+       },
+     
+        "Green with Blue fungi" : { 
+           "score": 2,
+           "rarity" : "1.43 %",
+           "frequency" : 78
+        
+       },
+     
+        "Red with Red fungi" : { 
+           "score": 2,
+           "rarity" : "1.39 %",
+           "frequency" : 76
+        
+       },
+     
+        "Purple with Blue fungi" : { 
+           "score": 2,
+           "rarity" : "1.39 %",
+           "frequency" : 76
+        
+       },
+     
+        "Orange with Green fungi" : { 
+           "score": 2,
+           "rarity" : "1.39 %",
+           "frequency" : 76
+        
+       },
+     
+        "Blue with Orange fungi" : { 
+           "score": 2,
+           "rarity" : "1.35 %",
+           "frequency" : 74
+        
+       },
+     
+        "Orange with Red fungi" : { 
+           "score": 2,
+           "rarity" : "1.35 %",
+           "frequency" : 74
+        
+       },
+     
+        "Generic with Purple fungi" : { 
+           "score": 2,
+           "rarity" : "1.33 %",
+           "frequency" : 73
+        
+       },
+     
+        "Blue with Green fungi" : { 
+           "score": 2,
+           "rarity" : "1.33 %",
+           "frequency" : 73
+        
+       },
+     
+        "Generic with Orange fungi" : { 
+           "score": 2,
+           "rarity" : "1.32 %",
+           "frequency" : 72
+        
+       },
+     
+        "Orange with Blue fungi" : { 
+           "score": 2,
+           "rarity" : "1.32 %",
+           "frequency" : 72
+        
+       },
+     
+        "Blue with Blue fungi" : { 
+           "score": 2,
+           "rarity" : "1.32 %",
+           "frequency" : 72
+        
+       },
+     
+        "Generic with Green fungi" : { 
+           "score": 2,
+           "rarity" : "1.3 %",
+           "frequency" : 71
+        
+       },
+     
+        "Blue with Purple fungi" : { 
+           "score": 2,
+           "rarity" : "1.26 %",
+           "frequency" : 69
+        
+       },
+     
+        "Generic with Red fungi" : { 
+           "score": 2,
+           "rarity" : "1.26 %",
+           "frequency" : 69
+        
+       },
+     
+        "Orange with Orange fungi" : { 
+           "score": 2,
+           "rarity" : "1.26 %",
+           "frequency" : 69
+        
+       },
+     
+        "Green with Purple fungi" : { 
+           "score": 2,
+           "rarity" : "1.24 %",
+           "frequency" : 68
+        
+       },
+     
+        "Purple with Purple fungi" : { 
+           "score": 2,
+           "rarity" : "1.24 %",
+           "frequency" : 68
+        
+       },
+     
+        "Generic with Blue fungi" : { 
+           "score": 2,
+           "rarity" : "1.21 %",
+           "frequency" : 66
+        
+       },
+     
+        "Red with Purple fungi" : { 
+           "score": 2,
+           "rarity" : "1.21 %",
+           "frequency" : 66
+        
+       },
+     
+        "Green with Red fungi" : { 
+           "score": 2,
+           "rarity" : "1.15 %",
+           "frequency" : 63
+        
+       },
+     
+        "Red with Orange fungi" : { 
+           "score": 2,
+           "rarity" : "1.1 %",
+           "frequency" : 60
+        
+       },
+     
+        "Blue with Red fungi" : { 
+           "score": 2,
+           "rarity" : "1.1 %",
+           "frequency" : 60
+        
+       },
+     
+        "Super Mycelial Purple" : { 
+           "score": 10,
+           "rarity" : "0.68 %",
+           "frequency" : 37
+        
+       },
+     
+        "Super Mycelial Blue" : { 
+           "score": 10,
+           "rarity" : "0.66 %",
+           "frequency" : 36
+        
+       },
+     
+        "Super Mycelial Orange" : { 
+           "score": 10,
+           "rarity" : "0.66 %",
+           "frequency" : 36
+        
+       },
+     
+        "Super Mycelial Red" : { 
+           "score": 10,
+           "rarity" : "0.64 %",
+           "frequency" : 35
+        
+       },
+     
+        "Super Mycelial" : { 
+           "score": 10,
+           "rarity" : "0.57 %",
+           "frequency" : 31
+        
+       },
+     
+        "Super Mycelial Green" : { 
+           "score": 10,
+           "rarity" : "0.55 %",
+           "frequency" : 30
+        
+       }
+    },
+    "Head": { 
+  
+        "Blue Maze" : { 
+           "score": 2,
+           "rarity" : "2.49 %",
+           "frequency" : 136
+        
+       },
+     
+        "Generic Maze" : { 
+           "score": 2,
+           "rarity" : "2.41 %",
+           "frequency" : 132
+        
+       },
+     
+        "Purple Tunnels" : { 
+           "score": 2,
+           "rarity" : "2.41 %",
+           "frequency" : 132
+        
+       },
+     
+        "Green Maze" : { 
+           "score": 2,
+           "rarity" : "2.39 %",
+           "frequency" : 131
+        
+       },
+     
+        "Orange Head" : { 
+           "score": 0,
+           "rarity" : "2.39 %",
+           "frequency" : 131
+        
+       },
+     
+        "Green Tunnels" : { 
+           "score": 2,
+           "rarity" : "2.38 %",
+           "frequency" : 130
+        
+       },
+     
+        "Purple Cerebrus" : { 
+           "score": 2,
+           "rarity" : "2.32 %",
+           "frequency" : 127
+        
+       },
+     
+        "Generic Decay" : { 
+           "score": 2,
+           "rarity" : "2.32 %",
+           "frequency" : 127
+        
+       },
+     
+        "Green Cerebrus" : { 
+           "score": 2,
+           "rarity" : "2.3 %",
+           "frequency" : 126
+        
+       },
+     
+        "Purple Veins" : { 
+           "score": 2,
+           "rarity" : "2.3 %",
+           "frequency" : 126
+        
+       },
+     
+        "Purple Decay" : { 
+           "score": 2,
+           "rarity" : "2.3 %",
+           "frequency" : 126
+        
+       },
+     
+        "Generic Tunnels" : { 
+           "score": 2,
+           "rarity" : "2.29 %",
+           "frequency" : 125
+        
+       },
+     
+        "Orange Tunnels" : { 
+           "score": 2,
+           "rarity" : "2.29 %",
+           "frequency" : 125
+        
+       },
+     
+        "Tua-Oo-See Orange" : { 
+           "score": 5,
+           "rarity" : "2.29 %",
+           "frequency" : 125
+        
+       },
+     
+        "Blue Ridges" : { 
+           "score": 2,
+           "rarity" : "2.27 %",
+           "frequency" : 124
+        
+       },
+     
+        "Blue Decay" : { 
+           "score": 2,
+           "rarity" : "2.23 %",
+           "frequency" : 122
+        
+       },
+     
+        "Green Decay" : { 
+           "score": 2,
+           "rarity" : "2.23 %",
+           "frequency" : 122
+        
+       },
+     
+        "Green Veins" : { 
+           "score": 2,
+           "rarity" : "2.23 %",
+           "frequency" : 122
+        
+       },
+     
+        "Blue Head" : { 
+           "score": 0,
+           "rarity" : "2.21 %",
+           "frequency" : 121
+        
+       },
+     
+        "Generic Cerebrus" : { 
+           "score": 2,
+           "rarity" : "2.19 %",
+           "frequency" : 120
+        
+       },
+     
+        "Purple Leopard" : { 
+           "score": 2,
+           "rarity" : "2.19 %",
+           "frequency" : 120
+        
+       },
+     
+        "Orange Veins" : { 
+           "score": 2,
+           "rarity" : "2.18 %",
+           "frequency" : 119
+        
+       },
+     
+        "Blue Leopard" : { 
+           "score": 2,
+           "rarity" : "2.12 %",
+           "frequency" : 116
+        
+       },
+     
+        "Tua-Oo-See Purple" : { 
+           "score": 5,
+           "rarity" : "2.08 %",
+           "frequency" : 114
+        
+       },
+     
+        "Blue Veins" : { 
+           "score": 2,
+           "rarity" : "2.08 %",
+           "frequency" : 114
+        
+       },
+     
+        "Orange Decay" : { 
+           "score": 2,
+           "rarity" : "2.05 %",
+           "frequency" : 112
+        
+       },
+     
+        "Blue Tunnels" : { 
+           "score": 2,
+           "rarity" : "2.03 %",
+           "frequency" : 111
+        
+       },
+     
+        "Purple Ridges" : { 
+           "score": 2,
+           "rarity" : "2.01 %",
+           "frequency" : 110
+        
+       },
+     
+        "Orange Ridges" : { 
+           "score": 2,
+           "rarity" : "2.01 %",
+           "frequency" : 110
+        
+       },
+     
+        "Purple Head" : { 
+           "score": 0,
+           "rarity" : "1.99 %",
+           "frequency" : 109
+        
+       },
+     
+        "Purple Maze" : { 
+           "score": 2,
+           "rarity" : "1.99 %",
+           "frequency" : 109
+        
+       },
+     
+        "Blue Cerebrus" : { 
+           "score": 2,
+           "rarity" : "1.97 %",
+           "frequency" : 108
+        
+       },
+     
+        "Tua-Oo-See Blue" : { 
+           "score": 5,
+           "rarity" : "1.96 %",
+           "frequency" : 107
+        
+       },
+     
+        "Orange Maze" : { 
+           "score": 2,
+           "rarity" : "1.96 %",
+           "frequency" : 107
+        
+       },
+     
+        "Orange Leopard" : { 
+           "score": 2,
+           "rarity" : "1.94 %",
+           "frequency" : 106
+        
+       },
+     
+        "Generic Head" : { 
+           "score": 0,
+           "rarity" : "1.94 %",
+           "frequency" : 106
+        
+       },
+     
+        "Tua-Oo-See Red" : { 
+           "score": 2,
+           "rarity" : "1.92 %",
+           "frequency" : 105
+        
+       },
+     
+        "Tua-Oo-See Green" : { 
+           "score": 2,
+           "rarity" : "1.9 %",
+           "frequency" : 104
+        
+       },
+     
+        "Green Head" : { 
+           "score": 0,
+           "rarity" : "1.9 %",
+           "frequency" : 104
+        
+       },
+     
+        "Orange Cerebrus" : { 
+           "score": 2,
+           "rarity" : "1.88 %",
+           "frequency" : 103
+        
+       },
+     
+        "Generic Veins" : { 
+           "score": 2,
+           "rarity" : "1.88 %",
+           "frequency" : 103
+        
+       },
+     
+        "Generic Leopard" : { 
+           "score": 2,
+           "rarity" : "1.86 %",
+           "frequency" : 102
+        
+       },
+     
+        "Generic Ridges" : { 
+           "score": 2,
+           "rarity" : "1.77 %",
+           "frequency" : 97
+        
+       },
+     
+        "Green Ridges" : { 
+           "score": 2,
+           "rarity" : "1.74 %",
+           "frequency" : 95
+        
+       },
+     
+        "Leopard" : { 
+           "score": 2,
+           "rarity" : "0.73 %",
+           "frequency" : 40
+        
+       },
+     
+        "Cerebrus" : { 
+           "score": 2,
+           "rarity" : "0.68 %",
+           "frequency" : 37
+        
+       },
+     
+        "Maze" : { 
+           "score": 2,
+           "rarity" : "0.68 %",
+           "frequency" : 37
+        
+       },
+     
+        "Squid" : { 
+           "score": 10,
+           "rarity" : "0.62 %",
+           "frequency" : 34
+        
+       },
+     
+        "Veins" : { 
+           "score": 2,
+           "rarity" : "0.53 %",
+           "frequency" : 29
+        
+       },
+     
+        "Tunnels" : { 
+           "score": 2,
+           "rarity" : "0.46 %",
+           "frequency" : 25
+        
+       },
+     
+        "with Gills" : { 
+           "score": 2,
+           "rarity" : "0.33 %",
+           "frequency" : 18
+        
+       },
+     
+        "Tua-Oo-See Green Waramu" : { 
+           "score": 10,
+           "rarity" : "0.24 %",
+           "frequency" : 13
+        
+       },
+     
+        "Tua-Oo-See Red Waramu" : { 
+           "score": 10,
+           "rarity" : "0.22 %",
+           "frequency" : 12
+        
+       },
+     
+        "Leopard Night Call" : { 
+           "score": 5,
+           "rarity" : "0.22 %",
+           "frequency" : 12
+        
+       },
+     
+        "Tua-Oo-See Blue Waramu" : { 
+           "score": 10,
+           "rarity" : "0.2 %",
+           "frequency" : 11
+        
+       },
+     
+        "Tua-Oo-See Purple Waramu" : { 
+           "score": 10,
+           "rarity" : "0.2 %",
+           "frequency" : 11
+        
+       },
+     
+        "Tunnels Night Call" : { 
+           "score": 5,
+           "rarity" : "0.2 %",
+           "frequency" : 11
+        
+       },
+     
+        "Maze Night Call" : { 
+           "score": 5,
+           "rarity" : "0.2 %",
+           "frequency" : 11
+        
+       },
+     
+        "Veins Night Call" : { 
+           "score": 5,
+           "rarity" : "0.15 %",
+           "frequency" : 8
+        
+       },
+     
+        "Cerebrus Night Call" : { 
+           "score": 5,
+           "rarity" : "0.15 %",
+           "frequency" : 8
+        
+       },
+     
+        "Tua-Oo-See Orange Waramu" : { 
+           "score": 10,
+           "rarity" : "0.11 %",
+           "frequency" : 6
+        
+       },
+     
+        "Tunnels with Veins" : { 
+           "score": 2,
+           "rarity" : "0.09 %",
+           "frequency" : 5
+        
+       },
+     
+        "_Abali Mara" : { 
+           "score": 2,
+           "rarity" : "0.09 %",
+           "frequency" : 5
+        
+       },
+     
+        "_Iguele de Wara Veins" : { 
+           "score": 5,
+           "rarity" : "0.05 %",
+           "frequency" : 3
+        
+       },
+     
+        "_Iguele de Wara Cerebrus" : { 
+           "score": 5,
+           "rarity" : "0.04 %",
+           "frequency" : 2
+        
+       },
+     
+        "_Iguele de Wara" : { 
+           "score": 5,
+           "rarity" : "0.04 %",
+           "frequency" : 2
+        
+       },
+     
+        "_Iguele de Wara Leopard" : { 
+           "score": 5,
+           "rarity" : "0.04 %",
+           "frequency" : 2
+        
+       },
+     
+        "_Iguele de Wara Tunnels" : { 
+           "score": 5,
+           "rarity" : "0.04 %",
+           "frequency" : 2
+        
+       },
+     
+        "Generic" : { 
+           "score": 0,
+           "rarity" : "0.04 %",
+           "frequency" : 2
+        
+       },
+     
+        "_Iguele de Wara Maze" : { 
+           "score": 5,
+           "rarity" : "0.02 %",
+           "frequency" : 1
+        
+       },
+     
+        "Orange" : { 
+           "score": 0,
+           "rarity" : "0.02 %",
+           "frequency" : 1
+        
+       },
+     
+        "Decay Orange" : { 
+           "score": 2,
+           "rarity" : "0.02 %",
+           "frequency" : 1
+        
+       }
+    },
+    "Eyes": { 
+  
+        "Purple Top" : { 
+           "score": 0,
+           "rarity" : "13.29 %",
+           "frequency" : 727
+        
+       },
+     
+        "Generic Top" : { 
+           "score": 0,
+           "rarity" : "13.25 %",
+           "frequency" : 725
+        
+       },
+     
+        "Blue Top" : { 
+           "score": 0,
+           "rarity" : "12.71 %",
+           "frequency" : 695
+        
+       },
+     
+        "Green Top" : { 
+           "score": 0,
+           "rarity" : "12.69 %",
+           "frequency" : 694
+        
+       },
+     
+        "Orange Top" : { 
+           "score": 0,
+           "rarity" : "12.65 %",
+           "frequency" : 692
+        
+       },
+     
+        "Blue Top Fire" : { 
+           "score": 5,
+           "rarity" : "2.93 %",
+           "frequency" : 160
+        
+       },
+     
+        "Generic Top Fire" : { 
+           "score": 5,
+           "rarity" : "2.91 %",
+           "frequency" : 159
+        
+       },
+     
+        "Orange Top Fire" : { 
+           "score": 5,
+           "rarity" : "2.85 %",
+           "frequency" : 156
+        
+       },
+     
+        "Green Top Fire" : { 
+           "score": 5,
+           "rarity" : "2.72 %",
+           "frequency" : 149
+        
+       },
+     
+        "Purple Top Fire" : { 
+           "score": 5,
+           "rarity" : "2.34 %",
+           "frequency" : 128
+        
+       },
+     
+        "Generic Bottom Eye Normal" : { 
+           "score": 2,
+           "rarity" : "1.15 %",
+           "frequency" : 63
+        
+       },
+     
+        "Blue Top Eye Normal" : { 
+           "score": 0,
+           "rarity" : "1.15 %",
+           "frequency" : 63
+        
+       },
+     
+        "Orange Top Eye Normal" : { 
+           "score": 0,
+           "rarity" : "1.06 %",
+           "frequency" : 58
+        
+       },
+     
+        "Green Top Eye Normal" : { 
+           "score": 0,
+           "rarity" : "0.99 %",
+           "frequency" : 54
+        
+       },
+     
+        "Blue Bottom Eye Normal" : { 
+           "score": 2,
+           "rarity" : "0.95 %",
+           "frequency" : 52
+        
+       },
+     
+        "Generic Top Eye Normal" : { 
+           "score": 0,
+           "rarity" : "0.95 %",
+           "frequency" : 52
+        
+       },
+     
+        "Purple Top Eye Normal" : { 
+           "score": 0,
+           "rarity" : "0.9 %",
+           "frequency" : 49
+        
+       },
+     
+        "Purple Bottom Eye Normal" : { 
+           "score": 2,
+           "rarity" : "0.86 %",
+           "frequency" : 47
+        
+       },
+     
+        "Green Bottom Eye Normal" : { 
+           "score": 2,
+           "rarity" : "0.84 %",
+           "frequency" : 46
+        
+       },
+     
+        "none" : { 
+           "score": 0,
+           "rarity" : "0.84 %",
+           "frequency" : 46
+        
+       },
+     
+        "Orange Bottom Eye Normal" : { 
+           "score": 2,
+           "rarity" : "0.8 %",
+           "frequency" : 44
+        
+       },
+     
+        "Blue Double" : { 
+           "score": 0,
+           "rarity" : "0.8 %",
+           "frequency" : 44
+        
+       },
+     
+        "Generic Double" : { 
+           "score": 0,
+           "rarity" : "0.77 %",
+           "frequency" : 42
+        
+       },
+     
+        "Blue Double Fire" : { 
+           "score": 10,
+           "rarity" : "0.73 %",
+           "frequency" : 40
+        
+       },
+     
+        "Purple Double" : { 
+           "score": 5,
+           "rarity" : "0.66 %",
+           "frequency" : 36
+        
+       },
+     
+        "Orange Double" : { 
+           "score": 5,
+           "rarity" : "0.64 %",
+           "frequency" : 35
+        
+       },
+     
+        "Purple Top Eye Fire" : { 
+           "score": 5,
+           "rarity" : "0.6 %",
+           "frequency" : 33
+        
+       },
+     
+        "Orange Top Eye Fire" : { 
+           "score": 5,
+           "rarity" : "0.57 %",
+           "frequency" : 31
+        
+       },
+     
+        "Blue Top Eye Fire" : { 
+           "score": 5,
+           "rarity" : "0.57 %",
+           "frequency" : 31
+        
+       },
+     
+        "Generic Bottom Eye Fire" : { 
+           "score": 5,
+           "rarity" : "0.53 %",
+           "frequency" : 29
+        
+       },
+     
+        "Blue Bottom Eye Fire" : { 
+           "score": 2,
+           "rarity" : "0.53 %",
+           "frequency" : 29
+        
+       },
+     
+        "Green Double Fire" : { 
+           "score": 10,
+           "rarity" : "0.51 %",
+           "frequency" : 28
+        
+       },
+     
+        "Green Double" : { 
+           "score": 5,
+           "rarity" : "0.51 %",
+           "frequency" : 28
+        
+       },
+     
+        "Orange Double Fire" : { 
+           "score": 10,
+           "rarity" : "0.49 %",
+           "frequency" : 27
+        
+       },
+     
+        "Purple Bottom Eye Fire" : { 
+           "score": 5,
+           "rarity" : "0.49 %",
+           "frequency" : 27
+        
+       },
+     
+        "Green Bottom Eye Fire" : { 
+           "score": 5,
+           "rarity" : "0.44 %",
+           "frequency" : 24
+        
+       },
+     
+        "Green Top Eye Fire" : { 
+           "score": 5,
+           "rarity" : "0.42 %",
+           "frequency" : 23
+        
+       },
+     
+        "Generic Double Fire" : { 
+           "score": 10,
+           "rarity" : "0.4 %",
+           "frequency" : 22
+        
+       },
+     
+        "Orange Bottom Eye Fire" : { 
+           "score": 5,
+           "rarity" : "0.35 %",
+           "frequency" : 19
+        
+       },
+     
+        "Purple Double Fire" : { 
+           "score": 10,
+           "rarity" : "0.31 %",
+           "frequency" : 17
+        
+       },
+     
+        "Double Vision" : { 
+           "score": 10,
+           "rarity" : "0.29 %",
+           "frequency" : 16
+        
+       },
+     
+        "Generic Top Eye Fire" : { 
+           "score": 5,
+           "rarity" : "0.27 %",
+           "frequency" : 15
+        
+       },
+     
+        "Vertus Operandi" : { 
+           "score": 10,
+           "rarity" : "0.27 %",
+           "frequency" : 15
+        
+       }
+    },
+    "Facial Features": { 
+  
+        "none" : { 
+           "score": -1,
+           "rarity" : "36.82 %",
+           "frequency" : 2014
+        
+       },
+     
+        "Level 1 Female Generic" : { 
+           "score": 2,
+           "rarity" : "9.54 %",
+           "frequency" : 522
+        
+       },
+     
+        "Level 0 Male Generic" : { 
+           "score": 0,
+           "rarity" : "5.92 %",
+           "frequency" : 324
+        
+       },
+     
+        "Level 1 Male Generic" : { 
+           "score": 0,
+           "rarity" : "4.46 %",
+           "frequency" : 244
+        
+       },
+     
+        "Level 4 Female Generic" : { 
+           "score": 10,
+           "rarity" : "3.77 %",
+           "frequency" : 206
+        
+       },
+     
+        "Level 4 Female Special" : { 
+           "score": 10,
+           "rarity" : "3.58 %",
+           "frequency" : 196
+        
+       },
+     
+        "Level 2 Male Generic" : { 
+           "score": 0,
+           "rarity" : "2.94 %",
+           "frequency" : 161
+        
+       },
+     
+        "Level 3 Male Generic" : { 
+           "score": 0,
+           "rarity" : "2.47 %",
+           "frequency" : 135
+        
+       },
+     
+        "Level 4 Male Generic" : { 
+           "score": 5,
+           "rarity" : "2.14 %",
+           "frequency" : 117
+        
+       },
+     
+        "Level 1 Female Blue" : { 
+           "score": 2,
+           "rarity" : "1.99 %",
+           "frequency" : 109
+        
+       },
+     
+        "Level 1 Female Green" : { 
+           "score": 2,
+           "rarity" : "1.63 %",
+           "frequency" : 89
+        
+       },
+     
+        "Level 1 Female Orange" : { 
+           "score": 2,
+           "rarity" : "1.61 %",
+           "frequency" : 88
+        
+       },
+     
+        "Level 0 Male Blue" : { 
+           "score": 0,
+           "rarity" : "1.37 %",
+           "frequency" : 75
+        
+       },
+     
+        "Level 1 Female Purple" : { 
+           "score": 2,
+           "rarity" : "1.3 %",
+           "frequency" : 71
+        
+       },
+     
+        "Level 0 Male Green" : { 
+           "score": 0,
+           "rarity" : "1.21 %",
+           "frequency" : 66
+        
+       },
+     
+        "Level 1 Tua-Oo-See Female Generic" : { 
+           "score": 2,
+           "rarity" : "1.19 %",
+           "frequency" : 65
+        
+       },
+     
+        "Level 5 Male Generic" : { 
+           "score": 10,
+           "rarity" : "1.13 %",
+           "frequency" : 62
+        
+       },
+     
+        "Level 0 Male Orange" : { 
+           "score": 0,
+           "rarity" : "0.95 %",
+           "frequency" : 52
+        
+       },
+     
+        "Level 1 Male Blue" : { 
+           "score": 0,
+           "rarity" : "0.93 %",
+           "frequency" : 51
+        
+       },
+     
+        "Level 4 Female Blue" : { 
+           "score": 10,
+           "rarity" : "0.84 %",
+           "frequency" : 46
+        
+       },
+     
+        "Level 2 Male Green" : { 
+           "score": 0,
+           "rarity" : "0.84 %",
+           "frequency" : 46
+        
+       },
+     
+        "Level 6 Male Generic" : { 
+           "score": 10,
+           "rarity" : "0.8 %",
+           "frequency" : 44
+        
+       },
+     
+        "Level 0 Male Purple" : { 
+           "score": 0,
+           "rarity" : "0.77 %",
+           "frequency" : 42
+        
+       },
+     
+        "Level 2 Male Blue" : { 
+           "score": 0,
+           "rarity" : "0.75 %",
+           "frequency" : 41
+        
+       },
+     
+        "Level 1 Male Green" : { 
+           "score": 0,
+           "rarity" : "0.71 %",
+           "frequency" : 39
+        
+       },
+     
+        "Level 4 Female Green" : { 
+           "score": 10,
+           "rarity" : "0.66 %",
+           "frequency" : 36
+        
+       },
+     
+        "Level 1 Male Orange" : { 
+           "score": 0,
+           "rarity" : "0.66 %",
+           "frequency" : 36
+        
+       },
+     
+        "Level 2 Male Purple" : { 
+           "score": 0,
+           "rarity" : "0.57 %",
+           "frequency" : 31
+        
+       },
+     
+        "Level 4 Female Purple" : { 
+           "score": 10,
+           "rarity" : "0.55 %",
+           "frequency" : 30
+        
+       },
+     
+        "Level 3 Male Blue" : { 
+           "score": 2,
+           "rarity" : "0.53 %",
+           "frequency" : 29
+        
+       },
+     
+        "Level 4 Female Orange" : { 
+           "score": 10,
+           "rarity" : "0.53 %",
+           "frequency" : 29
+        
+       },
+     
+        "Level 7 Male Generic" : { 
+           "score": 10,
+           "rarity" : "0.53 %",
+           "frequency" : 29
+        
+       },
+     
+        "Level 1 Male Purple" : { 
+           "score": 0,
+           "rarity" : "0.48 %",
+           "frequency" : 26
+        
+       },
+     
+        "Level 2 Male Orange" : { 
+           "score": 0,
+           "rarity" : "0.48 %",
+           "frequency" : 26
+        
+       },
+     
+        "Level 5 Male Blue" : { 
+           "score": 10,
+           "rarity" : "0.44 %",
+           "frequency" : 24
+        
+       },
+     
+        "Level 3 Male Purple" : { 
+           "score": 2,
+           "rarity" : "0.44 %",
+           "frequency" : 24
+        
+       },
+     
+        "Level 3 Male Orange" : { 
+           "score": 2,
+           "rarity" : "0.42 %",
+           "frequency" : 23
+        
+       },
+     
+        "Level 4 Male Purple" : { 
+           "score": 5,
+           "rarity" : "0.33 %",
+           "frequency" : 18
+        
+       },
+     
+        "Level 4 Male Blue" : { 
+           "score": 5,
+           "rarity" : "0.33 %",
+           "frequency" : 18
+        
+       },
+     
+        "Level 4 Male Orange" : { 
+           "score": 2,
+           "rarity" : "0.29 %",
+           "frequency" : 16
+        
+       },
+     
+        "Level 6 Male Green" : { 
+           "score": 10,
+           "rarity" : "0.29 %",
+           "frequency" : 16
+        
+       },
+     
+        "Level 3 Male Green" : { 
+           "score": 2,
+           "rarity" : "0.29 %",
+           "frequency" : 16
+        
+       },
+     
+        "Level 5 Male Green" : { 
+           "score": 10,
+           "rarity" : "0.26 %",
+           "frequency" : 14
+        
+       },
+     
+        "Level 1 Tua-Oo-See Female Blue" : { 
+           "score": 2,
+           "rarity" : "0.22 %",
+           "frequency" : 12
+        
+       },
+     
+        "Level 1 Tua-Oo-See Female Green" : { 
+           "score": 2,
+           "rarity" : "0.22 %",
+           "frequency" : 12
+        
+       },
+     
+        "Level 6 Male Blue" : { 
+           "score": 10,
+           "rarity" : "0.22 %",
+           "frequency" : 12
+        
+       },
+     
+        "Level 1 Tua-Oo-See Female Orange" : { 
+           "score": 2,
+           "rarity" : "0.2 %",
+           "frequency" : 11
+        
+       },
+     
+        "Level 7 Male Green" : { 
+           "score": 10,
+           "rarity" : "0.18 %",
+           "frequency" : 10
+        
+       },
+     
+        "Level 6 Male Orange" : { 
+           "score": 10,
+           "rarity" : "0.18 %",
+           "frequency" : 10
+        
+       },
+     
+        "Level 4 Male Green" : { 
+           "score": 5,
+           "rarity" : "0.18 %",
+           "frequency" : 10
+        
+       },
+     
+        "Level 5 Male Purple" : { 
+           "score": 10,
+           "rarity" : "0.18 %",
+           "frequency" : 10
+        
+       },
+     
+        "Level 6 Male Purple" : { 
+           "score": 10,
+           "rarity" : "0.16 %",
+           "frequency" : 9
+        
+       },
+     
+        "Level 5 Male Orange" : { 
+           "score": 10,
+           "rarity" : "0.16 %",
+           "frequency" : 9
+        
+       },
+     
+        "Level 1 Tua-Oo-See Female Purple" : { 
+           "score": 2,
+           "rarity" : "0.15 %",
+           "frequency" : 8
+        
+       },
+     
+        "Level 7 Male Blue" : { 
+           "score": 10,
+           "rarity" : "0.09 %",
+           "frequency" : 5
+        
+       },
+     
+        "Level 7 Male Orange" : { 
+           "score": 10,
+           "rarity" : "0.09 %",
+           "frequency" : 5
+        
+       },
+     
+        "Level 7 Male Purple" : { 
+           "score": 10,
+           "rarity" : "0.02 %",
+           "frequency" : 1
+        
+       }
+    }
+  }
