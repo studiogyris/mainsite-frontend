@@ -95,9 +95,9 @@ async function main() {
         while (r1 == false) {
             try {
                 if (isMobile) {
-                    gid('item-img').src = `https://gyris-${collectionName}-350x350.b-cdn.net/123.jpg`
+                    gid('item-img').src = `https://mara-downsized-images.s3.eu-central-1.amazonaws.com/mara/small/1.jpg`
                 } else {
-                    gid('item-img').src = `https://gyris-${collectionName}-800x800.b-cdn.net/123.jpg`
+                    gid('item-img').src = `https://mara-downsized-images.s3.eu-central-1.amazonaws.com/mara/big/1.jpg`
                 }
                 await new Promise(r => setTimeout(r, 50));
                 r1 = true;
@@ -233,12 +233,22 @@ async function main() {
         var r1 = false;
         while (r1 == false) {
             try {
-                if (isMobile) {
+                if (collectionName=='mara') {
+                    if (isMobile) {
 
-                    gid('item-img').src = `https://gyris-${collectionName}-350x350.b-cdn.net/${id}.jpg`
+                        gid('item-img').src = `https://mara-downsized-images.s3.eu-central-1.amazonaws.com/mara/small/${id}.jpg`
+                    } else {
+                        gid('item-img').src = `https://mara-downsized-images.s3.eu-central-1.amazonaws.com/mara/big/${id}.jpg`
+                    }
                 } else {
-                    gid('item-img').src = `https://gyris-${collectionName}-800x800.b-cdn.net/${id}.jpg`
+                    if (isMobile) {
+
+                        gid('item-img').src = `https://gyris-${collectionName}-350x350.b-cdn.net/${id}.jpg`
+                    } else {
+                        gid('item-img').src = `https://gyris-${collectionName}-800x800.b-cdn.net/${id}.jpg`
+                    }
                 }
+                
                 await new Promise(r => setTimeout(r, 50));
                 r1 = true;
             } catch (err) {
@@ -249,8 +259,12 @@ async function main() {
 
 
 
-
-        gid('view-original').href = `https://gyris-${collectionName}.b-cdn.net/${id}.jpg`
+        if (collectionName=='mara'){
+            gid('view-original').href = `https://bafybeicfvynww35jyfosxjat5drtio2z7ghqr6bhtdjo3hdftoddmb3e7y.ipfs.nftstorage.link/${id}.jpg`
+        } else {
+            gid('view-original').href = `https://gyris-${collectionName}.b-cdn.net/${id}.jpg`
+        }
+       
 
 
 
@@ -441,7 +455,7 @@ async function main() {
                     if (tname == "Class") {
                         const className = tval;
 
-                        gid('classname').textContent = className
+                        gid('classname').textContent = subclassLimits.dictionary[subclassLimits.mapping[className]];
                         gid('isyaru').textContent = subclassLimits.dictionary[subclassLimits.mapping[className]];
                         const scl = subclassLimits.values[(subclassLimits.mapping[className]).toFixed(0)];
 
