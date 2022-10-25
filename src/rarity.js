@@ -214,6 +214,7 @@ async function main() {
     async function onClickFetch() {
 
         var totalScore = 10;
+        var totrscore = 0;
         id = gid('input-itemid').value
         if (isNaN(id) || id == '' || id < 0 || id === 0) {
             return
@@ -310,8 +311,73 @@ async function main() {
                             //gid('traitcount-bonus').textContent=`[+${bonuspoints['5/12']}]`
                         }
                     }
+                    ///////////////
+                    rarrank = 1;
+                    var samescoreAmountRar = 0;
+                    for (scr of allscores['rarity']) {
+                        if (totrscore < scr) {
+
+                            rarrank++
+                        } else if (totrscore == scr) {
+                            samescoreAmountRar++;
+                        } else {
+                            break;
+                        }
+                    }
+
+                    wTP = (( (maxID+1) - rarrank - samescoreAmountRar + 1) / (maxID+1)) * 100
+                    var grade = ''
+                    if (wTP >= 93) {
+                        grade = ' (A+)'
+                    } else if (wTP >= 86) {
+                        grade = ' (A)'
+                    } else if (wTP >= 79) {
+                        grade = ' (A-)'
+                    } else if (wTP >= 72) {
+                        grade = ' (B+)'
+                    } else if (wTP >= 65) {
+                        grade = ' (B)'
+                    } else if (wTP >= 58) {
+                        grade = ' (B-)'
+                    } else if (wTP >= 51) {
+                        grade = ' (C+)'
+                    } else if (wTP >= 44) {
+                        grade = ' (C)'
+                    } else if (wTP >= 37) {
+                        grade = ' (C-)'
+                    } else if (wTP >= 30) {
+                        grade = ' (D+)'
+                    } else if (wTP >= 23) {
+                        grade = ' (D)'
+                    } else if (wTP >= 16) {
+                        grade = ' (D-)'
+                    } else if (wTP >= 9) {
+                        grade = ' (F+)'
+                    } else {
+                        grade = ' (F)'
+                    } 
 
 
+                    gid('rar-score').textContent = `${totrscore} ${grade}`
+                    var cardWidth = screen.width < 420 ? screen.width : 420;
+                    var barSize = (cardWidth * 0.8) - 20
+
+                    console.log(rarrank)
+                    var rarBetterThan = maxID+1 - rarrank - samescoreAmountRar;
+                   
+                    var rarMarginLeft = rarBetterThan / ( (maxID+1) / barSize) - 2
+                    var rarWidth = samescoreAmountRar / ( (maxID+1) / barSize)
+                    if (rarWidth < 7) rarWidth = 7;
+                    if (rarMarginLeft > (barSize - 9)) rarMarginLeft = barSize - 9;
+                    gid('rar-bar').style['margin-left'] = rarMarginLeft + 'px'
+                    gid('rar-bar').style.width = (rarWidth).toFixed(0) + 'px'
+
+                    gid("rar-better").textContent = ((( (maxID+1) - rarrank - samescoreAmountRar + 1) / (maxID+1)) * 100).toFixed(1);
+                    gid("rar-same").textContent = ((samescoreAmountRar / (maxID+1)) * 100).toFixed(1);
+                    gid("rar-worse").textContent = (((rarrank - 1) / (maxID+1)) * 100).toFixed(1);
+
+
+                    /////////////////
                     if (totalScore > 100) {
                         totalScore = 100
                     }
@@ -330,7 +396,7 @@ async function main() {
                         }
                     }
 
-                    gid('vis-score').textContent = `${vs}/5`
+                    gid('vis-score').textContent = `${vs*20}`
                     var cardWidth = screen.width < 420 ? screen.width : 420;
                     var barSize = (cardWidth * 0.8) - 20
 
@@ -483,6 +549,15 @@ async function main() {
 
 
                 const o = stats[tname][tval];
+
+                if (collectionName=='mara'){
+                    const num1 = o.frequency
+                    rarity_p = num1 / 5470
+                    rscore = (1/rarity_p)
+                    totrscore += Math.round(rscore)
+                    
+                }
+              
                 const { score } = o;
                 totalScore += score;
 

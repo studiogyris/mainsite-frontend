@@ -301,7 +301,7 @@
                 <ul>
                   <li>
                     <div class="title">
-                      Non-visual score: <span id="nonvis-score" class="bura-score"> 1.5/5</span>
+                      Base rating: <span id="nonvis-score" class="bura-score"> 1.5/5</span>
                     </div>
                     <div class="bar">
                       <div class="main-bar">
@@ -318,7 +318,7 @@
                             aria-hidden="true"
                           ></i>
                           <div class="tooltip-box">
-                            Your non-visual score is:
+                            Your Base rating is:
                             <br />
                             <br />
                             <ul>
@@ -333,7 +333,39 @@
                   </li>
                   <li>
                     <div class="title">
-                      Visual score: <span id="vis-score" class="bura-score">1.5/5</span>
+                      Rarity score: <span id="rar-score" class="bura-score">1234</span>
+                    </div>
+                    <div class="bar">
+                      <div class="main-bar">
+                        <div
+                          id="rar-bar"
+                          class="score-bar"
+                          style="width: 100x; margin-left: 100px"
+                        ></div>
+                      </div>
+                      <div class="info">
+                        <span class="tooltip"
+                          ><i
+                            class="fa fa-question-circle"
+                            aria-hidden="true"
+                          ></i>
+                          <div class="tooltip-box">
+                            Your visual score is:
+                            <br />
+                            <br />
+                            <ul>
+                              <li>&nbsp	&#8226; Better than <span id="rar-better">14</span> %</li>
+                              <li>&nbsp &#8226; Same as <span id="rar-same">29</span> %</li>
+                              <li>&nbsp &#8226; Worse than <span id="rar-worse">57</span> %</li>
+                            </ul>
+                          </div>
+                        </span>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="title">
+                      Visual score: <span id="vis-score" class="bura-score">15</span>
                     </div>
                     <div class="bar">
                       <div class="main-bar">
@@ -364,9 +396,7 @@
                     </div>
                   </li>
                 </ul>
-                <div class="important">
-                  * non-visual is the base rating in the metadata
-                </div>
+                
               </div>
             </div>
 
