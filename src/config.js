@@ -1,7 +1,7 @@
 const CFG = {
   //rpcUrl: 'https://psytrbhymqlkfrhudd.dev.genesysgo.net:8899',
-  rpcUrl: 'https://ssc-dao.genesysgo.net/',
-  CMID: '56PAXZCafPoC5XJkivWy6EXZMJycnd4JKGPLfochpa8Y',
+  rpcUrl: 'https://api.mainnet-beta.solana.com',
+  CMID: '3r8cA5BbUGEKvcm2bE5dC4Xy8ypwFRVJtJNbL1yuWU6n',
   devnet: false,
   maxPerTx: 100,
   marketplaceName: 'Magic Eden',
