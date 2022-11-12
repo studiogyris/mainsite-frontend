@@ -30,8 +30,19 @@ module.exports = {
         fallback: {
             crypto: false,
             "assert": require.resolve("assert/"),
-            "stream": require.resolve("stream-browserify")
-        }
+            "stream": require.resolve("stream-browserify"),
+            crypto: require.resolve("crypto-browserify"),
+            stream: require.resolve("stream-browserify"),
+            util: require.resolve("util"),
+            assert: require.resolve("assert"),
+            fs: false,
+            process: false,
+            path: false,
+            zlib: false,
+        },
+        
+        alias: { "stream": require.resolve("stream-browserify") }
+       
     },
     entry: {
       mint: './src/mint.js',
