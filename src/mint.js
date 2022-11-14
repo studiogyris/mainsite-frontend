@@ -45,6 +45,7 @@ async function main() {
     var success = true;
     try {
       const connection = new Web3.Connection(CFG.rpcUrl);
+      bag.connection = connection;
       bag.mx = Metaplex.make(connection);
       bag.sol.provider = new anchor.Provider(
         connection,
@@ -322,11 +323,32 @@ async function main() {
 
     const { candyMachine } = bag;
     const wallet = bag.sol.walletProvider;
+
+
+    const mintTXFee = 0.02 * 1e9;
+    const userLamports = await bag.connection.getBalance(wallet.publicKey)
+    const price = parseInt(bag.candyMachine.candyGuard.guards.solPayment.amount.basisPoints.toString())
+    const quantityString = parseInt(gid("mint-amount").value);
+    
+  
+    const lackOfSOLBalance = (((price + mintTXFee) * quantityString) - userLamports) / 1e9;
+    
+    
+    if ( lackOfSOLBalance ) {
+      
+      displayErr(`Insufficient funds - Need ~${ (lackOfSOLBalance).toFixed(2) } more SOL`);
+      enable("mint-amount");
+      gid('mint-btn').value='MINT';
+      enable('mint-btn');
+      return;
+    }
+
+
     bag.mx.use(walletAdapterIdentity(wallet))
 
     
 
-    const quantityString = parseInt(gid("mint-amount").value);
+    
 
     if (quantityString > 1) {
       displayMsg(
@@ -336,7 +358,6 @@ async function main() {
       displayMsg("Please confirm the transaction in your wallet!");
     }
 
-    var cancelledAmount = 0;
 
     try {
       const transactionBuilders = [];
@@ -374,6 +395,9 @@ async function main() {
       for (let signer in signers) {
         await signers[signer].signAllTransactions(transactions);
       }
+
+      gid('mint-btn').value='Confirming...'
+      displayMsg('Transaction sent for confirmation! Please wait a ~minute while it finalizes');
 
       const output = await Promise.all(
         signedTransactions.map(async (tx, i) => {
@@ -428,66 +452,6 @@ async function main() {
 
    
     return;
-
-
-
-    // // //
-    for (var i = 0; i < amount; i++) {
-      const tx = await bag.mx
-        .candyMachines()
-        .mint(
-          {
-            candyMachine,
-            collectionUpdateAuthority: bag.cmState.raw.authority,
-            owner: bag.sol.walletProvider.publicKey,
-          },
-          {
-            payer: bag.sol.walletProvider,
-          }
-        )
-        .catch((err) => {
-          console.error(err);
-          return err;
-        });
-
-      clearErr();
-
-      if (tx.code != undefined) {
-        cancelledAmount++;
-        if (amount > 1) {
-          displayErr(
-            `You have cancelled ${cancelledAmount}/${amount} mint transactions!`
-          );
-        } else {
-          clearMsg();
-          enable("mint-amount");
-          return displayErr("You have cancelled a mint transaction!");
-        }
-      } else {
-        clog(tx);
-      }
-
-      if (cancelledAmount == amount - 1 && amount > 1) {
-        displayMsg(
-          `Please confirm the last remaining mint transaction in your wallet!`
-        );
-      } else if (cancelledAmount > 0) {
-        displayMsg(
-          `Please confirm all ${
-            amount - i - 1
-          } remaining mint transactions in your wallet!`
-        );
-      } else {
-        displayMsg(
-          `Please confirm all ${
-            amount - i - 1
-          } mint transactions in your wallet!`
-        );
-      }
-    }
-    clearMsg();
-
-    enable("mint-amount");
   }
   // hides message box
   function clearMsg() {
