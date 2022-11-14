@@ -334,7 +334,7 @@ async function main() {
     const lackOfSOLBalance = (((price + mintTXFee) * quantityString) - userLamports) / 1e9;
     
     
-    if ( lackOfSOLBalance ) {
+    if ( lackOfSOLBalance >= 0 ) {
       
       displayErr(`Insufficient funds - Need ~${ (lackOfSOLBalance).toFixed(2) } more SOL`);
       enable("mint-amount");
