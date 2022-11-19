@@ -92,6 +92,36 @@ $(document).ready(function(){
 
 
 $(document).ready(function(){
+	 $('#hero-title .main-slider').slick({
+	  autoplay: true,
+  	  autoplaySpeed: 2000,
+	  slidesToShow: 1,
+	  slidesToScroll: 1,
+	  arrows: false,
+	  dots:false,
+	  fade: true,
+	  asNavFor: '#hero-title .nav-slider'
+	});
+	$('#hero-title .nav-slider').slick({
+	  slidesToShow: 3,
+	  slidesToScroll: 1,
+	  asNavFor: '#hero-title .main-slider',
+	  dots: false,
+	  arrows:false,
+	  centerMode: false,
+	  focusOnSelect: true
+	});
+
+});
+
+$(document).ready(function(){
+	lightbox.option({
+      'maxWidth': 1920,
+    });
+
+});
+
+$(document).ready(function(){
     var $page = $('html, body');
     $('a[href*="#"]').click(function() {
         $page.animate({
