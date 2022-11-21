@@ -94,7 +94,7 @@ $(document).ready(function(){
 $(document).ready(function(){
 	 $('#hero-title .main-slider').slick({
 	  autoplay: true,
-  	  autoplaySpeed: 2000,
+  	  autoplaySpeed: 4000,
 	  slidesToShow: 1,
 	  slidesToScroll: 1,
 	  arrows: false,
@@ -110,6 +110,19 @@ $(document).ready(function(){
 	  arrows:false,
 	  centerMode: false,
 	  focusOnSelect: true
+	});
+
+});
+
+$(document).ready(function(){
+	 $('#gaming .gaming-slider').slick({
+	  autoplay: true,
+  	  autoplaySpeed: 2000,
+	  slidesToShow: 1,
+	  slidesToScroll: 1,
+	  arrows: true,
+	  dots:false,
+	  fade: true,
 	});
 
 });
