@@ -42,6 +42,47 @@ async function main(){
   function onClickBack() {
     window.location.href='..';
   }
+
+  
+
+async function onLedgerSubmit(nonce) {
+  
+  const MEMO_PROGRAM_ID = new Web3.PublicKey(
+    "MemoSq4gqABAXKb96qnH8TysNcWxMyWCqXgDLGmfcHr"
+    
+  )
+  
+  const buildAuthTx = (nonce) => {
+    const tx = new Web3.Transaction()
+    tx.add(
+      new Web3.TransactionInstruction({
+        programId: MEMO_PROGRAM_ID,
+        keys: [],
+        data: Buffer.from(nonce, "utf8"),
+      })
+    )
+    return tx
+  }
+  
+ 
+
+  const tx = buildAuthTx(nonce)
+  tx.feePayer = bag.sol.walletProvider.publicKey 
+  const connection = new Web3.Connection(CFG.rpcUrl);
+  console.log(await connection.getLatestBlockhash())
+  tx.recentBlockhash = (await connection.getLatestBlockhash()).blockhash // same as line above
+  console.log(tx.recentBlockhash)
+ 
+  const signedTx = await bag.sol.walletProvider.signTransaction(tx)
+  
+  const serialized = signedTx.serialize()
+ 
+
+  return serialized.toString('hex')
+    
+  
+}
+
   
   // returns true/false based on an attempt to create an RPC connection and save it in bag.sol.provider
   function connectRpc() {
@@ -145,6 +186,7 @@ async function main(){
       .then((res)=>{
         clearErr();
         bag.sol.walletProvider=window.solana;
+       
         onWalletConnected();
     }).catch((err)=>{
         if (err.code&&err.code==4001){
@@ -300,6 +342,9 @@ async function main(){
   }
 
   async function onClickSubmit() {
+    
+
+
     const nftID = gid('input-id').value;
 
     
@@ -311,6 +356,12 @@ async function main(){
     if (!inputName && !inputStory) return displayErr('Please fill the Name or/and Backstory fields!');
 
     clearErr();
+
+    
+    
+
+
+
     if (!inputName) {
       return validateSignSend(3);
     } else {
@@ -371,10 +422,21 @@ async function main(){
     clearErr();
     clearMsg();
 
+
     const message = messagesToSign[actionNum]+ capitalize(collection) + ' #' + nftID;
 
-    const encodedMessage = new TextEncoder().encode(message);
-    const signedMessage = await bag.sol.walletProvider.signMessage(encodedMessage, "utf8");
+
+    var signedMessage;
+
+    if (gid('ledger-checkbox').checked) {
+      signedMessage = await onLedgerSubmit(message);
+    } else {
+      const encodedMessage = new TextEncoder().encode(message);
+      signedMessage = await bag.sol.walletProvider.signMessage(encodedMessage, "utf8");
+    }
+
+
+    
 
     
    
@@ -385,6 +447,10 @@ async function main(){
       signedMessage,
       id: nftID,
       collection: collection
+    }
+
+    if (gid('ledger-checkbox').checked) {
+      Data.ledger = true;
     }
 
     gid('twitter-wrap').innerHTML=`<a style="display:none;" id="twitter-btn" href="https://twitter.com/share?ref_src=twsrc%5Etfw"
