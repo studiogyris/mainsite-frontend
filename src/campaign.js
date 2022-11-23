@@ -363,7 +363,7 @@ async function main(){
     
 
     if (nftID == '' || isNaN(nftID) || parseInt(nftID)<0 ) {
-      displayErr('Please input correct nftID');
+      displayErr('Please input correct ID');
       return;
     }
 
@@ -397,28 +397,23 @@ async function main(){
       
     var successMsg;
     var btntext = 'Submit'
-    if (actionNum==1) {
-     
-     
-      btntext = 'Reroll'
-      successMsg =   `Your submission to reroll non-visual attributes of Bura #${nftID} has been recorded. Why not <u style='color:red;'>share it on twitter?</u> `;
-    } else if (actionNum==2) {
-      gid('twitter-btn').setAttribute('data-text',`I just renamed my Bura, check it out here: https://gyris.io/campaign/submissions?nftID=${nftID}\nIf you own one you can do the same here: `);
+    if (actionNum==2) {
+      gid('twitter-btn').setAttribute('data-text',`I just renamed my ${capitalize(collection)}, check it out here: https://gyris.io/c?${collection[0]}-${nftID}\nIf you own one you can do the same here: `);
       
      
       Data.name = name;
-      successMsg = `Your submission to rename Bura #${nftID} has been recorded. Why not <u style='color:red;'>share it on twitter?</u>`;
+      successMsg = `Your submission to rename ${capitalize(collection)} #${nftID} has been recorded. Why not <u style='color:red;'>share it on twitter?</u>`;
     } else if (actionNum==3) {
-      gid('twitter-btn').setAttribute('data-text',`I just added a backstory to my Bura, check it out here: https://gyris.io/campaign/submissions?nftID=${nftID}\nIf you own one you can do the same here: `);
+      gid('twitter-btn').setAttribute('data-text',`I just added a backstory to my ${capitalize(collection)}, check it out here: https://gyris.io/campaign/submissions?nftID=${nftID}\nIf you own one you can do the same here: `);
 
       Data.backstory = backstory;
-      successMsg = `Your submission to add a backstory to Bura #${nftID} has been recorded. Why not <u style='color:red;'>share it on twitter?</u>`
+      successMsg = `Your submission to add a backstory to ${capitalize(collection)} #${nftID} has been recorded. Why not <u style='color:red;'>share it on twitter?</u>`
     } else {
-      gid('twitter-btn').setAttribute('data-text',`I just renamed and added a backstory to my Bura, check it out here: https://gyris.io/campaign/submissions?nftID=${nftID}\nIf you own one you can do the same here: `);
+      gid('twitter-btn').setAttribute('data-text',`I just renamed and added a backstory to my ${capitalize(collection)}, check it out here: https://gyris.io/campaign/submissions?nftID=${nftID}\nIf you own one you can do the same here: `);
      
       Data.backstory = backstory;
       Data.name = name;
-      successMsg = `Your submission to rename and add a backstory to Bura #${nftID} has been recorded. Why not <u style='color:red;'>share it on twitter?</u>`
+      successMsg = `Your submission to rename and add a backstory to ${capitalize(collection)} #${nftID} has been recorded. Why not <u style='color:red;'>share it on twitter?</u>`
     }
     
     const params = {

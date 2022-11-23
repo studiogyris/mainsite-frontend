@@ -3,25 +3,38 @@ import {CFG} from './config.js';
 
 // ********[ Entry function ]*******
 async function main(){
-  const mapping = await fetch('/campaign/mapping.json').then((res)=>{
-    return res.json()})
+  var subs;
+  var selectedCollection = 'bura'; 
+  
+  
   if (window.location.search!=''){
-    const buraidtoshow = window.location.search.split('=')[1];
+    const query = window.location.search.split('=');
+    const collection = query[1].split('&')[0]
+    const id = query[2];
+    
+    hide('step1')
+    hide('step2')
+    hide('select-genus')
     hide('fetch-controls');
-    onClickFetch(buraidtoshow);
-    setPTitle('Displaying submissions for Bura #'+buraidtoshow)
+    gid('e1').innerHTML='';
+    gid('e2').innerHTML='';
+    gid('select-genus').value=collection;
+    selectedCollection=collection
+    onClickFetch(id);
+    
+    setPTitle(`Displaying submissions for ${selectedCollection} # ${id}`)
     hide('id-sign')
   } else {
     
-
+    gid('select-genus').addEventListener('change',onCollectionSelected)
     gid('fetch-btn').addEventListener('click',onClickFetch);
-    gid('input-buraid').addEventListener('input', onInputBuraID);
+    gid('input-id').addEventListener('input', onInputnftid);
   }
 
   if (window.screen.width<900) {
-      
     gid('text-backstory').style.width=window.screen.width*9/10+'px';
   }
+  
   
   
 
@@ -32,68 +45,101 @@ async function main(){
     window.location.href='..';
   }
 
-  function onInputBuraID(){
-    const inputE = gid("input-buraid");
+  function onInputnftid(){
+    const inputE = gid("input-id");
     const v = inputE.value;
     if (  v<0 || v===0 ){
       inputE.value="";
-    } else if ( v>2734){
-        inputE.value=2734;
-    }
+    } 
   }
 
+
+  async function onCollectionSelected() {
+   
+    const selector = event.target;
+    const collection = selector.value;
+    hide('fetched-info')
+    selectedCollection = collection;
+    getAllSubmissions(collection);
+  }
+
+  async function getAllSubmissions(collection) {
+    await fetch(CFG.backendURL,{
+      method:'POST',
+      body: JSON.stringify({
+        getSubmissions: true,
+        collection
+      })
+    })
+    .then((res)=>{
+      return res.json();
+    }).then((res)=>{
+      
+      subs = res.details
+     }
+    )
+    
+  }
+ 
+
   async function onClickFetch(buid){
+    if (!subs) {
+      await getAllSubmissions(selectedCollection);
+    }
     
-    var buraID
+    var nftid
     if (typeof(buid)=='string') {
-      buraID = buid;
+      nftid = buid;
     } else {
-      buraID = gid('input-buraid').value;
+      nftid = gid('input-id').value;
     }
     
+  
 
-    if (buraID == '' || isNaN(buraID) || parseInt(buraID)<0 || parseInt(buraID)>2734 ) {
-      displayErr('Please input correct BuraID');
+    if (nftid == '' || isNaN(nftid) || parseInt(nftid)<0 ) {
+      displayErr('Please input correct ID');
       return;
     }
 
-    if (!mapping[buraID]) {
-      displayErr("This Bura hasn't been minted yet");
-      return;
-    }
+    setPTitle(`Displaying submissions for ${selectedCollection} # ${nftid}`)
+    
     clearErr();
     
-    const url = CFG.backendURL +'/campaign/submissions?buraid='+buraID;
-
+    
     gid('twitter-wrap').innerHTML=`<a style="display:none;" id="twitter-btn" href="https://twitter.com/share?ref_src=twsrc%5Etfw"
         class="twitter-share-button" data-size="large"
-        data-text="Check out the name and backstory for this Bura: https://gyris.io/campaign/submissions?buraid=${buraID}.\nYou can view others' submissions here: "
-        data-via="Gyris_official" data-hashtags="nameandbackstorycampaign" data-lang="en"
+        data-text="Check out the name and backstory for this ${capitalize(selectedCollection)} "
+        data-via="Gyris_official" data-hashtags="LoreCampaignPart2" data-lang="en"
         data-dnt="true" data-show-count="true" target="_blank"
         onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">Tweet</a>`
 
 
-    gid('fetch-btn').value='Waiting...'
-    fetch(url)
-    .then((res)=>{
-      return res.json();
-    })
-    .then((res)=>{
-      console.log(res);
-      
-      gid('fetch-btn').value='Fetch';
-      
-      if (res.code<0){
-        displayErr(res.message)
-      } else {
-        unhide('fetched-info')
-        displayFetchedData(res.data);
-      }
-    })
-    
+    fetchSubmission(nftid);
   }
   
-  function displayFetchedData(data) {
+  function findSubmissionByID(id){
+    
+    for (const sub of subs) {
+      if (sub['id']==parseInt(id)) {
+        return sub
+      }
+    }
+    return null;
+  }
+
+  function capitalize(word) {
+    const loweredCase = word.toLowerCase();
+    return word[0].toUpperCase() + loweredCase.slice(1);
+  }
+
+  function fetchSubmission(nftid) {
+    const data = findSubmissionByID(nftid);
+
+    if (!data){
+      hide('fetched-info')
+      return displayErr(`No submission found for ${capitalize(selectedCollection)} #${nftid}`);
+    }
+   
 
     var script = document.createElement('script');
     script.src = "https://platform.twitter.com/widgets.js";
@@ -102,13 +148,8 @@ async function main(){
     script.id='twitter-script'
     gid('twitter-wrap').appendChild(script);
     
-    if (data.reroll==false) {
-      editext('reroll-bool','NO');
-      gid('reroll-bool').style.color='yellow'
-    } else {
-      editext('reroll-bool','YES');
-      gid('reroll-bool').style.color='lightgreen'
-    }
+    
+    
 
     if (data.name==null) {
       gid('input-name').value="The owner hasn't set a name";
@@ -121,6 +162,8 @@ async function main(){
     } else {
       gid('text-backstory').value=data.backstory;
     }
+
+    unhide('fetched-info')
   }
 
   // hides message box

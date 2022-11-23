@@ -82,9 +82,26 @@
 				
 				<div class="column data-column">
 					<div ><span id="back-btn" style="padding:8px;border-style:solid;border-width: 2px;">◄ BACK</span></div>
+					<div id="e1">
+						<br>
 					<br>
+					</div>
 					
-					<h2  id="main-h">Input ID of the Bura you'd like to see the submissions of the current campaign for.</h2><br>
+
+					<h2 id="step1">1) Select a collection</h2>
+					
+					<select style="font-size:150%;background-color:rgb(17, 16, 16); color:red;font-weight: bold;margin: auto;width: 50%;" name="genus" id="select-genus">
+						<option value="bura">Bura</option>
+						<option value="ogg">Ogg</option>
+						<option value="mara">Mara</option>
+					  </select>
+					  <div id="e2">
+						<br>
+						<br>
+					  </div>
+					  
+					
+					<h2  id="step2">2) Input ID of the NFT you'd like to see the submissions for.</h2><br>
 					
 					<div id="controls-form" >
 						<div class="process-row">
@@ -94,7 +111,7 @@
 								<div class="number-input">
 									<div id='id-sign' style="font-size:150%;color:red;"><strong>&nbsp&nbspID</strong></div>
 									<div id="fetch-controls">
-										<input id="input-buraid" type="number" value="" min="0" max="2734"/>
+										<input id="input-id" type="number" value="" min="0" max="2734"/>
 										<div>&nbsp</div>
 										<div class="column submit-column">
 											<input id="fetch-btn" type="button" class="btn green-button" value="Fetch">
@@ -131,14 +148,11 @@
 										</div>
 									</div>
 									<div style="display:none;" id="fetched-info">
-										<select name="cars" id="cars">
-											<option value="volvo">Volvo</option>
-											<option value="saab">Saab</option>
-											<option value="mercedes">Mercedes</option>
-											<option value="audi">Audi</option>
-										  </select>
 										<br>
-										<h3 style="font-size:150%;color:red;">&nbsp&nbspReroll? : <span id="reroll-bool">NO</span></h3>
+										<br>
+										<h2 id="main-h">Fetched submission:</h2>
+										<br>
+										
 										
 										<div style="font-size:150%;color:red;"><strong>&nbsp&nbspName</strong></div>
 										<span><input id="input-name" style="height:50px;width:250px;" type="text" /></span>

@@ -1,0 +1,18 @@
+<html>
+    <head>
+        <script>
+            const query = window.location.search.split('?')[1];
+            const coll = query.split('-')[0];
+            const id = query.split('-')[1];
+            const map = {
+                'b':'bura',
+                'o':'ogg',
+                'm':'mara'
+            }
+            
+            window.location.href = window.location.origin + `/campaign/submissions?collection=${map[coll]}&id=${id}`
+           
+        </script>
+    </head>
+    <body></body>
+</html>
