@@ -1185,6 +1185,12 @@ footer .copyright-column {
   margin-bottom: 45px;
 }
 
+#subs-table , th, td {
+  border: 1px solid red;
+  padding: 10px;
+  
+}
+
 .table-content-column-wrap {
   padding: 15px;
   border-radius: 11px;

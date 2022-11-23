@@ -20,12 +20,13 @@ async function main(){
     gid('e2').innerHTML='';
     gid('select-genus').value=collection;
     selectedCollection=collection
+    editext('other-subs-collection-name',capitalize(collection))
     onClickFetch(id);
     
     setPTitle(`Displaying submissions for ${selectedCollection} # ${id}`)
     hide('id-sign')
   } else {
-    
+    getAllSubmissions(selectedCollection);
     gid('select-genus').addEventListener('change',onCollectionSelected)
     gid('fetch-btn').addEventListener('click',onClickFetch);
     gid('input-id').addEventListener('input', onInputnftid);
@@ -60,10 +61,12 @@ async function main(){
     const collection = selector.value;
     hide('fetched-info')
     selectedCollection = collection;
+    editext('other-subs-collection-name',capitalize(collection))
     getAllSubmissions(collection);
   }
 
   async function getAllSubmissions(collection) {
+    
     await fetch(CFG.backendURL,{
       method:'POST',
       body: JSON.stringify({
@@ -76,9 +79,38 @@ async function main(){
     }).then((res)=>{
       
       subs = res.details
+      fillOtherSubsTable()
      }
     )
     
+  }
+
+  async function fillOtherSubsTable(){
+    const table = gid('subs-table');
+    table.children[0].replaceChildren(table.children[0].children[0]);
+
+    for (const sub of subs) {
+      
+      const tr = document.createElement('tr');
+
+
+      td = document.createElement('td');
+      td.innerHTML = `<a target="_blank" href="https://gyris.io/rarity/${selectedCollection}?id=${sub['id'] }"><span style='color: blue; font-size:120%'>${sub['id']}</span></a>`;sub['id'] 
+      console.log(td.textContent)
+      tr.appendChild(td)
+
+      td = document.createElement('td');
+      td.textContent = sub['name'] 
+      tr.appendChild(td)
+
+      var td = document.createElement('td');
+      td.textContent = sub['backstory']
+      tr.appendChild(td)
+
+
+      table.children[0].appendChild(tr)
+      
+    }
   }
  
 
