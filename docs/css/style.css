@@ -112,8 +112,35 @@ button:focus {
   outline: none;
 }
 
+#input-id {
+  font-weight: bold;
+  font-size: 150%;
+  background-color: rgba(0, 0, 0, 0);
+  color: red;
+  border: 1px solid rgb(255, 255, 255);
+}
+
 input {
   font-family: WorkSans, sans-serif;
+}
+
+#select-genus {
+  font-size: 150%;
+  background-color: rgb(17, 16, 16);
+  color: red;
+  font-weight: bold;
+  padding: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+                
+}
+
+
+#input-id {
+  font-weight: bold;
+  font-size: 150%;
+  background-color: black;
+  color: red;
 }
 
 input[type='submit'] {
@@ -469,6 +496,17 @@ header {
   align-items: center;
   padding-top: 60px;
   padding-bottom: 60px;
+}
+
+#text-backstory {
+  background-color: rgba(0, 0, 0, 0);
+  color: red;
+}
+
+#input-name {
+  background-color: rgba(0, 0, 0, 0);
+  color: red;
+  text-align: center;
 }
 
 #story {
@@ -1019,10 +1057,13 @@ footer .copyright-column {
   flex-basis: 44px;
   max-width: 44px;
 }
-#data .data-column .warning-wrap {
+#data .warning-wrap {
   margin-top: 25px;
+  padding: 10px;
   border: 1px solid #ffa500;
   color: #ffa500;
+  max-width: 700px;
+ 
 }
 #data .data-column .warning-wrap .warning-row {
   padding: 15px;
@@ -1042,10 +1083,12 @@ footer .copyright-column {
   flex-basis: 44px;
   max-width: 44px;
 }
-#data .data-column .message-wrap {
+#data  .message-wrap {
   margin-top: 25px;
   border: 1px solid #42816c;
   color: #42816c;
+  max-width: 500px;
+  margin: auto;
 }
 #data .data-column .message-wrap .message-row {
   min-height: 71px;
@@ -1160,6 +1203,11 @@ footer .copyright-column {
   max-width: 150px;
 }
 
+#navbar {
+  font-size: 105%;
+  text-shadow: 1px 1px black;
+}
+
 .max-column {
   -webkit-flex-basis: 210px;
   -ms-flex-preferred-size: 210px;
@@ -1186,8 +1234,10 @@ footer .copyright-column {
 }
 
 #subs-table , th, td {
-  border: 1px solid red;
+  border: 1px solid rgb(255, 255, 255);
   padding: 10px;
+  color: red;
+  margin: auto;
   
 }
 
@@ -1269,6 +1319,8 @@ input:checked + .slider:before {
   padding: 0;
   list-style: none;
 }
+
+
 .table-content-column-wrap ul a {
   color: #fff;
   text-decoration: none;
@@ -2287,9 +2339,15 @@ input#input-buraid {
   font-weight: bold;
 }
 #fetch-btn {
-  min-width: 200px;
+  min-width: 220px !important;
+  max-width: 250px !important;
   padding-right: 0px;
 }
+
+#fetch-controlls {
+  width: 100%
+}
+
 .description {
   font-size: 13px;
 }
@@ -2928,9 +2986,7 @@ section#our-team .team-member-avatar {
     width: 100%;
   }
 
-  input#input-buraid {
-    width: 100%;
-  }
+  
 
   .number-column {
     max-width: 100%;

@@ -133,7 +133,7 @@ async function main(){
       return;
     }
 
-    setPTitle(`Displaying submissions for ${selectedCollection} # ${nftid}`)
+    setPTitle(`<span style="color:red;font-size:110%;">D</span>isplaying submissions for ${selectedCollection} # ${nftid}`)
     
     clearErr();
     
