@@ -1233,7 +1233,7 @@ footer .copyright-column {
   margin-bottom: 45px;
 }
 
-#subs-table , th, td {
+#subs-table, #subs-table th ,#subs-table td {
   border: 1px solid rgb(255, 255, 255);
   padding: 10px;
   color: red;

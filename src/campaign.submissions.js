@@ -24,7 +24,7 @@ async function main(){
     onClickFetch(id);
     
     setPTitle(`Displaying submissions for ${selectedCollection} # ${id}`)
-    hide('id-sign')
+  
   } else {
     getAllSubmissions(selectedCollection);
     gid('select-genus').addEventListener('change',onCollectionSelected)
@@ -104,7 +104,7 @@ async function main(){
       tr.appendChild(td)
 
       var td = document.createElement('td');
-      td.textContent = sub['backstory']
+      td.innerHTML = sub['backstory'] ? sub['backstory'].replace(/(?:\r\n|\r|\n)/g, '<br>') : '';
       tr.appendChild(td)
 
 

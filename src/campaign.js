@@ -470,12 +470,12 @@ async function onLedgerSubmit(nonce) {
       Data.name = name;
       successMsg = `Your submission to rename ${capitalize(collection)} #${nftID} has been recorded. Why not <u style='color:red;'>share it on twitter?</u>`;
     } else if (actionNum==3) {
-      gid('twitter-btn').setAttribute('data-text',`I just added a backstory to my ${capitalize(collection)}, check it out here: https://gyris.io/campaign/submissions?nftID=${nftID}\nIf you own one you can do the same here: `);
+      gid('twitter-btn').setAttribute('data-text',`I just added a backstory to my ${capitalize(collection)}, check it out here: https://gyris.io/c?${collection[0]}-${nftID}\nIf you own one you can do the same here: `);
 
       Data.backstory = backstory;
       successMsg = `Your submission to add a backstory to ${capitalize(collection)} #${nftID} has been recorded. Why not <u style='color:red;'>share it on twitter?</u>`
     } else {
-      gid('twitter-btn').setAttribute('data-text',`I just renamed and added a backstory to my ${capitalize(collection)}, check it out here: https://gyris.io/campaign/submissions?nftID=${nftID}\nIf you own one you can do the same here: `);
+      gid('twitter-btn').setAttribute('data-text',`I just renamed and added a backstory to my ${capitalize(collection)}, check it out here: https://gyris.io/c?${collection[0]}-${nftID}\nIf you own one you can do the same here: `);
      
       Data.backstory = backstory;
       Data.name = name;
