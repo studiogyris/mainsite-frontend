@@ -1034,10 +1034,13 @@ footer .copyright-column {
 #data .data-column h1 {
   margin-top: 0;
 }
-#data .data-column .error-wrap {
+#data .error-wrap {
   margin-top: 25px;
   border: 1px solid #e43544;
   color: #e43544;
+  max-width: 400px;
+  margin-left:auto;
+  margin-right: auto;
 }
 #data .data-column .error-wrap .error-row {
   padding: 15px;
@@ -1208,6 +1211,11 @@ footer .copyright-column {
   text-shadow: 1px 1px black;
 }
 
+#navbar li {
+  padding-bottom:7px;
+  padding-top: 7px;
+}
+
 .max-column {
   -webkit-flex-basis: 210px;
   -ms-flex-preferred-size: 210px;
@@ -1232,6 +1240,22 @@ footer .copyright-column {
 .page-title-column {
   margin-bottom: 45px;
 }
+
+#back-btn {
+  padding: 8px; 
+  border-style: solid; 
+  border-width: 2px
+}
+
+#back-btn:hover {
+  padding: 8px; 
+  border-style: solid; 
+  border-width: 2px;
+  background-color: white;
+  color: black;
+  cursor:  pointer;
+}
+
 
 #subs-table, #subs-table th ,#subs-table td {
   border: 1px solid rgb(255, 255, 255);

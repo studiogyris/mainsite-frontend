@@ -69,9 +69,9 @@ async function onLedgerSubmit(nonce) {
   const tx = buildAuthTx(nonce)
   tx.feePayer = bag.sol.walletProvider.publicKey 
   const connection = new Web3.Connection(CFG.rpcUrl);
-  console.log(await connection.getLatestBlockhash())
+  
   tx.recentBlockhash = (await connection.getLatestBlockhash()).blockhash // same as line above
-  console.log(tx.recentBlockhash)
+  
  
   const signedTx = await bag.sol.walletProvider.signTransaction(tx)
   
@@ -493,7 +493,7 @@ async function onLedgerSubmit(nonce) {
       return res.json();
     })
     .then((res)=>{
-      console.log(res)
+      
       gid(`action-btn`).value=btntext;
       if (!res.success){
         displayErr(res.details.message)

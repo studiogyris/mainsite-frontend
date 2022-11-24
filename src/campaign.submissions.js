@@ -100,11 +100,11 @@ async function main(){
       tr.appendChild(td)
 
       td = document.createElement('td');
-      td.textContent = sub['name'] 
+      td.textContent = sub['name'] ? removeTags(sub['name']) : '';
       tr.appendChild(td)
 
       var td = document.createElement('td');
-      td.innerHTML = sub['backstory'] ? sub['backstory'].replace(/(?:\r\n|\r|\n)/g, '<br>') : '';
+      td.innerHTML = sub['backstory'] ? removeTags(sub['backstory']) : '';
       tr.appendChild(td)
 
 
@@ -113,6 +113,28 @@ async function main(){
     }
   }
  
+  var tagBody = '(?:[^"\'>]|"[^"]*"|\'[^\']*\')*';
+
+var tagOrComment = new RegExp(
+    '<(?:'
+    // Comment body.
+    + '!--(?:(?:-*[^->])*--+|-?)'
+    // Special "raw text" elements whose content should be elided.
+    + '|script\\b' + tagBody + '>[\\s\\S]*?</script\\s*'
+    + '|style\\b' + tagBody + '>[\\s\\S]*?</style\\s*'
+    // Regular name
+    + '|/?[a-z]'
+    + tagBody
+    + ')>',
+    'gi');
+function removeTags(html) {
+  var oldHtml;
+  do {
+    oldHtml = html;
+    html = html.replace(tagOrComment, '');
+  } while (html !== oldHtml);
+  return html.replace(/</g, '&lt;');
+}
 
   async function onClickFetch(buid){
     if (!subs) {
