@@ -26,7 +26,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _con
   \***********************/
 /***/ ((__unused_webpack_module, exports) => {
 
-eval("const CFG = {\n  rpcUrl: 'https://green-ancient-energy.solana-mainnet.quiknode.pro/787de86af48ab90143f19e444ae1481b1e380de8/',\n  CMID: '8ny7jWGara64yKGRr2NYa6oCCmfUQPBRTtP3N3bx1Yst',\n  devnet: true,\n  maxPerTx: 100,\n  marketplaceName: 'Magic Eden',\n  marketplaceCollection: 'https://magiceden.io/marketplace/gyris_genesys',\n  fromWLtoPublic: 2 * 60 * 60 * 1000,\n  backendURL: 'https://on4gbht69b.execute-api.eu-central-1.amazonaws.com/dev/'\n  \n}\nexports.CFG = CFG;\n\n\n//# sourceURL=webpack://mainsite-frontend/./src/config.js?");
+eval("const CFG = {\n  rpcUrl: 'https://quaint-ancient-friday.solana-mainnet.quiknode.pro/',\n  CMID: '8ny7jWGara64yKGRr2NYa6oCCmfUQPBRTtP3N3bx1Yst',\n  devnet: true,\n  maxPerTx: 100,\n  marketplaceName: 'Magic Eden',\n  marketplaceCollection: 'https://magiceden.io/marketplace/gyris_genesys',\n  fromWLtoPublic: 2 * 60 * 60 * 1000,\n  backendURL: 'https://on4gbht69b.execute-api.eu-central-1.amazonaws.com/dev/'\n  \n}\nexports.CFG = CFG;\n\n\n//# sourceURL=webpack://mainsite-frontend/./src/config.js?");
 
 /***/ })
 
