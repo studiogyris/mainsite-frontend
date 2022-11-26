@@ -68,6 +68,8 @@ h2 {
   line-height: 1.2;
 }
 
+
+
 h3 {
   font-family: WorkSans, sans-serif;
   font-size: 1.22em;
@@ -78,6 +80,10 @@ h4 {
   font-family: WorkSans, sans-serif;
   font-size: 1.18em;
   line-height: 1.1;
+}
+
+.gyris-green {
+  color: #42816c !important;
 }
 
 h5 {
@@ -864,6 +870,19 @@ header {
   width: 44px;
   height: 44px;
   background-color: #42816c !important;
+  display: block;
+  position: absolute;
+  right: -72px;
+  top: 34px;
+  border-radius: 50%;
+  z-index: 25;
+}
+
+.live:before {
+  content: "";
+  width: 44px;
+  height: 44px;
+  background-color: orange !important;
   display: block;
   position: absolute;
   right: -72px;
