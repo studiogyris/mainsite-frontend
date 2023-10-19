@@ -1,5 +1,5 @@
 const CFG = {
-  rpcUrl: 'https://quaint-ancient-friday.solana-mainnet.quiknode.pro/',
+  rpcUrl: 'https://api.mainnet-beta.solana.com/',
   CMID: '8ny7jWGara64yKGRr2NYa6oCCmfUQPBRTtP3N3bx1Yst',
   devnet: true,
   maxPerTx: 100,
