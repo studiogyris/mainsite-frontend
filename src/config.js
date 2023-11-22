@@ -1,5 +1,5 @@
 const CFG = {
-  rpcUrl: 'https://try-rpc.mainnet.solana.blockdaemon.tech/',
+  rpcUrl: 'https://api.blockeden.xyz/solana/8UuXzatAZYDBJC6YZTKD',
   CMID: '8ny7jWGara64yKGRr2NYa6oCCmfUQPBRTtP3N3bx1Yst',
   devnet: true,
   maxPerTx: 100,
